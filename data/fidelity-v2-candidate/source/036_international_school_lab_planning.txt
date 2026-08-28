@@ -1,0 +1,35 @@
+The planning meeting for the new science lab started with a floor plan and immediately became a staffing discussion. 国际学校准备把一间旧美术教室改成综合实验室，供 Grade 6 到 Grade 10 使用。Facilities had already drawn benches, sinks, storage cabinets, and a demonstration table, but science teachers were less interested in the furniture than in how students would actually move through the room.
+
+“Bench capacity says twenty-four,” said Priya, the department lead, “but capacity is not the same as safe class size.” 王老师指着靠窗的两排台面：“如果每组四个人，这里做 chemistry 还可以；但做 robotics，箱子一打开，走道马上变窄。” The team decided that the room needed activity-specific occupancy limits rather than one universal number posted on the door.
+
+The school teaches partly in English and partly in Chinese depending on grade and course. That language mix affected signage. Chemical storage labels had to follow standardized names and hazard symbols, while student-facing procedural reminders needed to be instantly understandable. “Emergency instructions cannot become a language lesson,” Priya said. “关键动作要 bilingual，但不要写成两大段说明。”
+
+They drafted a visual emergency board with short paired instructions: “Stop work / 停止操作,” “Alert teacher / 通知教师,” “Use eyewash / 使用洗眼器,” and arrows toward exits. For chemicals, however, the team agreed to retain the official English product label and SDS identifiers, adding Chinese explanation only as supplementary text. The goal was to avoid creating unofficial alternate names for reagents.
+
+Storage became the next issue. The architect had planned one large locked chemical cabinet. The lab technician rejected it. “Acids, bases, oxidizers, flammables—不能因为都叫 chemicals 就放在同一个柜子里。” She proposed separated cabinets plus a small daily-use area that teachers could stock before class. Bulk inventory would remain in a locked prep room.
+
+A teacher asked whether students should ever access the prep room. The current practice at another campus allowed senior students to retrieve equipment under supervision. Here, the team chose a clearer boundary: students could collect prepared trays from a pass-through shelf but would not enter chemical storage. That decision reduced traffic and simplified accountability.
+
+For biology, the challenge was different. The school planned microscopes, prepared slides, plant experiments, and occasional microbiology demonstrations. “如果以后做 bacterial culture，incubator 放哪里？” one teacher asked. The technician answered that the current ventilation and sterilization setup did not support routine culture work beyond low-risk teaching kits. Rather than designing for every possible future experiment, the room would document its biosafety limits.
+
+Physics teachers cared about long sight lines and floor space. Motion experiments, optics tracks, and projectile demonstrations require a clear path that chemistry benches can obstruct. The group proposed movable center tables instead of permanently fixed islands. Facilities worried about power access. The compromise was ceiling-mounted retractable power drops in designated zones, with floor markings showing where tables could be positioned without blocking exits.
+
+Then came the robotics program. Students use soldering irons, lithium batteries, small CNC tools, and 3D printers. “Robotics sounds clean compared with chemistry, but battery charging is its own fire risk,” the safety coordinator noted. 充电区因此被从普通储物架移到靠近监控位置的耐火柜旁，并要求 battery log 记录型号、状态和异常。
+
+The 3D printers raised an air-quality question. The vendor documentation emphasized enclosed printing, but teachers sometimes open doors immediately after a print finishes. “We should design behavior, not just equipment,” Priya said. They added local extraction and a cooldown indicator, plus a rule that students do not remove prints until the enclosure status changes to safe.
+
+At noon the meeting shifted to timetable constraints. The lab would host multiple subjects in the same day. A chemistry class might finish at 10:20 and a robotics class begin at 10:35. Fifteen minutes was not enough if teachers were expected to clean, inspect, restock, and reconfigure everything themselves. The department requested a formal turnaround period for certain activities.
+
+“Timetable people will hate us,” someone joked. 王老师回答：“比起事故报告，schedule conflict 比较好解决。” The team categorized activities by reset complexity: standard classroom use, wet lab, hazardous chemistry, fabrication, and extended project. Only some categories required protected turnaround time.
+
+Equipment checkout also needed redesign. The school used a generic asset system that worked for laptops but not for glassware or consumables. The technician proposed a simple lab-specific inventory layer: durable equipment by asset ID, consumables by batch, and high-risk items by named checkout. “不要为了每支试管贴 barcode,” she said, “but soldering stations and gas regulators need traceability.”
+
+A student representative joined the afternoon session. She pointed out that instructions often assumed right-handed work. The demonstration bench placed gas and power controls on one side only. “For left-handed students, you end up crossing cables over your body,” she explained. The architect adjusted the layout to provide mirrored work positions on at least two benches.
+
+Accessibility review identified another issue. One adjustable-height bench had been included, but the aisle leading to it narrowed near a storage cart. “An accessible bench that requires moving furniture every lesson is not truly available,” the coordinator said. The cart location changed, and commonly used tools were duplicated at reachable heights.
+
+The meeting ended with a list of design decisions rather than a finished room: separated chemical storage, bilingual emergency cues, activity-specific occupancy limits, movable tables, controlled battery charging, printer extraction, protected reset windows, and clear student boundaries around prep areas.
+
+Priya summarized the philosophy in mixed language: “我们不是在设计一个漂亮的 science room. We are designing a room that has to survive hundreds of different lessons without relying on everyone remembering unwritten rules.”
+
+That sentence captured the hardest part of lab planning. The benches and sinks are visible, but the real system consists of transitions: one class to the next, English to Chinese instructions, storage to use, clean activity to hazardous activity, student independence to supervised access. A good laboratory makes those transitions explicit before the first experiment begins.

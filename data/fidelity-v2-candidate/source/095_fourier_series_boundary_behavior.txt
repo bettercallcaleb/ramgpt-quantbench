@@ -1,0 +1,129 @@
+Fourier series approximate a periodic function by trigonometric modes, but convergence at discontinuities and boundaries is subtler than simple pointwise approximation. The limiting value is controlled by local one-sided behavior, and near a jump the Gibbs phenomenon prevents uniform convergence.
+
+Let f be 2pi-periodic and integrable. Its Fourier coefficients are
+
+a_n=(1/pi) integral_{-pi}^{pi} f(x) cos(nx) dx,
+
+b_n=(1/pi) integral_{-pi}^{pi} f(x) sin(nx) dx,
+
+with
+
+a_0=(1/pi) integral_{-pi}^{pi} f(x) dx.
+
+The N-th partial sum is
+
+S_N f(x)
+=a_0/2 + sum_{n=1}^N [a_n cos(nx)+b_n sin(nx)].
+
+A fundamental convergence theorem says that if f is piecewise smooth, then at each x,
+
+S_N f(x) -> [f(x^-)+f(x^+)]/2.
+
+At a point of continuity, the one-sided limits agree, so the Fourier series converges to f(x). At a jump, it converges to the midpoint of the jump.
+
+Consider the 2pi-periodic square wave
+
+f(x)=
+-1,  -pi<x<0,
++1,   0<x<pi,
+
+with any assigned values at x=0,+/-pi.
+
+The function is odd, so all cosine coefficients vanish and a_0=0. The sine coefficients are
+
+b_n
+=(1/pi) integral_{-pi}^{pi} f(x) sin(nx) dx
+=(2/pi) integral_0^pi sin(nx) dx
+=(2/pi)[1-(-1)^n]/n.
+
+Thus b_n=0 for even n and
+
+b_n=4/(pi n)
+
+for odd n.
+
+Therefore
+
+f(x) ~ (4/pi)[
+sin x + sin 3x/3 + sin 5x/5 + ...
+].
+
+At x=0, the one-sided limits are -1 and +1, so the series converges to zero. This is true regardless of how f(0) itself is defined. Changing the value at one point does not change any Fourier coefficient because a single point has measure zero.
+
+At x=pi, periodicity matters. The left limit is +1, while the right limit is the value approached after wrapping to -pi, namely -1. Hence the series also converges to zero at the endpoint. Fourier series see the periodic extension, not merely the graph on a closed interval.
+
+The midpoint convergence can be derived using the Dirichlet kernel. The partial sum can be written as a convolution:
+
+S_N f(x)
+=(1/2pi) integral_{-pi}^{pi}
+f(x-t) D_N(t) dt,
+
+where
+
+D_N(t)
+=sum_{n=-N}^N e^(int)
+=1+2sum_{n=1}^N cos(nt)
+=sin((N+1/2)t)/sin(t/2).
+
+The kernel has total mass 2pi but is not nonnegative and its L1 norm grows slowly with N. Its oscillatory concentration near t=0 is responsible for convergence under smoothness assumptions and also for overshoot near jumps.
+
+Suppose f has a jump of size
+
+J=f(x_0^+)-f(x_0^-).
+
+Near x_0, the partial sums develop oscillations whose maximum overshoot does not vanish as N increases. Instead, the transition region narrows while the overshoot approaches about 8.949% of the jump magnitude on each side. This is the Gibbs phenomenon.
+
+For the square wave, J=2, so the overshoot above +1 approaches roughly
+
+0.08949*2≈0.17898.
+
+Thus local maxima approach about 1.179 rather than 1. The location of the peak moves toward the discontinuity as N grows, but its height does not collapse to 1.
+
+This means the Fourier partial sums do not converge uniformly on the whole period when f has a jump. Uniform convergence would imply that the sup-norm error tends to zero, contradicting the persistent overshoot.
+
+Away from discontinuities, convergence is much better. On any closed interval that stays a positive distance from every jump, piecewise smooth functions can have uniform convergence under standard conditions. The problem is localized around the jumps.
+
+Coefficient decay reflects regularity. If f is piecewise C^1 with jump discontinuities, Fourier coefficients typically decay like O(1/n). If f is continuous and has additional derivatives matching periodically, repeated integration by parts yields faster decay.
+
+For example, if f is continuously differentiable and periodic with f(-pi)=f(pi), then
+
+a_n
+=(1/pi) integral f(x)cos(nx)dx.
+
+Integrating by parts,
+
+a_n
+=[f(x)sin(nx)/(pi n)]_{-pi}^{pi}
+-(1/(pi n)) integral f'(x)sin(nx)dx.
+
+The boundary term vanishes because sin(npi)=0, giving a_n=O(1/n) immediately. If one can integrate by parts again with compatible boundary behavior, another factor 1/n appears.
+
+Boundary mismatch can therefore dominate convergence. Suppose a smooth function is specified only on [-pi,pi] but f(-pi) != f(pi). Its periodic extension has a jump at the boundary even though the original function is smooth inside the interval. Fourier coefficients then decay only at the rate associated with that jump.
+
+This explains why cosine or sine series can be preferable on a finite interval. An even extension generates a cosine series; an odd extension generates a sine series. The chosen extension changes endpoint regularity and therefore spectral convergence.
+
+As an example, take f(x)=x on [0,pi]. Its odd extension to [-pi,pi] is simply f(x)=x, which has a jump in the periodic extension between pi and -pi. The sine series coefficients decay like 1/n.
+
+But if a function and enough derivatives match at the endpoints under a chosen extension, coefficients can decay much faster. For analytic periodic functions, decay may be exponential.
+
+Cesaro summation provides another view of boundary behavior. The Fejer mean averages the first N+1 partial sums:
+
+sigma_N f
+=1/(N+1) sum_{k=0}^N S_k f.
+
+This is convolution with the Fejer kernel,
+
+K_N(t)
+=1/(N+1)[sin((N+1)t/2)/sin(t/2)]^2.
+
+Unlike the Dirichlet kernel, K_N is nonnegative and has total mass 2pi. For continuous periodic f, Fejer's theorem gives uniform convergence
+
+sigma_N f -> f.
+
+For a function with jumps, Fejer means converge pointwise to the same midpoint value but suppress the persistent Gibbs overshoot characteristic of raw partial sums.
+
+The distinction is important: Fourier coefficients are the same, but the summation procedure changes finite-N behavior.
+
+At a discontinuity, no trigonometric polynomial sequence that is both globally spectral and tied to the ordinary partial-sum ordering can simply reproduce both one-sided values at the same point. The Fourier series chooses the symmetric average because the convolution kernel samples both sides.
+
+The practical convergence picture is therefore local. At smooth interior points, partial sums recover the function and can converge rapidly. At a jump, the limit is the half-sum of one-sided limits. Near the jump, oscillatory overshoot persists in amplitude while shrinking in width. At interval endpoints, the relevant left and right limits come from the periodic extension. Understanding these boundary effects is essential before interpreting Fourier approximation error only through coefficient size or visual smoothness.

@@ -1,0 +1,40 @@
+Issue triage started with a GitHub thread titled “Chinese strings inconsistent after v4.8.” The localization maintainers had already tagged it `i18n`, but no one agreed whether it was a translation bug, a product terminology problem, or a stale-resource problem.
+
+Kevin pasted the first screenshot into the call. “The sidebar says ‘工作区’, the settings page says ‘Workspace’, and the export dialog says ‘作业空间’.” 小岚马上说：“第三个肯定不对，但我们先别直接改。Need to trace where each string comes from.”
+
+The project used three translation layers. Core UI strings lived in the main repository. Plugin strings came from separate packages. A small set of server-generated messages still arrived from backend locale files. That architecture explained why the same concept could be translated three times by different contributors.
+
+They searched for the English key `workspace`. The main repository used a semantic key, `nav.workspace.label`. One plugin used the raw English phrase as its key. The backend sent an enum value and mapped it through a different catalog. “This is exactly why string-key design matters,” Kevin said. “同一个概念如果没有 canonical term，就会慢慢分叉。”
+
+Before touching translations, the team opened the terminology glossary. It listed `workspace = 工作区`, but the glossary had not been updated in eleven months. 小岚 checked recent design documents and confirmed the product team still used “工作区” in Chinese. That made the intended term clear, but they still needed to find why English leaked through.
+
+The plugin package had no `zh-CN` entry for its new settings panel, so the framework fell back to English. The backend catalog, meanwhile, contained “作业空间,” added years earlier by a contributor who translated the word literally. Two separate defects produced one inconsistent screen.
+
+The team split the issue. “One PR for missing plugin coverage, one PR for terminology normalization,” Kevin said. 小岚补充：“不要把所有旧词一次性 global replace。Some strings may refer to operating-system workspaces or IDE workspaces, context 不一样。”
+
+They then examined punctuation conventions. Several Chinese strings used English colons with spaces, while others used full-width punctuation. One contributor proposed a linter rule. Another warned that punctuation depended on component layout: if labels and values are in separate UI elements, hard-coded colons should not exist at all. The triage decision was to fix component structure where possible, not merely enforce one punctuation character.
+
+A second issue involved plural forms. English displayed “1 file” and “2 files,” while Chinese showed “1 个文件” and “2 个文件.” That seemed straightforward until a compact table column showed “2 files selected” translated as “已选择 2 个文件” and overflowed at narrow width. A developer suggested shortening it to “已选 2 项.” 小岚问：“这里能不能说 项？If selection can include folders later, maybe yes. If files only, 项 loses precision.”
+
+The group checked product behavior rather than deciding linguistically in isolation. The selection model already supported both files and folders in an upcoming branch, so “项” would actually become more future-proof. They documented the rationale in the glossary instead of leaving a mysterious short translation.
+
+Next came a report from a Taiwanese contributor asking why `zh-TW` inherited several mainland Chinese terms when a string was missing. The current fallback chain was `zh-TW -> zh-CN -> en`. “Technically convenient, linguistically risky,” Kevin said. For some concepts, a simplified-Chinese fallback was understandable; for others, terminology could feel clearly wrong. The team considered changing fallback directly to English, but that would increase untranslated UI.
+
+“Maybe fallback should be key-scoped,” 小岚 suggested. “Core neutral strings can inherit, terminology-sensitive strings cannot.” The framework did not support that easily. They opened an architectural issue rather than hiding the limitation inside translation data.
+
+The conversation shifted to contributor workflow. New localization pull requests often arrived with hundreds of changed lines because translation tools rewrote JSON ordering. Reviewers then struggled to distinguish actual translation edits. The maintainers decided to enforce stable key ordering and reject formatting-only churn.
+
+A developer asked whether machine translation could fill missing strings automatically. The localization lead answered carefully: “It can propose text, but merge criteria stay the same. 自动生成不是 provenance，也不是 review。” For this project, generated suggestions would need explicit human approval and should never overwrite an existing reviewed translation simply because a model preferred another phrase.
+
+They also found a more technical bug: locale bundles were cached by language code but not build version. After an update, some clients could retain old translations until cache expiry. That explained reports where users saw different wording on the same release. The fix belonged in asset versioning, not in the translation files.
+
+By the end of the session, the original single issue had become five tracked tasks:
+1. add missing `zh-CN` plugin strings;
+2. normalize the backend meaning of product workspace to “工作区”;
+3. update glossary context notes for “项” versus “文件”;
+4. version locale bundle caches by build hash;
+5. investigate safer `zh-TW` fallback behavior.
+
+Kevin summarized in English: “We are not fixing Chinese copy as a bag of strings. We are fixing a localization system.” 小岚在会议记录最后加了一句中文：“术语一致性是架构问题的一部分，不只是翻译质量问题。”
+
+That distinction mattered. A translation can be individually correct and still produce a broken product if fallback rules, cache behavior, component layout, and terminology ownership are inconsistent. The triage process worked because the team treated every screenshot as evidence of a pipeline, not merely a sentence that needed rewriting.

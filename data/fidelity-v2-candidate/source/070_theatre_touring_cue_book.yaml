@@ -1,0 +1,240 @@
+show:
+  title: Glass Harbor
+  touring_version: 2.4
+  runtime: "01:47:30"
+  intermission: false
+  company: Lantern Stage Collective
+
+venues:
+  minimum_stage:
+    width_m: 10.5
+    depth_m: 8.0
+    grid_height_m: 6.5
+  preferred_power:
+    lighting: "3x 100A three-phase"
+    audio: "2x 20A isolated circuits"
+    video: "1x 20A dedicated"
+  loading:
+    truck_length_m: 10
+    cases: 42
+    estimated_load_in_h: 6
+    estimated_load_out_h: 2.5
+
+departments:
+  stage_management:
+    caller: SM
+    deck_lead: DSL
+    assistant: ASM
+  lighting:
+    console: ETC_Eos
+    universes: [1, 2, 3]
+    practicals_universe: 4
+  audio:
+    console: Yamaha_DM7
+    playback: QLab_A
+    backup_playback: QLab_B
+  video:
+    server: Resolume_Main
+    backup: Resolume_Backup
+
+presets:
+  - id: PRE-01
+    call: "house open"
+    required:
+      - deck_clear
+      - haze_disabled
+      - projection_black
+      - practical_table_lamp_at_35
+  - id: PRE-02
+    call: "five minutes"
+    required:
+      - actor_headsets_checked
+      - harbor_bell_prop_stage_right
+      - rolling_dock_spiked
+      - projection_server_synced
+  - id: PRE-03
+    call: "places"
+    required:
+      - house_to_half_ready
+      - safety_light_confirmed
+      - fogger_fluid_above_25_percent
+
+cues:
+  - cue: LX-1
+    department: lighting
+    trigger: house_manager_clear
+    action: house_to_half
+    duration_s: 5
+  - cue: SD-1
+    department: audio
+    trigger: LX-1_complete
+    action: harbor_ambience_fade_in
+    duration_s: 12
+  - cue: LX-2
+    department: lighting
+    trigger: SM_go_after_ambience
+    action: house_out_stage_blue_18
+    duration_s: 7
+    dependencies: [SD-1]
+  - cue: VID-1
+    department: video
+    trigger: LX-2_at_80_percent
+    action: horizon_loop_start
+    content: horizon_dawn_v7.mov
+  - cue: DECK-3
+    department: stage
+    trigger: actor_line_"the tide keeps its own clock"
+    action: roll_dock_to_center_spike
+    crew: [DSL, ASM]
+    notes: stop if downstage caster crosses yellow tape
+  - cue: SD-4
+    department: audio
+    trigger: DECK-3_locked
+    action: bell_single_close
+    level_db: -8
+  - cue: LX-7
+    department: lighting
+    trigger: SD-4_tail
+    action: warm_side_light_to_42
+    duration_s: 3.5
+  - cue: VID-5
+    department: video
+    trigger: actor_opens_map
+    action: overlay_navigation_lines
+    opacity_pct: 68
+  - cue: LX-12
+    department: lighting
+    trigger: actor_line_"no lanterns tonight"
+    action: practicals_snap_out_except_table
+    duration_s: 0
+  - cue: SD-11
+    department: audio
+    trigger: LX-12
+    action: storm_layer_A_start
+    crossfade_s: 9
+  - cue: FX-2
+    department: stage
+    trigger: SD-11_plus_4s
+    action: wind_machine_low
+    safety:
+      max_duration_s: 48
+      stop_if: loose_fabric_enters_guard
+  - cue: LX-18
+    department: lighting
+    trigger: actor_reaches_upstage_window
+    action: lightning_sequence_1
+    notes: sequence internally timed; no manual retrigger
+  - cue: SD-15
+    department: audio
+    trigger: LX-18_frame_3
+    action: thunder_close
+  - cue: DECK-9
+    department: stage
+    trigger: blackout_after_scene_4
+    action: swap_dock_for_kitchen_unit
+    crew: [DSL, ASM, LOCAL1]
+    target_s: 34
+  - cue: LX-23
+    department: lighting
+    trigger: DECK-9_clear
+    action: kitchen_special_up
+    duration_s: 2
+  - cue: VID-12
+    department: video
+    trigger: actor_line_"the chart was wrong"
+    action: map_distortion_sequence
+    content: chart_warp_v3.mp4
+  - cue: SD-22
+    department: audio
+    trigger: actor_closes_radio
+    action: remove_harbor_ambience
+    duration_s: 6
+  - cue: LX-31
+    department: lighting
+    trigger: SD-22_complete
+    action: isolate_table_lamp
+    duration_s: 4
+  - cue: DECK-15
+    department: stage
+    trigger: actor_exits_left
+    action: preset_rope_bundle_downstage_right
+    crew: [ASM]
+  - cue: FX-7
+    department: stage
+    trigger: actor_line_"pull when I say"
+    action: release_rain_bar
+    safety:
+      floor_mats_confirmed: true
+      drainage_checked: true
+  - cue: SD-31
+    department: audio
+    trigger: FX-7_water_visible
+    action: storm_full
+    level_db: -3
+  - cue: LX-40
+    department: lighting
+    trigger: SM_go
+    action: storm_white_pulse
+    duration_s: 0.2
+  - cue: VID-19
+    department: video
+    trigger: LX-40
+    action: horizon_signal_loss
+  - cue: ALL-STOP-1
+    department: all
+    trigger: emergency_only
+    action: stop_motion_audio_video_hold_safe_light
+    notes: SM or venue safety lead may call
+  - cue: LX-52
+    department: lighting
+    trigger: final_line_"we are still here"
+    action: dawn_return
+    duration_s: 14
+  - cue: SD-42
+    department: audio
+    trigger: LX-52_plus_5s
+    action: harbor_ambience_return
+    duration_s: 10
+  - cue: VID-26
+    department: video
+    trigger: SD-42_at_50_percent
+    action: horizon_clear_frame
+  - cue: LX-55
+    department: lighting
+    trigger: actors_final_position
+    action: final_state
+    duration_s: 6
+  - cue: SD-45
+    department: audio
+    trigger: applause_detected_or_SM_go
+    action: curtain_music
+  - cue: LX-56
+    department: lighting
+    trigger: SD-45
+    action: curtain_call
+    duration_s: 2
+  - cue: LX-57
+    department: lighting
+    trigger: curtain_call_complete
+    action: house_half
+    duration_s: 5
+
+touring_notes:
+  substitutions:
+    - condition: venue_has_no_rain_recovery
+      change: omit_FX-7_and_use_video_rain_layer
+      approvals: [director, production_manager]
+    - condition: grid_height_below_7m
+      change: shorten_horizon_drop_and_refocus_LX-18
+      approvals: [lighting_supervisor]
+  local_crew:
+    required: 6
+    calls:
+      load_in: "08:00"
+      show_call: "18:00"
+      load_out: "22:15"
+  checks:
+    - verify all rolling scenery brakes before doors
+    - test emergency worklight from venue backup power
+    - confirm rain-bar water containment before first wet run
+    - record projector latency after signal-chain changes

@@ -1,0 +1,204 @@
+Design Note: Edge Cache Consistency Tradeoffs
+
+Context
+
+A global API serves product metadata through edge caches to reduce latency and origin load. Most objects change infrequently, but some fields such as availability status and policy flags must propagate quickly.
+
+A single cache policy for every field creates either unnecessary origin traffic or unacceptable staleness.
+
+Consistency Vocabulary
+
+Fresh:
+The cached object is within its declared TTL and can be served without revalidation.
+
+Stale:
+TTL has expired, but the object may still be served under an explicit stale policy.
+
+Invalidated:
+A control-plane message indicates a cached version should no longer be used.
+
+Revalidated:
+Edge confirms with origin, often using ETag or Last-Modified, that cached content is still current.
+
+Strong read-after-write consistency is not guaranteed by ordinary CDN caching. The design instead assigns bounded staleness according to data class.
+
+Data Classes
+
+Class A — Static Descriptive Metadata
+
+Examples:
+- product title;
+- dimensions;
+- documentation link.
+
+TTL: 1 hour
+stale-while-revalidate: 24 hours
+
+These fields tolerate moderate staleness.
+
+Class B — Frequently Changed Presentation Data
+
+Examples:
+- merchandising labels;
+- ranking hints.
+
+TTL: 5 minutes
+stale-while-revalidate: 15 minutes
+
+Class C — Operationally Sensitive Flags
+
+Examples:
+- item withdrawn;
+- legal restriction;
+- feature disabled for safety reason.
+
+TTL: 30 seconds maximum or no ordinary caching depending on risk.
+Explicit invalidation is required on updates.
+
+Class D — User-Specific Data
+
+Not shared-cacheable unless response key includes complete authorization context and policy explicitly permits it. Default is `private, no-store`.
+
+Cache Key
+
+The key includes:
+- normalized host;
+- path;
+- relevant query parameters;
+- API version;
+- representation language;
+- content encoding where required.
+
+Unknown query parameters are not automatically ignored because doing so can cause semantic collisions.
+
+Authorization
+
+Responses containing tenant-specific or user-specific information must not enter a public shared cache.
+
+The origin emits explicit Cache-Control headers. Edge configuration does not override `private` or `no-store` for convenience.
+
+Invalidation
+
+When a Class C record changes, origin publishes an invalidation event containing object ID and version.
+
+Edges receiving the event evict matching entries.
+
+Invalidation is best effort across a distributed network, so TTL remains a backstop. The system does not claim zero-staleness solely because purge messages exist.
+
+Versioned Keys
+
+For immutable resources, prefer versioned URLs:
+
+/assets/schema/v42.json
+
+No invalidation is required because a change creates a new key. Long TTLs become safe.
+
+Mutable logical endpoints such as `/products/123` cannot rely on this technique alone.
+
+ETag Revalidation
+
+Origin computes an ETag from canonical representation version.
+
+Edge sends:
+
+If-None-Match: "<etag>"
+
+Origin returns 304 if unchanged.
+
+This reduces payload transfer while still consulting origin after TTL expiry.
+
+Stale-While-Revalidate
+
+For tolerant classes, an expired object can be served immediately while edge refreshes in background.
+
+This lowers tail latency but intentionally increases staleness window.
+
+The policy is not used for safety or legal flags.
+
+Stale-If-Error
+
+If origin is unavailable, selected classes may continue serving stale content for a bounded period.
+
+Example:
+Class A: stale-if-error=24h
+Class B: stale-if-error=30m
+Class C: no stale-if-error unless explicitly approved
+
+Availability and correctness trade differently by class.
+
+Write Path
+
+Writes always go to origin. The response includes the new version.
+
+The client that performed the write may require read-your-write behavior. Options:
+- bypass cache for a short interval;
+- request a version-specific endpoint;
+- include a consistency token;
+- have origin response contain complete updated object.
+
+We choose a consistency token for administrative clients. The subsequent read includes `min-version=N`. An edge holding an older version must revalidate or forward to origin.
+
+This provides targeted read-your-write behavior without making all public reads strongly consistent.
+
+Race: Fill After Invalidation
+
+A classic race:
+
+1. Edge begins fetch for version 10.
+2. Origin updates to version 11.
+3. Invalidation for version 10 is sent.
+4. Edge's old fetch completes after invalidation and stores version 10 again.
+
+To prevent this, cache entries and invalidation events carry versions. An edge tracks minimum accepted version per key for a short horizon. A fill older than that version is rejected.
+
+Race: Concurrent Revalidation
+
+Many edges may expire simultaneously and stampede origin.
+
+Mitigations:
+- randomized TTL jitter;
+- request collapsing within each edge;
+- stale-while-revalidate;
+- origin shielding.
+
+Negative Caching
+
+404 responses may be cached briefly for immutable-looking IDs to protect origin from repeated misses.
+
+However, if object creation can occur soon after a miss, long negative TTL delays visibility.
+
+Default negative TTL is 10 seconds.
+
+Observability
+
+Measure:
+- hit ratio by data class;
+- origin requests;
+- revalidation 304 rate;
+- stale serves;
+- invalidation delivery latency;
+- purge failures;
+- cache age at response;
+- version mismatch;
+- origin shield load.
+
+Hit ratio alone is not success. An extremely high hit ratio can reflect excessively stale content.
+
+Testing
+
+Scenarios:
+- update during active cache fill;
+- invalidation delayed;
+- duplicate invalidations;
+- edge offline then reconnect;
+- origin outage;
+- administrative read-your-write;
+- language variants;
+- authorization-header responses;
+- negative cache followed by creation.
+
+Decision
+
+Use differentiated cache semantics rather than one universal TTL. Immutable data uses versioned keys and long caching. Ordinary mutable metadata uses TTL plus revalidation. Sensitive flags use short TTL and versioned invalidation. User-specific responses are not shared cached by default.
+
+The system therefore provides bounded, policy-driven staleness rather than pretending a geographically distributed edge cache is strongly consistent.

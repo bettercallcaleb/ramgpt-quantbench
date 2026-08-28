@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ramgpt.org/schemas/fidelity-v2-source-provenance-v1.json",
+  "title": "RAMGPT fidelity-v2 source-generation provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generation_method", "source_generation_prompt_version", "documents"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "generation_method": {"const": "external_language_model"},
+    "provider_identity": {"type": ["string", "null"]},
+    "model_identity": {"type": ["string", "null"]},
+    "source_generation_prompt_version": {"const": "fidelity-v2-source-generation-v1"},
+    "generation_started_at": {"type": ["string", "null"], "format": "date-time"},
+    "generation_completed_at": {"type": ["string", "null"], "format": "date-time"},
+    "documents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["document_id", "attempt_id", "status", "domain", "topic", "intended_document_type", "source_filename", "sha256", "byte_count"],
+        "properties": {
+          "document_id": {"type": "integer", "minimum": 0, "maximum": 127},
+          "attempt_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["accepted", "rejected"]},
+          "rejection_reason": {"type": ["string", "null"]},
+          "domain": {"enum": ["english_prose", "chinese_prose", "mixed_en_zh", "code", "structured_data", "math_symbolic", "technical_it", "dialogue_instruction"]},
+          "topic": {"type": "string", "minLength": 1},
+          "intended_document_type": {"type": "string", "minLength": 1},
+          "language_or_programming_language": {"type": ["string", "null"]},
+          "provider_identity": {"type": ["string", "null"]},
+          "model_identity": {"type": ["string", "null"]},
+          "provider_request_id": {"type": ["string", "null"]},
+          "generated_at": {"type": ["string", "null"], "format": "date-time"},
+          "source_filename": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "byte_count": {"type": "integer", "minimum": 1}
+        }
+      }
+    }
+  }
+}

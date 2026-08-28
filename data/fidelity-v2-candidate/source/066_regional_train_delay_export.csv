@@ -1,0 +1,28 @@
+event_id,service_date,train_id,route,scheduled_departure,actual_departure,delay_min,primary_cause,secondary_cause,location,passenger_impact,action_code,notes
+D-260801-01,2026-08-01,R421,North Coast,06:10,06:18,8,crew_connection,none,Harbor Central,low,HOLD_CONN,incoming crew arrived on late positioning service
+D-260801-02,2026-08-01,R508,Valley Link,07:35,07:52,17,signal_failure,track_circuit,Mile 18.4,medium,SIG_INSPECT,intermittent occupied indication on clear block
+D-260801-03,2026-08-01,R117,Lake Regional,09:00,09:04,4,passenger_assistance,wheelchair_boarding,Eastgate,low,ACCESS_ASSIST,platform lift used after bridge plate unavailable
+D-260802-01,2026-08-02,R421,North Coast,06:10,06:11,1,none,none,Harbor Central,none,NONE,within on-time threshold
+D-260802-02,2026-08-02,R773,Mountain Express,08:20,09:03,43,weather,debris_on_track,Pine Cut,high,TRACK_PATROL,storm debris removed before release
+D-260802-03,2026-08-02,R660,Capital Local,11:45,12:02,17,rolling_stock,door_fault,West Junction,medium,ISOLATE_DOOR,car 4 door isolated and platform staff briefed
+D-260803-01,2026-08-03,R508,Valley Link,07:35,07:43,8,dispatching,platform_conflict,Central Terminal,low,REPLATFORM,departed from track 6 after late intercity arrival
+D-260803-02,2026-08-03,R991,Airport Connector,10:05,10:21,16,security,unattended_item,Terminal 2,medium,SEC_CLEAR,platform reopened after security inspection
+D-260804-01,2026-08-04,R117,Lake Regional,09:00,09:29,29,infrastructure,switch_motor,Lakeview East,high,SWITCH_CLAMP,maintenance manually secured turnout
+D-260804-02,2026-08-04,R660,Capital Local,11:45,11:51,6,passenger_loading,group_boarding,University,low,DWELL_EXT,school group boarded through two supervised doors
+D-260805-01,2026-08-05,R773,Mountain Express,08:20,08:34,14,rolling_stock,brake_test_repeat,North Yard,medium,BRAKE_RETEST,automatic test produced inconsistent pressure reading
+D-260805-02,2026-08-05,R991,Airport Connector,10:05,10:08,3,none,none,Terminal 2,none,NONE,minor dwell variance
+D-260806-01,2026-08-06,R421,North Coast,06:10,06:37,27,power_supply,substation_trip,River Substation,high,POWER_REROUTE,traction power restored through adjacent feeder
+D-260806-02,2026-08-06,R508,Valley Link,07:35,07:47,12,maintenance,speed_restriction,Mile 24.1,medium,TSR,temporary slow order after overnight geometry inspection
+D-260806-03,2026-08-06,R117,Lake Regional,09:00,09:19,19,medical,passenger_illness,Oak Street,medium,EMS,train held until paramedics transferred passenger
+D-260807-01,2026-08-07,R660,Capital Local,11:45,12:24,39,signal_failure,communications_loss,South Control Zone,high,LOCAL_CONTROL,dispatcher established fallback radio authority
+D-260807-02,2026-08-07,R773,Mountain Express,08:20,08:28,8,baggage_loading,oversize_items,Highland,low,DWELL_EXT,six bicycles loaded in rear rack
+D-260808-01,2026-08-08,R991,Airport Connector,10:05,10:31,26,airport_interface,terminal_evacuated,Terminal 2,high,TURNBACK,service short-turned one stop before airport
+D-260808-02,2026-08-08,R421,North Coast,06:10,06:22,12,crew_connection,late_taxicab,Harbor Central,medium,CREW_SWAP,standby conductor used after twelve-minute wait
+D-260809-01,2026-08-09,R508,Valley Link,07:35,07:35,0,none,none,Central Terminal,none,NONE,on time
+D-260809-02,2026-08-09,R117,Lake Regional,09:00,09:07,7,passenger_assistance,mobility_scooter,Eastgate,low,ACCESS_ASSIST,boarding completed with portable ramp
+D-260810-01,2026-08-10,R660,Capital Local,11:45,12:01,16,infrastructure,crossing_gate_fault,Route 16 Crossing,medium,FLAG_CROSSING,qualified employee protected crossing until repair
+D-260810-02,2026-08-10,R773,Mountain Express,08:20,08:55,35,weather,heat_speed_restriction,Summit District,high,HEAT_TSR,rail temperature exceeded threshold for normal speed
+D-260811-01,2026-08-11,R991,Airport Connector,10:05,10:17,12,rolling_stock,hvac_alarm,Central Terminal,medium,EQUIP_SWAP,set exchanged before passenger boarding
+D-260811-02,2026-08-11,R421,North Coast,06:10,06:16,6,dispatching,freight_conflict,River Junction,low,ROUTE_PRIORITY,held for clearing freight movement
+D-260812-01,2026-08-12,R508,Valley Link,07:35,08:02,27,police_activity,trespasser,Mile 11.7,high,TRACK_HOLD,movement resumed after corridor search
+D-260812-02,2026-08-12,R117,Lake Regional,09:00,09:10,10,maintenance,inspection_overrun,Lake Yard,low,INSPECT_CLOSE,daily cab inspection completed late

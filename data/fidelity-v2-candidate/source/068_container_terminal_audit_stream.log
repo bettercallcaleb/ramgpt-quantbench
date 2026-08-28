@@ -1,0 +1,62 @@
+2026-08-17T04:58:12.003Z level=INFO component=gate lane=G07 event=SHIFT_OPEN operator=op-441 details="lane inspection complete; OCR camera clean"
+2026-08-17T05:01:44.661Z level=INFO component=yard event=STACK_SNAPSHOT block=B3 occupied=118 capacity=144 reefer_slots_free=7
+2026-08-17T05:04:19.118Z level=INFO component=gate lane=G07 event=TRUCK_ARRIVAL truck=TRK-88213 booking=BK-271904 container=MSCU7421986 seal=CN884219
+2026-08-17T05:04:21.446Z level=INFO component=ocr lane=G07 event=PLATE_READ truck=TRK-88213 confidence=0.991 plate="ON-2847LK"
+2026-08-17T05:04:22.907Z level=INFO component=ocr lane=G07 event=CONTAINER_READ container=MSCU7421986 confidence=0.978
+2026-08-17T05:04:25.130Z level=WARN component=gate lane=G07 event=SEAL_MISMATCH booking=BK-271904 expected=CN884291 observed=CN884219 action=HOLD
+2026-08-17T05:05:03.772Z level=INFO component=security event=IMAGE_REVIEW ref=IMG-G07-050422 reviewer=sec-18 result=manual_confirm observed_seal=CN884219
+2026-08-17T05:06:17.399Z level=INFO component=dispatch event=BOOKING_LOOKUP booking=BK-271904 source=edi status=active vessel=MV_Northern_Arc voyage=NA218
+2026-08-17T05:07:40.516Z level=INFO component=customer_service event=DOC_REQUEST booking=BK-271904 document=seal_change_notice sent_to=carrier_portal
+2026-08-17T05:11:06.944Z level=INFO component=carrier_gateway event=DOC_RECEIVED booking=BK-271904 document=seal_change_notice signed_by=origin_terminal old_seal=CN884291 new_seal=CN884219
+2026-08-17T05:11:19.203Z level=INFO component=gate lane=G07 event=HOLD_RELEASE container=MSCU7421986 reason=DOCUMENTED_SEAL_CHANGE approver=sec-18
+2026-08-17T05:12:02.880Z level=INFO component=weighbridge scale=W02 event=WEIGH_IN truck=TRK-88213 gross_kg=38210 axle_group_kg="6480,11170,20560"
+2026-08-17T05:12:05.415Z level=INFO component=weighbridge scale=W02 event=VGM_COMPARE container=MSCU7421986 declared_kg=26140 estimated_container_kg=26090 delta_kg=-50 status=within_tolerance
+2026-08-17T05:13:49.011Z level=INFO component=yard event=MOVE_ASSIGN move=MV-883501 container=MSCU7421986 from=G07 to=B3-14-2 tractor=YT-32 priority=normal
+2026-08-17T05:14:08.728Z level=INFO component=equipment tractor=YT-32 event=MOVE_ACCEPT move=MV-883501 driver=yd-090
+2026-08-17T05:18:31.481Z level=INFO component=equipment crane=RTG-05 event=LIFT_START move=MV-883501 container=MSCU7421986 source=YT-32 target=B3-14-2
+2026-08-17T05:18:57.270Z level=INFO component=equipment crane=RTG-05 event=LIFT_COMPLETE move=MV-883501 container=MSCU7421986 target=B3-14-2 twistlocks=confirmed
+2026-08-17T05:19:03.618Z level=INFO component=yard event=MOVE_COMPLETE move=MV-883501 elapsed_s=314
+2026-08-17T05:21:44.092Z level=INFO component=reefer event=ARRIVAL container=TGHU1198204 booking=BK-271951 setpoint_c=-18.0 commodity=frozen_food
+2026-08-17T05:22:01.405Z level=INFO component=reefer event=PLUG_ASSIGN container=TGHU1198204 rack=R2 outlet=R2-17 electrician=rf-22
+2026-08-17T05:22:18.776Z level=INFO component=reefer event=POWER_ON container=TGHU1198204 outlet=R2-17 supply_v=459 current_a=6.8
+2026-08-17T05:23:49.880Z level=WARN component=reefer event=RETURN_TEMP_HIGH container=TGHU1198204 return_c=-11.2 setpoint_c=-18.0 grace_period_min=30
+2026-08-17T05:25:12.345Z level=INFO component=planning event=VESSEL_WINDOW_UPDATE vessel=MV_Northern_Arc eta=2026-08-17T17:20:00Z berth=P4 change_min=35 reason="pilot delay"
+2026-08-17T05:27:56.108Z level=INFO component=yard event=STACK_REPLAN block=B3 trigger=VESSEL_WINDOW_UPDATE moves_deferred=6 moves_promoted=4
+2026-08-17T05:31:14.992Z level=INFO component=gate lane=G05 event=TRUCK_ARRIVAL truck=TRK-77102 booking=BK-271933 container=OOLU3305179 seal=SE920145
+2026-08-17T05:31:17.083Z level=WARN component=ocr lane=G05 event=PLATE_READ confidence=0.612 raw="8M2?1P" action=manual_entry
+2026-08-17T05:31:44.220Z level=INFO component=gate lane=G05 event=PLATE_MANUAL truck=TRK-77102 plate="ON-8M2J1P" operator=op-309
+2026-08-17T05:32:09.145Z level=INFO component=hazmat event=DECLARATION_CHECK container=OOLU3305179 un_number=UN1263 class=3 packing_group=III result=accepted
+2026-08-17T05:32:15.705Z level=INFO component=hazmat event=PLACEMENT_RULE container=OOLU3305179 required_zone=HZ3 segregation="away_from_class_5.1"
+2026-08-17T05:34:42.612Z level=INFO component=yard event=MOVE_ASSIGN move=MV-883544 container=OOLU3305179 from=G05 to=HZ3-08-1 tractor=YT-11 priority=hazmat
+2026-08-17T05:39:52.028Z level=INFO component=equipment crane=RTG-02 event=LIFT_COMPLETE move=MV-883544 container=OOLU3305179 target=HZ3-08-1 twistlocks=confirmed
+2026-08-17T05:41:10.744Z level=INFO component=maintenance event=EQUIPMENT_ALERT crane=RTG-08 code=HYD_TEMP_WARN value_c=77.4 threshold_c=75.0
+2026-08-17T05:41:21.145Z level=INFO component=maintenance event=WORK_ORDER_CREATE work_order=WO-62081 crane=RTG-08 priority=2 symptom="hydraulic temperature above advisory"
+2026-08-17T05:42:03.806Z level=INFO component=planning event=CRANE_REMOVE_SERVICE crane=RTG-08 affected_block=C1 replacement=RTG-11
+2026-08-17T05:44:18.562Z level=INFO component=yard event=QUEUE_DEPTH block=C1 before=9 after=14 cause=CRANE_CHANGE
+2026-08-17T05:47:07.391Z level=WARN component=security event=PERIMETER_DOOR door=P-N12 state=open duration_s=91 threshold_s=60
+2026-08-17T05:47:15.930Z level=INFO component=security event=CAMERA_CHECK door=P-N12 camera=CAM-N12 result="maintenance crew visible"
+2026-08-17T05:47:29.177Z level=INFO component=security event=PERIMETER_DOOR door=P-N12 state=closed duration_s=113 badge=mt-551
+2026-08-17T05:50:11.884Z level=INFO component=rail event=TRAIN_ARRIVAL train=IM-4407 track=R4 wagons=62 containers=104
+2026-08-17T05:51:36.532Z level=INFO component=rail event=CONSIST_RECONCILE train=IM-4407 expected_wagons=62 observed_wagons=62 missing_containers=0 extra_containers=0
+2026-08-17T05:54:03.478Z level=INFO component=rail event=UNLOAD_PLAN train=IM-4407 cranes="RMG-1,RMG-2" estimated_complete=2026-08-17T07:46:00Z
+2026-08-17T05:57:40.097Z level=INFO component=reefer event=TEMP_CHECK container=TGHU1198204 return_c=-15.9 supply_c=-19.4 elapsed_min=35 status=recovering
+2026-08-17T06:02:18.812Z level=INFO component=customs event=EXAM_HOLD container=CAIU4482021 booking=BK-271602 hold_code=XRY reason="nonintrusive inspection"
+2026-08-17T06:02:29.025Z level=INFO component=yard event=REHANDLE_PLAN container=CAIU4482021 current=C4-22-3 target=EXAM-04 rehandles=2
+2026-08-17T06:07:54.662Z level=INFO component=equipment crane=RTG-04 event=LIFT_COMPLETE container=CAIU4482021 target=EXAM-04 move=MV-883611
+2026-08-17T06:09:12.204Z level=INFO component=customs event=EXAM_QUEUE container=CAIU4482021 position=3 expected_start=2026-08-17T06:42:00Z
+2026-08-17T06:15:00.000Z level=INFO component=metrics event=QUARTER_HOUR gate_in=41 gate_out=33 yard_moves=86 rail_moves=19 rehandles=7 safety_holds=0 avg_truck_turn_min=28.7
+2026-08-17T06:18:44.514Z level=WARN component=network event=PACKET_LOSS zone=RMG latency_ms=118 loss_pct=4.2 threshold_pct=3.0
+2026-08-17T06:19:08.880Z level=INFO component=network event=PATH_SWITCH zone=RMG from=core_sw2 to=core_sw3 protocol=vrRP
+2026-08-17T06:19:33.516Z level=INFO component=network event=RECOVERY zone=RMG latency_ms=24 loss_pct=0.1
+2026-08-17T06:22:57.002Z level=INFO component=maintenance event=EQUIPMENT_CHECK crane=RTG-08 hydraulic_temp_c=71.8 fan_state=high leak_detected=false
+2026-08-17T06:23:18.443Z level=INFO component=maintenance event=WORK_ORDER_UPDATE work_order=WO-62081 status=monitoring action="cleaned cooler screen; inspect after 30 min"
+2026-08-17T06:27:12.551Z level=INFO component=reefer event=TEMP_CHECK container=TGHU1198204 return_c=-17.6 supply_c=-19.2 elapsed_min=65 status=normalizing
+2026-08-17T06:30:00.000Z level=INFO component=metrics event=QUARTER_HOUR gate_in=38 gate_out=36 yard_moves=92 rail_moves=27 rehandles=9 safety_holds=0 avg_truck_turn_min=29.4
+2026-08-17T06:34:45.804Z level=INFO component=customs event=EXAM_START container=CAIU4482021 lane=X2 inspector=cb-331
+2026-08-17T06:41:20.165Z level=INFO component=customs event=EXAM_COMPLETE container=CAIU4482021 result=clear image_ref=XRY-260817-4402
+2026-08-17T06:41:35.048Z level=INFO component=customs event=HOLD_RELEASE container=CAIU4482021 hold_code=XRY
+2026-08-17T06:45:51.991Z level=INFO component=planning event=EXPORT_CUTOFF vessel=MV_Northern_Arc cutoff=2026-08-17T14:30:00Z remaining_exports=382
+2026-08-17T06:49:11.652Z level=INFO component=safety event=NEAR_MISS_REPORT report=NM-260817-03 location=B2-crossing involved="YT-18,pedestrian" injury=false
+2026-08-17T06:49:45.360Z level=INFO component=safety event=IMMEDIATE_ACTION report=NM-260817-03 action="temporary spotter assigned; CCTV preservation requested"
+2026-08-17T06:52:06.107Z level=INFO component=safety event=CCTV_LOCK report=NM-260817-03 cameras="B2-04,B2-05" retain_days=90
+2026-08-17T06:56:20.220Z level=INFO component=shift event=SUPERVISOR_NOTE area=yard note="B2 crossing review at 08:00; reinforce 10 km/h approach speed"

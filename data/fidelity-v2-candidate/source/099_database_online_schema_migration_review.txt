@@ -1,0 +1,186 @@
+Engineering Review: Online Schema Migration for Orders Table
+
+Background
+
+The orders service needs a new `normalized_customer_key` column used by fraud and reconciliation workflows. The table contains approximately 2.4 billion rows and receives continuous writes. A blocking table rewrite or long exclusive lock is unacceptable.
+
+Current Table
+
+orders(
+    order_id bigint primary key,
+    customer_id text not null,
+    region_code text not null,
+    status smallint not null,
+    created_at timestamptz not null,
+    updated_at timestamptz not null,
+    ...
+)
+
+Target behavior requires a deterministic normalized key derived from region_code and customer_id. New application code must eventually enforce non-null values for all newly created orders and support an index used by lookup queries.
+
+Migration Constraints
+
+- no planned application outage;
+- lock acquisition must remain below 500 ms;
+- replication lag must remain below operational threshold;
+- backfill must be resumable;
+- rollback must not require deleting already populated data;
+- mixed-version application fleets must remain compatible during deployment.
+
+Rejected Approach: Add Column with Immediate Default and NOT NULL
+
+Although modern database versions may optimize some constant defaults, the normalized value is row-dependent and cannot be expressed as a single metadata-only constant. Computing every value in one DDL statement would create unacceptable I/O and lock risk.
+
+Accepted Phased Strategy
+
+Phase 1: Add Nullable Column
+
+ALTER TABLE orders
+ADD COLUMN normalized_customer_key text;
+
+This is a metadata change on the target database version. The migration job will set a short lock timeout. If the lock cannot be acquired quickly because of conflicting transactions, it will abort and retry rather than waiting indefinitely.
+
+Phase 2: Dual-Write in Application
+
+A backward-compatible application release computes the key for every insert and for updates that modify customer_id or region_code. Existing code can ignore the new column.
+
+The normalized function is versioned in application code and covered by deterministic test vectors. The same normalization logic is also implemented in the backfill job using a shared library to avoid semantic drift.
+
+Phase 3: Backfill Existing Rows
+
+Backfill is chunked by primary-key range. Each transaction updates a bounded number of rows:
+
+UPDATE orders
+SET normalized_customer_key = normalize(region_code, customer_id)
+WHERE order_id > :low
+  AND order_id <= :high
+  AND normalized_customer_key IS NULL;
+
+The job records completed ranges in a control table. Range completion is idempotent because rows already populated are skipped.
+
+Chunk size is dynamically reduced when:
+- replica lag rises;
+- transaction duration exceeds target;
+- storage write latency rises;
+- vacuum or checkpoint pressure becomes elevated.
+
+The backfill sleeps between chunks under sustained load.
+
+Why Primary-Key Ranges
+
+OFFSET pagination becomes increasingly expensive on a multi-billion-row table and can behave poorly under concurrent writes. Stable primary-key ranges provide deterministic progress and bounded scans.
+
+Rows inserted after the backfill begins are populated by dual-write application code, so the backfill does not need to chase the moving high-water mark indefinitely.
+
+Phase 4: Verify Completeness
+
+Verification has several layers.
+
+Exact null count query may be expensive at this scale, so operational checks first sample ranges and use incremental counters. Before constraint validation, an indexed or controlled full scan verifies:
+
+SELECT count(*)
+FROM orders
+WHERE normalized_customer_key IS NULL;
+
+The result must be zero.
+
+A semantic checksum job samples rows and recomputes the normalization independently. Completeness alone is insufficient if the value is wrong.
+
+Phase 5: Build Index Concurrently
+
+Create the lookup index using the database's online/concurrent index-build mechanism:
+
+CREATE INDEX CONCURRENTLY idx_orders_normalized_customer_key
+ON orders(normalized_customer_key);
+
+The operation is monitored for:
+- long-running snapshots that prevent cleanup;
+- replication lag;
+- failed/invalid index state;
+- disk headroom.
+
+If a concurrent build fails, the invalid index object is removed before retry.
+
+Phase 6: Add Constraint Without Long Blocking Validation
+
+Where supported, add a check constraint in a non-validating mode:
+
+ALTER TABLE orders
+ADD CONSTRAINT orders_normalized_key_present
+CHECK (normalized_customer_key IS NOT NULL)
+NOT VALID;
+
+New or modified rows are checked immediately, while historical rows are not scanned under the DDL lock.
+
+Then validate separately:
+
+ALTER TABLE orders
+VALIDATE CONSTRAINT orders_normalized_key_present;
+
+Validation scans existing rows but avoids the stronger table lock associated with some direct NOT NULL conversions.
+
+After successful validation, the database-specific procedure may convert the column to formal NOT NULL if this can be done using the validated proof without a full blocking scan. The exact command must be tested against the production database version.
+
+Deployment Ordering
+
+1. Database adds nullable column.
+2. Application version N starts dual-writing but reads do not depend on column.
+3. Backfill runs to completion.
+4. Semantic verification passes.
+5. Concurrent index build completes.
+6. Constraint validation completes.
+7. Application version N+1 may read using the new key.
+8. Old application version is removed from fleet.
+9. Optional cleanup removes transitional code.
+
+This ordering allows version N and N+1 to coexist.
+
+Rollback Analysis
+
+Before phase 7, rollback is simple: revert application behavior and stop backfill. The extra column and values may remain harmlessly.
+
+After clients depend on the column or index, rollback must preserve the schema even if application behavior is reverted. We explicitly do not couple application rollback to destructive schema rollback.
+
+Normalization Function Changes
+
+A critical review question is what happens if normalization rules change during the multi-day backfill. The rule therefore carries a `normalization_version`. The migration freezes version 1 for this column. A later algorithm change must use a new migration or explicit recomputation, not silently change the backfill code midway.
+
+Concurrency
+
+The update predicate includes `normalized_customer_key IS NULL`. If a live application writes a value before the backfill reaches the row, the backfill does not overwrite it.
+
+If customer_id changes concurrently, application dual-write updates both fields in the same transaction. Backfill ranges should use normal row locking and rely on transaction serialization to avoid partial states.
+
+Observability
+
+Dashboard metrics:
+- rows_backfilled_total;
+- ranges_completed;
+- current_range_width;
+- update_transaction_seconds;
+- rows_per_second;
+- replica_lag_seconds;
+- deadlocks/retries;
+- null_estimate;
+- index_build_phase;
+- storage write latency.
+
+Stop Conditions
+
+The job pauses automatically if:
+- replica lag exceeds 60 seconds for more than 2 minutes;
+- database CPU exceeds 85% for sustained period;
+- lock wait exceeds 500 ms;
+- disk free space falls below reserve;
+- deadlock rate crosses threshold.
+
+Review Outcome
+
+Approved with conditions:
+- benchmark DDL locking behavior on exact production version;
+- freeze normalization version before phase 2;
+- prove index disk headroom;
+- exercise failed concurrent index-build cleanup;
+- test rollback with mixed application versions.
+
+The migration is considered an application/database protocol, not a one-time SQL script. Safety comes from compatibility between phases and the ability to pause between them.

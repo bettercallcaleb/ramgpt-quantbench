@@ -1,0 +1,71 @@
+Field Observation Report — North Marsh Migratory Bird Count
+
+Survey date: 18 April
+Observer team: four primary counters, one recorder
+Survey window: 05:55–11:40
+Conditions at start: 4°C, overcast, light east wind, visibility greater than 5 km
+Conditions at end: 10°C, broken cloud, southeast wind 14–18 km/h
+
+Purpose
+
+The survey was conducted to estimate species presence and relative abundance during the spring migration period at North Marsh, a shallow wetland complex bordered by reed beds, flooded willow scrub, pasture, and a narrow lakeshore. The count was designed as a standardized observation event rather than a complete census. Particular attention was given to separating local breeding birds from transient migrants and to documenting how use differed among habitat zones.
+
+Method
+
+The team followed a fixed clockwise route covering six stations. At each station, observers remained for twenty minutes after a two-minute settling period. Birds were identified by sight or call when confidence was sufficient. Flyovers were recorded separately from birds using the site. To reduce duplicate counts of mobile flocks, the recorder noted direction of travel, flock size, and time. Large waterfowl groups were counted independently by two observers and reconciled immediately.
+
+Station 1 — South causeway
+
+The first light reached the flooded meadow before it reached the open water. Red-winged Blackbirds were already calling from cattail stems, and Song Sparrows moved along the ditch margin. A group of eighteen Green-winged Teal fed in shallow water south of the causeway. Their position remained stable throughout the station period, so they were treated as one local group rather than repeated movements.
+
+At 06:18, a loose flock of approximately sixty blackbirds crossed high from southwest to northeast. Most appeared to be Common Grackles, but several birds could not be identified reliably against the cloud cover. The unidentified portion was recorded as blackbird sp. rather than assigned by proportion.
+
+A Northern Harrier quartered the western meadow at low height. Its arrival briefly altered activity: teal compressed into a tighter group and several snipe flushed from wet grass. Seven Wilson’s Snipe were counted in flight, then watched descending beyond a drainage channel. Because they landed within the survey area, they were retained as site users rather than flyovers.
+
+Station 2 — Reed basin
+
+The reed basin produced the highest call diversity of the morning. Marsh Wrens had not yet returned in numbers, but two individuals gave short bursts of song from separate reed patches. Swamp Sparrows were frequent and mostly detected acoustically. To avoid inflating totals, the team mapped approximate call positions and required either simultaneous calling or a clear shift in location before adding another individual.
+
+Three Virginia Rails were detected, all by vocalization. Two called nearly simultaneously from opposite sides of the basin, establishing at least two birds. A third call came later from a central patch. Because rails can move unseen through dense cover, the third was counted only after its call overlapped with one of the earlier birds.
+
+The first notable migrant was a Rusty Blackbird feeding at the muddy edge of a beaver channel. It remained visible for six minutes and was photographed through a spotting scope. A second bird joined briefly, giving a minimum count of two.
+
+Station 3 — Willow point
+
+Wind increased slightly by 07:30. The willow thickets held a mixed group of kinglets and sparrows moving north along the shoreline. Ruby-crowned Kinglets outnumbered Golden-crowned Kinglets by roughly three to one. Because the flock was continuously moving and partially hidden, the team used a conservative minimum count based on simultaneous views rather than cumulative sightings.
+
+White-throated Sparrows were widespread. Twenty-three were recorded at this station, but the number likely underestimates actual abundance. Several birds moved ahead of the observers along the route; their direction and time were noted to prevent recounting at Station 4.
+
+One Brown Creeper was observed climbing a dead willow trunk. Two Yellow-bellied Sapsuckers crossed the point and landed in poplars. Neither species was numerous, but both fit the expected early-spring migrant sequence.
+
+Station 4 — North mudflat
+
+The north mudflat had expanded after several days of falling water levels. Shorebird diversity remained low, which was expected for the date. Twelve Greater Yellowlegs fed along the outer margin. Two Lesser Yellowlegs were identified by size and call, though distance made prolonged comparison difficult.
+
+A flock of thirty-one Pectoral Sandpipers arrived from the lake at 08:41, circled twice, and landed on the central mudflat. The group remained through the end of the station period. One Dunlin was tentatively suspected in the flock but could not be confirmed; it was omitted from the species total.
+
+Waterfowl counts from this station included 146 Northern Pintail, 73 Mallards, 52 Gadwall, and 39 American Wigeon. The Pintail flock was dense and partially obscured by vegetation. Two independent estimates were 142 and 150; the final count of 146 was adopted after recounting a high-resolution photograph.
+
+Station 5 — Lakeshore ridge
+
+Migration became more obvious as the sky brightened. Small passerines crossed the ridge in intermittent pulses, generally moving northeast. Most were finches and sparrows. Eighty-six birds were recorded as identifiable flyovers, including American Goldfinches, Pine Siskins, and small numbers of Purple Finches.
+
+At 09:37 an adult Bald Eagle passed south along the lakeshore. The eagle caused a temporary lift-off of ducks from the outer bay but did not provoke the entire marsh to flush. Observers paused waterfowl counting until birds resettled.
+
+Three Common Loons moved offshore, all in breeding plumage. They were classified as flyovers/site-adjacent rather than marsh users because they did not land within the count boundary.
+
+Station 6 — West pasture edge
+
+The final station was warmer and windier. Eastern Meadowlarks were singing from fence posts, suggesting local territory establishment rather than migration passage. Savannah Sparrows were present in short grass, while several American Pipits fed on exposed soil near a livestock track.
+
+A group of forty-two Sandhill Cranes was heard before it was seen. The birds appeared high to the southeast and continued northwest without descending. They were recorded as flyovers. Six additional cranes feeding in a distant harvested field were considered local site users because they remained stationary throughout the observation period.
+
+Summary of observations
+
+The survey recorded 79 species. Waterfowl dominated total abundance, while passerine migration was moderate and concentrated along the willow shoreline and lakeshore ridge. The most notable site-use records were two Rusty Blackbirds, three Virginia Rails, and a flock of thirty-one Pectoral Sandpipers. No species outside the expected regional migration window was confirmed.
+
+Several sources of uncertainty should be retained with the data. Dense reed habitat reduced visual detection. Mobile sparrow flocks created duplicate-count risk between stations. Waterfowl estimates, particularly Northern Pintail, depended partly on photographic recounts. Acoustic detections were accepted only when species-specific calls were clear; uncertain sounds were excluded rather than forced into a category.
+
+Habitat patterns were distinct. Shallow flooded meadow supported teal and snipe. Reed beds held rails and swamp-associated sparrows. Willow scrub concentrated small passerines. The exposed mudflat produced the highest shorebird use, while open lakeshore airspace carried most directional migration.
+
+The survey should be compared with future counts using the same station durations, route direction, and approximate seasonal timing. A single morning cannot establish a population trend, but repeated standardized counts can reveal shifts in migration timing, habitat use, and the availability of shallow-water feeding areas. The most useful result is therefore not the raw total of birds seen today, but a structured observation that can be repeated under known conditions.

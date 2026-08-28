@@ -1,0 +1,344 @@
+{
+  "night_id": "OBS-2026-08-14-N1",
+  "site": {
+    "name": "Arroyo Ridge Observatory",
+    "code": "ARO",
+    "latitude_deg": 34.78162,
+    "longitude_deg": -117.21438,
+    "elevation_m": 1678,
+    "timezone": "America/Los_Angeles"
+  },
+  "staff": [
+    {
+      "observer_id": "ob-17",
+      "name": "Mira Chen",
+      "role": "lead_observer",
+      "shift_start": "2026-08-14T19:00:00-07:00",
+      "shift_end": "2026-08-15T05:30:00-07:00"
+    },
+    {
+      "observer_id": "ob-09",
+      "name": "Elias Romero",
+      "role": "instrument_specialist",
+      "shift_start": "2026-08-14T19:30:00-07:00",
+      "shift_end": "2026-08-15T04:45:00-07:00"
+    }
+  ],
+  "weather": {
+    "opening": {
+      "time_local": "19:42",
+      "temp_c": 18.4,
+      "humidity_pct": 24.1,
+      "wind_mps": 2.8,
+      "wind_dir_deg": 248,
+      "pressure_hpa": 831.6,
+      "sky": "clear"
+    },
+    "minimum_temp_c": 11.2,
+    "maximum_humidity_pct": 37.9,
+    "wind_events": [
+      {
+        "start_local": "22:18",
+        "end_local": "22:31",
+        "peak_mps": 8.9,
+        "action": "dome slit reduced to 70 percent"
+      },
+      {
+        "start_local": "02:07",
+        "end_local": "02:16",
+        "peak_mps": 10.7,
+        "action": "tracking paused and shutters parked"
+      }
+    ],
+    "cloud_notes": [
+      {
+        "time_local": "00:44",
+        "coverage": "thin cirrus",
+        "azimuth_sector": "west",
+        "estimated_fraction": 0.12
+      },
+      {
+        "time_local": "03:21",
+        "coverage": "clear",
+        "azimuth_sector": "all",
+        "estimated_fraction": 0.0
+      }
+    ]
+  },
+  "instrument": {
+    "telescope": {
+      "aperture_m": 1.2,
+      "mount": "equatorial fork",
+      "focus_model": "secondary translation"
+    },
+    "camera": {
+      "model": "HX4K-Science",
+      "serial": "HX4K-0198",
+      "sensor_temp_setpoint_c": -92.0,
+      "readout_mode": "slow_16bit",
+      "binning": "1x1",
+      "filters": [
+        {
+          "slot": 1,
+          "name": "g",
+          "central_nm": 477
+        },
+        {
+          "slot": 2,
+          "name": "r",
+          "central_nm": 623
+        },
+        {
+          "slot": 3,
+          "name": "i",
+          "central_nm": 763
+        },
+        {
+          "slot": 4,
+          "name": "Ha",
+          "central_nm": 656.3
+        }
+      ]
+    },
+    "state_changes": [
+      {
+        "utc": "2026-08-15T02:49:11Z",
+        "component": "camera",
+        "from": "cooling",
+        "to": "ready",
+        "detail": "sensor reached -91.8 C"
+      },
+      {
+        "utc": "2026-08-15T03:22:54Z",
+        "component": "autoguider",
+        "from": "idle",
+        "to": "locked",
+        "detail": "guide star SNR 48.2"
+      },
+      {
+        "utc": "2026-08-15T05:18:33Z",
+        "component": "filter_wheel",
+        "from": "r",
+        "to": "i",
+        "detail": "position verified by encoder"
+      },
+      {
+        "utc": "2026-08-15T09:17:02Z",
+        "component": "mount",
+        "from": "tracking",
+        "to": "parked",
+        "detail": "wind safety pause"
+      }
+    ]
+  },
+  "targets": [
+    {
+      "target_id": "T-041",
+      "catalog_name": "NGC 6946",
+      "program": "supernova_remnant_survey",
+      "coordinates": {
+        "ra": "20:34:52.3",
+        "dec": "+60:09:14"
+      },
+      "sequence": [
+        {
+          "filter": "r",
+          "exposure_s": 180,
+          "count": 6,
+          "airmass_start": 1.22,
+          "airmass_end": 1.17
+        },
+        {
+          "filter": "Ha",
+          "exposure_s": 600,
+          "count": 4,
+          "airmass_start": 1.17,
+          "airmass_end": 1.15
+        },
+        {
+          "filter": "i",
+          "exposure_s": 180,
+          "count": 5,
+          "airmass_start": 1.15,
+          "airmass_end": 1.18
+        }
+      ],
+      "quality": {
+        "median_fwhm_arcsec": 1.41,
+        "guiding_rms_arcsec": 0.36,
+        "rejected_frames": [
+          {
+            "frame": "ARO_T041_Ha_0003.fits",
+            "reason": "aircraft trail"
+          },
+          {
+            "frame": "ARO_T041_i_0005.fits",
+            "reason": "wind shake"
+          }
+        ]
+      }
+    },
+    {
+      "target_id": "T-118",
+      "catalog_name": "Gaia DR3 215794132887",
+      "program": "transit_followup",
+      "coordinates": {
+        "ra": "22:17:04.8",
+        "dec": "+18:42:51"
+      },
+      "sequence": [
+        {
+          "filter": "r",
+          "exposure_s": 45,
+          "count": 84,
+          "airmass_start": 1.08,
+          "airmass_end": 1.31
+        }
+      ],
+      "quality": {
+        "median_fwhm_arcsec": 1.62,
+        "guiding_rms_arcsec": 0.44,
+        "rejected_frames": []
+      }
+    },
+    {
+      "target_id": "CAL-07",
+      "catalog_name": "BD+28 4211",
+      "program": "photometric_calibration",
+      "coordinates": {
+        "ra": "21:51:11.0",
+        "dec": "+28:51:51"
+      },
+      "sequence": [
+        {
+          "filter": "g",
+          "exposure_s": 25,
+          "count": 3,
+          "airmass_start": 1.04,
+          "airmass_end": 1.04
+        },
+        {
+          "filter": "r",
+          "exposure_s": 20,
+          "count": 3,
+          "airmass_start": 1.04,
+          "airmass_end": 1.04
+        },
+        {
+          "filter": "i",
+          "exposure_s": 20,
+          "count": 3,
+          "airmass_start": 1.04,
+          "airmass_end": 1.05
+        }
+      ],
+      "quality": {
+        "median_fwhm_arcsec": 1.33,
+        "guiding_rms_arcsec": 0.29,
+        "rejected_frames": []
+      }
+    }
+  ],
+  "calibration_frames": {
+    "bias": {
+      "count": 32,
+      "median_adu": 512.7,
+      "mad_adu": 3.1
+    },
+    "dark": [
+      {
+        "exposure_s": 45,
+        "count": 12
+      },
+      {
+        "exposure_s": 180,
+        "count": 10
+      },
+      {
+        "exposure_s": 600,
+        "count": 8
+      }
+    ],
+    "flats": [
+      {
+        "filter": "g",
+        "count": 14,
+        "median_adu": 28210
+      },
+      {
+        "filter": "r",
+        "count": 14,
+        "median_adu": 27488
+      },
+      {
+        "filter": "i",
+        "count": 12,
+        "median_adu": 26904
+      },
+      {
+        "filter": "Ha",
+        "count": 16,
+        "median_adu": 25118
+      }
+    ]
+  },
+  "events": [
+    {
+      "local": "21:06",
+      "severity": "info",
+      "code": "FOCUS_RUN",
+      "message": "focus offset +42 um after temperature drop"
+    },
+    {
+      "local": "22:27",
+      "severity": "warning",
+      "code": "WIND_HIGH",
+      "message": "short gust sequence; exposure T-041 r frame 6 reviewed"
+    },
+    {
+      "local": "23:58",
+      "severity": "info",
+      "code": "MERIDIAN_CHECK",
+      "message": "mount clearance verified before long sequence"
+    },
+    {
+      "local": "02:09",
+      "severity": "warning",
+      "code": "SAFETY_PAUSE",
+      "message": "mount parked for peak wind above operational threshold"
+    },
+    {
+      "local": "02:18",
+      "severity": "info",
+      "code": "RESUME",
+      "message": "wind below threshold for ten minutes; tracking restored"
+    },
+    {
+      "local": "04:56",
+      "severity": "info",
+      "code": "DAWN_FLAT",
+      "message": "flat sequence started at solar altitude -6.8 deg"
+    }
+  ],
+  "data_products": {
+    "raw_frame_count": 187,
+    "accepted_science_frames": 185,
+    "archive_path": "s3://aro-raw/2026/08/14/OBS-2026-08-14-N1/",
+    "manifest_sha256": "0d7665bf20ea0987079830c947adea2b544271cf7042610623ac09fce2a0c793",
+    "processing_status": "queued"
+  },
+  "closeout": {
+    "dome_closed_local": "05:17",
+    "camera_warmup_started_local": "05:22",
+    "open_actions": [
+      {
+        "owner": "instrument",
+        "action": "inspect guide-camera cable strain relief before next night"
+      },
+      {
+        "owner": "data",
+        "action": "confirm aircraft-trail frame excluded from stacked product"
+      }
+    ]
+  }
+}

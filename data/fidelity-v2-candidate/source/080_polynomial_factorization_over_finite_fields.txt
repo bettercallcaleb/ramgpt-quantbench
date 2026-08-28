@@ -1,0 +1,96 @@
+Polynomial factorization over a finite field looks deceptively similar to factorization over the integers, but the algebraic structure changes several familiar intuitions. Consider the polynomial
+
+f(x) = x^8 + 4x^6 + 2x^5 + 3x^4 + x^3 + 4x + 1
+
+over F_5. The coefficients are interpreted modulo 5, so -1 and 4 are the same element and division by any nonzero coefficient is always possible.
+
+A first question is whether f has a linear factor. Over F_5, this is decided by evaluating f at the five field elements. Direct substitution gives
+
+f(0)=1,
+f(1)=1+4+2+3+1+4+1 = 16 = 1 mod 5,
+f(2)=4 mod 5,
+f(3)=2 mod 5,
+f(4)=3 mod 5.
+
+Thus gcd(f, x^5-x)=1, because x^5-x is exactly the product of all monic linear factors over F_5. No root exists in the base field.
+
+The next task is to detect factors of degree 2. Every monic irreducible quadratic over F_5 divides x^(25)-x, while every irreducible linear factor also divides that polynomial. Since f has no linear factor, the polynomial
+
+g_2(x) = gcd(f(x), x^(25)-x)
+
+is precisely the product of the quadratic irreducible factors of f. Exponentiating x modulo f is much cheaper than writing x^25 explicitly. Repeated squaring gives x^5 mod f, then another fifth-power map gives x^25 mod f. Suppose the Euclidean algorithm yields
+
+g_2(x) = x^4 + 2x^3 + 4x^2 + 3x + 2.
+
+The degree four result tells us that f contains two irreducible quadratic factors, or possibly one repeated quadratic with multiplicity two. To distinguish those cases, first test square-freeness.
+
+The formal derivative is
+
+f'(x) = 8x^7 + 24x^5 + 10x^4 + 12x^3 + 3x^2 + 4
+      = 3x^7 + 4x^5 + 2x^3 + 3x^2 + 4  in F_5[x].
+
+If gcd(f,f')=1, then f is square-free. In characteristic p, this derivative step needs special care: a polynomial such as h(x)=x^(10)+3x^5+1 over F_5 has derivative zero, because each exponent is divisible by 5. Such a polynomial is a polynomial in x^5 and must be handled through p-th roots rather than ordinary square-free decomposition. Our f does not have that pathology.
+
+Assume gcd(f,f')=1. We can split g_2 by a distinct-degree or equal-degree procedure. One convenient randomized method selects a polynomial a(x), computes
+
+b(x) = a(x)^((5^2-1)/2) - 1 mod g_2(x),
+
+and then takes gcd(b,g_2). The exponent is (25-1)/2=12. If the gcd has degree two, a nontrivial split has been found. For example, suppose one trial produces
+
+q_1(x)=x^2+2x+3,
+q_2(x)=x^2+3x+4.
+
+Multiplication confirms
+
+q_1 q_2
+= (x^2+2x+3)(x^2+3x+4)
+= x^4 + 5x^3 + 13x^2 + 17x + 12
+= x^4 + 3x^2 + 2x + 2 mod 5.
+
+If this does not equal the previously computed g_2, then either the proposed factors or the intermediate gcd is wrong. Finite-field calculations are especially easy to corrupt by silently switching between integer and modular arithmetic, so every split should be verified by multiplication. Suppose after correction the actual result is
+
+g_2(x)=(x^2+x+2)(x^2+x+3)
+      =x^4+2x^3+x^2+0x+1  mod 5.
+
+Both quadratics are irreducible because their discriminants are nonsquares in F_5. For x^2+x+2 the discriminant is 1-8=-7=3, while the nonzero squares modulo 5 are 1 and 4. For x^2+x+3 the discriminant is 1-12=-11=4, which is a square, so that second polynomial would actually split. This again shows why local verification matters.
+
+Let us instead choose a consistent pair,
+
+q_1(x)=x^2+2,
+q_2(x)=x^2+x+1.
+
+The discriminants are -8=2 and 1-4=-3=2, respectively, and 2 is nonsquare modulo 5. Their product is
+
+x^4+x^3+3x^2+2x+2.
+
+A real computation must preserve this exact product as the degree-two component.
+
+After removing g_2 from f, define r=f/g_2. If deg r=4, then the remaining factorization can contain irreducible quartics, two irreducible cubics are impossible by degree, and a cubic plus linear factor is impossible because linear factors were already excluded. Therefore, if r has no quadratic divisor, r itself is irreducible of degree four.
+
+The standard distinct-degree test expresses this cleanly. For a square-free polynomial F, define
+
+D_d = gcd(F, x^(q^d)-x),
+
+where q=5. The quotient accumulated after earlier degrees are removed ensures that D_d is the product of irreducible factors whose degrees are exactly d. The procedure only needs d up to floor(deg F/2); anything left after that is irreducible.
+
+There is a useful conceptual reason for x^(q^d)-x. The finite field F_(q^d) contains exactly q^d elements, and every element satisfies a^(q^d)=a. A monic irreducible polynomial over F_q of degree m has its roots in F_(q^d) exactly when m divides d. Therefore its roots, and hence the polynomial itself, divide x^(q^d)-x precisely for those d divisible by m.
+
+The Frobenius map phi(a)=a^q is central here. On coefficients in F_q it fixes every scalar, while on extension-field roots it permutes conjugates. Iterating phi d times yields a -> a^(q^d). Factorization algorithms exploit this structure instead of searching blindly through all possible coefficient combinations.
+
+For an implementation, three invariants are worth checking after every phase:
+
+1. Every reported factor is monic.
+2. The product of factors, including multiplicities, equals the original polynomial modulo q.
+3. Each factor claimed irreducible passes a degree-appropriate irreducibility test.
+
+For a monic polynomial h of degree m over F_q, one deterministic irreducibility criterion is
+
+x^(q^m) = x mod h,
+
+and for every prime divisor ell of m,
+
+gcd(h, x^(q^(m/ell))-x)=1.
+
+This avoids trusting the internal history of the factorization routine.
+
+The finite-field problem therefore decomposes naturally into square-free factorization, distinct-degree factorization, and equal-degree splitting. The first isolates multiplicities, the second groups factors by degree using Frobenius powers, and the third separates factors that have the same degree. The algebra behind the algorithms is not an implementation detail; it is what makes factorization over a finite field tractable without enumerating an enormous space of candidate polynomials.

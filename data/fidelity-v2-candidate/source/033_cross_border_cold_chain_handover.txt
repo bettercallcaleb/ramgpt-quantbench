@@ -1,0 +1,39 @@
+Shift handover, 18:35 local time. The reefer truck had reached the border inspection yard forty minutes late, and the evening team was taking over from day operations. 刘主管先把 dashboard 投到墙上：“We have one shipment at risk, not because temperature is out of range, but because the transfer window is shrinking.”
+
+The cargo was a mixed load of diagnostic reagents packed in validated insulated containers inside a refrigerated trailer. The trailer setpoint remained at 4°C, and the logger showed air temperature between 3.2 and 4.6°C for the previous six hours. On paper, everything looked fine. But customs inspection required the rear doors to be opened, and the receiving carrier had not yet arrived at the bonded side of the yard.
+
+“先分清楚 product temperature 和 ambient trailer temperature,” Elena from quality said. “The air can spike when doors open, but the product packs have thermal inertia. We should not treat a five-minute air excursion as a product excursion.” 她同时提醒，不能因此忽略门开时间，因为连续几个小延误会累积。
+
+The outgoing coordinator had already confirmed document numbers, seal ID, pallet count, and data logger serials. One mismatch remained: the commercial invoice listed twenty-four cartons on pallet 7, while the warehouse manifest listed twenty-three. “这个不能靠现场猜,” 刘主管说，“Before breaking the seal, we need the shipper to confirm whether it is a documentation error or a packing change.”
+
+The team opened a shared exception channel with the shipper, customs broker, and destination warehouse. Messages alternated naturally between English and Chinese because the shipper’s warehouse team worked in Shenzhen while the destination QA group was in Vancouver. “Pallet 7 carton count discrepancy—please confirm source packing record,” Elena typed. A few minutes later the warehouse replied: “系统里原始 packing scan 是 23 cartons，第24箱在 pallet 8，invoice line grouping 有误。” They attached the original scan list.
+
+That resolved the count without touching the cargo. The broker updated the declaration note and asked whether the truck could proceed to inspection. The border yard had only one temperature-controlled inspection bay, currently occupied. The normal alternative was an open dock under a canopy. Outside temperature was 27°C with high humidity.
+
+“Open dock is not ideal, but it may still be acceptable if we control exposure,” Elena said. The packaging qualification allowed forty-five minutes at 30°C ambient before the internal product zone approached the upper threshold, assuming the containers had been preconditioned correctly. However, the qualification study assumed a single door opening, not repeated handling.
+
+The handover team therefore proposed a sequence: stage the receiving carrier first, position insulated pallet covers, open the trailer only when inspectors were physically ready, inspect the required pallets in one pass, and close the doors immediately afterward. 刘主管补了一句：“不要为了省两分钟提前开门等人。Door-open time starts when seal is broken, not when inspection actually begins.”
+
+At 19:10 the receiving carrier reported another delay: the driver had entered the wrong commercial lane and would need about twenty minutes to circle back. That created a choice. The team could wait with the original trailer sealed, or perform customs inspection now and re-seal before the transfer vehicle arrived. Waiting would preserve thermal stability but push the shipment closer to the destination warehouse’s receiving cutoff.
+
+The destination warehouse joined by phone. “If arrival is after 22:30, we can still receive, but the normal QA desk closes at 22:00,” their coordinator said. “We can activate after-hours receiving if you send the exception package before 21:15.” 中文这边马上确认：“那我们不需要为了赶 regular desk 冒险提前开箱，先走 after-hours approval。”
+
+This changed the operational priority. The shipment was no longer racing against a hard warehouse closure. The team documented the late-carrier event and held the trailer sealed until the transfer truck reached the yard.
+
+At 19:42 the receiving vehicle arrived. The team checked its reefer pre-cool record. Setpoint was correct, but the supply-air sensor read 6.1°C because the unit had been idling with doors open while the driver searched for the lane. “先关门拉温，不接货,” 刘主管决定。The target was not merely to display 4°C at the controller; they wanted five minutes of stable return-air trend before loading.
+
+Customs inspectors became available at 19:55. The transfer trailer had not yet stabilized, so the original trailer moved to the inspection bay alone. Seal removal was photographed, logger time synchronized, and door-open timing started. Inspectors requested pallet 3 and pallet 7. Forklift drivers removed only the required units. No cartons were opened because document review and external labels were sufficient.
+
+Door-open duration was eleven minutes thirty-eight seconds. Trailer air temperature briefly rose above 8°C near the rear but returned below 5°C within twelve minutes after closing. Product-container loggers did not show a threshold excursion. “这个就是为什么 air spike 不能直接等于 product failure,” Elena said, “but we still record the exposure because it contributes to cumulative risk.”
+
+By 20:20 the receiving trailer was stable at 3.8°C return air. Transfer started pallet by pallet. The team used a scan-confirm-scan process: source pallet barcode, destination position, then sealable transfer confirmation. English prompts on the handheld device were short; warehouse staff answered in Chinese over radio. “Pallet twelve verified.” “十二号已上车，位置 B4。” “B4 confirmed.”
+
+One pallet had condensation on the outer stretch wrap. The quality team checked whether the moisture came from a cold surface exposed to humid air or from a damaged product container. There was no puncture, no wet carton board, and no moisture inside the insulated shipper. The pallet was accepted with a note rather than automatically quarantined.
+
+At 20:47 transfer completed. New seal number was recorded in both systems. Before release, Elena compared the source and destination logger clocks and noticed a fifty-two-second offset. It was not operationally significant, but she added it to the exception note because future investigators might otherwise misalign the temperature traces.
+
+The final handover message was deliberately concise: “Cargo transferred under controlled conditions; no product-temperature excursion observed; customs door-open interval 11m38s; receiving trailer stable before load; invoice carton discrepancy corrected by source scan evidence; after-hours warehouse receiving activated.”
+
+刘主管在中文群里补充：“重点不是‘温度没超就没事’，而是整个 chain of custody 每一步都能解释。今晚的风险来自时间压缩和交接，而不是制冷机坏了。”
+
+At 21:05 the receiving truck departed. The team did not close the incident immediately. They left two follow-up actions for morning shift: reconcile the corrected invoice in the permanent record and verify destination logger continuity after unloading. A cold-chain handover is successful only when the physical cargo, temperature evidence, and documentation all arrive together.

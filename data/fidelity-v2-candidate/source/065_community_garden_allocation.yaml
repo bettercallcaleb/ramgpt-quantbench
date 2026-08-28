@@ -1,0 +1,200 @@
+schema_version: 3
+garden:
+  id: CG-17
+  name: Cedar Junction Community Garden
+  season: 2026
+  address: 84 Cedar Junction Road
+  operating_window:
+    opens: 2026-04-04
+    closes: 2026-11-08
+    gate_hours:
+      weekday: "06:00-21:00"
+      weekend: "07:00-21:00"
+  contacts:
+    coordinator: coordinator@cedarjunction.example
+    irrigation_lead: water@cedarjunction.example
+    accessibility_contact: access@cedarjunction.example
+
+governance:
+  steering_committee:
+    seats: 7
+    quorum: 4
+    terms_months: 24
+    election_month: February
+  voting:
+    eligibility: one_vote_per_active_plot
+    proxy_votes: false
+    ordinary_motion: simple_majority
+    bylaw_amendment: two_thirds
+  meetings:
+    regular:
+      cadence: monthly
+      weekday: Thursday
+      start_time: "19:00"
+    minutes_publish_within_days: 7
+  conflict_resolution:
+    stages:
+      - informal_conversation
+      - coordinator_mediation
+      - written_review
+      - steering_committee_decision
+    appeal_window_days: 14
+
+plot_classes:
+  standard:
+    dimensions_m: [3.0, 6.0]
+    annual_fee_cad: 42
+    max_per_household: 1
+  raised_accessible:
+    dimensions_m: [1.2, 2.4]
+    annual_fee_cad: 30
+    priority: mobility_access
+  youth:
+    dimensions_m: [2.0, 3.0]
+    annual_fee_cad: 0
+    priority: age_12_to_18
+  communal:
+    fee: none
+    allocation: committee_program
+
+allocation_policy:
+  renewal:
+    deadline: 2026-02-15
+    allowed_if:
+      - fees_paid
+      - prior_plot_cleared
+      - no_unresolved_safety_violation
+  waitlist:
+    ordering: timestamp_then_priority
+    priority_groups:
+      - returning_accessibility_request
+      - resident_within_2km
+      - new_general_applicant
+    offer_response_hours: 72
+    no_response_action: move_to_end_once
+  transfer:
+    direct_private_transfer: prohibited
+    temporary_care:
+      max_days: 30
+      coordinator_notice_required: true
+
+plots:
+  - plot_id: A01
+    class: standard
+    status: assigned
+    member_id: M-204
+    crop_plan: [tomato, basil, bush_bean]
+    irrigation_zone: Z1
+    notes: west edge shaded after 17:00
+  - plot_id: A02
+    class: standard
+    status: assigned
+    member_id: M-118
+    crop_plan: [pepper, eggplant, lettuce]
+    irrigation_zone: Z1
+    notes: null
+  - plot_id: A03
+    class: standard
+    status: reserved
+    reservation_reason: new_member_orientation
+    member_id: M-311
+    irrigation_zone: Z1
+  - plot_id: A04
+    class: standard
+    status: maintenance_hold
+    member_id: null
+    irrigation_zone: Z2
+    notes: replace north border timber before assignment
+  - plot_id: B01
+    class: raised_accessible
+    status: assigned
+    member_id: M-087
+    crop_plan: [chard, parsley, radish]
+    irrigation_zone: Z3
+  - plot_id: B02
+    class: raised_accessible
+    status: assigned
+    member_id: M-265
+    crop_plan: [dwarf_pea, spinach, calendula]
+    irrigation_zone: Z3
+  - plot_id: Y01
+    class: youth
+    status: assigned
+    member_id: Y-014
+    crop_plan: [strawberry, snap_pea]
+    irrigation_zone: Z4
+  - plot_id: C01
+    class: communal
+    status: active
+    program: pollinator_demonstration
+    crop_plan: [anise_hyssop, bergamot, milkweed, goldenrod]
+    irrigation_zone: manual
+  - plot_id: C02
+    class: communal
+    status: active
+    program: food_bank_rows
+    crop_plan: [potato, onion, winter_squash]
+    irrigation_zone: Z5
+
+water:
+  source: municipal
+  meter_id: WTR-8814
+  seasonal_budget_m3: 415
+  zones:
+    Z1: {days: [Mon, Thu], start: "06:15", duration_min: 18}
+    Z2: {days: [Tue, Fri], start: "06:15", duration_min: 20}
+    Z3: {days: [Mon, Wed, Sat], start: "07:00", duration_min: 10}
+    Z4: {days: [Wed, Sat], start: "07:20", duration_min: 12}
+    Z5: {days: [Tue, Fri], start: "06:40", duration_min: 24}
+  restrictions:
+    hand_watering_after: "19:00"
+    hose_nozzle_required: true
+    unattended_sprinklers: prohibited
+
+site_rules:
+  pesticides:
+    synthetic_herbicide: prohibited
+    permitted_products_require_label_use: true
+    application_log_required: true
+  structures:
+    max_height_m: 1.8
+    opaque_barriers: prohibited
+    permanent_concrete: prohibited
+  compost:
+    accepted: [plant_residue, coffee_grounds, untreated_straw]
+    prohibited: [meat, dairy, pet_waste, diseased_tomato_vines]
+  conduct:
+    shared_paths_clear_width_m: 1.0
+    quiet_hours_start: "20:00"
+    smoking: prohibited
+    pets:
+      allowed: false
+      exception: service_animals
+
+season_tasks:
+  - id: T-01
+    due: 2026-03-21
+    owner: infrastructure_team
+    action: pressure-test irrigation main
+  - id: T-02
+    due: 2026-04-02
+    owner: coordinator
+    action: publish final plot map
+  - id: T-03
+    due: 2026-05-09
+    owner: compost_team
+    action: turn communal compost bays
+  - id: T-04
+    due: 2026-07-18
+    owner: accessibility_team
+    action: inspect raised-bed approach surfaces
+  - id: T-05
+    due: 2026-10-24
+    owner: all_members
+    action: remove annual crop supports and loose plastic
+
+audit:
+  last_review: 2026-02-28
+  reviewed_by: [M-041, M-118, M-233, M-265]
+  next_review: 2027-02-28
+  document_checksum: pending_after_approval

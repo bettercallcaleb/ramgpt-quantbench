@@ -1,0 +1,159 @@
+Historic Boat Launch Decision Meeting
+
+Participants:
+Elise — museum director
+Tom — maritime conservator
+Gavin — boatwright
+Nia — public-history curator
+
+Elise: We need a decision on whether the 1912 fishing launch goes back in the water for the harbor anniversary. The event committee assumes the answer is yes because the boat was restored.
+
+Tom: "Restored" does not mean "fit for operation." Our conservation treatment prioritized structural stabilization and historical material.
+
+Gavin: I agree. The hull is much stronger than when it arrived, but I haven't signed off on launch loads.
+
+Nia: The public story changes depending on what we do. If it floats, people experience it as a working boat. If it stays ashore, we need to explain why that isn't a failure.
+
+Elise: Let's separate heritage value from operating risk.
+
+Tom: The boat retains about 60% original planking by area, more if you count frames and interior fittings. Repeated wetting and drying would stress both old and replacement material.
+
+Gavin: The seams are currently caulked for display condition, not commissioned for a season afloat.
+
+Elise: Could we launch it once, for two hours?
+
+Gavin: That's actually awkward. A traditionally planked wooden hull may need time for seams to take up after immersion. A brief launch can leak more than a boat kept in water.
+
+Tom: And intentionally soaking original timber to make an event possible is a conservation decision with consequences.
+
+Nia: What did the boat do historically? Was it hauled daily?
+
+Gavin: No. Records suggest it stayed in the harbor through the fishing season and was hauled for winter.
+
+Elise: So a ceremonial two-hour float isn't historically representative anyway.
+
+Nia: Correct.
+
+Tom: Another concern is the engine. The original engine block survives but is not operational. The current proposal suggests towing the boat.
+
+Gavin: Towing introduces load at fittings that were not restored as working towing points.
+
+Elise: Could a cradle support it in shallow water?
+
+Tom: Then we're creating a submerged display system around a historic hull. That's an engineering project, not a simple launch.
+
+Nia: And visitors may still assume it's floating under its own integrity.
+
+Elise: What evidence would we need to approve an actual launch?
+
+Gavin: Full hull survey below waterline, fastening assessment, seam plan, displacement calculation, lifting-point verification, emergency dewatering, tow arrangement, insurance approval, and a recovery plan if leakage exceeds threshold.
+
+Tom: Plus conservation review of what saturation does to original materials and coatings.
+
+Elise: Is any of that impossible?
+
+Gavin: Not impossible. But doing it responsibly would take months, not three weeks.
+
+Nia: Then the anniversary date should not drive the technical conclusion.
+
+Elise: Agreed.
+
+Tom: I would recommend against launching this year.
+
+Gavin: Same.
+
+Nia: Before we settle, is there a lower-risk way to show operation?
+
+Gavin: We can place it on the mobile yard cradle near the water and demonstrate rigging, steering linkage, and engine-start procedure using a separate working demonstration engine.
+
+Tom: Moving the boat on its approved cradle is within existing handling plan.
+
+Elise: Could we lower it on the marine railway without entering water?
+
+Gavin: Possibly to the upper apron, but we need check slope and braking load.
+
+Tom: That would visually reconnect it to the harbor without wetting the hull.
+
+Nia: And we can use archival film of similar boats launching.
+
+Elise: Event committee will say that's less exciting.
+
+Nia: Then our interpretation has to make the decision interesting. "Why doesn't the museum simply put an old boat back in the water?" is actually a good public question.
+
+Tom: Exactly. Conservation is about preserving evidence, not making every artifact perform its original function.
+
+Gavin: But we should avoid implying working boats are somehow wrong. Some maritime museums maintain operational replicas or vessels with different preservation strategies.
+
+Nia: Good distinction. Our decision applies to this boat and its material condition.
+
+Elise: Let's review authenticity concerns. If we replaced enough material to make it operational, would we still be preserving the same artifact?
+
+Tom: That's a continuum, not a binary. Replacing failed planks may be necessary even for static preservation. But operating use can accelerate replacement cycles until much of the surviving historical fabric is gone.
+
+Gavin: A working boat consumes material. That's normal in a working fleet. In a museum collection, we have to decide whether continued operation or retention of old fabric is the priority.
+
+Nia: For this launch, the collection record emphasizes documented original construction details, repairs, and fishing wear. Those are exactly the things repeated operational refit could erase.
+
+Elise: Then static preservation is aligned with why we collected it.
+
+Tom: Yes.
+
+Elise: Insurance?
+
+Gavin: Current policy covers museum handling, not navigation. We'd need a marine endorsement.
+
+Elise: Another reason three weeks is unrealistic.
+
+Nia: What about building a replica eventually?
+
+Tom: That could serve the operating interpretation very well.
+
+Gavin: We have enough lines and surviving construction detail to build an accurate working replica, though some undocumented choices would have to be explicit.
+
+Elise: Could the anniversary launch a replica project instead of the boat?
+
+Nia: That's compelling. We display the original and announce a community boatbuilding program based on it.
+
+Gavin: If funded properly, apprentices could document every construction decision and compare it with evidence from the original.
+
+Tom: And the replica can be designed from the start for safe modern operation while visually following historical construction where appropriate.
+
+Elise: Modern safety requirements would need to be clear.
+
+Gavin: Absolutely. Bilge pumps, flotation, engine systems, and passenger limits would follow current requirements even if external form is historical.
+
+Nia: That contrast is educational: original artifact versus research-based working reconstruction.
+
+Elise: Let's make sure we're not deciding from fear. What would change Tom's recommendation?
+
+Tom: If the collection policy identified operation as a core preservation goal, if the hull were surveyed and maintained under an operational conservation plan, and if we accepted the material replacement that operation entails. None of those conditions exists now.
+
+Gavin: Same. My answer isn't "old boats shouldn't float." It's "this boat hasn't been prepared or governed as an operational vessel."
+
+Elise: Good.
+
+Nia: We should record the decision rationale formally:
+- current restoration was for stabilization and display;
+- operational structural assessment is incomplete;
+- wetting has conservation consequences;
+- towing and lifting arrangements are unverified;
+- insurance and emergency plans are not in place;
+- event deadline is insufficient.
+
+Tom: Add that a one-time brief immersion is not necessarily low risk.
+
+Elise: Yes.
+
+Gavin: For the yard display, I can inspect the cradle and proposed marine-rail position this week.
+
+Nia: I'll draft interpretation around the question "What does it mean to preserve a working object when it no longer works?"
+
+Elise: And I'll tell the anniversary committee we're declining the launch but offering something stronger than a stationary object: cradle demonstration, archival launch footage, live boatbuilding interpretation, and announcement of the replica feasibility project.
+
+Tom: That preserves the boat and still acknowledges its original life.
+
+Elise: Then decision: no water launch of the original this anniversary. Any future operational proposal requires a separate conservation and engineering project, not an event request.
+
+Gavin: That's the correct boundary.
+
+Nia: And because we can explain the boundary, the public gets to see the decision rather than just the result.

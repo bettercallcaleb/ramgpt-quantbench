@@ -1,0 +1,143 @@
+Consider a transportation network with three supply depots and four demand locations. Let depot supplies be
+
+s = (40, 35, 25),
+
+and customer demands be
+
+d = (20, 30, 25, 25).
+
+Total supply and demand are both 100, so a balanced transportation plan is possible.
+
+Let x_ij denote the quantity shipped from depot i to customer j, and let c_ij be the unit shipping cost. Suppose
+
+C =
+[ 4  7  6  8
+  5  3  7  6
+  8  5  4  3 ].
+
+The basic linear program is
+
+minimize   sum_i sum_j c_ij x_ij
+
+subject to
+
+sum_j x_ij = s_i   for each depot i,
+sum_i x_ij = d_j   for each customer j,
+x_ij >= 0.
+
+Written explicitly, the supply equations are
+
+x_11+x_12+x_13+x_14=40,
+x_21+x_22+x_23+x_24=35,
+x_31+x_32+x_33+x_34=25,
+
+and the demand equations are
+
+x_11+x_21+x_31=20,
+x_12+x_22+x_32=30,
+x_13+x_23+x_33=25,
+x_14+x_24+x_34=25.
+
+Because total supply equals total demand, one equality is redundant. The constraint matrix of a transportation problem is closely related to a node-edge incidence matrix and is totally unimodular. Therefore, if supplies and demands are integers, every extreme-point solution is integral even though integrality constraints x_ij in Z are not explicitly imposed.
+
+Now add operational restrictions. Suppose route (1,4) is unavailable:
+
+x_14=0.
+
+Depot 2 has a contractual minimum of 10 units to customer 2:
+
+x_22>=10.
+
+Customer 3 requires at least 8 units from depot 3 because of product qualification:
+
+x_33>=8.
+
+Depot 1 and depot 2 together may ship at most 18 units to customer 4 due to a receiving-door constraint:
+
+x_14+x_24<=18.
+
+Since x_14=0, this reduces to x_24<=18.
+
+The primal remains a linear program. To understand dual prices, first return to the unrestricted balanced transportation model. Associate dual variables u_i with supply equations and v_j with demand equations. Since the primal equalities have unrestricted dual variables, the dual is
+
+maximize   sum_i s_i u_i + sum_j d_j v_j
+
+subject to
+
+u_i + v_j <= c_ij
+
+for every route (i,j).
+
+Interpret u_i as the marginal value of supply at depot i and v_j as the marginal value associated with satisfying demand j, subject to an arbitrary additive normalization. If all u_i are increased by k and all v_j decreased by k, every sum u_i+v_j is unchanged, and because total supply equals total demand, the dual objective is unchanged. One dual variable can therefore be fixed, such as u_1=0.
+
+Complementary slackness says that if x_ij>0 in an optimal primal solution, then the corresponding dual inequality is tight:
+
+u_i+v_j=c_ij.
+
+Unused routes may have strict slack,
+
+u_i+v_j<c_ij.
+
+The reduced cost is
+
+r_ij=c_ij-u_i-v_j.
+
+For a minimization problem, an unused route with r_ij>0 is locally unattractive; a zero reduced cost indicates an alternative optimal edge may exist.
+
+Operational inequality constraints add dual variables with economic meaning. For the capacity constraint x_24<=18, introduce a nonnegative shadow value associated with relaxing that cap. If the constraint is binding and its dual multiplier is positive, increasing the receiving capacity by one unit decreases optimal cost by approximately that multiplier, as long as the current basis remains valid.
+
+A lower bound such as x_33>=8 can be transformed by defining
+
+y_33=x_33-8 >=0.
+
+The required eight units are treated as a fixed baseline shipment. Supplies and demand are adjusted:
+
+s_3' = s_3-8,
+d_3' = d_3-8.
+
+The cost objective gains the constant
+
+8 c_33=8*4=32.
+
+After this transformation, the remaining optimization uses nonnegative variables with ordinary zero lower bounds.
+
+The same technique handles x_22>=10. Let
+
+y_22=x_22-10.
+
+Then reduce s_2 and d_2 by 10 and add 10*c_22=30 to the objective. Lower-bound transformations are often preferable to adding inequality machinery when the lower bounds are fixed and feasible.
+
+Feasibility must be checked before optimization. The unavailable route x_14=0 and the cap x_24<=18 imply customer 4 can receive at most
+
+0 + 18 + x_34.
+
+Because customer 4 requires 25, depot 3 must send at least 7 units to customer 4. Depot 3 already owes at least 8 to customer 3, leaving at most 17 for its other customers. This is feasible because 7+8<=25.
+
+A more general feasibility criterion follows from network flow. Build a source connected to each depot with capacity s_i, shipment arcs from depots to customers with route capacities, and customer arcs to the sink with capacity d_j. The transportation problem is feasible exactly when a maximum flow reaches total demand. This catches interacting route restrictions that are not obvious from individual rows and columns.
+
+Suppose a solver returns the shipment plan
+
+X =
+[20 12  8  0
+  0 18  7 10
+  0  0 10 15].
+
+Row sums are 40,35,25 and column sums are 20,30,25,25. It satisfies x_22>=10, x_33>=8, and x_24<=18. Its cost is
+
+20(4)+12(7)+8(6)
++18(3)+7(7)+10(6)
++10(4)+15(3).
+
+Compute by rows:
+
+row 1: 80+84+48=212,
+row 2: 54+49+60=163,
+row 3: 40+45=85.
+
+Total cost is 460.
+
+This proves only that cost 460 is attainable, not that it is optimal. To certify optimality, find dual variables and inequality multipliers whose objective equals 460 and satisfy all dual constraints. Equality of primal and dual objectives then invokes strong duality.
+
+Sensitivity analysis turns the solution into operational information. A high dual price on a depot supply constraint means an extra unit available there could reduce cost substantially. A positive multiplier on the customer-4 receiving cap measures the value of expanding that bottleneck. A route with large positive reduced cost is unlikely to enter the optimal plan unless costs or constraints change significantly.
+
+Transportation optimization is therefore more than filling a cost matrix greedily. The primal describes feasible physical flows, the dual assigns marginal values to scarce supply, demand obligations, and route capacities, and complementary slackness links the two. This dual interpretation is often what decision makers actually need: not only the best current plan, but which constraint is making it expensive.

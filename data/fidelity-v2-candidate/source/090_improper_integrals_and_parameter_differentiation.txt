@@ -1,0 +1,229 @@
+Parameter differentiation can turn an improper integral that is difficult to evaluate directly into a differential equation for a family of easier integrals. The method is powerful, but the interchange of differentiation and integration must be justified.
+
+Consider, for a>0,
+
+F(a)=integral_0^infinity [e^(-ax)-e^(-x)]/x dx.
+
+Each term separately would produce a logarithmic divergence near x=0 if divided by x without cancellation, but their difference is well behaved. Expanding near zero,
+
+e^(-ax)=1-ax+O(x^2),
+e^(-x)=1-x+O(x^2),
+
+so
+
+[e^(-ax)-e^(-x)]/x
+=(1-a)+O(x).
+
+At infinity, both exponentials decay. Thus F(a) converges for every a>0.
+
+Differentiate formally with respect to a:
+
+F'(a)
+=
+integral_0^infinity [-x e^(-ax)]/x dx
+=
+-integral_0^infinity e^(-ax) dx
+=
+-1/a.
+
+If this differentiation is valid, then
+
+F(a)=-log a + C.
+
+Since F(1)=0,
+
+C=0,
+
+and therefore
+
+integral_0^infinity [e^(-ax)-e^(-x)]/x dx
+=-log a.
+
+To justify the derivative locally around a fixed a_0>0, restrict a to an interval [alpha,beta] with 0<alpha<a_0<beta. The derivative of the integrand is
+
+-e^(-ax).
+
+For every a in [alpha,beta],
+
+|e^(-ax)| <= e^(-alpha x),
+
+and e^(-alpha x) is integrable on [0,infinity). Dominated convergence therefore allows differentiation under the integral sign.
+
+A second example produces a classical rational integral. Define
+
+G(a)=integral_0^infinity e^(-ax)/(1+x^2) dx,
+
+for a>=0.
+
+At a=0,
+
+G(0)=integral_0^infinity dx/(1+x^2)=pi/2.
+
+Differentiating gives
+
+G'(a)
+=
+-integral_0^infinity x e^(-ax)/(1+x^2) dx.
+
+This is not obviously simpler. Differentiating again gives
+
+G''(a)
+=
+integral_0^infinity x^2 e^(-ax)/(1+x^2) dx.
+
+Use
+
+x^2/(1+x^2)=1-1/(1+x^2).
+
+Hence
+
+G''(a)
+=
+integral_0^infinity e^(-ax) dx
+-
+integral_0^infinity e^(-ax)/(1+x^2) dx
+=
+1/a-G(a),
+
+for a>0.
+
+Thus G satisfies
+
+G''(a)+G(a)=1/a.
+
+The resulting differential equation still contains a singular forcing term, so this route is more structural than elementary. It illustrates that differentiation does not guarantee an immediate closed form; it transforms the analytic problem.
+
+A cleaner parameter family is
+
+H(a)=integral_0^infinity e^(-x) sin(ax)/x dx,
+a>=0.
+
+Near x=0,
+
+sin(ax)/x -> a,
+
+and the exponential controls infinity, so the integral converges.
+
+Differentiate:
+
+H'(a)
+=
+integral_0^infinity e^(-x) cos(ax) dx.
+
+The Laplace transform gives
+
+integral_0^infinity e^(-x) cos(ax) dx
+=1/(1+a^2).
+
+Therefore
+
+H'(a)=1/(1+a^2).
+
+Since H(0)=0,
+
+H(a)=arctan a.
+
+Thus
+
+integral_0^infinity e^(-x) sin(ax)/x dx
+=arctan a.
+
+Letting a grow suggests the Dirichlet integral. Write
+
+H(a)=integral_0^infinity e^(-x) sin(ax)/x dx.
+
+Substitute t=ax:
+
+H(a)=integral_0^infinity e^(-t/a) sin t/t dt.
+
+As a->infinity, H(a)->pi/2. Formally e^(-t/a)->1, suggesting
+
+integral_0^infinity sin t/t dt=pi/2.
+
+But ordinary dominated convergence is not directly applicable on [0,infinity), because |sin t|/t is not integrable. A separate oscillatory convergence argument is required. This is a good example of why a correct parameter calculation does not automatically justify every limiting operation afterward.
+
+Parameter differentiation also evaluates integrals involving logarithms. For s>-1 define
+
+I(s)=integral_0^1 x^s dx.
+
+Direct integration gives
+
+I(s)=1/(s+1).
+
+Differentiate with respect to s:
+
+I'(s)
+=
+integral_0^1 x^s log x dx
+=
+-1/(s+1)^2.
+
+At s=0,
+
+integral_0^1 log x dx=-1.
+
+Differentiate again:
+
+I''(s)
+=
+integral_0^1 x^s (log x)^2 dx
+=
+2/(s+1)^3.
+
+Thus
+
+integral_0^1 (log x)^2 dx=2.
+
+More generally,
+
+integral_0^1 x^s (log x)^k dx
+=
+(-1)^k k!/(s+1)^(k+1).
+
+This follows by differentiating k times.
+
+The same idea underlies the gamma function. For s>0,
+
+Gamma(s)=integral_0^infinity x^(s-1)e^(-x) dx.
+
+Differentiation yields
+
+Gamma'(s)
+=
+integral_0^infinity x^(s-1)e^(-x) log x dx,
+
+and higher derivatives insert higher powers of log x.
+
+Why is differentiation allowed? On a compact parameter interval s in [alpha,beta] with alpha>0, split the integral into (0,1] and [1,infinity). Near zero,
+
+x^(s-1)|log x|^k
+<= x^(alpha-1)|log x|^k,
+
+which is integrable for alpha>0. At infinity,
+
+x^(s-1)e^(-x)|log x|^k
+
+is bounded by a polynomial-log factor times e^(-x), also integrable. This provides a dominating function.
+
+Improper integrals often require two independent checks: convergence of the original integral and control of the differentiated integrand uniformly over a parameter neighborhood. It is not enough that both
+
+integral f(x,a) dx
+
+and
+
+integral partial_a f(x,a) dx
+
+happen to converge pointwise for each a. A theorem such as dominated convergence, uniform convergence, or a suitable Leibniz rule must support the interchange.
+
+A practical workflow is therefore:
+
+1. Define the parameter domain carefully.
+2. Check all improper endpoints.
+3. Compute the formal parameter derivative.
+4. Find an integrable bound independent of the nearby parameter.
+5. Differentiate under the integral.
+6. Solve the resulting differential or algebraic relation.
+7. Determine the integration constant from a convenient parameter value.
+8. Justify any later limit separately.
+
+The elegance of the method comes from choosing the family well. The integral of interest should appear at a convenient parameter value, while differentiation should remove the troublesome part of the integrand. The analysis that justifies the interchange is what converts that elegant heuristic into a valid proof.

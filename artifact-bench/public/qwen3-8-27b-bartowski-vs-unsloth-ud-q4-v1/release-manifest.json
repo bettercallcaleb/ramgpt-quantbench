@@ -1,0 +1,42 @@
+{
+  "benchmark_id": "qwen3-8-27b-bartowski-vs-unsloth-ud-q4-v1",
+  "files": {
+    "compact/bartowski.npz": {
+      "bytes": 697300,
+      "sha256": "e06cb60e2c097ea51b99d89d08d8eaf3b4b01b9e4b0ca2842c59d183f57a65a9"
+    },
+    "compact/unsloth-ud-q4-k-xl.npz": {
+      "bytes": 692628,
+      "sha256": "6ba146e86f5419bc2cb109d2a9685fed1647201a40a24e7605a9f74be175c295"
+    },
+    "forensic-evidence-v1.json": {
+      "bytes": 3389,
+      "sha256": "a01434e68a5c068012b0b56ce014446f391b9ec2dd22fb8fdfc2cfad99ae0023"
+    },
+    "independent-validation.json": {
+      "bytes": 10795,
+      "sha256": "efbc57883c0d081dbf4c50e74cabd5397bd131a1c07505f4d611b6248dbd3a94"
+    },
+    "leaderboard-entry.json": {
+      "bytes": 3327,
+      "sha256": "8ef2ba4335e451d54e288e4097b708d6c8b6e6dc7429270f5f967291b5f9666a"
+    },
+    "reference-preflight.json": {
+      "bytes": 374198,
+      "sha256": "dd858e08bd17265c2c07b311c11184484bfd6035f36fb78f804e1a9372211203"
+    },
+    "result.csv": {
+      "bytes": 1687,
+      "sha256": "0853ec61be67fe00ed1e3a98706ca8c2956132e8858e8aa7927b626977c9f407"
+    },
+    "run-spec.json": {
+      "bytes": 2298,
+      "sha256": "865c5ad49f2eef9868edea49024035f6ec3f2075766bc121a5a9e67480829bb5"
+    },
+    "verified-result.json": {
+      "bytes": 14018,
+      "sha256": "ce24ffef3d5dbec4109f862e7ebae07865750298dc7d2bf8b3632066a05759d0"
+    }
+  },
+  "schema": "ramgpt-artifact-bench-release-manifest-v1"
+}

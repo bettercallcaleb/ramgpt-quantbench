@@ -1,0 +1,83 @@
+Operational Case Study: Redesigning the Baylink Coastal Ferry Schedule
+
+Context
+
+Baylink Ferries operates two passenger-and-vehicle vessels across a 42-kilometer coastal route connecting Port Alder with three island communities. For years, the published schedule was built around a simple pattern: four round trips on weekdays, three on weekends, with additional summer sailings. The timetable looked regular on paper but performed poorly in practice. Delays accumulated through the day, vehicle queues were unpredictable, and the final evening departure was frequently held for connecting buses.
+
+The redesign project began not because ridership had collapsed, but because the existing system had become operationally brittle. Annual passenger volume had risen 18 percent over six years, while freight bookings increased more rapidly. Vessel capacity was adequate in aggregate. The problem was how capacity and turnaround time were distributed across the day.
+
+Baseline diagnosis
+
+Operations staff assembled twelve months of departure, arrival, loading, weather, reservation, and vehicle-count data. The analysis showed that the nominal 25-minute terminal turnaround was unrealistic at two specific sailings. The 07:10 departure carried a high share of commercial vehicles requiring careful deck placement, while the 16:40 departure coincided with school traffic, parcel deliveries, and commuters returning to the islands. Those turnarounds averaged 34 and 38 minutes respectively.
+
+A second issue was tidal. At the smallest terminal, very low tides changed the ramp angle enough that staff loaded long-wheelbase vehicles individually. This added between six and fourteen minutes. The original timetable did not account for predictable tidal windows; it treated every day as operationally identical unless weather forced an exception.
+
+Finally, the schedule contained no recovery time. A departure ten minutes late in the morning tended to remain late all day. Crews often regained a few minutes underway, but sustained high-speed operation increased fuel consumption and could not safely compensate for terminal delays in rough conditions.
+
+Design principles
+
+The project team established four constraints before proposing new departure times. First, the first mainland arrival had to remain early enough for hospital and school connections. Second, each island needed an evening return after typical work hours. Third, dangerous incentives to “make up time” underway had to be removed. Fourth, the schedule should remain understandable to occasional passengers rather than becoming a different timetable every day.
+
+These constraints ruled out a purely mathematical optimization. The team could minimize average delay by moving some sailings to inconvenient hours, but that would degrade the public service the timetable existed to provide.
+
+Demand segmentation
+
+Reservation records revealed five recurring demand groups: early commercial freight, weekday commuters, midday service travel, afternoon school/parcel traffic, and summer visitor traffic. Instead of treating all sailings as interchangeable, planners assigned each departure a dominant operating profile.
+
+The early freight sailing received a longer loading window and an advance check-in cutoff for oversized vehicles. The commuter sailing retained a tight passenger connection but limited non-reserved freight. The afternoon island-bound sailing gained additional terminal time. Summer visitor sailings were separated from core service so seasonal congestion would not distort the year-round timetable.
+
+Recovery time
+
+The most controversial change was the introduction of a 22-minute recovery period at Port Alder after the midday round trip. Drivers and regular passengers initially viewed the gap as wasted capacity. Simulation using historical delays showed the opposite. Because late morning sailings now had a place to recover, the probability that the 16:40 departure left more than fifteen minutes late fell sharply.
+
+The recovery period was placed at the mainland terminal because maintenance, fueling support, and spare staff were available there. Crews could use the time for short inspections, cabin servicing, and schedule recovery. If the vessel arrived on time, the period remained protected rather than being converted automatically into an extra sailing.
+
+Tide-aware operating notes
+
+Rather than publish a tide-dependent passenger timetable, Baylink kept fixed departure times and added internal operating notes. On dates when predicted low tide crossed a defined threshold at East Inlet, dispatch shifted certain long vehicles to an earlier sailing when space allowed and notified booked drivers in advance. Terminal staff also began pre-positioning ramp equipment before vessel arrival.
+
+This preserved a stable public schedule while allowing operations to respond to a recurring physical constraint.
+
+Bus connections
+
+The former evening timetable required the ferry to wait up to fifteen minutes for a regional bus. That practice protected a small number of connecting passengers but created cascading delays for hundreds of people already aboard. The redesign reversed the dependency. The transit agency shifted the bus by twelve minutes and added a direct communication protocol for exceptional disruptions.
+
+Under the new rule, the ferry does not routinely hold for a late bus. Dispatch can authorize a short hold only when the next sailing interval would create significant hardship and when the vessel can absorb the delay within remaining recovery margin.
+
+Pilot period
+
+The revised timetable was piloted for eight weeks in spring, outside peak tourist season but during normal freight demand. Key measures included on-time departure, arrival variance, missed vehicle reservations, connection failures, fuel consumption, crew overtime, and passenger complaints.
+
+On-time departures within five minutes improved from 71 percent to 89 percent. The final evening sailing showed the largest gain, rising from 58 percent to 91 percent. Average fuel use per operating hour decreased slightly because captains no longer relied as often on higher cruising speed to recover delays.
+
+Not every measure improved. Some midday passengers disliked the new longer gap between departures. A small grocery distributor argued that the revised freight cutoff reduced flexibility when warehouse loading ran late. The company eventually shifted its dispatch process rather than the ferry schedule.
+
+Capacity effects
+
+The redesign did not add a vessel, yet practical capacity increased at constrained periods because loading became more predictable. Oversized commercial vehicles arrived earlier and with better documentation. Deck officers received reservation dimensions before the vessel docked, allowing a preliminary loading plan.
+
+During the pilot, denied boarding for reserved vehicles declined despite similar traffic volume. The improvement came mainly from reducing last-minute deck rearrangement, not from carrying more vehicles than the vessel certification allowed.
+
+Crew considerations
+
+Earlier schedule proposals had focused on passenger convenience without fully testing crew duty limits. The final design was modeled against shift lengths, mandatory breaks, and handover times. One proposed late-night extension was rejected because it would require either routine overtime or a second crew change at the island terminal.
+
+This became an important governance lesson: a timetable is also a labor schedule. Service that depends on constant exceptions is not operationally stable even if the printed times appear attractive.
+
+Weather resilience
+
+No fixed schedule can eliminate weather disruption on a coastal route. The redesign therefore distinguished ordinary variability from severe conditions. Recovery time is intended for routine loading, traffic, and minor sea-state effects. It is not used to justify maintaining normal service when wind or wave limits are exceeded.
+
+Dispatch procedures now classify disruptions into recoverable delay, modified service, and suspension. Passenger messaging uses the same categories so customers can distinguish “running late” from “schedule no longer applicable.”
+
+Full implementation
+
+After the pilot, Baylink adopted the new timetable with two changes. The midday gap was shortened by seven minutes after terminal teams demonstrated faster routine cleaning, and the freight check-in rule was adjusted for medical and emergency shipments.
+
+Six months later, on-time performance remained above the old baseline. More importantly, delay propagation decreased. A late sailing was more likely to be followed by an on-time one instead of carrying the same delay through the day.
+
+Lessons
+
+The schedule redesign succeeded because it treated the ferry system as a chain of constrained operations rather than a list of desirable departure times. Terminal processes, tides, vehicle mix, crew rules, bus connections, and recovery margins all affected whether a printed timetable could be kept.
+
+The project did not maximize the number of sailings. It increased reliability by making fewer assumptions about perfect conditions. The result illustrates a broader operational principle: a schedule is credible only when it contains enough time for the work that must happen between the events it promises.

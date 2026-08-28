@@ -1,0 +1,167 @@
+Security Architecture: Kubernetes Admission Policy
+
+Purpose
+
+The cluster platform requires centralized enforcement of workload security invariants before objects are persisted. Namespace documentation and CI checks are insufficient because users can submit manifests through multiple paths, controllers can generate objects dynamically, and compromised automation may bypass normal pipelines.
+
+Admission control will therefore enforce a baseline policy at the Kubernetes API boundary.
+
+Threat Model
+
+Admission policy is intended to reduce:
+- privileged container execution;
+- host namespace access;
+- unsafe hostPath mounts;
+- unapproved Linux capabilities;
+- mutable image tags in production;
+- workloads without resource constraints;
+- execution under the default service account;
+- containers running as root;
+- bypass of approved registry controls.
+
+Admission is not a substitute for node hardening, runtime detection, network policy, RBAC, or image scanning.
+
+Policy Layers
+
+Layer 1: Cluster Baseline
+
+Applies to all application namespaces except narrowly defined system namespaces.
+
+Rules include:
+- privileged=false;
+- hostPID=false;
+- hostIPC=false;
+- hostNetwork=false unless approved;
+- allowPrivilegeEscalation=false;
+- runAsNonRoot=true;
+- seccompProfile type RuntimeDefault or Localhost approved profile;
+- drop ALL Linux capabilities, then explicitly add approved capabilities;
+- prohibit hostPath except approved platform workloads;
+- prohibit hostPort in application namespaces.
+
+Layer 2: Production Supply Chain
+
+Production namespaces require images from approved registries and immutable references. Tags such as `latest` are rejected. Where supported, images must be referenced by digest or resolved through a verified admission component.
+
+This layer integrates with image-signature policy. Signature verification failure rejects deployment.
+
+Layer 3: Operational Reliability
+
+Production workloads must specify CPU and memory requests. Memory limits are required for selected workload classes. Liveness probes are not universally mandated because an incorrect liveness probe can cause outages; readiness is required for services receiving routed traffic.
+
+Layer 4: Namespace-Specific Extensions
+
+Teams may opt into stricter policies, such as read-only root filesystem or a restricted list of approved base images.
+
+Policy Technology
+
+Use native ValidatingAdmissionPolicy with CEL for deterministic rules expressible from object content. Use a dedicated admission webhook only when external state or signature verification is required.
+
+Native policy is preferred because it reduces an external availability dependency and keeps simple enforcement close to the API server.
+
+Failure Mode
+
+Security-critical validating controls fail closed in production. If the signature-verification webhook is unavailable, new affected deployments are rejected.
+
+This creates a control-plane dependency, so the webhook must run with:
+- multiple replicas;
+- PodDisruptionBudget;
+- topology spread;
+- priority class;
+- independent monitoring;
+- short deterministic timeout;
+- no dependency on the workloads it validates.
+
+Noncritical informational checks may operate in audit mode.
+
+Exemptions
+
+Exemptions are explicit objects with:
+- namespace/workload scope;
+- policy identifier;
+- owner;
+- business justification;
+- security approval;
+- expiration timestamp;
+- compensating controls.
+
+Permanent wildcard exceptions are prohibited.
+
+An exception does not change the global policy definition. Admission checks evaluate whether an active approved exception covers the specific violation.
+
+Break-Glass
+
+A cluster-admin emergency path exists for incidents in which admission policy itself blocks recovery. Use requires privileged authentication and generates a high-severity audit event.
+
+Break-glass changes are time-limited and reviewed after the incident. The mechanism is intentionally operationally separate from ordinary policy exemptions.
+
+Rollout
+
+Policies move through:
+1. observe;
+2. warn;
+3. enforce in development;
+4. enforce in staging;
+5. enforce in production.
+
+During observe mode, violations are counted but not rejected. Teams receive reports identifying the exact resource and rule.
+
+A policy does not move to production enforcement until:
+- false-positive rate is understood;
+- platform system workloads are covered;
+- remediation documentation exists;
+- exemption workflow is operational.
+
+Controller-Generated Resources
+
+Admission applies to resources created by controllers too. This is desirable, but ownership can be confusing. Violation events should include ownerReferences so users can trace a rejected Pod back to Deployment, Job, or custom resource.
+
+Mutating Admission
+
+Security-sensitive fields should not generally be silently repaired. If a workload asks for privileged mode, changing it to unprivileged can produce surprising behavior. Validation with a clear rejection is preferred.
+
+Mutation is reserved for deterministic metadata injection such as platform labels where semantic behavior is known.
+
+Policy Testing
+
+Every rule has:
+- positive fixtures;
+- negative fixtures;
+- boundary cases;
+- version compatibility tests.
+
+Examples include Linux capabilities represented in different array orders, omitted securityContext fields, init containers, ephemeral containers, Windows workloads, and controller-generated objects.
+
+Policy changes are versioned in source control and tested against a corpus of real anonymized manifests before rollout.
+
+Observability
+
+Metrics:
+- admission requests by policy;
+- denials;
+- audit violations;
+- webhook latency;
+- webhook timeout/failure;
+- exception usage;
+- expiring exemptions;
+- top violating namespaces.
+
+Audit logs preserve request user, object identity, policy decision, and exception reference, but avoid logging full secrets.
+
+Performance
+
+Admission occurs on the API write path. CEL rules should remain bounded and avoid expensive patterns. Webhook external calls are minimized and cached where safe.
+
+Latency SLO is measured at P50/P95/P99. Policy expansion is rejected if it materially degrades API-server write latency.
+
+Version Skew
+
+Kubernetes API versions evolve. Policies match stable semantic fields and are tested during cluster upgrades. Rules that depend on deprecated fields receive explicit migration plans.
+
+Security Boundary
+
+Admission guarantees only that the object met policy at creation/update time. A compromised node runtime or privileged host process can still alter execution. Runtime controls and audit remain required.
+
+Decision
+
+The platform will enforce a native-policy-first admission architecture with fail-closed security validation, explicit expiring exemptions, staged rollout, and independently monitored webhook components only where native admission cannot express the required trust decision.

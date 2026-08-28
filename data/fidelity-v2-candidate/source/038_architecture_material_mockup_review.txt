@@ -1,0 +1,44 @@
+The design studio had built three full-scale façade mockups along the warehouse wall. From a distance they looked similar: vertical fins, pale masonry panels, dark window frames. Up close, every joint told a different story.
+
+Architect Lin walked the group to Mockup A. “This is the original competition intent,” she said. “竖向线条最干净，shadow gap 也最深。” The contractor immediately pointed to the problem: the deep recess required a custom flashing piece that would be difficult to install consistently across thirty floors.
+
+“Can it be fabricated? Yes,” he said. “Can it be installed at scale in winter, with tolerance stacking, without creating water traps? That’s the real question.”
+
+They sprayed the mockup before any aesthetic discussion continued. A hose rack simulated wind-driven rain while observers stood behind the assembly. After fifteen minutes, no interior leakage appeared, but moisture collected at the lower corner of one fin. The envelope consultant marked the location with tape. “Not a failure yet. 我们先看 drainage path.”
+
+Mockup B used a shallower recess and a two-piece flashing. The architect disliked the visible seam. “It reads more commercial,” she said. The contractor replied, “It also gives us a replaceable component. 如果以后 damaged，不需要拆半面墙。” The review was not simply beauty versus cost; maintainability had entered the visual decision.
+
+A materials specialist compared the masonry samples. The design documents called for warm gray, but natural variation produced panels ranging from beige to almost blue-gray. “If the specification uses one approved sample as an exact color target, rejection rate will be absurd,” she said. 设计团队于是讨论 range sample：用三到五块代表可接受色差，而不是假装天然材料可以像涂料一样一致。
+
+At the window jamb, a Chinese and English terminology mismatch briefly confused the team. The consultant referred to the “backpan,” while the site drawing translated a related component as “背板.” The contractor’s crew used “内衬板” for another piece. Lin stopped the discussion. “先对 drawing detail number，不要靠词猜。” They opened the detail and identified each layer by function before continuing.
+
+Thermal bridging was reviewed with an infrared scan from the previous cold-room test. Mockup A showed a narrow colder line at the fin anchor. The structural engineer explained that the stainless-steel bracket still conducted heat despite the thermal pad. “The question is not whether there is any bridge,” he said. “It is whether surface temperature stays above condensation risk under design conditions.”
+
+The envelope consultant had run the calculation. At the specified indoor humidity, the interior surface remained above the critical temperature, but with limited margin. “如果 residents 冬天把 humidity 开到很高，condensation risk 会增加。” The team debated whether occupant behavior should influence the detail. In the end they chose a slightly thicker thermal isolator because the cost was modest and the assembly became more robust.
+
+Mockup C introduced a different window frame finish. Under warehouse lighting, it looked nearly black. Outside in daylight, it showed a green undertone. The client representative was surprised. “Renderings never showed this.” Lin answered, “That’s exactly why we build a mockup. Digital color is not material color.”
+
+They carried one loose frame sample outdoors and viewed it under cloudy sky, direct sun, and reflected light from adjacent brick. The group preferred the original charcoal finish after seeing the comparison. The decision was recorded with photographs and physical sample IDs rather than descriptive phrases like “slightly warmer black.”
+
+Acoustic performance came next. The project sits beside an elevated rail line, so glazing composition matters. The mockup window had a laminated outer pane and asymmetric air space. During a speaker test, low-frequency sound remained noticeable. “You won’t eliminate the train,” the acoustic consultant said. “我们的 target 是 interior level, not silence.”
+
+The client asked whether thicker glass would solve it. The consultant explained that mass, laminate, cavity, frame seals, and flanking paths all interact. A heavier pane could help one frequency band while leaving another unchanged. The team agreed to test one alternative glazing build rather than changing all panes immediately.
+
+At the base of the wall, the landscape architect noticed that the façade detail assumed finished grade lower than the current planting plan. “我们这里 soil 会抬高 120 millimeters,” she said. That would reduce clearance to drainage openings. The architecture and landscape models had coordinated geometrically but not functionally. They revised the planter edge to keep drainage paths exposed.
+
+The afternoon sun cast sharp shadows across the fins. Lin stood back twenty meters. Mockup B, which she had initially disliked, now produced almost the same rhythm as A. The visible flashing seam disappeared in shadow except at close range. “This changes my opinion,” she admitted. “Full scale matters.”
+
+The contractor used the moment to raise sequencing. On site, windows would be installed before some exterior panels. If the detail required access from both sides after panel placement, crews would improvise. The group physically rehearsed installation using loose components. One screw location proved nearly unreachable. Moving it thirty millimeters solved the issue without changing appearance.
+
+The review ended with a marked-up board:
+- adopt B-style flashing geometry with revised seam alignment;
+- use a range sample for masonry color;
+- increase thermal-isolator thickness at fin anchors;
+- retain original charcoal frame finish;
+- test alternate acoustic glazing;
+- revise planter grade interface;
+- relocate one concealed fastener for installation access.
+
+Lin summarized: “The mockup is not a sculpture we approve or reject. 它是把 drawing assumptions 变成 physical consequences 的地方。”
+
+No single participant owned all those consequences. Architecture saw proportion and shadow; contractors saw sequence and tolerance; consultants saw water, heat, and sound; landscape saw grade; the client saw maintenance and cost. The full-scale wall forced those views into the same object, where a five-millimeter decision could be simultaneously visual, structural, thermal, and operational.

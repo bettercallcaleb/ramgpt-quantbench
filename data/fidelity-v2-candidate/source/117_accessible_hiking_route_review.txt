@@ -1,0 +1,239 @@
+Accessible Hiking Route Review
+
+Participants:
+Leila — park planner
+Graham — trail maintenance supervisor
+Asha — accessibility advisor
+Ben — visitor-services coordinator
+
+Leila: We're reviewing the Lakeside Loop before publishing it as an accessible route. I don't want the designation based only on average grade.
+
+Asha: Good, because visitors need information about the whole route: surface, width, cross-slope, resting places, obstacles, and where conditions change.
+
+Graham: The loop is 1.8 kilometres. Most of it is compacted limestone screenings.
+
+Asha: "Most" is exactly where problems hide. Let's walk segment by segment.
+
+Leila: Segment one, parking lot to lookout, 320 metres.
+
+Graham: Width 1.8 to 2.2 metres, firm surface, longitudinal grade mostly under 3%. One drainage crossing reaches 5% for about six metres.
+
+Asha: Cross-slope?
+
+Graham: Under 2% except at the drainage crossing where it reaches about 3.5%.
+
+Asha: That needs either correction or disclosure. Cross-slope can be more difficult than a short forward grade for some wheelchair users.
+
+Leila: Can maintenance regrade it?
+
+Graham: Yes. The ditch outlet is slightly too high. We can reset it and bring cross-slope below 2%.
+
+Ben: The lookout has a bench.
+
+Asha: Does the bench have adjacent clear space?
+
+Ben: Not currently. The bench sits between two boulders.
+
+Leila: Then we need a level companion space beside it, not in the travel path.
+
+Graham: I can extend the pad.
+
+Asha: And armrests on at least some seating. People use them for transfers and standing.
+
+Ben: We can replace the bench rather than modify it.
+
+Leila: Segment two is the boardwalk.
+
+Graham: Four hundred metres, 1.5 metres clear width, timber decking. The main issue is the expansion gaps.
+
+Asha: What size?
+
+Graham: Most under 12 millimetres. Two are about 22 millimetres.
+
+Asha: Those two need repair. Also check that elongated gaps run perpendicular to travel, not parallel.
+
+Graham: Agreed.
+
+Ben: There is a viewing bay halfway across the marsh.
+
+Asha: Turning radius?
+
+Graham: About 1.7 metres by 1.8 metres.
+
+Asha: Good. Edge protection?
+
+Graham: Continuous curb plus rail.
+
+Leila: The boardwalk can become slippery after rain.
+
+Asha: We should provide condition information, but "slippery when wet" is not enough if it is routinely hazardous. What is the maintenance practice?
+
+Graham: Algae wash twice per season and after high-water events. I want to increase inspection frequency in shaded sections.
+
+Leila: Let's make that an operational requirement for keeping the route designation.
+
+Ben: Segment three is where we have the bigger issue. The old trail climbs to the cedar ridge.
+
+Graham: Eighty metres at 9 to 11% grade.
+
+Asha: Then that cannot be presented as part of the same accessible loop without a meaningful alternative.
+
+Leila: There is a lower bypass, but it currently has loose gravel.
+
+Graham: The bypass is 140 metres and averages 2%. We can resurface it with compacted screenings.
+
+Asha: That is the better route. The signage must make the choice obvious before someone reaches the steep section.
+
+Ben: Could we keep the ridge route as an optional spur?
+
+Asha: Yes, if it's clearly described as a more difficult trail segment and not required to complete the accessible loop.
+
+Leila: So the map shows accessible loop continuing on the bypass and ridge spur separately.
+
+Ben: I'll use different line styles, not color alone.
+
+Asha: Thank you.
+
+Graham: The bypass crosses one exposed root zone near the cedar.
+
+Asha: Can the roots be protected with a raised surface rather than cut?
+
+Graham: Yes, a short stabilized board section would preserve the tree.
+
+Leila: Segment four returns along the lake. Surface is good, but flooding happens in spring.
+
+Ben: Visitor services usually puts up a temporary closure sign.
+
+Asha: Is the closure reflected online?
+
+Ben: Not consistently.
+
+Asha: That's important. Accessibility information is only useful if it's current. Someone may plan a trip specifically because the route is described as barrier-reduced.
+
+Leila: We need a route-status page with last inspection date.
+
+Graham: During flood season, maintenance can update status after morning patrol.
+
+Ben: I'll make the web page show:
+- open;
+- partially open;
+- closed;
+- winter conditions;
+- last checked time.
+
+Asha: Good. Avoid implying conditions are guaranteed after inspection.
+
+Leila: What about winter? The park is open year-round.
+
+Graham: We don't plow the full loop. We pack snow on part of it.
+
+Asha: Then the summer accessible designation should not silently carry into winter. Publish seasonal conditions separately.
+
+Ben: "Accessible route — maintained May through October, weather permitting"?
+
+Asha: Maybe "Designed and maintained for the listed accessibility features during the snow-free operating season." Then explain winter maintenance separately.
+
+Leila: Let's discuss signage height and content.
+
+Ben: Trailhead sign currently has a map, length, and estimated walking time.
+
+Asha: Add objective route characteristics:
+- distance;
+- typical and maximum running slope;
+- typical and maximum cross-slope;
+- minimum clear width;
+- surface;
+- locations of steeper optional spur;
+- rest intervals;
+- washroom location.
+
+Graham: We can measure exact maxima after repairs.
+
+Asha: Good. Avoid just saying "easy." Difficulty labels are subjective.
+
+Leila: The washroom is 120 metres from the trailhead.
+
+Ben: It has an accessible stall.
+
+Asha: Have we checked the route to the washroom? A compliant stall behind a heavy door and gravel approach may not be functionally accessible.
+
+Graham: The approach is paved. The exterior door closer is fairly strong.
+
+Leila: We'll add door-force check to facilities inspection.
+
+Ben: Drinking fountain?
+
+Asha: One spout is too high for some users. Is there a bottle filler?
+
+Ben: Yes, at 900 millimetres.
+
+Asha: Mention that on the map.
+
+Leila: Emergency access?
+
+Graham: Utility cart can reach all but the boardwalk center. For the boardwalk, responders access from either end.
+
+Asha: Numbered location markers would help someone report where they are.
+
+Ben: We already have kilometre posts, but the numbers are tiny.
+
+Leila: Replace them with high-contrast route markers and include the marker number in the online map.
+
+Asha: Also check cellular coverage. Some accessible-trail users may depend on phone contact if mobility equipment fails.
+
+Graham: Coverage drops near the marsh.
+
+Ben: We could post that at the trailhead.
+
+Asha: Yes, factual and non-alarmist.
+
+Leila: Rest areas. How far apart?
+
+Graham: Currently roughly 300, 480, 260, and 400 metres.
+
+Asha: The 480 gap is long for some visitors. Could we add seating near the boardwalk exit?
+
+Graham: There is space.
+
+Ben: Bench plus clear companion area.
+
+Graham: Understood.
+
+Leila: I want to make sure we're not treating accessibility as a binary certification.
+
+Asha: Exactly. Publish measurable characteristics so visitors can decide whether the route works for them. The label is useful, but the data are more useful.
+
+Ben: Should we include photos?
+
+Asha: Yes. Show the actual surface, boardwalk, resting area, and bypass intersection. Don't use only scenic photos.
+
+Graham: Maintenance needs a checklist that matches what we publish. If the website promises 1.5-metre minimum width and vegetation narrows it to one metre, information becomes false.
+
+Leila: Let's tie inspection to published attributes.
+
+Graham: Checklist:
+- clear width;
+- surface firmness;
+- rut depth;
+- boardwalk gap damage;
+- cross-slope at drainage;
+- seating access;
+- sign visibility;
+- bypass condition;
+- flood closure status.
+
+Asha: Add protruding objects and low branches.
+
+Ben: And temporary obstacles from events or maintenance.
+
+Leila: Final decision: we do not publish the accessible route designation until the drainage cross-slope, boardwalk gaps, bypass surface, and rest area are corrected.
+
+Graham: Those are all feasible before opening weekend.
+
+Asha: After repairs, I want one user review with people who have different mobility needs. Technical measurements tell us a lot, but not everything about usability.
+
+Leila: Agreed.
+
+Ben: I'll hold the promotional copy and work on the factual route-information page instead.
+
+Asha: Perfect. The best accessibility communication is specific enough that a visitor doesn't have to trust a vague adjective.

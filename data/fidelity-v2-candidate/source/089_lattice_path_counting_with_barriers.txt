@@ -1,0 +1,139 @@
+A standard lattice path problem asks for the number of monotone paths from (0,0) to (m,n) using only east steps E=(1,0) and north steps N=(0,1). Without restrictions, every path is a word containing m symbols E and n symbols N, so the count is
+
+binom(m+n,m)=binom(m+n,n).
+
+Barriers make the problem more interesting because local restrictions can often be converted into global counting formulas.
+
+First consider paths from (0,0) to (8,6) that never go above the diagonal-like boundary
+
+y <= x.
+
+Since the endpoint satisfies 6<=8, such paths exist. The reflection principle counts the forbidden paths.
+
+There are
+
+binom(14,6)
+
+unrestricted paths. A forbidden path is one that first reaches y=x+1. Reflect the portion up to the first crossing across the line y=x. This transforms a path from (0,0) to (8,6) that crosses the boundary into an unrestricted path from (-1,1), equivalently from (0,0) after translation, to (8,6) with altered step counts.
+
+The classical ballot formula yields
+
+binom(14,6)-binom(14,5).
+
+Numerically,
+
+binom(14,6)=3003,
+binom(14,5)=2002,
+
+so the number of valid paths is 1001.
+
+The same result can be written
+
+(m-n+1)/(m+1) * binom(m+n,n)
+
+for m>=n. With m=8,n=6,
+
+(8-6+1)/(8+1) * binom(14,6)
+=3/9*3003
+=1001.
+
+Now add a forbidden point. Suppose monotone paths from (0,0) to (8,6) must satisfy y<=x and must avoid (5,3). A valid path that passes through (5,3) consists of a valid prefix from (0,0) to (5,3) followed by a suffix from (5,3) to (8,6) that remains under y<=x.
+
+The prefix count is a ballot number:
+
+binom(8,3)-binom(8,2)
+=56-28
+=28.
+
+The suffix is more subtle because the boundary is not centered at the new origin. Translate (5,3) to (0,0). The endpoint becomes (3,3), and the original boundary y<=x becomes
+
+y+3 <= x+5,
+
+or
+
+y <= x+2.
+
+Thus the suffix may wander up to two units above its translated diagonal.
+
+A generalized reflection formula counts paths from (0,0) to (p,q) staying below
+
+y<=x+h,
+
+with h>=0. The number is
+
+binom(p+q,q) - binom(p+q,q-h-1),
+
+where the second binomial is interpreted as zero when its lower index is outside the valid range.
+
+For p=q=3 and h=2,
+
+binom(6,3)-binom(6,0)
+=20-1
+=19.
+
+Therefore 28*19=532 valid paths pass through the forbidden point. The desired count is
+
+1001-532=469.
+
+Multiple forbidden points require inclusion-exclusion or dynamic programming. Suppose the forbidden points are
+
+P_1=(3,2),
+P_2=(5,3),
+P_3=(7,5),
+
+all lying within the allowed region.
+
+A direct inclusion-exclusion count would need:
+- all valid boundary-respecting paths,
+- paths through each P_i,
+- paths through each compatible pair in coordinate order,
+- paths through all three.
+
+This is manageable for three points but grows exponentially.
+
+A more scalable combinatorial dynamic program sorts forbidden points and the destination by x+y or coordinate order. Let C(A,B) denote the number of boundary-respecting monotone paths from point A to point B, assuming A is coordinatewise no larger than B.
+
+Define F(P_i) as the number of valid paths from the origin to P_i that avoid all earlier forbidden points. Then
+
+F(P_i)
+=
+C(O,P_i)
+-
+sum_{j<i, P_j<=P_i} F(P_j) C(P_j,P_i).
+
+The same recurrence applied to the destination gives the number of paths avoiding every forbidden point.
+
+This is an instance of Möbius-style subtraction over a partially ordered set: every path reaching P_i either reached no earlier forbidden point or has a unique first forbidden point. Subtracting by first occurrence avoids double counting.
+
+Rectangular obstacles can be handled similarly. Suppose all lattice vertices in the rectangle
+
+4<=x<=5,
+2<=y<=4
+
+are forbidden. One can either treat each blocked vertex separately or exploit geometry. Because paths move only north and east, entering the rectangle can occur only through its lower or left boundary, and leaving only through its upper or right boundary. Depending on dimensions, an obstacle decomposition can reduce the number of states dramatically.
+
+Dynamic programming on the whole grid is often simplest. Define
+
+dp[x,y] =
+0,                                      if (x,y) is blocked,
+dp[x-1,y]+dp[x,y-1],                    otherwise,
+
+with dp[0,0]=1 and out-of-range terms zero. If a diagonal boundary applies, set dp[x,y]=0 whenever y>x+h.
+
+This computes the count in O(mn) time and handles arbitrary blocked sets. The combinatorial formulas are preferable when m and n are huge but the number of obstacles is small, because binomial coefficients can be evaluated directly and only obstacle points need to be processed.
+
+There is also a determinant formulation. For multiple nonintersecting lattice paths with ordered start and end points, the Lindstrom-Gessel-Viennot lemma expresses the number of nonintersecting families as a determinant of single-path counts. This converts a global avoidance condition among several paths into linear algebra.
+
+As a simple two-path example, let starts be A_1,A_2 and ends B_1,B_2 arranged so that only order-preserving nonintersecting connections are possible. If c_ij counts monotone paths from A_i to B_j, then
+
+number of nonintersecting path pairs
+=
+det [[c_11,c_12],[c_21,c_22]]
+=
+c_11 c_22 - c_12 c_21.
+
+The subtraction has the same flavor as reflection: intersecting configurations are paired with configurations having swapped endpoints.
+
+The main combinatorial tools therefore correspond to different barrier structures. Reflection works for a single linear boundary because there is a canonical first crossing to reflect. Inclusion-exclusion handles a few isolated forbidden points. Obstacle dynamic programming handles arbitrary local restrictions. Determinants count interacting path families when nonintersection is the constraint.
+
+In each case, the crucial step is not evaluating a binomial coefficient but encoding the barrier so that invalid paths are counted systematically rather than enumerated one by one.

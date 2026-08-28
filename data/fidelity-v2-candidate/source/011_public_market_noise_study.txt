@@ -1,0 +1,83 @@
+Public Market Noise Study: Evidence Report to the Civic Services Committee
+
+Executive finding
+
+Noise at the Central Public Market is not a single problem with a single source. Measurements and observations conducted over six weeks show three distinct patterns: early-morning delivery noise affecting nearby residents, daytime crowd and vendor activity that is generally consistent with the market’s intended use, and episodic amplified sound from events that produces the highest short-duration levels. Complaints are therefore unlikely to be resolved by a broad reduction in operating hours. Targeted controls on loading practices and amplified events would address the most disruptive periods with less impact on ordinary market activity.
+
+Study area
+
+The market occupies two historic sheds and an open plaza bordered by mixed-use buildings. Residences are located above shops on the west side and in a newer apartment building to the north. Deliveries enter from Market Lane beginning before opening hours. Weekend events use the south plaza.
+
+The city received 147 noise complaints associated with the market precinct in the previous calendar year. Complaint timestamps clustered between 04:30 and 07:00 and, less frequently, between 19:00 and 22:00 during event nights. Complaint counts alone could not identify actual sound levels or distinguish recurring sources, so the study combined measurements with operational observation.
+
+Methods
+
+Three calibrated sound monitors were deployed at fixed positions for forty-two days. One was placed near residential façades on Market Lane, one at the north apartment property line, and one within the plaza. Instruments recorded equivalent continuous sound levels and short-duration maxima. Weather periods with heavy rain or wind above the study threshold were flagged.
+
+Staff also completed twelve attended observation sessions covering weekday delivery hours, weekday daytime operation, Saturday peak trading, and four scheduled evening events. Observers logged identifiable sources including trucks, pallet equipment, refuse collection, vendor setup, public address systems, musicians, crowd peaks, motorcycles, and emergency vehicles.
+
+Measurements were interpreted together with time, location, and source notes. A high maximum caused by an ambulance on the arterial road was not attributed to the market simply because the monitor recorded it.
+
+Early-morning deliveries
+
+The clearest recurring issue occurred on Market Lane between 05:00 and 06:30. Average background levels were relatively low before traffic increased, making individual impacts more noticeable. The highest repeat market-related maxima came from metal roll-cages striking uneven pavement, tail-lift gates closing, and trucks idling near the west loading doors.
+
+The study observed significant variation among suppliers. Some drivers switched off engines immediately and moved goods using rubber-wheeled equipment. Others idled through the entire unloading period. Two vendors received deliveries by rigid carts with metal wheels, producing sharp impacts at pavement joints.
+
+This variation suggests that delivery noise is operationally controllable. It is not an unavoidable consequence of receiving goods.
+
+Daytime market activity
+
+Between 09:00 and 17:00, sound levels rose due to pedestrian traffic, conversation, vendor calls, children, buses, and general city activity. Although daytime periods produced sustained sound, they generated relatively few complaints. Attended observations found that much of the sound could not be separated meaningfully from the surrounding commercial district.
+
+Vendor activity inside the sheds rarely produced high exterior maxima. The open fish auction held on Saturdays was louder than ordinary trading for roughly twenty minutes, but its timing and duration were consistent from week to week.
+
+The evidence does not support restricting normal daytime market operation as a primary noise-control measure.
+
+Evening events
+
+Four amplified events were monitored. Two remained within the event permit’s sound-management target at the nearest residential location. One exceeded the target during a musical performance after the operator increased low-frequency output. The fourth produced repeated peaks when the master of ceremonies used the public address system between acts.
+
+The important finding is that event type alone did not predict impact. Equipment setup and operator behavior mattered substantially. During the best-controlled event, speakers were positioned inward toward the plaza, bass output was limited, and an on-site technician monitored the residential boundary. During the poorest-controlled event, one speaker was angled toward the north apartments and no boundary measurement was taken after soundcheck.
+
+Complaint correlation
+
+Thirty-nine complaints were received during the six-week study. Twenty-one corresponded with periods where monitors and observers recorded identifiable market-related events. Eleven occurred when market sound was present but not unusually high relative to surrounding activity. Seven occurred during periods where no clear market-related source was found, including two complaints when the market was closed.
+
+This does not invalidate those residents’ experiences. Indoor sound perception can differ from outdoor monitoring, and some impacts may be intermittent. It does show that complaint count should not be treated as a direct numerical measure of market noise.
+
+Building and street effects
+
+Market Lane is narrow, with hard façades on both sides. Short impact sounds reflect between buildings and remain perceptible above ambient traffic. The apartment building to the north has balconies facing the plaza, increasing exposure to event sound. By contrast, the east side faces a wider road where ordinary vehicle noise often dominates.
+
+These physical differences explain why identical activities can generate complaints in one direction but not another. Controls should therefore consider source location and orientation, not just overall volume.
+
+Recommended delivery controls
+
+The city should establish a quiet-delivery protocol from 04:30 to 07:00. Required practices should include engine shutdown except where equipment operation requires otherwise, use of rubber-wheeled carts, controlled lowering of tail lifts, and avoidance of empty metal-container handling outdoors.
+
+The market operator should repair two pavement joints that repeatedly caused cart impacts. Delivery doors should be assigned by vendor so vehicles do not queue and relocate unnecessarily.
+
+A three-month trial should measure whether these changes reduce early-morning maxima before the city considers changing delivery hours.
+
+Recommended event controls
+
+Amplified events should continue, but permits should include a site-specific speaker layout and a soundcheck at the nearest residential boundary. Events expected to use substantial low-frequency amplification should maintain an on-site competent operator with access to system controls.
+
+The study does not recommend a single universal decibel limit without reference to measurement location and time basis. Permit conditions should define where and how compliance is measured.
+
+Communication
+
+Residents reported frustration not only with sound but with uncertainty about when unusual activity would occur. The market should publish an event calendar and provide advance notice for early setup or exceptional deliveries. A dedicated complaint channel should capture time, location, and perceived source so reports can be compared with operational logs.
+
+Future monitoring
+
+Permanent continuous monitoring is not necessary at this stage. A better approach is periodic targeted measurement after controls are introduced. The city should repeat one week of early-morning attended observations after the quiet-delivery protocol begins and monitor at least two major events under the revised permit system.
+
+Conclusion
+
+The evidence does not support describing Central Public Market as uniformly too noisy. It supports a narrower conclusion: certain activities create preventable impacts at predictable times and locations.
+
+Early delivery noise is dominated by handling practices and idling rather than the mere presence of trucks. Daytime market activity is part of the normal commercial sound environment and is not strongly associated with complaints. Evening event impacts vary widely with speaker placement and sound management.
+
+A targeted policy can therefore protect nearby residents without treating the market’s ordinary social activity as a nuisance to be eliminated. The committee should adopt operational controls first, measure the outcome, and reserve broader restrictions for problems that remain after those specific sources have been addressed.

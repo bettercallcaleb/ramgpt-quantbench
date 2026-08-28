@@ -1,0 +1,128 @@
+Architecture Decision Record: Multi-Region Object Replication
+
+Status: Accepted
+Decision ID: ADR-042
+Scope: Customer document object store
+Owners: Storage Platform, Reliability Engineering
+
+Context
+
+The document platform stores immutable customer uploads ranging from a few kilobytes to several gigabytes. Metadata is maintained in a transactional database, while binary objects are stored in object storage. The current deployment uses one primary region with asynchronous backup copy to a second region. Recovery requires manual promotion and can take several hours.
+
+The product now requires regional disaster recovery with an objective of RPO <= 15 minutes for committed objects and RTO <= 60 minutes for regional loss. The design must also preserve tenant isolation, retention locks, encryption policies, and idempotent object identity.
+
+Decision
+
+We will use active-active object ingestion across two regions with asynchronous cross-region replication and a globally unique immutable object identifier. Metadata write authority remains region-local during normal operation, but each accepted object enters a replication journal before the API reports durable completion.
+
+Objects are never modified in place. Replacement creates a new object version with a new content identifier and metadata relationship. This simplifies conflict behavior because binary replication does not need last-writer-wins semantics.
+
+Object Identity
+
+Each upload receives:
+- tenant_id;
+- object_id, generated as UUIDv7;
+- version_id;
+- content_sha256;
+- byte_length;
+- creation_region;
+- encryption_key_reference.
+
+The physical storage key is derived from tenant_id and object_id, not from user-supplied filename. Filenames remain metadata.
+
+Write Path
+
+A client uploads to the nearest healthy region. The receiving service streams the object to regional storage while computing SHA-256. Once the object store confirms durability, the service writes a journal entry to the regional replication log. Only after both object durability and journal durability succeed does the API mark the version as committed.
+
+Cross-region workers read journal entries and copy objects to the peer region. After copy completion, the destination recomputes or verifies the storage-provided checksum and records a replication acknowledgment.
+
+Why Journal Before Acknowledgment Matters
+
+If the service acknowledged an upload before creating durable replication intent, a regional failure could destroy the only reference telling the peer what still needed copying. The object could exist in the failed region yet be absent from the surviving region with no durable queue entry. The journal closes that gap.
+
+Consistency Model
+
+Binary objects are immutable and addressed by object_id/version_id. Reads of a committed version in its creation region are strongly consistent with local metadata. Cross-region visibility is eventually consistent until replication acknowledgment.
+
+The API exposes replication_state:
+- local_only;
+- replicating;
+- replicated;
+- exception.
+
+Clients that require cross-region durability can request a stronger completion mode. In that mode, the upload call does not return success until the peer acknowledgment arrives or a timeout occurs. This mode is reserved for selected workflows because it increases latency and couples writes to inter-region health.
+
+Metadata
+
+The transactional metadata database is replicated separately using its own multi-region strategy. Object replication does not infer metadata existence from storage listing. A binary object without corresponding metadata is treated as orphaned and retained until reconciliation confirms whether it is safe to delete.
+
+Failure Scenarios
+
+1. Source region fails before local object durability.
+The upload is not committed and the client may retry using the same idempotency key.
+
+2. Source object is durable but replication journal write fails.
+The API does not commit. A background orphan scanner can later discover and reconcile the unreferenced binary.
+
+3. Journal is durable but replication has not started when the source region fails.
+The recovery design requires the journal itself to be replicated through an independent durable mechanism. Pending entries survive and can be replayed.
+
+4. Destination copy succeeds but acknowledgment is lost.
+The worker retries. Put operations use deterministic destination keys and verify checksum, so retry is idempotent.
+
+5. Both regions accept logically related edits during a partition.
+Binary versions remain independent immutable objects. Metadata conflict handling determines which version becomes current; neither binary is overwritten.
+
+Retention and Legal Hold
+
+Retention mode and legal-hold attributes are copied as part of the replication manifest. Destination workers must apply retention controls before recording replication completion. A replica without equivalent retention policy is not considered valid.
+
+Deletion is represented as a tombstone in metadata rather than immediate physical removal. Tombstones replicate first. Each region independently applies retention eligibility, then garbage collection deletes the binary after policy checks.
+
+Encryption
+
+Objects use envelope encryption. Data-encryption keys are generated per object version and wrapped with a regional key-encryption key. To avoid requiring one region's KMS during disaster recovery, the encrypted data key is additionally wrapped for the peer region during replication.
+
+Replication completion requires:
+- object bytes present;
+- content checksum match;
+- peer-wrapped key present;
+- retention metadata applied.
+
+Network Transfer
+
+Large objects use multipart copy with checkpointed part state. Workers limit concurrency by tenant and total bandwidth so a large tenant backlog cannot starve others. Transfer state is resumable and persisted outside process memory.
+
+Backlog Control
+
+The primary SLO metric is replication_lag_seconds, measured from source commit time to destination acknowledgment. Additional metrics:
+- unreplicated_object_count;
+- unreplicated_bytes;
+- oldest_pending_age;
+- checksum_failure_count;
+- retry_rate;
+- tenant_fairness_queue_depth.
+
+Alerts trigger on both absolute lag and backlog growth rate.
+
+Recovery Procedure
+
+During regional loss, routing sends reads and new writes to the surviving region. A version known only as local_only in the failed region may be unavailable. Metadata will expose this state rather than fabricating success. The stated RPO is therefore tied to observed replication lag, not merely a design target.
+
+When the failed region returns, replication does not immediately reverse all traffic. Reconciliation compares journal sequence, metadata versions, object checksums, retention state, and tombstones. Only after convergence checks pass is normal routing restored.
+
+Alternatives Considered
+
+Synchronous dual-region writes for every upload were rejected because WAN latency and partial regional degradation would directly reduce write availability.
+
+Provider-managed bucket replication alone was rejected because it did not provide sufficient application-level acknowledgment semantics for our RPO reporting and metadata coordination requirements.
+
+Single-region primary with periodic batch copy was rejected because recovery point was too coarse and backlog behavior was difficult to bound.
+
+Consequences
+
+The design adds a replication journal, state tracking, reconciliation logic, and additional encryption-key handling. In exchange, object immutability makes replication conflict-free at the binary layer, and recovery state becomes observable per object.
+
+Decision Principle
+
+Replication is considered complete only when the peer can independently read, decrypt, validate, and enforce retention for the object. A successful copy API call alone is not the durability contract.

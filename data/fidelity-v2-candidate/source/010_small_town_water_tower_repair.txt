@@ -1,0 +1,107 @@
+Chronological Account: Water Tower Repair, Clearfield Township
+
+06:30 — Site opening
+
+The repair crew arrived at the Clearfield elevated water tank before normal public-works traffic. The 1.8-million-liter steel tower had been removed from service at midnight and isolated from the distribution system. Operators confirmed valve positions at the ground manifold and compared them with the isolation checklist. A temporary pressure-monitoring plan was already active because the town would rely on the lower reservoir and booster pumps during the outage.
+
+The repair objective was limited but critical: replace a leaking section of the overflow pipe, inspect corrosion around its roof penetration, and renew the failed exterior seal. No work was permitted on the tank shell until atmospheric testing and access controls were complete.
+
+07:05 — Drain-down verification
+
+The tank had been drained overnight. A small amount of water remained below the outlet level and was removed through the washout connection. Operators verified that the level indicator showed empty and then physically confirmed no water was entering through the isolated inlet.
+
+The distribution-control room reported slightly higher pump cycling than usual, consistent with the tower being offline. Pressure at three remote monitoring points remained within the temporary operating range.
+
+07:30 — Safety setup
+
+The contractor established a controlled area around the tower base. Fall-arrest equipment, rescue gear, welding screens, fire extinguishers, and first-aid supplies were inspected. Although the work was mostly external, entry through the roof hatch could potentially meet confined-space criteria depending on the task. The crew therefore treated the interior as permit-controlled and did not enter until ventilation and atmospheric readings met the plan.
+
+A portable gas monitor sampled oxygen, combustible gas, and relevant toxic gases at the hatch and at lower levels using a sampling line. Results were within acceptable ranges. Forced ventilation began before the first entry and continued during interior inspection.
+
+08:10 — Initial inspection
+
+Two inspectors climbed to the roof platform. The visible leak had developed where the overflow pipe passed through the roof plate before turning downward along the exterior column. Sealant around the penetration had separated on the windward side. Rust staining extended roughly thirty centimeters from the joint.
+
+Inside the tank, inspection showed localized coating failure but no broad loss of steel thickness. Ultrasonic measurements were taken around the affected plate and compared with nominal thickness. The readings supported repair in place; a larger plate replacement was not required.
+
+08:55 — Removal of damaged pipe section
+
+The crew marked the section of overflow pipe to be replaced. Before cutting, they verified that the pipe was open and dry. The damaged section showed corrosion beneath an old clamp repair that had been installed as a temporary measure several years earlier.
+
+Cutting was performed in stages to avoid placing weight on the roof penetration. A chain hoist supported the exterior pipe while the corroded section was removed. The detached piece was lowered to the ground for documentation rather than dropped or left on the platform.
+
+09:40 — Surface preparation
+
+With the pipe removed, the crew cleaned the roof penetration and surrounding steel to expose sound material. Old sealant, loose coating, and surface rust were removed mechanically. Inspectors found minor pitting but no through-wall corrosion.
+
+The opening was checked against the dimensions of the new fabricated sleeve. The replacement had been prepared off-site based on drawings, but actual measurements differed by several millimeters. The fitter adjusted a non-critical flange component on site rather than forcing alignment.
+
+10:25 — Welding preparation
+
+Hot-work authorization was reviewed. Combustible materials had been removed from the immediate area, interior coating near the weld zone was protected as specified, and a fire watch was assigned. Atmospheric monitoring continued inside the tank.
+
+The welder completed tack alignment first. Inspectors checked pipe slope because the overflow must drain freely without trapping water. Once alignment was accepted, the final weld sequence began.
+
+11:20 — Welding complete
+
+The completed joint was allowed to cool before examination. Visual inspection found no obvious defects. The contractor performed the specified nondestructive examination on the pressure-independent overflow connection. One area required minor grinding and rewelding due to surface profile, after which it passed reinspection.
+
+12:05 — Lunch and system check
+
+Work paused while operators reviewed town water pressure. The lower reservoir had fallen but remained comfortably above the contingency threshold. Booster pump starts were more frequent but stable. No customer pressure complaints had been received.
+
+Because the repair remained on schedule, the public-works supervisor chose not to activate the backup interconnection with the neighboring utility.
+
+12:40 — Coating repair
+
+Prepared steel around the penetration received the specified coating system. Environmental conditions—surface temperature, air temperature, and relative humidity—were recorded before application. The crew used a compatible primer on exposed steel and repaired the surrounding topcoat after the required interval.
+
+The new exterior seal was not applied over uncured coating. This sequencing added waiting time but avoided repeating the adhesion failure that had contributed to the leak.
+
+13:35 — Interior inspection closeout
+
+Before leaving the tank interior, inspectors photographed the repaired zone, checked for tools and debris, and reviewed the coating condition below the work area. No foreign material remained. The access log showed three entries during the day, all accounted for.
+
+Ventilation continued until personnel were clear. The hatch was then temporarily secured while exterior seal work continued.
+
+14:10 — Seal installation
+
+A flexible weather seal was installed around the pipe penetration according to the repair detail. The geometry allowed movement between the pipe and roof plate without relying on a thick bead of rigid filler. The seal edges were tooled to prevent standing water.
+
+A controlled water test was applied from the exterior after the initial set period permitted by the product specification. No leakage appeared inside the tank.
+
+15:00 — Final mechanical inspection
+
+The overflow pipe supports were checked from roof to grade. One lower bracket showed a loose fastener unrelated to the leak. Because the tower was already out of service, the crew replaced the fastener and documented the additional maintenance item.
+
+The removed corroded pipe section was measured and tagged for the maintenance archive. The deepest visible corrosion corresponded with the location under the old clamp, supporting the decision to prohibit long-term clamp repairs on similar exposed joints.
+
+15:35 — Cleaning and disinfection preparation
+
+Any interior work on a potable-water tank requires controlled cleaning before return to service. The crew removed protective sheeting and vacuumed debris from the work zone. The tank was prepared for the utility’s disinfection procedure.
+
+Operators reviewed the refill plan. The tower would be filled gradually to avoid sudden pressure changes in the distribution network. Water quality samples would be collected before normal service resumed.
+
+16:20 — Site demobilization begins
+
+Hot-work equipment was removed, but access controls remained in place. The fire watch completed the required post-work observation period. No heat, smoke, or coating damage was detected.
+
+16:50 — Refill starts
+
+The inlet valve was opened to the planned position. Control-room staff monitored pressure and reservoir levels as the tank began filling. The first stage was intentionally slow. No abnormal pressure transients were observed.
+
+18:10 — Intermediate level check
+
+At approximately one-third full, the tower was held while operators walked the ground manifold and checked visible piping. The repaired overflow penetration remained dry. Instrument readings matched the expected water level.
+
+19:05 — Refill continues
+
+The tank was brought to its operational level. Operators confirmed that the overflow path remained unobstructed by briefly raising level to the test threshold under controlled conditions. Flow appeared at the discharge point as expected, with no leakage at the roof penetration.
+
+20:00 — Operational handover
+
+The tower was returned to normal hydraulic service subject to the utility’s water-quality clearance procedure. Temporary booster settings were restored to normal logic. Remote pressure at all monitoring points stabilized.
+
+The repair log recorded one planned pipe replacement, one minor bracket fastener replacement, one weld rework during inspection, and no safety incidents. The total outage lasted twenty hours, shorter than the twenty-four-hour contingency window.
+
+The final maintenance note recommended inspecting all exterior overflow clamps during the next annual tower survey. The immediate leak had been repaired, but the more useful result was identifying why a previous temporary fix had created a concealed corrosion location. The tower returned to service the same evening; the lesson was added to the system that would govern the next repair.

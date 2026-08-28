@@ -1,0 +1,136 @@
+Suppose observations x_1,...,x_n are measurements of a common location parameter but a small fraction may be contaminated by gross errors. The sample mean is statistically efficient under a Gaussian model, yet a single arbitrarily large observation can move it arbitrarily far. Robust location estimators trade some ideal-model efficiency for controlled sensitivity to contamination.
+
+The sample mean is
+
+xbar = (1/n) sum_i x_i.
+
+Its influence can be seen by replacing one observation x_j by M. The new mean is
+
+xbar_M = xbar + (M-x_j)/n.
+
+As |M| grows, the displacement grows without bound. This is one way of expressing the mean's unbounded influence.
+
+The sample median behaves differently. For odd n=2k+1, the median is the (k+1)-st order statistic. As long as fewer than roughly half the observations are replaced, arbitrarily extreme replacements cannot force the median outside the range of the uncontaminated central observations. Its finite-sample replacement breakdown point approaches 1/2.
+
+The median minimizes absolute deviation:
+
+m in argmin_theta sum_i |x_i-theta|.
+
+This can be established from subgradients. Define
+
+L(theta)=sum_i |x_i-theta|.
+
+At a point theta not equal to an observation,
+
+L'(theta)
+= # {i: theta>x_i} - # {i: theta<x_i}.
+
+A minimizer occurs where zero enters the subgradient, meaning at least half the data lie on each side. That is exactly the defining property of a median.
+
+The mean, in contrast, minimizes squared deviation:
+
+xbar = argmin_theta sum_i (x_i-theta)^2.
+
+Differentiating gives
+
+-2 sum_i(x_i-theta)=0,
+
+so theta=xbar. The loss function therefore explains the robustness difference. Squaring magnifies large residuals, while absolute loss grows only linearly.
+
+A trimmed mean offers an intermediate estimator. Let x_(1)<=...<=x_(n) be the ordered observations. For trimming fraction alpha, remove approximately alpha n observations from each tail and average the remainder. If r=floor(alpha n),
+
+T_alpha = 1/(n-2r) sum_{i=r+1}^{n-r} x_(i).
+
+A 10% trimmed mean retains more Gaussian efficiency than the median while protecting against a limited number of extreme values. Its breakdown point is approximately alpha, because contamination exceeding the trimmed fraction can enter the retained sample and drive the average.
+
+A Winsorized mean uses a related but distinct operation. Instead of deleting extremes, values below x_(r+1) are replaced by x_(r+1), and values above x_(n-r) by x_(n-r). The resulting average preserves sample size while capping tail leverage. Trimming and Winsorization are sometimes conflated, but they have different sampling variances and interpretations.
+
+M-estimators generalize these ideas. Choose a loss rho and define
+
+theta_hat = argmin_theta sum_i rho((x_i-theta)/s),
+
+where s is a robust scale estimate. If psi=rho' exists, the estimating equation is
+
+sum_i psi((x_i-theta_hat)/s)=0.
+
+For squared loss, psi(u)=2u and the solution is the mean. For absolute loss, psi is sign(u) away from zero and the solution is a median.
+
+Huber's loss is quadratic near zero and linear in the tails:
+
+rho_c(u) =
+  u^2/2,                   if |u|<=c,
+  c|u|-c^2/2,              if |u|>c.
+
+Its score function is
+
+psi_c(u)=
+  u,                       if |u|<=c,
+  c sign(u),               if |u|>c.
+
+Large residuals therefore contribute at most c in magnitude to the estimating equation. This bounded score is the source of robustness.
+
+The Huber location estimate can be computed by iteratively reweighted least squares. Write
+
+psi(u)=w(u)u,
+
+with
+
+w(u)=1                  for |u|<=c,
+w(u)=c/|u|              for |u|>c.
+
+Given a current theta, compute residuals u_i=(x_i-theta)/s and update
+
+theta_new = sum_i w_i x_i / sum_i w_i.
+
+Large residuals receive smaller weights. Iterate until the change in theta is negligible.
+
+Scale estimation is crucial. If s is the ordinary standard deviation, gross outliers can inflate s and make extreme residuals appear less extreme. A common robust choice is the median absolute deviation,
+
+MAD = median_i |x_i - median_j x_j|.
+
+For Gaussian data, 1.4826*MAD is approximately consistent for the standard deviation because the median of |Z| for Z~N(0,1) is approximately 0.67449.
+
+Consider the sample
+
+10.2, 10.4, 9.9, 10.1, 10.3, 10.0, 10.2, 42.0.
+
+The mean is
+
+xbar = 113.1/8 = 14.1375,
+
+which is far from the cluster near 10. The median is the average of the fourth and fifth ordered observations,
+
+median=(10.2+10.2)/2=10.2.
+
+A 12.5% trimmed mean removes one observation from each tail, leaving
+
+10.0,10.1,10.2,10.2,10.3,10.4
+
+after removing 9.9 and 42.0. Its value is 10.2. The three estimators tell very different stories because the sample contains one extreme point.
+
+Robustness should not be reduced to "ignore outliers." If 42.0 is a legitimate observation from the target distribution, deleting it may discard real structure. Robust procedures instead control how much any small subset can dominate location estimation.
+
+Efficiency gives another dimension. Under an exact normal model, the sample mean has minimum variance among many regular unbiased estimators. The asymptotic variance of the sample median for normal data is about
+
+(pi/2) sigma^2/n,
+
+whereas the mean has variance sigma^2/n. Thus the median's asymptotic relative efficiency is 2/pi≈0.637. A well-tuned Huber estimator can retain around 95% Gaussian efficiency while bounding influence.
+
+The influence function formalizes local sensitivity. For a statistical functional T(F), contamination at point x gives
+
+F_epsilon=(1-epsilon)F+epsilon Delta_x.
+
+The influence function is
+
+IF(x;T,F)=lim_{epsilon->0}
+          [T(F_epsilon)-T(F)]/epsilon.
+
+For the mean, IF(x)=x-mu, unbounded in x. For the median under a continuous distribution with positive density f at median m,
+
+IF(x) = [1/(2f(m))] sign(x-m),
+
+up to the convention at x=m. Its magnitude is bounded.
+
+Breakdown point and influence answer different questions. Influence is infinitesimal: what does a tiny amount of contamination at x do? Breakdown is global: how much adversarial replacement is required before the estimator can be driven arbitrarily far? A procedure can have bounded local influence yet a lower-than-desired breakdown point depending on how scale and tuning are estimated.
+
+For a practical comparison, one should therefore report at least three properties: ideal-model efficiency, contamination sensitivity, and the assumptions made about the contamination mechanism. There is no universally best location estimator. The mean is excellent when tails are genuinely light and the model is appropriate; the median is highly resistant but less efficient under pure normality; trimmed means and Huber estimators occupy useful middle ground. Robust statistics makes that tradeoff explicit rather than pretending every observation should have unlimited leverage.

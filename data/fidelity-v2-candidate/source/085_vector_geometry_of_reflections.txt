@@ -1,0 +1,159 @@
+A reflection in Euclidean space is easiest to understand without coordinates. Let V be a real inner-product space and let H be a hyperplane through the origin with unit normal vector n. Every vector x decomposes uniquely as
+
+x = x_parallel + x_perp,
+
+where x_parallel lies in H and x_perp is parallel to n.
+
+Because n is a unit vector,
+
+x_perp = <x,n> n,
+
+and therefore
+
+x_parallel = x - <x,n>n.
+
+Reflection across H keeps the parallel component and reverses the perpendicular component:
+
+R_H(x)=x_parallel-x_perp.
+
+Substituting the decomposition,
+
+R_H(x)
+=x-<x,n>n-<x,n>n
+=x-2<x,n>n.
+
+Thus the reflection operator is
+
+R_H = I - 2 n \otimes n,
+
+where the rank-one operator n \otimes n maps x to <x,n>n.
+
+This formula is coordinate-free. If an orthonormal basis is later chosen and n is represented as a column vector, it becomes the familiar matrix
+
+R=I-2nn^T.
+
+Several properties follow immediately. First,
+
+R_H(n)=n-2<n,n>n=-n.
+
+Second, if x is in H then <x,n>=0, so
+
+R_H(x)=x.
+
+Therefore H is the +1 eigenspace and span{n} is the -1 eigenspace.
+
+Applying the reflection twice gives the identity. Indeed,
+
+R_H(R_H(x))
+=R_H(x-2<x,n>n).
+
+The inner product of the intermediate vector with n is
+
+<x-2<x,n>n,n>
+=<x,n>-2<x,n>
+=-<x,n>.
+
+Hence
+
+R_H(R_H(x))
+=x-2<x,n>n+2<x,n>n
+=x.
+
+So R_H^2=I.
+
+A reflection also preserves inner products. Write
+
+Rx=x-2<x,n>n,
+Ry=y-2<y,n>n.
+
+Then
+
+<Rx,Ry>
+=<x,y>
+-2<x,n><n,y>
+-2<y,n><x,n>
++4<x,n><y,n><n,n>.
+
+Since <n,n>=1 and <n,y>=<y,n>, the last three terms cancel, leaving
+
+<Rx,Ry>=<x,y>.
+
+Thus reflection preserves lengths and angles. In operator language, R is orthogonal.
+
+Now consider an affine hyperplane
+
+H_a={x : <x,n>=a}.
+
+This plane need not pass through the origin. To reflect x across H_a, choose any point p on the plane, for example p=a n when n is unit. Translate by -p, reflect across the parallel linear hyperplane, then translate back:
+
+R_{H_a}(x)
+=p+R_H(x-p).
+
+Using p=a n,
+
+R_{H_a}(x)
+=a n + (x-a n)-2<x-a n,n>n
+=x-2(<x,n>-a)n.
+
+Therefore
+
+R_{H_a}(x)=x-2(<x,n>-a)n.
+
+The signed distance from x to the plane is
+
+d_s(x,H_a)=<x,n>-a,
+
+so the formula has a simple geometric interpretation: move x twice the signed normal distance in the opposite direction.
+
+The composition of two reflections reveals rotations. In a two-dimensional plane, let H_1 and H_2 be lines through the origin meeting at angle theta. Reflect first across H_1 and then across H_2. The composition is a rotation by angle 2theta.
+
+This can be shown without committing immediately to coordinates. Restrict attention to the two-dimensional subspace spanned by normals to the lines. Choose a unit vector u along H_1 and let v be a unit vector obtained by rotating u through theta so that v lies along H_2. Reflection in H_1 changes the signed angular coordinate alpha to -alpha. Reflection in H_2 changes an angle beta relative to H_2 into -beta. A vector initially making angle alpha with H_1 first moves to -alpha, whose angle relative to H_2 is -alpha-theta. Reflecting around H_2 sends that relative angle to alpha+theta, so the final absolute angle is
+
+theta+(alpha+theta)=alpha+2theta.
+
+The result extends to higher dimensions. If two hyperplanes through the origin have normals n_1 and n_2, their reflections act trivially on the intersection H_1 cap H_2. All nontrivial action occurs in the two-dimensional plane spanned by n_1 and n_2. On that plane, the composition is a rotation by twice the angle between the hyperplanes, while vectors in their common intersection remain fixed.
+
+Parallel affine hyperplanes produce translations instead. Let
+
+H_a={x:<x,n>=a},
+H_b={x:<x,n>=b}.
+
+Reflect across H_a:
+
+R_a(x)=x-2(<x,n>-a)n.
+
+The inner product of this point with n is
+
+<R_a(x),n>
+=<x,n>-2(<x,n>-a)
+=2a-<x,n>.
+
+Now reflect across H_b:
+
+R_b(R_a(x))
+=R_a(x)-2(2a-<x,n>-b)n.
+
+Substitute R_a(x):
+
+=x-2(<x,n>-a)n-2(2a-<x,n>-b)n
+=x+2(b-a)n.
+
+Thus the composition is a translation by 2(b-a)n. Two parallel mirror operations create pure displacement; two intersecting mirror operations create rotation.
+
+Reflections can also be used to construct orthogonal transformations. The Cartan-Dieudonné theorem states that every orthogonal transformation of a finite-dimensional real inner-product space is a composition of finitely many reflections. Householder transformations in numerical linear algebra are exactly these hyperplane reflections.
+
+To map a nonzero vector x to a scalar multiple of the first basis vector, choose
+
+v=x-alpha e_1,
+
+where alpha is chosen with sign to avoid catastrophic cancellation. Normalize n=v/||v|| and define
+
+H=I-2 n\otimes n.
+
+Then Hx=alpha e_1. Repeating this idea zeroes entries below the diagonal during QR factorization.
+
+The same geometric operator therefore appears in pure geometry and numerical computation. In geometry it reflects points across a plane. In linear algebra it provides a stable way to transform vectors while preserving norms. The formula
+
+x -> x - 2<x,n>n
+
+contains both interpretations: isolate the normal component, reverse it, and leave every orthogonal direction untouched.

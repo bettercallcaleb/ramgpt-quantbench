@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ramgpt.invalid/schemas/artifact-record-v1.schema.json",
+  "title": "RAMGPT Artifact Record V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "artifact_id", "publisher", "repository", "filename",
+    "sha256", "bytes", "model_name", "model_family", "model_revision_claimed",
+    "model_revision_verified", "architecture", "tokenizer_identity",
+    "nominal_quant_type", "comparison_class", "imatrix_status",
+    "requantization_status", "provenance_grade", "provenance_evidence",
+    "download_source", "status"
+  ],
+  "properties": {
+    "schema_version": {"const": "artifact-record-v1"},
+    "artifact_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$"},
+    "publisher": {"type": "string", "minLength": 1},
+    "repository": {"type": "string", "minLength": 1},
+    "filename": {"type": "string", "minLength": 1},
+    "sha256": {"$ref": "#/$defs/sha256"},
+    "bytes": {"type": "integer", "minimum": 1},
+    "model_name": {"type": "string", "minLength": 1},
+    "model_family": {"type": "string", "minLength": 1},
+    "model_revision_claimed": {"type": ["string", "null"], "minLength": 1},
+    "model_revision_verified": {"type": ["string", "null"], "minLength": 1},
+    "architecture": {"type": "string", "minLength": 1},
+    "tokenizer_identity": {"type": "string", "minLength": 1},
+    "nominal_quant_type": {"type": "string", "minLength": 1},
+    "comparison_class": {"type": "string", "minLength": 1},
+    "imatrix_status": {"enum": ["NONE", "USED", "CLAIMED_NONE_UNVERIFIED", "UNKNOWN"]},
+    "requantization_status": {"enum": ["NOT_REQUANTIZED", "REQUANTIZED", "CLAIMED_NOT_REQUANTIZED_UNVERIFIED", "UNKNOWN"]},
+    "provenance_grade": {"enum": ["GRADE_A_VERIFIED_SAME_SOURCE", "GRADE_B_MODEL_MATCHED_SOURCE_UNCERTAIN", "GRADE_C_RECIPE_VARIANT", "GRADE_D_INELIGIBLE"]},
+    "provenance_evidence": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["kind", "description"],
+        "properties": {
+          "kind": {"enum": ["UPSTREAM_REVISION", "MODEL_METADATA", "TOKENIZER_METADATA", "GGUF_METADATA", "RECIPE", "IMATRIX", "REQUANTIZATION", "HASH", "OTHER"]},
+          "description": {"type": "string", "minLength": 1},
+          "source": {"type": ["string", "null"]},
+          "sha256": {"anyOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]}
+        }
+      }
+    },
+    "download_source": {"type": "string", "minLength": 1},
+    "status": {"enum": ["PLACEHOLDER", "DISCOVERED", "PREFLIGHT", "ELIGIBLE", "INELIGIBLE", "BENCHMARKED", "WITHDRAWN", "SUPERSEDED"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "supersedes_artifact_id": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

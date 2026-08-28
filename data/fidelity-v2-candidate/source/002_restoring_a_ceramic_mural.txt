@@ -1,0 +1,55 @@
+Day 1 — Condition survey
+
+The mural occupies the north wall of the old ticket hall, twelve meters long and just under three meters high. From the floor it reads as a continuous band of cobalt water, ochre hills, and white geometric birds, but the surface is actually assembled from 418 ceramic tiles of uneven size. The first task was not cleaning. It was learning how the wall had aged.
+
+Under raking light, the damage separated into several distinct problems. Forty-six tiles carried hairline glaze cracks that did not penetrate the body. Nine had edge losses. Three were fractured across their full width but remained in place. The mortar joints varied from hard gray Portland cement in the center to a softer lime-rich fill near the original door opening. Someone had patched a missing corner in the 1980s with painted plaster, matching the color from a distance but not the sheen. We marked every condition on a printed elevation and assigned temporary numbers with low-tack paper tabs fixed to the mortar, never the glaze.
+
+Day 3 — Tests before treatment
+
+The blue glaze is less stable than it looks. A cotton swab dampened with deionized water lifted only surface dirt, but a stronger alkaline solution left a faint matte spot on a sacrificial fragment kept in the archive. That ended the idea of aggressive cleaning. We prepared three small test windows in unobtrusive areas: dry microfiber, water with a neutral surfactant at low concentration, and a gelled water system designed to limit penetration into cracks. The gel gave the best control, especially along crazed glaze where liquid could otherwise migrate into the ceramic body.
+
+The team agreed on a principle that sounds obvious but is easy to forget once work begins: the mural does not need to look new. The goal is to recover legibility without erasing age. Dark deposits trapped in recessed joints can remain if removing them would require abrasion. A conservation treatment should solve a problem, not satisfy an instinct for uniform brightness.
+
+Day 6 — Removing the failed patch
+
+The plaster repair at the southwest corner had separated from the wall and was pushing against two adjacent tiles. We documented it in photographs before removal. The painted surface imitated the mural’s yellow field with broad brushstrokes, but the patch had no historic significance of its own and was physically damaging original material. Using small hand tools, we took it down in layers until the edge of the original setting bed became visible.
+
+Behind it we found the reason for the failure: a void almost five centimeters deep where the masonry substrate had crumbled. There was also a rusted steel fastener, probably left from a former notice board. Its expansion had cracked the surrounding fill. The fastener came out only after we isolated the neighboring tiles with thin protective shims. We cleaned loose debris with a low-suction micro-vacuum and consolidated the friable masonry before any replacement material was introduced.
+
+Day 10 — The fractured tiles
+
+Tile 227 was the most difficult decision. A diagonal break divided the image of a white bird, but both halves were still bonded to the wall. Removing them would allow a cleaner repair on the bench, yet extraction could damage the original setting bed and the tiles around it. We decided to leave the pieces in situ. A low-viscosity conservation adhesive was introduced into the fracture with a fine syringe, working from the lower edge upward. Excess was removed immediately from the glaze.
+
+The repair line remains visible at close range. That is intentional. We toned the fill only enough to prevent the bright raw ceramic body from interrupting the design. From three meters away, the bird reads as a complete shape; from thirty centimeters, the history of the break is still apparent.
+
+Day 14 — Color matching
+
+Replacing missing glaze is not the same as matching paint on a wall. The mural changes with angle because the glaze reflects light. A flat painted fill can match under one lamp and look dead under another. For the nine edge losses, we used a reversible fill material shaped slightly below the original surface. Color was applied in thin layers, with tiny variations rather than a single solid tone. On the cobalt tiles, the most convincing result came from a dark blue base followed by sparse warmer specks. The eye integrates the variation at normal viewing distance.
+
+We rejected one test because it was too perfect. The filled loss disappeared completely in photographs, which at first seemed like success. In person, however, the restoration pulled attention because its smoothness exceeded that of the surrounding worn glaze. We removed the coating and started again with a quieter surface.
+
+Day 18 — Joint problem
+
+The Portland cement repairs presented a structural question. They are harder than the ceramic edges and have already caused small chips where the wall moves. Complete removal would be risky because the cement grips the tile sides. Instead of chasing every later intervention, we selected only the joints showing active damage. A narrow channel was cut through the center of those joints, reducing their stiffness without levering against the tile. The channel was then refilled with a softer lime-based mortar colored to harmonize with the original joints.
+
+This selective approach leaves some gray cement visible. The treatment record explains why. Future conservators should know that what appears unfinished was a deliberate balance between removing harmful material and avoiding collateral loss.
+
+Day 22 — The replacement corner
+
+The missing southwest section could not be reconstructed from surviving fragments. Fortunately, an early black-and-white photograph shows the general pattern: two ochre bands meeting a field of blue. We made a replacement panel from removable infill rather than firing new ceramic tiles. The new section is visually compatible but distinguishable by material and by a hairline separation around its perimeter. It completes the large color masses without pretending to be original fabric.
+
+A visitor asked why we did not recreate the missing birds visible in the photograph. The answer is evidence. The image is too blurred to establish their exact shapes, and invention would cross the line from conservation into redesign. We restored what the documentation supports and left the uncertain detail absent.
+
+Day 27 — Cleaning complete
+
+The water-and-gel method removed a surprising amount of gray grime from the upper tiles, especially near old ventilation grilles. We worked in small zones so no area became dramatically brighter than its neighbors before we could judge the overall balance. Grease deposits at hand height required repeated short applications rather than stronger chemistry.
+
+The mural now reads differently from the entrance. The blue band is continuous again, but the surface still carries fine scratches, craze lines, and small stains. Those marks make the object legible as a seventy-year-old public artwork rather than a reproduction.
+
+Day 30 — Final documentation
+
+Today we removed the last temporary labels and photographed every tile under normal and raking light. The treatment map now distinguishes original ceramic, historic mortar, later cement repairs, new lime mortar, adhesive repairs, toned fills, and the removable southwest infill. Samples of the rejected coating and the old plaster patch were sealed and labeled for the archive.
+
+The most useful part of the final record may be the section titled “What was not done.” We did not replace all discolored joints. We did not overpaint intact glaze to make colors uniform. We did not remove stable cracks merely because they are visible. We did not reconstruct undocumented imagery.
+
+Conservation work is often described as bringing an artwork back. After a month with this mural, that phrase feels wrong. Nothing went backward. The wall still contains its installation, its repairs, its years of dirt, its cracks, and our own interventions. What we changed was the balance among those layers so the original design could be seen without deleting the evidence of time.

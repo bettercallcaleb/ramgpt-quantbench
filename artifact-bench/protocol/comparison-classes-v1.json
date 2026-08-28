@@ -1,0 +1,33 @@
+{
+  "schema": "ramgpt-artifact-comparison-classes-v1",
+  "protocol_version": "artifact-ranking-v1",
+  "classes": [
+    {
+      "comparison_class": "qwen3-8b-standard-q4-k-m-v1",
+      "model_family": "Qwen3",
+      "model_name": "Qwen3-8B",
+      "nominal_quant_type": "Q4_K_M",
+      "strict_class": true,
+      "allowed_provenance_grades": [
+        "GRADE_A_VERIFIED_SAME_SOURCE",
+        "GRADE_B_MODEL_MATCHED_SOURCE_UNCERTAIN"
+      ],
+      "requirements": {
+        "architecture_compatible": true,
+        "tokenizer_compatible": true,
+        "imatrix_status": "NONE",
+        "requantization_status": "NOT_REQUANTIZED",
+        "recipe_family": "STANDARD_LLAMA_CPP_Q4_K_M"
+      },
+      "excluded_recipe_markers": [
+        "IMATRIX",
+        "DYNAMIC",
+        "UD",
+        "IQ",
+        "REQUANTIZED",
+        "MATERIALLY_ALTERED"
+      ],
+      "candidate_artifacts": []
+    }
+  ]
+}

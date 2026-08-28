@@ -1,0 +1,91 @@
+Incident Postmortem: DNSSEC Validation Failure in Public Resolver Tier
+
+Summary
+
+On 2026-07-18 between 14:07 UTC and 14:41 UTC, approximately 18% of recursive DNS queries handled by the east resolver tier returned SERVFAIL for a subset of signed domains. Unsigned domains and most signed domains were unaffected. The incident was caused by an expired trust-chain intermediate record cached beyond the intended rollover window after a key-signing configuration change. The resolver software behaved according to its validation rules; the operational failure was in rollover sequencing and cache invalidation.
+
+Customer Impact
+
+Affected users could not resolve several customer-facing domains hosted under two signed zones. Browser behavior varied because clients retried against alternate resolvers. Internal monitoring also showed elevated HTTP error rates from services that depended on those names. The median failed interval per client was shorter than the full incident because some systems had cached valid A/AAAA records before the validation failure.
+
+Detection
+
+The first automated alert came from recursive-resolver SERVFAIL rate, which crossed 5% at 14:09 UTC. A synthetic HTTP check failed one minute earlier but initially appeared to be an application issue. The DNS dashboard separated NXDOMAIN from SERVFAIL but did not break SERVFAIL down by validation reason. Operators had to inspect resolver logs to see repeated messages of the form "validation failure: no valid DNSKEY chain".
+
+Timeline
+
+13:25 UTC — A planned DNSKEY rollover was started for zone group ZG-4.
+13:31 UTC — New KSK material was published and visible from authoritative servers.
+13:42 UTC — DS update at the parent was submitted.
+13:57 UTC — Deployment automation removed the previous KSK from one authoritative cluster after observing the new key locally.
+14:03 UTC — Several recursive resolvers still held a cached DNSKEY RRset containing only the old validated path.
+14:07 UTC — Cached DS and DNSKEY combinations began producing validation failures as TTL boundaries diverged.
+14:09 UTC — Resolver SERVFAIL alert fired.
+14:12 UTC — On-call identified that failures were concentrated in DNSSEC-signed zones.
+14:16 UTC — Authoritative DNS health was confirmed; responses were syntactically valid.
+14:20 UTC — Engineers compared DNSKEY and DS sets from multiple vantage points and found inconsistent trust-chain visibility.
+14:24 UTC — Previous KSK was republished on all authoritative clusters.
+14:28 UTC — New responses validated, but some recursive caches continued failing.
+14:31 UTC — Resolver cache flush was issued for the affected zones only.
+14:36 UTC — SERVFAIL rate fell below 1%.
+14:41 UTC — Incident declared mitigated.
+16:10 UTC — Full rollover sequence was paused pending review.
+
+Technical Background
+
+DNSSEC validation depends on a chain of signatures from the queried record toward a configured trust anchor. At a delegation boundary, the parent zone publishes a DS record that identifies a child-zone DNSKEY. During a key-signing-key rollover, old and new material must overlap long enough for caches at multiple layers to age out safely.
+
+The deployment logic used a local visibility check: once the new DNSKEY appeared on every authoritative endpoint and the parent DS change had been submitted, the old KSK could be removed after a fixed delay. That model ignored the possibility that recursive resolvers still held cached DS or DNSKEY RRsets from before the change.
+
+The relevant TTLs were not aligned. The DNSKEY RRset TTL was 21,600 seconds, while the parent DS TTL was 86,400 seconds. Because the old key was removed well before the maximum parent-side cache lifetime, some validators observed combinations that had no valid cryptographic chain.
+
+Why Only Some Resolvers Failed
+
+Recursive caches had different ages. A resolver that refreshed both DS and DNSKEY after the new material was globally visible validated successfully. A resolver holding the old DS but receiving a DNSKEY set without the old KSK could not construct a chain and returned SERVFAIL. Resolvers that had cached final A/AAAA responses before the rollover sometimes answered from cache without immediately repeating validation.
+
+This explains why failures appeared probabilistic from the application layer even though each resolver's behavior was deterministic with respect to its cache state.
+
+Root Cause
+
+The primary root cause was a rollover automation rule that treated authoritative publication and parent-update submission as sufficient evidence to retire the previous KSK. The procedure did not model the full TTL overlap required by downstream validating caches.
+
+Contributing Factors
+
+1. The DNSKEY and DS TTLs differed by a factor of four, but the rollover job used one fixed delay.
+2. The parent registry API acknowledged change submission, not global propagation.
+3. Resolver telemetry reported validation failures only as generic SERVFAIL counts.
+4. The pre-production test environment used short TTLs and therefore did not reproduce production cache overlap.
+5. The runbook described emergency republishing but did not specify targeted recursive cache invalidation.
+6. The deployment pipeline verified authoritative consistency but did not query independent validating resolvers.
+
+What Went Well
+
+The resolver fleet remained healthy and did not need process restarts. Authoritative servers continued answering and were not overloaded. Republish of the old KSK was possible without generating new key material. The team used targeted cache flushing instead of clearing entire resolver caches, limiting secondary load.
+
+What Went Poorly
+
+Initial triage focused on applications because the first visible symptom was HTTP failure. The DNS dashboard lacked reason-specific validation metrics. The rollover tooling had no state representing "parent propagation still within maximum cache lifetime." Operators also had no precomputed safe-removal timestamp.
+
+Corrective Actions
+
+Rollover automation will calculate an earliest-safe-retirement time from the maximum of relevant TTLs plus a propagation margin. A KSK cannot be removed until that timestamp passes and independent validators confirm both old and new paths during the overlap phase.
+
+The authoritative deployment pipeline will add validation queries from at least three external networks. Parent registry status will be treated as administrative acknowledgment only, not as propagation evidence.
+
+Resolver software already logs validation subreasons. Metrics extraction will now classify failures into categories such as expired signature, missing DNSKEY, DS mismatch, unsupported algorithm, and bogus delegation.
+
+Production-like DNSSEC tests will use realistic TTLs in a time-accelerated harness rather than simply lowering all TTLs to seconds. The test must include stale-cache states.
+
+Runbook Changes
+
+The incident runbook now begins by distinguishing:
+- authoritative answer failure;
+- transport failure;
+- ordinary negative response;
+- DNSSEC bogus response.
+
+For DNSSEC incidents, responders capture the DS, DNSKEY, RRSIG, and TTL state from both local and independent validating resolvers before changing records. Emergency restoration favors reintroducing previously trusted key material and waiting for propagation before aggressive cache operations.
+
+Lessons
+
+DNSSEC rollovers are distributed state transitions, not single DNS record edits. Correctness depends on what validators may still have cached, not only what authoritative servers currently publish. The failure occurred because automation reasoned about present authoritative state while the protocol required reasoning about all still-valid historical cache states.

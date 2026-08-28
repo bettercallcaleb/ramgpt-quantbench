@@ -1,0 +1,170 @@
+Incident Review: Metrics Cardinality Explosion
+
+Summary
+
+On 2026-08-02, the observability metrics backend experienced elevated ingestion latency, query timeouts, and memory pressure after a new application release introduced a request-specific identifier as a metric label. The label created millions of new time series within minutes.
+
+The incident did not originate from increased request volume. It was caused by a dramatic increase in series cardinality.
+
+Impact
+
+From 17:18 UTC to 18:06 UTC:
+- dashboard queries frequently timed out;
+- alert evaluation was delayed by up to nine minutes;
+- remote-write queues grew across several clusters;
+- two metrics-ingestion pods were OOM-killed;
+- unrelated teams lost reliable real-time visibility.
+
+Application traffic continued, but reduced observability increased operational risk.
+
+Detection
+
+The first alert was memory pressure in the ingestion tier. A second alert showed active-series count rising far above its daily envelope. Ingestion bytes increased only moderately, which initially appeared inconsistent with the memory spike.
+
+The distinction was important: many small unique series cost more indexing and metadata memory than a similar number of samples appended to existing series.
+
+Timeline
+
+17:03 — Version 6.41 of checkout-api deployed to 10% canary.
+17:11 — Canary expanded to 50%.
+17:16 — Release reached 100%.
+17:18 — Active-series growth accelerated.
+17:21 — Ingestion memory alert fired.
+17:24 — Query latency exceeded SLO.
+17:27 — On-call identified `request_context_id` among top newly created label names.
+17:30 — Checkout team confirmed the value was effectively unique per request.
+17:33 — Metrics relabel rule deployed to drop the offending label before ingestion.
+17:38 — New-series creation rate returned toward baseline.
+17:44 — Remote-write backlog stopped growing.
+17:51 — Two ingestion pods restarted with restored headroom.
+18:06 — Alert evaluation delay returned below one minute.
+19:20 — Temporary per-tenant series limit enabled for the application namespace.
+
+Root Cause
+
+A developer added the following metric dimension to HTTP request duration:
+
+http_request_duration_seconds{
+    method,
+    route,
+    status,
+    request_context_id
+}
+
+The intent was to correlate individual slow requests with logs. Metrics were the wrong data model for this purpose because `request_context_id` had extremely high cardinality.
+
+With one nearly unique value per request, each label combination generated a new time series instead of adding samples to a bounded set.
+
+Why Review Did Not Catch It
+
+The change passed unit and integration tests because functional metric emission was correct. Pre-production traffic volume was too small for cardinality growth to become obvious.
+
+The team's instrumentation review focused on metric names and semantic correctness, not on label-domain bounds.
+
+The observability platform also had no automated CI check rejecting obviously unbounded labels such as UUIDs.
+
+Technical Mechanics
+
+A time series is identified by metric name plus the complete label set. If a histogram has multiple buckets, every label combination can generate multiple related series.
+
+Suppose a histogram has 12 bucket boundaries plus count and sum, producing 14 series per label combination. If the stable dimensions yield 120 combinations, the histogram produces roughly 1,680 series.
+
+Adding a label with one million unique values does not add one million samples to those same series. It can multiply the combination space toward millions of distinct series, each with index and memory overhead.
+
+Immediate Mitigation
+
+We dropped `request_context_id` through ingestion relabeling rather than waiting for every application instance to redeploy.
+
+This stopped new high-cardinality series from entering the backend. Existing series aged out according to retention and head-block behavior.
+
+The application was then patched to remove the label at source.
+
+Correlation Alternative
+
+Per-request correlation belongs in logs and traces.
+
+The metric retains bounded labels:
+- route;
+- method;
+- status_class;
+- service;
+- region.
+
+Slow individual requests can be linked through exemplars or trace identifiers where supported, without making the trace ID a metric label.
+
+Guardrails
+
+1. Instrumentation Guidelines
+
+Labels must have a bounded and operationally meaningful domain. Examples of acceptable values include HTTP method, normalized route, deployment region, and finite status categories.
+
+Prohibited examples include:
+- user ID;
+- request ID;
+- session ID;
+- raw URL;
+- email;
+- arbitrary exception message;
+- timestamp.
+
+2. CI Cardinality Linting
+
+Instrumentation libraries will expose metric descriptors for testing. Static and dynamic checks flag labels whose sample values match UUIDs, high-entropy tokens, or raw paths.
+
+CI cannot prove boundedness in every case, but it can catch common mistakes.
+
+3. Runtime Series Budgets
+
+The metrics gateway will enforce tenant-level and metric-level limits on active series growth. Limits are safety boundaries, not capacity targets.
+
+When a tenant exceeds its allowed growth rate, the platform should reject or drop offending series with clear telemetry rather than exhaust shared infrastructure.
+
+4. Cardinality Dashboards
+
+New dashboards will show:
+- active series by tenant;
+- new series per second;
+- top metric names by series count;
+- top labels by distinct values;
+- churn rate;
+- ingestion memory per million active series.
+
+5. Release Comparison
+
+Deployments will be annotated on cardinality dashboards. A sudden series increase correlated with a release becomes easier to attribute.
+
+Alerting
+
+Absolute active-series thresholds are useful but can be too slow. We will also alert on rate of change:
+
+d(active_series)/dt
+
+and on series churn, because rapid creation/deletion can stress the system even when steady-state count remains moderate.
+
+Data Model Guidance
+
+Metrics answer aggregate questions over bounded dimensions. Logs capture discrete detailed events. Traces capture request execution paths.
+
+Trying to make metrics carry per-request identity destroys the aggregation property that makes metrics efficient.
+
+What Went Well
+
+Ingestion relabeling allowed the platform team to mitigate centrally. The application team quickly identified the source change. Log and trace systems remained healthy and provided enough request-level diagnostics after the metric label was removed.
+
+What Went Poorly
+
+Shared observability infrastructure had insufficient tenant isolation. Alert evaluation itself depended on the degraded metrics backend, reducing confidence during the incident. Capacity dashboards emphasized samples per second rather than active-series cost.
+
+Action Items
+
+- remove request_context_id from application instrumentation;
+- deploy high-cardinality label linting;
+- add active-series budgets per tenant;
+- add series-growth alerts;
+- document metric/log/trace field selection;
+- test backend degradation behavior under synthetic cardinality spikes;
+- isolate critical platform alerts from ordinary tenant query load.
+
+Lesson
+
+Metrics scale because many events collapse into a limited number of stable time series. High-cardinality labels reverse that compression. Observability design must therefore budget uniqueness, not only sample volume.

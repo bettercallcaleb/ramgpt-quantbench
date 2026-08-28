@@ -1,0 +1,63 @@
+{
+  "adapter": "qwen-v1",
+  "artifacts": [
+    {
+      "input_url": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF/resolve/419d4bf0b4841d3517a2a15a70465abdf655281c/Qwen3.8-27B-Q4_K_M.gguf",
+      "label": "bartowski",
+      "resolved_revision": "419d4bf0b4841d3517a2a15a70465abdf655281c",
+      "resolved_url": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF/resolve/419d4bf0b4841d3517a2a15a70465abdf655281c/Qwen3.8-27B-Q4_K_M.gguf"
+    },
+    {
+      "input_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/4ca720788d1e01f1bff70c033e0d0028fd02e502/Qwen3.8-27B-UD-Q4_K_XL.gguf",
+      "label": "unsloth-ud-q4-k-xl",
+      "resolved_revision": "4ca720788d1e01f1bff70c033e0d0028fd02e502",
+      "resolved_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/4ca720788d1e01f1bff70c033e0d0028fd02e502/Qwen3.8-27B-UD-Q4_K_XL.gguf"
+    }
+  ],
+  "benchmark_id": "qwen3-8-27b-bartowski-vs-unsloth-ud-q4-v1",
+  "cleanup_policy": "aggressive",
+  "execution_contract": {
+    "artifact_gpu_layers": -1,
+    "bootstrap": {
+      "replicates": 10000,
+      "resampling_unit": "independent segment",
+      "seed": 20260823
+    },
+    "flash_attention": true,
+    "fresh_context_each_segment": true,
+    "full_vocabulary_fp32_logits": true,
+    "hcdf_thresholds": [
+      1,
+      2,
+      4
+    ],
+    "kv_k_type": "F16",
+    "kv_v_type": "F16",
+    "n_batch": 512,
+    "n_ctx": 4096,
+    "n_ubatch": 512,
+    "placement_policy": "reference_partial_offload_artifact_full_gpu",
+    "positions_per_segment": 512,
+    "reference": "native BF16",
+    "reference_gpu_layers": 24,
+    "rql_version": 2,
+    "sampling": false,
+    "segments": 128,
+    "tokenizer_add_special": true,
+    "tokenizer_parse_special": false,
+    "total_positions": 65536,
+    "version": "QuantBench-V1-REFNGL24"
+  },
+  "llama_cpp_commit": "70adb1b4cea5ee39f867792c78dc59320921eda7",
+  "min_free_gib": 10.0,
+  "model": "Qwen/Qwen3.8-27B",
+  "quantization_label": "Q4_SIZE_MATCHED",
+  "reference_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+  "reference_vocabulary_size": 248320,
+  "resolved_reference_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "schema": "ramgpt-artifact-bench-run-spec-v1",
+  "start_time": "2026-08-27T21:22:05.357550+00:00",
+  "tool_versions": {
+    "python": "3.13.5"
+  }
+}

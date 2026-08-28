@@ -1,0 +1,49 @@
+The site-acceptance dialogue began beside a newly installed lithography support tool in a semiconductor facility. The vendor team had finished mechanical installation overnight, but the fab would not sign acceptance until utilities, interlocks, software, and process interfaces were verified.
+
+Fab engineer Chen opened the checklist. “Mechanical complete 不等于 site acceptance complete. We go subsystem by subsystem.” The vendor lead, Michael, agreed and asked whether facilities had released compressed dry air and chilled water.
+
+Facilities confirmed both were within specification. Chilled-water supply was 18.1°C, return 20.4°C, differential pressure stable. CDA dew point also passed. “Please record actual readings, not just ‘pass’,” Chen said. “以后如果 process drift，我们需要 installation baseline.”
+
+They moved to exhaust. The tool had two branches: general enclosure exhaust and a smaller process exhaust. The vendor’s HMI showed both as green. Fab facilities used an independent manometer and found process exhaust slightly below the contractual minimum.
+
+Michael checked the local damper. “Our sensor reads within range.” Chen replied: “你们 sensor 是 tool internal indication，acceptance spec references facility measurement point. Let’s reconcile, not argue green versus red.”
+
+They traced the difference to measurement locations. A flexible section between the two points created more pressure drop than expected. The system was still safe, but contractual criteria had not been met. Facilities adjusted the branch damper, and both readings entered range without starving neighboring equipment.
+
+Next came electrical verification. Breaker labels matched drawings, emergency-off circuits were tested, and UPS-backed control power survived a simulated utility interruption. One auxiliary monitor rebooted because it was connected to a convenience outlet rather than backed power. The vendor argued it was noncritical. Chen asked what happened if it rebooted during recipe execution.
+
+“It only displays environmental trend,” Michael said. “No control authority.” The fab accepted the non-UPS connection but updated documentation so operators would not mistake a blank monitor for process failure.
+
+Software integration was more complex. The fab’s host system expected equipment status through SECS/GEM. The tool connected successfully, but one state mapping differed: vendor `IDLE_READY` appeared as `IDLE` to the host. “Can production still dispatch?” asked automation. Yes, but maintenance dashboards lost the distinction between ready and waiting-for-condition.
+
+“Small semantic mismatch today becomes troubleshooting pain later,” Chen said. The teams updated the mapping table and reran state transitions.
+
+A Chinese technician noticed recipe names containing full-width punctuation were rejected by the tool. “我们有些 engineering recipe 用中文备注,” he said. The vendor software supported UTF-8 display but restricted recipe identifiers to ASCII. The distinction had never been documented.
+
+Rather than demand unrestricted names, the fab defined a naming rule: machine recipe ID stays ASCII and versioned; a separate description field may contain Chinese or English text. “Identifier 跟 human description 分开，actually cleaner,” the automation engineer said.
+
+At 11:20 they tested door and panel interlocks. Opening a service panel correctly inhibited motion. Closing it did not automatically restart. “Good. Recovery requires explicit operator action,” Chen said. One access door, however, generated an alarm only after a two-second debounce. The vendor explained that vibration had caused nuisance alarms during shipping tests.
+
+“Two seconds while dangerous motion continues?” safety asked. The tool’s hazardous motion stopped through a separate hardwired circuit in milliseconds; the delayed signal affected only the HMI alarm. Once that architecture was demonstrated, the debounce was accepted.
+
+After lunch, vibration measurements began. The tool sat near another piece of rotating equipment. Baseline floor vibration was within the installation requirement, but one narrow frequency peak appeared when the neighboring pump ramped speed. “Spec passes, but let's record this signature,” said the process engineer. If imaging performance later showed periodic artifacts, the team would have a reference.
+
+The vendor then ran a dry cycle. No product wafer was used. Motion axes homed, handlers transferred dummy carriers, sensors changed state, and host messages were logged. A vacuum pickup generated one intermittent retry. “One retry in twenty cycles may sound small,” Chen said, “but acceptance is exactly where we investigate it.”
+
+They inspected the pickup cup and found a tiny packaging residue on the surface. After cleaning, fifty repeated transfers completed without retry. The event stayed in the acceptance record rather than disappearing because it had been “fixed.”
+
+Chemical connections were not part of this particular tool, but the fab still verified labeling on all unused ports. One capped port had an old vendor label from factory testing. “Remove or mark not connected,” facilities requested. Ambiguous labels become dangerous years later when technicians no longer remember installation history.
+
+At 15:10 the conversation turned to remote support. The vendor wanted persistent outbound connectivity for diagnostics. Fab security policy allowed remote access only through an approved broker with session logging and explicit activation. Michael said continuous telemetry helped predictive maintenance.
+
+“可以 send health metrics through approved channel, but interactive remote session must be controlled,” security replied. They separated telemetry from remote-control access instead of treating “support connection” as one feature.
+
+A final failover test disconnected the host network. The tool continued its local safe state but queued several messages. When network returned, it sent buffered events with original timestamps. Automation verified no duplicate lot-start messages were generated.
+
+The acceptance list ended with three open items: update the exhaust measurement record, document recipe-ID character restrictions, and configure the approved remote-support pathway. None prevented controlled engineering use, but production release would wait until documentation closed.
+
+Chen summarized in bilingual shorthand: “Utilities pass with measured baseline; interlocks verified; GEM mapping corrected; dummy transfer stable after cleaning; network loss behavior okay; remote access 还没正式 close.”
+
+Michael signed the vendor section but not the final production-acceptance box. “Fair,” he said. “Site acceptance should mean the fab can operate and troubleshoot the tool under its own rules, not just that our installer can make it run.”
+
+The tool stood powered and quiet as the teams left. Installation had turned bolts, cables, utilities, software states, language conventions, security controls, and maintenance assumptions into one operating system. Acceptance meant those pieces agreed closely enough that future production would not depend on the people who happened to be present on installation day.

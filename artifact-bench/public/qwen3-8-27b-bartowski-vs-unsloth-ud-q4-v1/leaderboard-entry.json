@@ -1,0 +1,108 @@
+{
+  "badge": "RAMGPT_QUANTBENCH_VERIFIED",
+  "benchmark_id": "qwen3-8-27b-bartowski-vs-unsloth-ud-q4-v1",
+  "comparison_class": "OPEN_ARTIFACT_DOWNLOAD_RANK",
+  "execution_contract": {
+    "artifact_gpu_layers": -1,
+    "bootstrap": {
+      "replicates": 10000,
+      "resampling_unit": "independent segment",
+      "seed": 20260823
+    },
+    "flash_attention": true,
+    "fresh_context_each_segment": true,
+    "full_vocabulary_fp32_logits": true,
+    "hcdf_thresholds": [
+      1,
+      2,
+      4
+    ],
+    "kv_k_type": "F16",
+    "kv_v_type": "F16",
+    "n_batch": 512,
+    "n_ctx": 4096,
+    "n_ubatch": 512,
+    "placement_policy": "reference_partial_offload_artifact_full_gpu",
+    "positions_per_segment": 512,
+    "reference": "native BF16",
+    "reference_gpu_layers": 24,
+    "rql_version": 2,
+    "sampling": false,
+    "segments": 128,
+    "tokenizer_add_special": true,
+    "tokenizer_parse_special": false,
+    "total_positions": 65536,
+    "version": "QuantBench-V1-REFNGL24"
+  },
+  "geometry": {
+    "positions_per_segment": 512,
+    "segments": 128,
+    "total_positions": 65536
+  },
+  "model": "Qwen/Qwen3.8-27B",
+  "paired_uncertainty": {
+    "ci_95": [
+      0.002261641691757173,
+      0.003443154134059695
+    ],
+    "delta": 0.0029323990473626976,
+    "delta_definition": "mean_KL_bartowski - mean_KL_unsloth-ud-q4-k-xl",
+    "replicates": 10000,
+    "resampling_unit": "segment",
+    "seed": 20260823,
+    "segments": 128,
+    "winner_vs_all": [
+      {
+        "ci_95_high": 0.003443154134059695,
+        "ci_95_low": 0.002261641691757173,
+        "delta_definition": "other_mean_KL - winner_mean_KL",
+        "other": "bartowski",
+        "point_estimate_delta_kl": 0.0029323990473626976,
+        "replicates": 10000,
+        "resampling_unit": "segment",
+        "seed": 20260823,
+        "segments": 128,
+        "winner": "unsloth-ud-q4-k-xl"
+      }
+    ]
+  },
+  "primary_metric": {
+    "artifact_values": {
+      "bartowski": 0.010784265436292097,
+      "unsloth-ud-q4-k-xl": 0.007851866388929398
+    },
+    "direction": "lower_is_better",
+    "name": "mean KL(BF16 || artifact)",
+    "winner_artifact": "unsloth-ud-q4-k-xl",
+    "winner_mean_kl": 0.007851866388929398,
+    "winner_vs_runner_up_relative_reduction_percent": 27.191458376889987
+  },
+  "quantization_label": "Q4_SIZE_MATCHED",
+  "ramgpt_recommended": {
+    "awarded": false,
+    "status": "NOT_AWARDED"
+  },
+  "rankings": [
+    {
+      "artifact_sha256": "3f227079003add2511437e5b1e94812e363385225bf6a9b47b0054a72bc8b01e",
+      "changed_top1_count": 2798,
+      "mean_kl_bf16_to_artifact": 0.007851866388929398,
+      "publisher": "unsloth-ud-q4-k-xl",
+      "rank": 1
+    },
+    {
+      "artifact_sha256": "e103abf9d914d1d7b2f2592f055f2759a71195c350a01c135f71aaae86bca52b",
+      "changed_top1_count": 3298,
+      "mean_kl_bf16_to_artifact": 0.010784265436292097,
+      "publisher": "bartowski",
+      "rank": 2
+    }
+  ],
+  "status": "VERIFIED",
+  "strict_recipe_rank": {
+    "eligible": false,
+    "reason": "Strict Recipe Rank is ineligible because this open-artifact comparison does not establish controlled, equivalent quantization recipe provenance for every tested artifact. The result ranks exact downloadable artifacts, not quantization algorithms.",
+    "status": "INELIGIBLE"
+  },
+  "winner": "unsloth-ud-q4-k-xl"
+}

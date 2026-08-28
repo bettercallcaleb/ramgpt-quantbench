@@ -1,0 +1,191 @@
+Least-squares problems appear whenever an overdetermined linear system
+
+A x ≈ b
+
+must be solved in a way that minimizes the Euclidean residual
+
+||Ax-b||_2.
+
+If A is m by n with m>=n, the classical objective is
+
+min_x ||Ax-b||_2^2.
+
+A first derivation differentiates
+
+f(x)=(Ax-b)^T(Ax-b)
+    =x^T A^T A x - 2b^T A x + b^T b.
+
+Setting the gradient to zero gives the normal equations
+
+A^T A x = A^T b.
+
+If A has full column rank, A^T A is positive definite and therefore invertible, so formally
+
+x_hat=(A^T A)^(-1)A^T b.
+
+This formula is mathematically correct but is usually not the preferred numerical algorithm. Forming A^T A squares the condition number:
+
+kappa_2(A^T A)=kappa_2(A)^2.
+
+If A is moderately ill-conditioned, the loss of numerical accuracy can become serious.
+
+The QR decomposition avoids this. Suppose A has full column rank and
+
+A=QR,
+
+where Q is m by n with orthonormal columns,
+
+Q^T Q=I,
+
+and R is n by n upper triangular with nonzero diagonal. Then
+
+||Ax-b||_2^2
+=||QRx-b||_2^2.
+
+Extend Q to an orthogonal matrix [Q Q_perp]. Orthogonal transformations preserve Euclidean norm, so
+
+||QRx-b||_2^2
+=||Q^T(QRx-b)||_2^2
+ +||Q_perp^T(QRx-b)||_2^2
+=||Rx-Q^T b||_2^2
+ +||Q_perp^T b||_2^2.
+
+The second term does not depend on x. Therefore the least-squares solution satisfies
+
+R x_hat = Q^T b.
+
+Because R is triangular, x_hat is found by back substitution.
+
+This decomposition also exposes the geometry. The fitted vector is
+
+A x_hat = Q Q^T b,
+
+which is the orthogonal projection of b onto the column space of A. The residual is
+
+r=b-Ax_hat=(I-QQ^T)b,
+
+and it is orthogonal to every column of A:
+
+A^T r=0.
+
+That orthogonality is exactly the normal-equation condition written geometrically.
+
+There are several ways to compute QR. Classical Gram-Schmidt constructs an orthonormal basis by repeatedly subtracting projections, but in floating-point arithmetic it can lose orthogonality when the columns are nearly dependent. Modified Gram-Schmidt improves stability by updating each remaining vector immediately after every projection.
+
+Householder QR is generally more stable. A Householder reflector has the form
+
+H=I-2 vv^T/(v^T v).
+
+It is symmetric and orthogonal:
+
+H^T=H,
+H^T H=I.
+
+For a vector z, choose v so that Hz has zeros below its first coordinate. Applying a sequence of reflectors to A yields an upper triangular R:
+
+H_k ... H_2 H_1 A = R.
+
+The product Q=H_1 H_2 ... H_k need not be formed explicitly. To compute Q^T b, apply the same reflectors to b in the order used during factorization.
+
+Givens rotations offer another route. A Givens matrix acts only on two coordinates:
+
+G =
+[ c  s
+ -s  c ]
+
+with c^2+s^2=1. By choosing c and s appropriately, one selected matrix entry can be zeroed. Givens rotations are useful when A is sparse or when observations arrive incrementally because they can update an existing triangular factor without recomputing the whole decomposition.
+
+The singular value decomposition gives the most informative treatment, especially near rank deficiency. Let
+
+A=U Sigma V^T,
+
+where U and V have orthonormal columns and
+
+Sigma=diag(sigma_1,...,sigma_r)
+
+contains positive singular values
+
+sigma_1 >= ... >= sigma_r > 0.
+
+For full column rank n,
+
+x_hat=V Sigma^(-1) U^T b.
+
+This follows because
+
+||Ax-b||_2
+=||U Sigma V^T x-b||_2.
+
+Writing y=V^T x and projecting b onto the left singular vectors reduces the optimization to independent scalar problems. The component along u_j contributes
+
+sigma_j y_j ≈ u_j^T b,
+
+so
+
+y_j=(u_j^T b)/sigma_j.
+
+Small singular values amplify corresponding components of b. This explains ill-conditioning directly. If sigma_n is tiny, a small perturbation in b along u_n can create a large change in x_hat along v_n.
+
+For a rank-deficient A, the least-squares minimizer is not unique. The SVD produces the minimum-norm solution
+
+x_hat=A^+ b,
+
+where
+
+A^+=V Sigma^+ U^T
+
+is the Moore-Penrose pseudoinverse and Sigma^+ reciprocates only nonzero singular values.
+
+Suppose
+
+A =
+[1 1
+ 1 1.0001
+ 1 0.9999]
+
+and
+
+b =
+[2
+ 2.0001
+ 1.9999].
+
+The two columns of A are nearly identical. Normal equations create a matrix A^T A whose determinant is very small, making explicit inversion fragile. QR will solve the same problem more stably, while the SVD will reveal one large singular value and one tiny singular value, showing that the data identify the sum of the two coefficients much more strongly than their difference.
+
+Column pivoting strengthens QR when rank is uncertain. A pivoted factorization has the form
+
+A P = Q R,
+
+where P permutes columns so that well-determined directions are processed first. The diagonal magnitudes of R provide information about numerical rank. If
+
+|r_kk|
+
+drops sharply relative to |r_11|, the later columns may contribute little independent information.
+
+Weighted least squares fits naturally into the same framework. Given a positive-definite weight matrix W, minimize
+
+(Ax-b)^T W (Ax-b).
+
+If W=C^T C, then the problem becomes ordinary least squares for
+
+C A x ≈ C b.
+
+For diagonal W with entries w_i, C is simply diag(sqrt(w_i)). Thus QR or SVD can be applied after scaling each row by the square root of its weight.
+
+Regularized least squares can also be represented by augmentation. Ridge regression solves
+
+min_x ||Ax-b||_2^2 + lambda ||x||_2^2.
+
+This is equivalent to
+
+min_x ||
+[ A             ] x -
+[ sqrt(lambda)I ]     [ b ]
+                      [ 0 ]
+||_2^2.
+
+A QR decomposition of the augmented matrix solves the regularized problem without forming A^T A + lambda I explicitly.
+
+The decomposition to choose depends on the task. Normal equations are inexpensive and may be adequate for well-conditioned problems when high precision is unnecessary. Householder QR is the standard robust method for full-rank dense least squares. Pivoted QR helps diagnose rank. The SVD is more expensive but gives the clearest numerical-rank and conditioning information and supports minimum-norm solutions when rank is deficient.
+
+The key lesson is that these factorizations are not different formulas for the same inverse. They expose different structures. QR converts least squares into orthogonal projection plus triangular solution; the SVD decomposes the problem into independent singular directions; pivoting reveals which columns carry independent information. A good numerical solution uses that structure rather than mechanically evaluating (A^T A)^(-1)A^T b.

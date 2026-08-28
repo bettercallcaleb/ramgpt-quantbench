@@ -1,0 +1,9 @@
+[project]
+name = "ramgpt-quantbench"
+version = "0.1.0"
+description = "Artifact-level measurement and verification for quantized LLMs"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+
+[tool.pytest.ini_options]
+testpaths = ["artifact-bench/tests"]

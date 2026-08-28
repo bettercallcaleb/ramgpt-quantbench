@@ -1,0 +1,192 @@
+River Rescue Training Planning Meeting
+
+Participants:
+Dina — training coordinator
+Marcus — senior rescue technician
+Priya — safety officer
+Evan — logistics lead
+
+Dina: We need to finalize the two-day river rescue exercise for the new cohort. I want the plan to build skill without turning day one into a test of confidence.
+
+Marcus: Then we should keep the first water block entirely on shore and in the eddy. No live crossing until they have throw-bag accuracy, defensive swimming position, and ferry-angle basics.
+
+Priya: I agree, with one addition: we should distinguish "demonstrated" from "practiced." Watching Marcus throw a bag is not completion.
+
+Dina: Good. Let's define prerequisites for entering moving water.
+
+Marcus: Personal protective equipment fitted correctly, throw bag packed, whistle signals understood, self-rescue position demonstrated in shallow flow, and a dry-land explanation of downstream hazards.
+
+Evan: Do you want rope systems before swimming?
+
+Marcus: Only basic rope handling. Full mechanical advantage can wait. If we overload the morning with knots, they'll forget half of it by the time they're wet.
+
+Priya: The risk assessment lists water temperature at 11 to 13 Celsius for the training site. We need exposure limits.
+
+Dina: What do you recommend?
+
+Priya: Short rotations. No participant should remain immersed continuously. We schedule warm-up recovery, dry layers, and hot drinks. Anyone showing uncontrolled shivering, confusion, loss of hand function, or unusual fatigue is removed from water activity.
+
+Marcus: We also need to teach them to report cold early. New people often hide it because they don't want to look weak.
+
+Dina: Put that into the briefing: reporting cold is part of the safety protocol, not a failure.
+
+Evan: I can set up two heated shelters near the access road. One for routine rotation and one kept clear for medical assessment.
+
+Priya: Perfect. Keep the second one from becoming a gear room.
+
+Evan: I'll mark it.
+
+Dina: Let's walk through day one.
+
+Marcus: 08:00 check-in and equipment issue. 08:30 classroom overview of current, hydraulics, strainers, foot entrapment, low-head dams, and communication signals. Keep low-head dams conceptual; we are not simulating one.
+
+Priya: Explicitly state "avoidance hazard," not "skill station."
+
+Dina: Yes.
+
+Marcus: 09:30 shore-based throw bags. We need a progression: static target, moving target, then rescuer movement along shore.
+
+Evan: How many bags?
+
+Marcus: One per pair plus six spares. Wet ropes knot differently, and bags get tangled.
+
+Evan: We have twenty-four participants, so eighteen bags is comfortable.
+
+Dina: At 10:45?
+
+Marcus: Shallow-water movement at the inside bend. Demonstrate stable stance, side-step, and when not to stand in stronger flow.
+
+Priya: I want a hard rule around foot entrapment. In current above knee depth, participants do not attempt to stand after losing footing. They move to defensive or aggressive swim position depending on objective.
+
+Marcus: Agreed.
+
+Dina: Lunch at noon, then water block at 13:00.
+
+Marcus: Eddy entries and exits first. Then ferry angles with safety downstream.
+
+Priya: How many downstream safeties?
+
+Marcus: Two in water at the catch eddy, one shore rescuer with bag, and a boat downstream during all participant crossings.
+
+Evan: The inflatable rescue boat will be staged at the lower gravel bar.
+
+Priya: It needs an operator and backup, not just "boat available."
+
+Evan: I'll assign two qualified operators.
+
+Dina: What is the cancellation threshold?
+
+Priya: We need measurable criteria. Training is postponed if river gauge exceeds the approved level, lightning is within the established radius, visibility is poor enough to lose downstream observation, or water temperature plus air temperature produces exposure outside our cold-water protocol.
+
+Marcus: Add debris load. After heavy rain the gauge can look acceptable while branches are moving through the channel.
+
+Dina: Good. Who makes the call?
+
+Priya: Safety officer in consultation with training coordinator. Anyone can call an immediate stop for observed hazard.
+
+Marcus: That's important. No rank requirement for "stop."
+
+Dina: Day two should introduce team rescue systems.
+
+Marcus: Start with review, then tethered rescuer concepts on shore. I do not want trainees clipped into live-bait systems until they understand releasable attachment and backup.
+
+Priya: We have only six participants who are already qualified for tethered-contact rescue. The rest should observe that station and practice rope management outside the water.
+
+Dina: So the new cohort doesn't perform live bait.
+
+Marcus: Correct. They can learn shore-based vector pull, throw-bag rescues, and boat support. Live bait belongs in the advanced course.
+
+Evan: That reduces equipment load.
+
+Dina: I'd rather reduce risk than maximize equipment use.
+
+Marcus: After lunch, scenario rotations. Maybe three.
+
+Priya: Define the learning objective for each so scenarios don't become improvisational chaos.
+
+Marcus: Scenario one: swimmer misses an eddy. Objective is communication, downstream positioning, and throw-bag recovery.
+
+Dina: Scenario two?
+
+Marcus: Stranded person on a mid-channel gravel bar. Objective is planning and choosing a low-risk contact method. The correct answer may be "do not send a swimmer; use boat access."
+
+Priya: Excellent. We need scenarios where restraint is rewarded.
+
+Evan: Scenario three could be gear loss.
+
+Marcus: Better: two-person incident with one ambulatory and one fatigued. Objective is triage and resource allocation, not dramatic rescue.
+
+Dina: Let's make one subject an instructor actor who can report symptoms. No simulated unconscious casualty in moving water.
+
+Priya: Agreed. If we want an unconscious-person module, use shore or still-water training.
+
+Evan: For the gravel-bar scenario, do we pre-position a dummy?
+
+Marcus: No. Use a live actor in a location accessible by a safe wading route before the scenario starts, then close that route for the students. That way we don't put a mannequin where retrieval itself becomes a hazard.
+
+Priya: We'll need an instructor escape route that remains open.
+
+Dina: Document it on the site map.
+
+Evan: I can produce the map with:
+- primary access;
+- emergency vehicle access;
+- upstream boundary;
+- downstream safety line;
+- eddies;
+- known strainers;
+- boat launch;
+- warm shelters;
+- medical shelter;
+- muster point.
+
+Priya: Add the nearest reliable radio location. The lower bend has weak coverage.
+
+Marcus: Good point.
+
+Dina: Evaluation. I don't want a single pass/fail score based on the final scenario.
+
+Marcus: Use competencies:
+- hazard recognition;
+- communication;
+- throw accuracy;
+- self-rescue;
+- positioning;
+- team planning;
+- judgment.
+
+Priya: And safety behaviors should be non-compensatory. Someone cannot make up for ignoring a stop signal by being excellent at rope work.
+
+Dina: Exactly. A critical safety violation requires remediation before qualification.
+
+Evan: Are we qualifying them as river rescuers at the end?
+
+Marcus: No. We are qualifying them for the introductory operational role defined by the agency. The plan needs to name that role precisely.
+
+Dina: I'll add: "Completion does not authorize advanced tethered-contact rescue, technical boat operation, or incident command."
+
+Priya: Good.
+
+Marcus: We should also debrief decision-making, not only technique. Ask each team: What hazard changed your plan? What option did you reject? Why?
+
+Dina: That's strong. We'll use that after every scenario.
+
+Evan: What about photography for training records?
+
+Priya: Fine from shore if participants consent, but no photographer moves into an operational safety position. Safety zones take precedence over media.
+
+Dina: Last item: emergency response.
+
+Priya: If a participant becomes a real casualty, the training scenario stops immediately. Instructors switch to incident roles. One person contacts EMS, one controls the site, one manages patient care, and one meets responders at access.
+
+Marcus: Students should know that before training starts so they don't continue pretending the scenario is active.
+
+Dina: We'll state: "Real-world emergency overrides simulation without ambiguity."
+
+Evan: I think logistics are clear.
+
+Dina: Then I'll issue version 1.0 with the competencies, site map, cancellation criteria, cold-exposure protocol, and instructor assignments. No activity runs unless the named safety positions are staffed.
+
+Priya: That's the right gate.
+
+Marcus: And day one stays instructional, not performative. If they leave knowing when not to enter the river, we've taught one of the most important rescue skills.

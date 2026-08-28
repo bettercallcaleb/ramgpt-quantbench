@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ramgpt.invalid/schemas/leaderboard-v1.schema.json",
+  "title": "RAMGPT Artifact Leaderboard V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "comparison_class", "benchmark_version", "analysis_protocol_version", "primary_metric", "ranking_policy", "eligible_artifacts", "fidelity_ranking", "tie_groups"],
+  "properties": {
+    "schema_version": {"const": "leaderboard-v1"},
+    "comparison_class": {"type": "string", "minLength": 1},
+    "benchmark_version": {"type": "string", "minLength": 1},
+    "analysis_protocol_version": {"const": "artifact-ranking-v1"},
+    "primary_metric": {"const": "mean_KL_BF16_to_artifact"},
+    "ranking_policy": {"const": "lower_is_better_no_weighted_composite"},
+    "eligible_artifacts": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/artifactEntry"}},
+    "fidelity_ranking": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["artifact_id", "artifact_sha256", "mean_kl", "rank", "fidelity_tier", "provenance_grade", "decision_stability", "verification_status"],
+        "properties": {
+          "artifact_id": {"type": "string", "minLength": 1},
+          "artifact_sha256": {"$ref": "#/$defs/sha256"},
+          "mean_kl": {"type": "number", "minimum": 0},
+          "rank": {"type": "integer", "minimum": 1},
+          "fidelity_tier": {"type": "string", "pattern": "^(JOINT_)?FIDELITY_TIER_[1-9][0-9]*$"},
+          "provenance_grade": {"$ref": "#/$defs/provenanceGrade"},
+          "decision_stability": {"$ref": "#/$defs/decisionStability"},
+          "verification_status": {"enum": ["UNVERIFIED", "RAMGPT_QUANTBENCH_VERIFIED"]}
+        }
+      }
+    },
+    "tie_groups": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["tier", "artifact_ids", "basis"],
+        "properties": {
+          "tier": {"type": "string", "pattern": "^JOINT_FIDELITY_TIER_[1-9][0-9]*$"},
+          "artifact_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+          "basis": {"const": "STATISTICALLY_INDISTINGUISHABLE_ON_MEAN_KL"}
+        }
+      }
+    },
+    "created_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "provenanceGrade": {"enum": ["GRADE_A_VERIFIED_SAME_SOURCE", "GRADE_B_MODEL_MATCHED_SOURCE_UNCERTAIN", "GRADE_C_RECIPE_VARIANT", "GRADE_D_INELIGIBLE"]},
+    "artifactEntry": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "artifact_sha256", "publisher", "provenance_grade", "verification_status"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1}, "artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "publisher": {"type": "string", "minLength": 1}, "provenance_grade": {"$ref": "#/$defs/provenanceGrade"},
+        "verification_status": {"enum": ["UNVERIFIED", "RAMGPT_QUANTBENCH_VERIFIED"]}
+      }
+    },
+    "decisionStability": {
+      "type": "object", "additionalProperties": false,
+      "required": ["top1_flip_rate", "hcdfr_at_1", "hcdfr_at_2", "hcdfr_at_4", "max_flipped_bf16_margin", "flags"],
+      "properties": {
+        "top1_flip_rate": {"type": "number", "minimum": 0, "maximum": 1},
+        "hcdfr_at_1": {"type": "number", "minimum": 0, "maximum": 1},
+        "hcdfr_at_2": {"type": "number", "minimum": 0, "maximum": 1},
+        "hcdfr_at_4": {"type": "number", "minimum": 0, "maximum": 1},
+        "max_flipped_bf16_margin": {"type": "number", "minimum": 0},
+        "flags": {"type": "array", "uniqueItems": true, "items": {"enum": ["HIGH_MARGIN_STABILITY_EXCEPTION"]}}
+      }
+    }
+  }
+}

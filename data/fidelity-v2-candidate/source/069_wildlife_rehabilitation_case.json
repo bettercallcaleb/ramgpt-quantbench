@@ -1,0 +1,265 @@
+{
+  "case_id": "WR-26-1842",
+  "intake": {
+    "date": "2026-06-03",
+    "time": "17:42",
+    "species": {
+      "common_name": "red-tailed hawk",
+      "scientific_name": "Buteo jamaicensis",
+      "confidence": "high"
+    },
+    "age_class": "juvenile",
+    "sex": "undetermined",
+    "found_location": {
+      "habitat": "roadside field edge",
+      "municipality": "Northfield",
+      "coordinates_withheld": true
+    },
+    "presenter": "public",
+    "circumstances": "bird found grounded near utility pole after thunderstorm",
+    "initial_weight_g": 918,
+    "body_condition_score": 2.0,
+    "triage_priority": "urgent"
+  },
+  "initial_exam": {
+    "mentation": "quiet but responsive",
+    "hydration": "estimated 7 percent dehydrated",
+    "temperature_c": 40.1,
+    "heart_rate_bpm": 186,
+    "respiratory_rate_bpm": 34,
+    "findings": [
+      {
+        "system": "musculoskeletal",
+        "finding": "left wing held low; swelling over distal radius/ulna",
+        "severity": "moderate"
+      },
+      {
+        "system": "integument",
+        "finding": "abrasion over left carpus, 1.8 cm, superficial contamination",
+        "severity": "mild"
+      },
+      {
+        "system": "neurologic",
+        "finding": "pupils equal, menace present, no obvious ataxia",
+        "severity": "none"
+      },
+      {
+        "system": "oral",
+        "finding": "mucous membranes tacky, no plaques",
+        "severity": "mild"
+      }
+    ],
+    "diagnostic_plan": [
+      "whole-body radiographs",
+      "packed cell volume and total solids",
+      "lead screening"
+    ]
+  },
+  "diagnostics": [
+    {
+      "date": "2026-06-03",
+      "type": "radiograph",
+      "result": "closed non-displaced fracture distal left ulna; radius intact; no shoulder luxation"
+    },
+    {
+      "date": "2026-06-03",
+      "type": "pcv_ts",
+      "result": {
+        "pcv_pct": 34,
+        "total_solids_g_dl": 5.1
+      }
+    },
+    {
+      "date": "2026-06-03",
+      "type": "lead_screen",
+      "result": {
+        "blood_lead_ug_dl": 4.2,
+        "interpretation": "not elevated"
+      }
+    },
+    {
+      "date": "2026-06-10",
+      "type": "radiograph",
+      "result": "alignment maintained; early callus visible"
+    },
+    {
+      "date": "2026-06-24",
+      "type": "radiograph",
+      "result": "bridging callus present; fracture line less distinct"
+    },
+    {
+      "date": "2026-07-08",
+      "type": "radiograph",
+      "result": "advanced remodeling; suitable for progressive flight conditioning"
+    }
+  ],
+  "treatments": [
+    {
+      "start": "2026-06-03",
+      "end": "2026-06-04",
+      "category": "fluids",
+      "detail": "balanced crystalloid divided subcutaneous doses",
+      "dose": "25 mL/kg/day"
+    },
+    {
+      "start": "2026-06-03",
+      "end": "2026-06-08",
+      "category": "analgesia",
+      "detail": "meloxicam under veterinary direction",
+      "monitoring": "hydration and appetite"
+    },
+    {
+      "start": "2026-06-03",
+      "end": "2026-06-17",
+      "category": "immobilization",
+      "detail": "figure-eight wing wrap plus body wrap",
+      "checks": "twice daily skin and toe perfusion"
+    },
+    {
+      "start": "2026-06-03",
+      "end": "2026-06-07",
+      "category": "wound_care",
+      "detail": "abrasion flushed and covered with non-adherent dressing"
+    },
+    {
+      "start": "2026-06-18",
+      "end": "2026-07-07",
+      "category": "housing",
+      "detail": "small flight pen with restricted perch spacing"
+    },
+    {
+      "start": "2026-07-08",
+      "end": "2026-07-26",
+      "category": "conditioning",
+      "detail": "progressive creance-free flight sessions in 18 m enclosure"
+    }
+  ],
+  "daily_checkpoints": [
+    {
+      "date": "2026-06-04",
+      "weight_g": 930,
+      "appetite": "good",
+      "left_wing": "wrap stable",
+      "notes": "accepted thawed mouse overnight"
+    },
+    {
+      "date": "2026-06-06",
+      "weight_g": 944,
+      "appetite": "good",
+      "left_wing": "swelling reduced",
+      "notes": "abrasion clean and dry"
+    },
+    {
+      "date": "2026-06-10",
+      "weight_g": 956,
+      "appetite": "good",
+      "left_wing": "alignment stable",
+      "notes": "radiographs reviewed by veterinarian"
+    },
+    {
+      "date": "2026-06-14",
+      "weight_g": 969,
+      "appetite": "good",
+      "left_wing": "wrap changed",
+      "notes": "no pressure lesions"
+    },
+    {
+      "date": "2026-06-18",
+      "weight_g": 975,
+      "appetite": "good",
+      "left_wing": "wrap removed after veterinary exam",
+      "notes": "moved to restricted pen"
+    },
+    {
+      "date": "2026-06-24",
+      "weight_g": 988,
+      "appetite": "good",
+      "left_wing": "partial extension symmetric",
+      "notes": "bridging callus on imaging"
+    },
+    {
+      "date": "2026-07-01",
+      "weight_g": 1003,
+      "appetite": "good",
+      "left_wing": "full extension",
+      "notes": "short hops between low perches"
+    },
+    {
+      "date": "2026-07-08",
+      "weight_g": 1011,
+      "appetite": "good",
+      "left_wing": "remodeling adequate",
+      "notes": "cleared for flight conditioning"
+    },
+    {
+      "date": "2026-07-12",
+      "weight_g": 1007,
+      "appetite": "good",
+      "flight": "6 controlled lengths",
+      "notes": "slight fatigue after final pass"
+    },
+    {
+      "date": "2026-07-17",
+      "weight_g": 1015,
+      "appetite": "good",
+      "flight": "10 sustained lengths",
+      "notes": "level turns improving"
+    },
+    {
+      "date": "2026-07-22",
+      "weight_g": 1022,
+      "appetite": "good",
+      "flight": "14 sustained lengths",
+      "notes": "strong elevation gain to high perch"
+    },
+    {
+      "date": "2026-07-26",
+      "weight_g": 1018,
+      "appetite": "good",
+      "flight": "release assessment complete",
+      "notes": "silent flight, symmetric landing, rapid recovery"
+    }
+  ],
+  "nutrition": {
+    "diet_items": [
+      "mouse",
+      "day-old chick",
+      "quail portions"
+    ],
+    "supplementation": "none after balanced whole-prey intake established",
+    "feeding_policy": "minimal human visibility; food delivered behind visual barrier"
+  },
+  "behavioral_assessment": {
+    "human_avoidance": "strong",
+    "prey_response": "appropriate",
+    "perching": "normal",
+    "flight_endurance": "passed",
+    "landing_accuracy": "passed",
+    "conspecific_exposure": "visual only, no abnormal fixation"
+  },
+  "release": {
+    "date": "2026-07-28",
+    "time": "07:12",
+    "site_type": "open field with woodland margin",
+    "weather": {
+      "temp_c": 18,
+      "wind": "light southwest",
+      "precipitation": "none"
+    },
+    "method": "hard release",
+    "banding": "none",
+    "outcome": "departed strongly to northeast tree line; perched briefly then continued beyond visual range"
+  },
+  "case_review": {
+    "primary_diagnosis": "closed non-displaced left ulnar fracture with superficial carpal abrasion",
+    "suspected_cause": "blunt trauma, exact mechanism unknown",
+    "length_of_stay_days": 55,
+    "disposition": "released",
+    "quality_flags": [
+      "no habituation observed",
+      "analgesia and hydration documented",
+      "serial imaging supported progression"
+    ],
+    "follow_up": "no post-release tracking device fitted"
+  }
+}

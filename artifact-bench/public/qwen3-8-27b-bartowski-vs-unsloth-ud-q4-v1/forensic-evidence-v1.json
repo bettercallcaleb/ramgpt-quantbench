@@ -1,0 +1,107 @@
+{
+  "artifacts": {
+    "bartowski": {
+      "compact_evidence_sha256": "e06cb60e2c097ea51b99d89d08d8eaf3b4b01b9e4b0ca2842c59d183f57a65a9",
+      "hcdfr": {
+        "1": {
+          "eligible_positions": 42699,
+          "flips": 10,
+          "hcdf_rate": 0.00023419752219021523
+        },
+        "2": {
+          "eligible_positions": 31212,
+          "flips": 2,
+          "hcdf_rate": 6.407791874919902e-05
+        },
+        "4": {
+          "eligible_positions": 20801,
+          "flips": 1,
+          "hcdf_rate": 4.8074611797509735e-05
+        }
+      },
+      "max_flipped_bf16_margin": 4.730245590209961,
+      "mean_kl": 0.010784265436292097,
+      "top1_flips": 3298
+    },
+    "unsloth-ud-q4-k-xl": {
+      "compact_evidence_sha256": "6ba146e86f5419bc2cb109d2a9685fed1647201a40a24e7605a9f74be175c295",
+      "hcdfr": {
+        "1": {
+          "eligible_positions": 42699,
+          "flips": 16,
+          "hcdf_rate": 0.00037471603550434435
+        },
+        "2": {
+          "eligible_positions": 31212,
+          "flips": 6,
+          "hcdf_rate": 0.00019223375624759708
+        },
+        "4": {
+          "eligible_positions": 20801,
+          "flips": 3,
+          "hcdf_rate": 0.0001442238353925292
+        }
+      },
+      "max_flipped_bf16_margin": 7.740398406982422,
+      "mean_kl": 0.007851866388929398,
+      "top1_flips": 2798
+    }
+  },
+  "benchmark_id": "qwen3-8-27b-bartowski-vs-unsloth-ud-q4-v1",
+  "execution_contract": {
+    "artifact_gpu_layers": -1,
+    "bootstrap": {
+      "replicates": 10000,
+      "resampling_unit": "independent segment",
+      "seed": 20260823
+    },
+    "flash_attention": true,
+    "fresh_context_each_segment": true,
+    "full_vocabulary_fp32_logits": true,
+    "hcdf_thresholds": [
+      1,
+      2,
+      4
+    ],
+    "kv_k_type": "F16",
+    "kv_v_type": "F16",
+    "n_batch": 512,
+    "n_ctx": 4096,
+    "n_ubatch": 512,
+    "placement_policy": "reference_partial_offload_artifact_full_gpu",
+    "positions_per_segment": 512,
+    "reference": "native BF16",
+    "reference_gpu_layers": 24,
+    "rql_version": 2,
+    "sampling": false,
+    "segments": 128,
+    "tokenizer_add_special": true,
+    "tokenizer_parse_special": false,
+    "total_positions": 65536,
+    "version": "QuantBench-V1-REFNGL24"
+  },
+  "geometry": {
+    "positions_per_segment": 512,
+    "segments": 128,
+    "total_positions": 65536
+  },
+  "independent_validation": {
+    "sha256": "efbc57883c0d081dbf4c50e74cabd5397bd131a1c07505f4d611b6248dbd3a94",
+    "status": "PASS"
+  },
+  "methodology": {
+    "comparison_class": "OPEN_ARTIFACT_DOWNLOAD_RANK",
+    "primary_metric": "mean KL(BF16 || artifact), lower is better",
+    "reference": "native BF16",
+    "strict_recipe_rank": {
+      "eligible": false,
+      "reason": "Strict Recipe Rank is ineligible because this open-artifact comparison does not establish controlled, equivalent quantization recipe provenance for every tested artifact. The result ranks exact downloadable artifacts, not quantization algorithms."
+    }
+  },
+  "model": "Qwen/Qwen3.8-27B",
+  "quantization_label": "Q4_SIZE_MATCHED",
+  "reference_determinism": "Two complete independent captures were bitwise identical across 16,273,899,520 FP32 logits.",
+  "schema": "ramgpt-quantbench-forensic-evidence",
+  "schema_version": 1,
+  "source_verified_result_sha256": "ce24ffef3d5dbec4109f862e7ebae07865750298dc7d2bf8b3632066a05759d0"
+}

@@ -1,0 +1,48 @@
+The deviation call began at 07:30, before the morning lab shift started. A freezer alarm had occurred overnight in the sample-processing room, and one rack of research specimens spent approximately twenty-six minutes above the procedural alert temperature. No one yet knew whether the samples were compromised.
+
+Dr. Chen opened with a boundary: “这不是先决定报废还是保留。First we reconstruct what happened, then assess impact against the protocol and sample stability data.” The team included laboratory operations, quality, facilities, the study scientist, and the vendor supporting the monitoring system.
+
+The monitoring graph showed freezer air temperature rising from -78°C to -61°C before recovering. The freezer’s local display, however, never showed warmer than -68°C. “Why the difference?” asked quality. Facilities explained that the central probe sits near the upper rear compartment, while the freezer display uses an internal control sensor closer to the cooling coil.
+
+“So neither reading is automatically wrong,” Dr. Chen said. “它们测的是不同位置。” The team needed sample-specific evidence rather than choosing the friendlier number.
+
+The overnight technician had acknowledged the alarm remotely at 02:14 but did not enter the building because the system reported recovery within ten minutes. That decision followed the current call tree. The problem was that the alarm dashboard displayed current temperature prominently but made the peak excursion difficult to see. When the technician checked at 02:20, the value had already fallen.
+
+Quality asked whether acknowledging an alarm stopped escalation. The vendor confirmed that it did not, but a second notification rule required thirty continuous minutes above -65°C. Because the temperature dipped below that threshold briefly, the escalation timer reset. “这个 logic technically 按配置工作了，但可能跟我们的 risk expectation 不一致,” the quality lead noted.
+
+The lab team then mapped the affected rack. It contained aliquots from four studies, not one. Some samples were plasma awaiting biomarker analysis; others were extracted nucleic acid. Stability requirements differed. “Please don’t assess the rack as a single material,” the study scientist said. Each sample type would need its own exposure evaluation.
+
+They checked door logs. No badge entry occurred overnight, so the excursion was not caused by someone leaving the freezer open. Facilities reviewed compressor data and found a defrost-related pressure anomaly followed by automatic recovery. “We have a likely equipment event, but not confirmed root cause,” the engineer said.
+
+A junior scientist asked whether the samples themselves could have reached -61°C. Dr. Chen answered: “Not necessarily. Air changes faster than frozen material. 但我们不能 assume thermal inertia enough without data.” The group located a previous qualification study in which representative vials were instrumented during controlled power loss. That study could help estimate sample temperature lag.
+
+The qualification showed that center vials in a full rack warmed slowly, while edge vials responded faster. Unfortunately, the affected rack was only about sixty percent full. The configuration was not identical. Quality decided the study was supporting evidence, not direct proof.
+
+The team discussed opening the freezer to inspect rack position, then stopped. “Every door opening now adds another temperature disturbance,” operations said. They instead used inventory records and a photo from the previous day to confirm the rack was on the second shelf near the front.
+
+At 08:05, the freezer had remained below -75°C for forty minutes. The immediate containment decision was to leave the affected rack in place but electronically quarantine all sample IDs. No aliquot could be issued for testing until assessment was complete.
+
+“Quarantine in the system and a physical tag,” quality added. “双重标识。If someone scans a sample, LIMS should block it, but we don’t rely on software alone.”
+
+The call then turned to protocol wording. The SOP defined an “excursion” as storage temperature outside -80°C ±10°C for more than fifteen minutes. By that definition, the central probe exceeded -70°C for about eighteen minutes. The local sensor did not. Which sensor governed the SOP? The procedure did not say.
+
+“That is a documentation gap,” Dr. Chen said. “We cannot retroactively pick the sensor that gives the answer we prefer.” Until the SOP was clarified, quality would use the independently calibrated monitoring probe designated for environmental records.
+
+The study scientist reviewed material stability. Plasma samples for one assay had vendor data showing no measurable effect after a single thirty-minute exposure at -60°C. Extracted RNA was more sensitive, and the available data did not match the exact storage condition. Those aliquots would require scientific review and possibly exclusion.
+
+A bilingual note was drafted for the study teams: “Overnight freezer excursion under investigation; affected sample IDs quarantined; no confirmed sample loss at this time.” 中文版本刻意没有写“样本失效”，因为那还不是事实，也没有写“完全安全”，因为评估尚未完成。
+
+The vendor was asked to export raw alarm events, including values hidden by dashboard aggregation. Facilities opened a maintenance case for the compressor pressure anomaly. Quality opened a separate CAPA question about alarm escalation logic and sensor governance.
+
+At 08:40 the team summarized decisions:
+1. maintain electronic and physical quarantine;
+2. assess sample types separately;
+3. use the calibrated monitoring probe as the provisional governing record;
+4. compare exposure against applicable stability evidence;
+5. investigate freezer pressure anomaly;
+6. review alarm timer reset behavior;
+7. revise SOP to identify the authoritative storage-monitoring sensor.
+
+Dr. Chen ended with a reminder: “Deviation review 不是找一句话证明 samples okay，也不是看到 alarm 就全部 discard. We need traceable reasoning.”
+
+That distinction preserved both scientific value and quality discipline. The call did not erase uncertainty, but it converted uncertainty into specific evidence requests, containment actions, and decision criteria. Until those were resolved, the samples remained neither “good” nor “bad”—only controlled, documented, and under review.

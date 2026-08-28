@@ -1,0 +1,208 @@
+Rare Book Exhibition Editing Session
+
+Participants:
+Mara — exhibition editor
+Jonas — rare-books curator
+Irene — conservation specialist
+Luis — public-programs producer
+
+Mara: I want to start with the label for the 1683 navigation manual. The current text says, "This revolutionary book transformed maritime knowledge across Europe." That's too sweeping. Jonas, what can we actually support?
+
+Jonas: We can support that it was widely reprinted, that several port libraries acquired copies within thirty years, and that later manuals reused some of its diagrams. "Transformed maritime knowledge" sounds like a claim about impact we haven't demonstrated.
+
+Mara: Good. Then maybe: "First printed in 1683, the manual circulated widely among European port communities and influenced later instructional diagrams."
+
+Irene: I would soften "influenced" unless you want a footnote in the catalog. We have visual similarity, but not documentary evidence that the later engravers copied this edition.
+
+Jonas: Agreed. Say, "Later manuals used closely related diagrams." That's observable.
+
+Luis: Can we keep a sentence that tells visitors why they should care? Purely defensive language makes the object sound inert.
+
+Mara: Yes. We can add: "Its pages show how practical knowledge moved through print, annotation, and repeated use." That is interpretive, but it's grounded in the object.
+
+Irene: Repeated use is definitely visible. The fore-edge is darkened, three leaves have handling repairs, and there are grease traces near the foldout chart.
+
+Luis: That's much better. It gives me something to build into the audio guide.
+
+Mara: Next issue: the display sequence. Right now the navigation manual is followed by the physician's pocket book, then the ship log.
+
+Jonas: I originally grouped them by date.
+
+Mara: Visitors won't notice a six-year chronological difference. The stronger sequence is manual, ship log, then physician's notebook. Instruction, application, personal adaptation.
+
+Jonas: I can accept that, but the ship log is physically larger. Irene, does moving it affect the mount plan?
+
+Irene: The order itself is fine. The bigger problem is page opening. The current mount drawing opens the log to 140 degrees. I don't want more than 105. The sewing is already strained.
+
+Luis: At 105 degrees, will the annotations still be visible?
+
+Irene: The left-page marginal notes will. The right-page table will be partly hidden near the gutter.
+
+Mara: Which matters more to the argument?
+
+Jonas: The marginal notes. They show the officer correcting the printed astronomical table by hand.
+
+Mara: Then we privilege that. Can the label explicitly say the table continues into the gutter so visitors understand they're seeing a partial opening for conservation reasons?
+
+Irene: I'd rather not turn the label into a mount explanation. We can put a small conservation note in the digital companion.
+
+Luis: The audio guide can say, "The book is only partly opened to protect its binding." That's brief.
+
+Mara: Fine. Main label stays interpretive.
+
+Jonas: I have another concern. The section heading "Books at Work" sounds a bit cute.
+
+Luis: I like it because it's plain language.
+
+Mara: What are the alternatives?
+
+Jonas: "Practical Print in Motion."
+
+Luis: That sounds like a conference panel.
+
+Irene: "Used Books" is accurate but sounds like a shop.
+
+Mara: What is the section actually doing? We're showing books that accumulated evidence of use: notes, stains, repairs, inserts, substitutions.
+
+Jonas: Yes, and we're arguing that these traces are historical evidence, not damage to be ignored.
+
+Mara: Then "Evidence of Use."
+
+Luis: Clear, but not very inviting.
+
+Mara: "Marks of Use"?
+
+Irene: Better. It doesn't imply every mark is intentional.
+
+Jonas: I can live with "Marks of Use."
+
+Luis: So can I.
+
+Mara: Let's lock that unless another heading later forces a change.
+
+Irene: Before you lock labels, I need the light-level issue resolved. The dyed-paper almanac cannot stay at 50 lux for the full twelve-week run.
+
+Jonas: What's your maximum?
+
+Irene: Either 30 lux for the full run or 50 lux for six weeks, then rotate it with the facsimile.
+
+Luis: If we rotate, visitors in the second half see a reproduction.
+
+Mara: Does the original have to be in the main case?
+
+Jonas: It anchors the color argument.
+
+Irene: The facsimile reproduces the color reasonably, but the fluorescence is not identical.
+
+Luis: We could make the rotation part of the exhibition story. A small note: "Light can damage historic dyes; the original rests after six weeks."
+
+Mara: That risks turning conservation into spectacle, but in this case it actually explains why display decisions matter.
+
+Jonas: I'd support that. It makes the institution's choices visible.
+
+Irene: If we do that, the facsimile needs a different mount so nobody mistakes it for the original.
+
+Mara: Then write me a two-sentence conservation note by Friday. Plain language, no alarmist tone.
+
+Irene: Done.
+
+Luis: Moving to the school-group script: we're currently asking, "Why do you think someone wrote in this book?" That's too open for ten-year-olds staring at seventeenth-century handwriting.
+
+Mara: What's your alternative?
+
+Luis: "Look for a place where handwriting changes the printed page. What might the writer have been trying to correct, remember, or add?"
+
+Jonas: Better. It directs observation before interpretation.
+
+Irene: Please don't encourage children to lean over the glass trying to read tiny notes.
+
+Luis: Good point. We can provide a magnified reproduction on the rail.
+
+Mara: That also helps accessibility.
+
+Jonas: The reproduction should show enough surrounding page to preserve context. A crop of one word makes the handwriting look decorative instead of functional.
+
+Luis: I'll ask design for a full-quarter-page enlargement.
+
+Mara: Now, the physician's pocket book. The draft says the owner was "a rural doctor." Do we know that?
+
+Jonas: We know the owner signed the flyleaf, and tax records describe him as an apothecary. We have one later reference calling him "doctor," but it may be honorific.
+
+Mara: Then we cannot call him a doctor.
+
+Luis: "An apothecary who provided medical care"?
+
+Jonas: That is supportable. His account book includes charges for visits, bleeding, medicines, and setting a fracture.
+
+Irene: Are we displaying the account book too?
+
+Jonas: No, it's in the study room only.
+
+Mara: Then the exhibition label can't rely on visitors seeing that evidence. But the catalog can cite it.
+
+Luis: Could the label say, "The owner, an apothecary who also made medical visits..."?
+
+Jonas: Yes.
+
+Mara: Good. Another issue: we quote one recipe that uses a substance now recognized as toxic. We shouldn't make the historic practice sound quaint.
+
+Luis: The education team asked for a warning.
+
+Jonas: I don't want a modern safety disclaimer attached to every premodern recipe.
+
+Mara: We only need clarity. Something like: "Historic remedies could include ingredients now known to be dangerous; the recipe is shown as evidence of past practice, not as medical guidance."
+
+Irene: That's precise.
+
+Luis: And useful.
+
+Mara: Put it in the extended label, not the 60-word case label.
+
+Jonas: Agreed.
+
+Mara: Final pass on the opening panel. Current first sentence: "Books are often imagined as fixed containers of text." I think that's abstract.
+
+Luis: Start with an action: "Readers changed these books."
+
+Jonas: Strong.
+
+Irene: Then name the changes: wrote, folded, repaired, stained, inserted.
+
+Mara: Let's draft it aloud. "Readers changed these books. They wrote in margins, folded charts, repaired bindings, inserted scraps of paper, and carried volumes through workshops, ships, clinics, and homes."
+
+Luis: That's the exhibition.
+
+Jonas: Add that those changes are evidence.
+
+Mara: Second sentence: "Those traces allow us to study not only what books said, but how people used them."
+
+Irene: Good.
+
+Luis: I would stop there. Don't over-explain on the first panel.
+
+Mara: Agreed.
+
+Jonas: One last correction. The ship log label says the correction is in "red ink." Under magnification it looks brown now, and we haven't analyzed the pigment.
+
+Irene: Correct. Call it "a darker ink," not red.
+
+Mara: Good catch. This is exactly why we're doing the object-by-object pass.
+
+Luis: Can we establish a rule for the remaining labels? Every claim should be one of three things: visible in the object, supported by documentation, or clearly marked as interpretation.
+
+Mara: Yes. Let's write that at the top of the editorial checklist.
+
+Jonas: And if we can't tell which category a sentence belongs to, it probably isn't ready.
+
+Irene: Add a fourth category: conservation constraint. Sometimes what visitors see is shaped by what the object can safely tolerate.
+
+Mara: Good. Final checklist:
+1. What can the visitor directly observe?
+2. What is supported by documentary evidence?
+3. What is interpretation, and is it signaled as such?
+4. What display choices are constrained by conservation?
+5. Are we overstating certainty?
+
+Luis: That's clear enough to use across the rest of the exhibition.
+
+Mara: Then that's our working standard. I'll circulate revised labels tonight, and we reconvene after design has the new mounts and enlargements.

@@ -1,0 +1,47 @@
+The retrofit meeting took place in a hotel conference room that was itself slightly too cold. The irony was not lost on anyone. The owner wanted lower energy bills; the engineering consultant wanted a coherent building-controls upgrade; the contractor wanted a scope that could actually be priced.
+
+“先把目标说清楚,” Ms. Zhang, the owner’s representative, said. “We are not chasing a sustainability badge at any cost. We need measurable savings, guest comfort, and no long shutdown.” The consultant translated that into three technical targets: reduce annual HVAC energy, stabilize hot-water demand, and improve room-level control without replacing every fan-coil unit.
+
+The hotel had 286 rooms built in two phases. Half the rooms used newer digital thermostats; the older wing still relied on simple local controls. Occupancy data existed in the property-management system, but HVAC controls did not use it. “Empty room 也在 full comfort setpoint, sometimes for days,” the consultant said.
+
+The proposed design connected room occupancy status to temperature setback. The owner liked the idea until front-desk staff described real operations. “Check-out in PMS does not always mean room empty,” they explained. Housekeeping, maintenance, late luggage pickup, and room inspections may continue. 如果系统一 checkout 就把空调拉到 aggressive setback，员工会在闷热房间里工作。
+
+They changed the control logic from a single PMS event to a state model: guest occupied, turnover in progress, verified vacant, maintenance hold, and out of service. The thermostat could respond differently to each state.
+
+The contractor then raised network infrastructure. New controllers required reliable communication in guest corridors, but parts of the older wing had weak coverage. “If controls depend on Wi-Fi, then network upgrade belongs in the scope,” he said. The consultant preferred wired field buses for core HVAC functions and wireless only for noncritical telemetry. “不要让 guest Wi-Fi congestion 影响 room control.”
+
+Domestic hot water represented nearly as much savings potential as room HVAC. The existing circulation pumps ran continuously. Temperature measurements showed the return loop stayed hotter than necessary overnight. A variable-speed strategy could reduce pumping and heat loss, but there was a hygiene constraint: water temperatures still had to meet the hotel’s Legionella-control program.
+
+“Energy optimization cannot quietly change public-health assumptions,” the facility manager said. The team proposed scheduled high-temperature cycles, minimum return thresholds, and logging. Any new control sequence would be reviewed against water-safety procedures before commissioning.
+
+The owner asked for payback by measure. Lighting upgrades had a short, easy calculation. Controls savings were harder because they depended on occupancy and guest behavior. The consultant presented a calibrated baseline from twelve months of utility data, adjusted for weather and occupied room-nights.
+
+“这个 model 能不能拿来 guarantee savings?” Ms. Zhang asked. The consultant said not without agreeing on measurement and verification rules. If occupancy rose substantially next year, raw energy consumption could increase even while efficiency improved. The contract therefore needed a normalized performance metric.
+
+The contractor proposed a guaranteed-energy-savings package but added exclusions for major operational changes. The owner disliked broad exclusions. After discussion, they drafted specific adjustment variables: heating and cooling degree days, occupied room-nights, banquet-event hours, and any floor closures.
+
+Guest-room sensors became the most contentious item. One vendor proposed motion and door sensors to infer vacancy. The owner worried about privacy perception. “No cameras, obviously,” she said, “but even occupancy sensing needs clear limits.” The design would use binary room-presence signals only, with no detailed movement history retained beyond what controls required.
+
+The bilingual legal discussion became precise. “Data retention 是多久?” asked counsel. “The BMS doesn’t need a guest timeline. Current state plus short diagnostic logs should be enough.” The system architecture was revised so room-presence events were aggregated for operations rather than stored as long-term behavioral records.
+
+Installation sequencing had to protect revenue. The contractor initially assumed ten rooms per day, but housekeeping warned that working rooms could not be scattered randomly across occupied floors. The hotel preferred blocking contiguous room stacks, completing them, then returning them to inventory. That reduced coordination overhead but could slow progress.
+
+A sample-room installation was scheduled before final pricing. “Mockup room first,” said Ms. Zhang. “我们要看到 thermostat response、noise、wall patching、housekeeping impact 全部，不只是 controller 能不能连上。”
+
+The meeting moved to the central plant. Chiller replacement was not included in the current budget, but control modifications would change chilled-water flow. The mechanical engineer insisted on checking minimum-flow constraints. A software sequence that looked efficient could force existing equipment outside stable operating range.
+
+At 15:30 they discussed commissioning. The owner had experienced previous projects where systems were “commissioned” on opening day and never revisited. This time the specification would require seasonal verification: heating-mode testing in winter and cooling-mode testing in summer. “You cannot prove economizer logic in January,” the engineer said.
+
+Training also became contractual. Facility staff wanted editable setpoints and trend access, not a black-box vendor portal. “If every small change requires service call, operational savings disappear into maintenance fees,” the facility manager said. The vendor agreed to provide administrator training and point lists.
+
+The final negotiation did not reduce everything to one price. Instead, scope was divided into base work and options:
+- room-state integration and thermostat replacement;
+- domestic-hot-water pump control;
+- older-wing controls network;
+- central-plant sequence updates;
+- analytics dashboard;
+- extended measurement and verification.
+
+Ms. Zhang closed the meeting with a practical test: “If we save energy but guests complain, failure. If comfort improves but nobody can maintain the system, failure. If dashboard shows beautiful graphs but bills do not normalize downward, also failure.”
+
+The engineering team agreed. A hotel retrofit is not merely a collection of efficient devices. It is a negotiated operating system for a building that never fully stops: guests sleep while technicians work, kitchens and laundries shift loads, weather changes, rooms turn over, and business priorities remain active. The project would succeed only if the control logic fit that living schedule.

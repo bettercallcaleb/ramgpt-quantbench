@@ -1,0 +1,59 @@
+2026-01-14T15:42:03-05:00 level=INFO area=registration event=SHIFT_START lead=vol-112 expected_capacity=146 occupied=91
+2026-01-14T15:44:18-05:00 level=INFO area=supplies event=COUNT blankets=188 cots_available=49 hygiene_kits=72 water_cases=38
+2026-01-14T15:47:51-05:00 level=INFO area=weather event=UPDATE temp_c=-14 wind_chill_c=-24 snow_cm_h=1.8 advisory=extreme_cold
+2026-01-14T15:51:06-05:00 level=INFO area=registration event=ARRIVAL household=HH-551 persons=3 mobility_assistance=false pet=false assigned_zone=B
+2026-01-14T15:53:22-05:00 level=INFO area=registration event=ARRIVAL household=HH-552 persons=1 mobility_assistance=true pet=false assigned_zone=A
+2026-01-14T15:54:11-05:00 level=INFO area=accessibility event=COT_ASSIGN person_ref=HH-552-1 cot=AC-07 location=A-12 clearance_m=1.2
+2026-01-14T15:58:42-05:00 level=INFO area=transport event=BUS_ARRIVAL bus=SH-3 origin=Central_Library passengers=17
+2026-01-14T16:02:55-05:00 level=INFO area=registration event=BULK_CHECKIN transport=SH-3 persons=17 zones="B,C"
+2026-01-14T16:08:09-05:00 level=WARN area=facilities event=DOOR_CLOSER_FAULT door=west_entry symptom="does not latch in wind" action=staff_monitor
+2026-01-14T16:09:26-05:00 level=INFO area=facilities event=WORK_ORDER id=F-208 door=west_entry priority=high contractor=city_building_ops
+2026-01-14T16:13:44-05:00 level=INFO area=food event=MEAL_SERVICE_START menu="lentil_stew,bread,fruit" servings_ready=160
+2026-01-14T16:17:02-05:00 level=INFO area=medical event=ASSESSMENT case=M-021 complaint="cold exposure, numb fingers" disposition=warming_observation
+2026-01-14T16:21:57-05:00 level=INFO area=medical event=ASSESSMENT case=M-022 complaint="missed routine medication" action=pharmacy_call disposition=stable
+2026-01-14T16:25:30-05:00 level=INFO area=occupancy event=COUNT occupied=119 capacity=146 available=27
+2026-01-14T16:28:10-05:00 level=WARN area=supplies event=LOW_STOCK item=hygiene_kits count=28 threshold=30
+2026-01-14T16:29:44-05:00 level=INFO area=logistics event=RESUPPLY_REQUEST request=R-330 items="hygiene_kits:80,socks:120,gloves:80" source=warehouse_north
+2026-01-14T16:34:18-05:00 level=INFO area=transport event=SHUTTLE_DEPART shuttle=VAN-2 destination=Transit_Hub seats=8 purpose=pickup
+2026-01-14T16:41:33-05:00 level=INFO area=security event=ROUNDS round=SEC-04 exits_clear=true stairwells_clear=true issues=0
+2026-01-14T16:46:27-05:00 level=INFO area=food event=DIET_REQUEST ref=HH-559 allergy=peanut action="separate sealed meal issued"
+2026-01-14T16:50:05-05:00 level=INFO area=registration event=ARRIVAL household=HH-561 persons=5 mobility_assistance=false pet=true assigned_zone=C
+2026-01-14T16:50:36-05:00 level=INFO area=animal_support event=PET_INTAKE household=HH-561 species=dog crate=P-09 vaccination_status=owner_reported
+2026-01-14T16:55:12-05:00 level=WARN area=occupancy event=THRESHOLD occupied=132 capacity=146 percent=90.4 action=prepare_overflow
+2026-01-14T16:56:40-05:00 level=INFO area=coordination event=OVERFLOW_CONTACT site=East_Recreation_Centre status=standby capacity=80 activation_time_min=35
+2026-01-14T17:03:58-05:00 level=INFO area=logistics event=RESUPPLY_ETA request=R-330 eta=2026-01-14T17:32:00-05:00 vehicle=WH-18
+2026-01-14T17:08:19-05:00 level=INFO area=medical event=DISPOSITION case=M-021 status=improved release_to=shelter_area
+2026-01-14T17:14:41-05:00 level=INFO area=facilities event=TEMP_CHECK zone=A temp_c=20.8 zone=B temp_c=20.1 zone=C temp_c=19.6
+2026-01-14T17:20:03-05:00 level=INFO area=registration event=DEPARTURE household=HH-545 persons=2 destination=family_pickup
+2026-01-14T17:22:44-05:00 level=INFO area=occupancy event=COUNT occupied=137 capacity=146 available=9
+2026-01-14T17:24:17-05:00 level=WARN area=coordination event=OVERFLOW_ACTIVATE site=East_Recreation_Centre transfer_after=145
+2026-01-14T17:28:05-05:00 level=INFO area=registration event=ARRIVAL household=HH-567 persons=4 mobility_assistance=false pet=false assigned_zone=C
+2026-01-14T17:30:21-05:00 level=INFO area=occupancy event=COUNT occupied=141 capacity=146 available=5
+2026-01-14T17:33:02-05:00 level=INFO area=logistics event=RESUPPLY_ARRIVAL request=R-330 vehicle=WH-18
+2026-01-14T17:34:47-05:00 level=INFO area=supplies event=RECEIVE hygiene_kits=80 socks=120 gloves=80 receiver=vol-088
+2026-01-14T17:36:11-05:00 level=INFO area=supplies event=COUNT hygiene_kits=103 socks=164 gloves=121
+2026-01-14T17:39:55-05:00 level=INFO area=facilities event=WORK_ORDER_UPDATE id=F-208 status=technician_on_site
+2026-01-14T17:43:29-05:00 level=INFO area=registration event=ARRIVAL household=HH-569 persons=6 mobility_assistance=false pet=false assigned_zone=overflow_transfer
+2026-01-14T17:44:08-05:00 level=INFO area=transport event=TRANSFER_QUEUE household=HH-569 persons=6 destination=East_Recreation_Centre
+2026-01-14T17:47:33-05:00 level=INFO area=transport event=BUS_ASSIGN bus=SH-5 destination=East_Recreation_Centre seats=22
+2026-01-14T17:51:44-05:00 level=INFO area=coordination event=STATUS primary_occupied=141 primary_capacity=146 overflow_open=true overflow_occupied=0
+2026-01-14T17:56:02-05:00 level=INFO area=food event=MEAL_SERVICE_END servings_issued=138 servings_remaining=22
+2026-01-14T18:01:28-05:00 level=INFO area=weather event=UPDATE temp_c=-16 wind_chill_c=-27 snow_cm_h=2.4 road_status=poor
+2026-01-14T18:05:16-05:00 level=WARN area=transport event=SHUTTLE_DELAY shuttle=VAN-2 reason=road_conditions delay_min=18
+2026-01-14T18:11:03-05:00 level=INFO area=medical event=ASSESSMENT case=M-023 complaint="mild asthma symptoms" action="own inhaler used" disposition=monitor
+2026-01-14T18:15:47-05:00 level=INFO area=security event=ROUNDS round=SEC-05 exits_clear=true stairwells_clear=true issues=0
+2026-01-14T18:20:12-05:00 level=INFO area=facilities event=WORK_ORDER_UPDATE id=F-208 status=temporary_repair_complete detail="closer arm replaced; recheck after 2h"
+2026-01-14T18:24:39-05:00 level=INFO area=transport event=TRANSFER_DEPART bus=SH-5 persons=18 destination=East_Recreation_Centre
+2026-01-14T18:31:15-05:00 level=INFO area=coordination event=OVERFLOW_STATUS site=East_Recreation_Centre occupied=18 capacity=80
+2026-01-14T18:36:22-05:00 level=INFO area=registration event=ARRIVAL household=HH-574 persons=2 mobility_assistance=false pet=false assigned_zone=overflow_transfer
+2026-01-14T18:40:06-05:00 level=INFO area=transport event=TRANSFER_QUEUE household=HH-574 persons=2 destination=East_Recreation_Centre
+2026-01-14T18:45:00-05:00 level=INFO area=occupancy event=COUNT primary_occupied=139 primary_capacity=146 overflow_occupied=18
+2026-01-14T18:52:18-05:00 level=INFO area=medical event=FOLLOWUP case=M-023 symptoms=resolved disposition=shelter_area
+2026-01-14T19:00:00-05:00 level=INFO area=coordination event=HOURLY_SUMMARY arrivals=58 departures=10 transfers=18 medical_cases=3 open_facility_issues=0
+2026-01-14T19:08:41-05:00 level=INFO area=food event=EVENING_SNACK_START items="tea,oatmeal_bars,bananas"
+2026-01-14T19:14:27-05:00 level=INFO area=facilities event=GENERATOR_TEST result=pass transfer_time_s=7.4 fuel_pct=82
+2026-01-14T19:22:56-05:00 level=INFO area=security event=INCIDENT report=S-014 type=verbal_dispute injury=false action=deescalated
+2026-01-14T19:24:10-05:00 level=INFO area=security event=INCIDENT_CLOSE report=S-014 parties_separated=true police_required=false
+2026-01-14T19:31:08-05:00 level=INFO area=weather event=UPDATE temp_c=-17 wind_chill_c=-29 snowfall=moderate forecast="conditions improve after 23:00"
+2026-01-14T19:45:00-05:00 level=INFO area=occupancy event=COUNT primary_occupied=137 primary_capacity=146 overflow_occupied=22
+2026-01-14T19:52:03-05:00 level=INFO area=shift event=HANDOVER incoming_lead=vol-203 outgoing_lead=vol-112 priorities="weather monitoring; overflow transfers; door repair recheck"

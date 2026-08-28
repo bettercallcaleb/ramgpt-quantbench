@@ -1,0 +1,97 @@
+Service Evaluation Report: Mobile Dental Clinic Route Review
+
+Overview
+
+The county mobile dental clinic operates a two-chair vehicle that visits rural schools, community centers, long-term care sites, and small towns without a resident dentist. The service was created to reduce travel barriers for preventive and basic restorative care. After eighteen months of operation, the health department reviewed whether the current route uses clinical time efficiently and reaches residents with the greatest access barriers.
+
+The evaluation examined appointment records, travel time, cancellations, procedure mix, referral completion, vehicle downtime, and patient feedback across 64 service days. Staff interviews were used to interpret workflow problems but were not treated as substitutes for service data.
+
+Current route
+
+The clinic follows a four-week repeating cycle with twelve regular stops. Distances between the depot and service sites range from 18 to 146 kilometers. Some communities receive a full day every four weeks; smaller sites receive a half day every eight weeks. The schedule was initially designed using population size and requests from local organizations rather than observed appointment demand.
+
+That approach succeeded in establishing geographic coverage but produced uneven utilization. Several distant sites consistently fill every appointment and maintain waitlists. Two closer stops average fewer than 60 percent of available chair slots despite repeated outreach.
+
+Patient profile
+
+Children account for 46 percent of visits, adults 37 percent, and older adults 17 percent. The most common services are examinations, radiographs, scaling, fluoride application, simple restorations, and temporary treatment for urgent pain. Procedures requiring complex surgery, advanced imaging, or extensive laboratory support are referred to fixed clinics.
+
+Many adult patients report delaying care because of travel cost, lack of paid time off, or difficulty finding a provider accepting new patients. Among older adults seen at long-term care sites, mobility and transportation are dominant barriers.
+
+Utilization by stop
+
+The three highest-demand locations are Pine Crossing School, West Valley Community Centre, and Lake Junction. Each filled more than 92 percent of bookable time. Pine Crossing also had the lowest cancellation rate because school staff coordinated student attendance and consent forms in advance.
+
+By contrast, Northgate Hall and Glen Orchard filled 54 and 57 percent of available slots. Both sites are within thirty kilometers of the county’s largest town, where three fixed dental practices operate. Interviews suggest the mobile clinic is useful there for uninsured residents, but total local access need is lower than originally estimated.
+
+Travel burden
+
+The route devotes approximately 17 percent of staff duty time to driving and vehicle setup. Travel is not inherently wasteful because reaching remote areas is the program’s purpose. The important distinction is between necessary access travel and avoidable routing inefficiency.
+
+On six reviewed days, the vehicle returned to the depot after a distant morning stop before traveling outward again to an afternoon site. Reordering those stops could save 40 to 70 kilometers per day without reducing service.
+
+Weather also matters. Winter travel to Ridge Settlement crosses a road that closes intermittently during blowing snow. Three clinic days were cancelled for road conditions. The current schedule offers no protected replacement date, so patients may wait another eight weeks.
+
+Appointment flow
+
+Clinical utilization depends heavily on work completed before the vehicle arrives. Sites that verify health histories, consent, and contact information in advance have shorter gaps between patients. At lower-performing sites, staff often spend chair time calling guardians or resolving incomplete forms.
+
+The evaluation therefore separates “appointment demand” from “operational readiness.” A full waiting list does not guarantee efficient use of the mobile unit if required information is unavailable.
+
+Cancellations and no-shows
+
+Overall no-show rate was 13 percent, but variation was substantial. School-based programs averaged below 6 percent. Open community appointments averaged 19 percent. Reminder calls improved attendance when contact information was accurate.
+
+The program currently books one patient per time slot and avoids deliberate overbooking because some procedures run longer than expected. A more flexible approach would maintain a short same-day standby list at larger sites rather than scheduling more people than can be treated.
+
+Referral completion
+
+The mobile clinic referred 184 patients for services it could not provide. Only 58 percent had documented completion within three months. Completion was highest for children referred through school programs and lowest for uninsured adults needing endodontic or surgical treatment.
+
+This is a significant limitation. Identifying disease without a practical pathway to definitive care can improve awareness without resolving the underlying condition. The mobile program should measure referral completion as part of service effectiveness, not as activity occurring outside its responsibility.
+
+Vehicle reliability
+
+The clinical vehicle experienced four unscheduled service interruptions. Two involved the onboard compressor, one involved a water-system pump, and one involved the wheelchair lift. Total lost clinical time was 3.5 days. Preventive maintenance records were complete, but spare parts for the compressor required out-of-region delivery.
+
+The department should maintain critical spares for components whose failure disables both dental chairs. This is especially important because rescheduling a mobile clinic day affects an entire community, not just a single appointment.
+
+Patient feedback
+
+Survey responses were strongly positive regarding convenience and staff communication. Rural patients repeatedly cited avoiding a long drive as the main benefit. Negative responses focused on limited treatment scope and uncertainty about when the clinic would return.
+
+Several patients assumed the mobile service could provide crowns or complex extractions because they associated the vehicle with a complete dental office. Pre-visit communication should explain the service range more clearly.
+
+Route redesign options
+
+The evaluation recommends replacing the rigid four-week cycle with three service tiers.
+
+Tier A locations would receive frequent scheduled visits because they combine high demand, high travel barriers, and strong operational readiness. Pine Crossing, West Valley, Lake Junction, and Ridge Settlement meet these criteria.
+
+Tier B locations would receive regular but less frequent service, with visit frequency adjusted based on waitlist and utilization.
+
+Tier C locations near fixed dental capacity would move to periodic targeted clinics focused on uninsured or priority groups rather than general appointments.
+
+This model would preserve geographic presence while shifting clinical days toward demonstrated need.
+
+Winter contingency
+
+Ridge Settlement and one other weather-sensitive site should receive paired winter dates: a primary service day and a reserved backup window. The backup would be released for other work if not needed. This creates some scheduling inefficiency but reduces the risk of an eight-week gap after weather cancellation.
+
+Referral navigation
+
+A part-time referral coordinator should track patients needing services beyond the mobile unit’s scope. The role would identify providers, assist with eligibility programs, and confirm completion where patients consent. Priority should be given to urgent conditions and children.
+
+Performance measures
+
+Future reporting should move beyond visit counts. Recommended indicators are chair utilization, filled appointment rate, no-show rate, travel hours per clinical hour, waitlist length, urgent-pain resolution, referral completion, cancelled service days, and proportion of patients reporting transportation barriers.
+
+Equity should be reported geographically. A route can appear productive while underserving a small remote population whose travel burden is unusually high.
+
+Recommendation
+
+Adopt the tiered route for a six-month pilot. Reassign two low-utilization general clinic days per cycle to high-demand remote locations. Establish same-day standby lists, create winter backup dates for the most weather-sensitive stop, and begin structured referral follow-up.
+
+The mobile clinic should not be judged by whether every chair is occupied every minute. Some travel and setup are intrinsic to delivering care across distance. The stronger test is whether those hours are spent overcoming barriers that fixed services do not address.
+
+The first eighteen months demonstrate that the vehicle can deliver reliable preventive and basic restorative care in settings that previously had little access. The next stage should make the route more responsive to evidence rather than historical scheduling. The objective is not simply to drive the clinic to twelve places. It is to use a limited mobile resource where mobility changes who can realistically receive care.

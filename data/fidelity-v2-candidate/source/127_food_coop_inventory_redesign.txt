@@ -1,0 +1,259 @@
+Food Co-op Inventory Redesign Workshop
+
+Participants:
+Amira — co-op operations manager
+Leo — grocery buyer
+Carmen — receiving lead
+Raj — member-owner and software volunteer
+
+Amira: The inventory system says we have 18,000 active items, but staff trust maybe half the counts. Before we buy new software, I want to understand why the process fails.
+
+Carmen: Receiving is the first problem. Purchase orders use supplier case codes, shelf labels use our internal SKU, and some invoices use UPC. Staff manually match them.
+
+Leo: And produce often has no unit barcode at all.
+
+Raj: So identifier mapping is many-to-one and sometimes one-to-many.
+
+Amira: Translate that into operations.
+
+Raj: One supplier code may represent a case of twelve jars, while our system stocks individual jars. Another supplier may use different codes for the same retail item depending on warehouse. We need a canonical internal item ID plus explicit packaging conversions.
+
+Carmen: Exactly. Right now someone receives "2 cases" and types quantity 2 when the system expects 24 units.
+
+Leo: That explains some negative inventory later.
+
+Amira: Let's define item master fields.
+
+Raj: Internal item ID, description, brand, retail unit, purchase unit, units per purchase case, UPC if present, department, tax category, supplier mappings, shelf life class, and whether weighted.
+
+Carmen: For produce, include purchase unit and sale unit separately. We buy apples by case weight and sell by kilogram.
+
+Leo: Also catch-weight products from deli.
+
+Raj: Weighted items need quantity plus weight semantics. Don't force every stock movement into integer "each."
+
+Amira: Second problem: substitutions.
+
+Leo: Supplier sends a different size when our ordered size is unavailable. Staff put it on shelf because customers still want it, but inventory remains under the old SKU.
+
+Carmen: We need a receiving exception workflow:
+- exact match;
+- approved substitute;
+- partial delivery;
+- damaged;
+- short shipment;
+- over shipment.
+
+Raj: A substitute should never silently inherit the old item's barcode. Either map it to an existing item or create a temporary review record.
+
+Amira: Who can approve a new item?
+
+Leo: Buyer for that department.
+
+Carmen: Receiving needs a fast path, though. Trucks can't wait 40 minutes.
+
+Raj: Then quarantine unknown item in the system and physically stage it in an exception area. Buyer can resolve from phone.
+
+Amira: Good.
+
+Leo: Perishables are another problem. We don't need perfect serial tracking for every tomato, but we do need expiry awareness for yogurt, tofu, prepared foods.
+
+Raj: Use lot/expiry tracking only where operational value justifies it. Don't turn bananas into pharmaceutical inventory.
+
+Carmen: For refrigerated packaged goods, receiving can capture expiry date at case level.
+
+Leo: Then replenishment should be FEFO—first expiry, first out—not merely FIFO.
+
+Amira: Can staff actually manage multiple lots on shelf?
+
+Carmen: If labels are simple. Back stock can have date cards.
+
+Raj: System can suggest the earliest-expiry lot when moving stock.
+
+Amira: Cycle counts. We currently shut sections down twice a year for physical inventory.
+
+Leo: And counts become wrong again within weeks.
+
+Raj: Continuous cycle counting is better. High-value and high-variance items count frequently; stable low-value items less often.
+
+Carmen: Don't schedule cycle count during active receiving. Movement while counting causes false variance.
+
+Amira: Classification?
+
+Raj: Could use ABC plus variance:
+A: high value or critical margin;
+B: moderate;
+C: low.
+
+Then add risk flags:
+- theft-prone;
+- perishable;
+- frequently substituted;
+- bulk;
+- high shrink.
+
+Leo: Bulk bins need special treatment. We receive 25-kilogram sacks, fill bins, customers scoop variable amounts, and spills happen.
+
+Carmen: Scale calibration matters too.
+
+Raj: Bulk inventory should be weight-based. Receiving adds kilograms. POS sales subtract measured kilograms. Waste adjustments subtract weight with reason code.
+
+Amira: Reason codes. Current system has "adjustment" for everything.
+
+Carmen: That's useless.
+
+Leo: We need:
+- spoilage;
+- damage;
+- donation;
+- sampling;
+- internal kitchen use;
+- theft/shrink unknown;
+- receiving correction;
+- count correction;
+- supplier credit pending.
+
+Raj: Exactly. The ledger should preserve why stock changed.
+
+Amira: Ledger?
+
+Raj: Instead of just storing current quantity, record inventory movements:
+RECEIPT +24
+SALE -1
+WASTE -2
+COUNT_ADJUST -3
+
+Current on-hand is the sum, with snapshots for performance.
+
+Carmen: That makes investigation much easier.
+
+Leo: But POS sends thousands of sales. Do we store every transaction line?
+
+Raj: We can aggregate by item and short time window if audit needs allow, but source references should remain.
+
+Amira: Returns?
+
+Carmen: Customer return does not always go back to saleable inventory. Refrigerated returns usually shouldn't.
+
+Leo: So return financial transaction and inventory disposition are separate.
+
+Raj: Yes. Refund can occur while inventory movement is WASTE rather than RETURN_TO_STOCK.
+
+Amira: Online orders create reservations.
+
+Leo: Right now pickers grab products and only later does inventory update.
+
+Raj: Introduce states:
+on_hand;
+reserved;
+available = on_hand - reserved.
+
+When order is picked, reservation converts to sale/dispatch. If canceled, reservation releases.
+
+Carmen: What if picker substitutes?
+
+Leo: Customer substitution rules determine that.
+
+Raj: Inventory needs an explicit substitution event so original reservation is released and substitute item is reserved.
+
+Amira: Supplier ordering. Buyers rely on intuition.
+
+Leo: Because reorder points are unreliable if on-hand is unreliable.
+
+Raj: Once movement data improves, reorder recommendation can use lead time and demand. But don't automate purchasing before data quality stabilizes.
+
+Amira: Good. Phase one is trustworthy transactions, not forecasting.
+
+Carmen: Receiving hardware. We need scanners that can survive the dock.
+
+Raj: Barcode scanner plus tablet. For case conversion, scanning supplier code should display:
+"2 cases × 12 each = 24 units. Confirm."
+
+Carmen: That would prevent common errors.
+
+Leo: For items without barcode?
+
+Raj: Search by supplier PO line, not free-text product name.
+
+Amira: Shelf labels?
+
+Leo: They should display internal item ID in small print even if customers don't care.
+
+Carmen: Then count teams can match exact item.
+
+Raj: QR code could open item record, but don't make core counting dependent on internet if store Wi-Fi fails.
+
+Amira: Offline mode?
+
+Raj: Yes, count app should cache assigned count list and sync later with conflict checks.
+
+Carmen: Conflict example?
+
+Raj: Staff counts 12 at 10:00 while a sale of 2 happens before sync. If system blindly sets quantity to 12 at 10:10, it erases the sale.
+
+Amira: How solve?
+
+Raj: Count records timestamp and expected ledger position. Server applies reconciliation against movements after count time instead of naive overwrite.
+
+Leo: That's important.
+
+Amira: Donations. We give near-expiry food to local organizations.
+
+Carmen: Staff currently write it on paper.
+
+Raj: Donation becomes inventory movement with recipient category and optional batch reference. We don't need personal recipient data.
+
+Leo: Supplier credits for damaged cases?
+
+Carmen: Damage is removed from saleable stock immediately, even if credit isn't approved yet.
+
+Raj: Correct. Inventory truth and accounts-receivable status are separate.
+
+Amira: Dashboards I want:
+- negative on-hand items;
+- high variance;
+- receiving exceptions unresolved;
+- expiry risk;
+- shrink by reason;
+- cycle-count completion;
+- stockouts;
+- supplier fill rate.
+
+Leo: Add "items with case conversion changed." Those cause ordering mistakes.
+
+Carmen: And unknown scans at receiving.
+
+Raj: Data-governance rule: item-master changes are logged. Changing units-per-case is high impact and should require buyer approval.
+
+Amira: Migration. We have bad current counts.
+
+Raj: Don't pretend conversion can clean them magically. New system starts with verified opening counts by department.
+
+Carmen: That means a physical count.
+
+Amira: Yes, but staged. We can migrate one department at a time.
+
+Leo: Grocery first?
+
+Carmen: I'd start with packaged refrigerated goods. Smaller item set, expiry tracking gives immediate value.
+
+Raj: Good pilot because it exercises receiving, cases, expiry, sales, waste, and cycle counts.
+
+Amira: Success criteria for pilot:
+- receiving variance falls;
+- no unexplained negative inventory;
+- 95% cycle counts completed;
+- shrink reasons captured;
+- staff can resolve exceptions without spreadsheets.
+
+Leo: And buyers trust on-hand enough to use it in ordering.
+
+Carmen: Training has to follow actual dock workflow, not software screenshots.
+
+Raj: We'll simulate a delivery with exact item, short shipment, substitute, damaged case, and unknown barcode.
+
+Amira: Perfect. The redesign principle is clear: inventory is a movement history with explicit units and reasons, not a number somebody edits until it looks plausible.
+
+Leo: Once that foundation is trustworthy, forecasting can come later.
+
+Amira: Exactly. We fix truth before prediction.

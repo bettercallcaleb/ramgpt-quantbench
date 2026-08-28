@@ -1,0 +1,197 @@
+Linux Memory Pressure Runbook
+
+Purpose
+
+This runbook is for production Linux hosts showing elevated memory pressure, allocation stalls, swap activity, cgroup OOM events, or kernel out-of-memory kills. The objective is to distinguish healthy cache use from real memory contention, identify the constrained scope, and reduce risk without destroying diagnostic evidence.
+
+1. Confirm the Symptom
+
+Do not begin with the assumption that "low free memory" is a problem. Linux intentionally uses otherwise idle memory for page cache.
+
+Capture:
+
+date -Is
+uptime
+free -h
+cat /proc/meminfo
+vmstat 1 10
+cat /proc/pressure/memory
+dmesg -T | tail -n 200
+
+Key signals:
+- MemAvailable rather than MemFree;
+- sustained si/so in vmstat;
+- PSI some/full pressure;
+- allocation stalls;
+- kernel OOM messages;
+- cgroup memory.events counters.
+
+If MemFree is small but MemAvailable is healthy and PSI is near zero, the host may be operating normally.
+
+2. Determine Scope: Host or Cgroup
+
+Modern services commonly run under systemd slices, containers, or Kubernetes cgroups. A process can hit its cgroup memory.max while the host still has free memory.
+
+For cgroup v2, inspect:
+
+cat /sys/fs/cgroup/<path>/memory.current
+cat /sys/fs/cgroup/<path>/memory.max
+cat /sys/fs/cgroup/<path>/memory.high
+cat /sys/fs/cgroup/<path>/memory.events
+cat /sys/fs/cgroup/<path>/memory.stat
+
+Important memory.events fields:
+- high: throttling events after crossing memory.high;
+- max: attempts to exceed memory.max;
+- oom: cgroup OOM condition;
+- oom_kill: tasks killed by cgroup OOM.
+
+A nonzero oom_kill with healthy host-wide memory points to a container or service limit issue, not necessarily global exhaustion.
+
+3. Identify Consumers
+
+Use multiple views because RSS accounting, shared mappings, page cache, and kernel memory differ.
+
+ps -eo pid,ppid,user,rss,vsz,%mem,comm --sort=-rss | head -n 30
+
+For a suspicious process:
+
+cat /proc/<pid>/status
+cat /proc/<pid>/smaps_rollup
+
+smaps_rollup provides:
+- Rss;
+- Pss;
+- Private_Clean/Dirty;
+- Shared_Clean/Dirty;
+- Swap.
+
+PSS is often more informative than RSS when many processes share mapped pages.
+
+For service-level analysis:
+
+systemd-cgtop
+systemctl status <service>
+systemctl show <service> -p MemoryCurrent -p MemoryPeak -p MemoryMax
+
+4. Separate Anonymous Memory from File Cache
+
+From /proc/meminfo inspect:
+- AnonPages;
+- Cached;
+- SReclaimable;
+- Slab;
+- Shmem;
+- Dirty;
+- Writeback.
+
+Large file cache alone is usually reclaimable. Large anonymous memory is more likely to require swap or process reclamation.
+
+If Slab is unexpectedly large:
+
+slabtop -o
+
+Look for growth in a particular kernel object cache. Do not drop caches as a first response. `echo 3 > /proc/sys/vm/drop_caches` destroys useful cache and can create an I/O storm while masking the root cause.
+
+5. Check Swap Behavior
+
+Commands:
+
+swapon --show
+cat /proc/swaps
+vmstat 1
+grep -E 'SwapTotal|SwapFree|SwapCached' /proc/meminfo
+
+Swap usage by itself is not an incident. The important question is whether active paging is occurring now. Sustained swap-in/swap-out plus high PSI indicates working sets no longer fit comfortably in RAM.
+
+If swap is completely full, do not run `swapoff -a` unless sufficient RAM headroom is proven. swapoff may force pages back into RAM and trigger OOM.
+
+6. Read PSI Correctly
+
+`/proc/pressure/memory` may show:
+
+some avg10=8.31 avg60=4.02 avg300=1.17 total=...
+full avg10=1.20 avg60=0.44 avg300=0.11 total=...
+
+"some" means at least one task is stalled due to memory pressure. "full" means all non-idle tasks in the measured scope are simultaneously stalled. Sustained nonzero full pressure is operationally serious.
+
+Compare the trend with service latency and reclaim activity rather than using one universal PSI threshold.
+
+7. Check OOM Evidence
+
+Search:
+
+journalctl -k --since "-30 min" | grep -i -E 'oom|out of memory|killed process'
+journalctl --since "-30 min" | grep -i 'memory cgroup'
+
+Kernel OOM logs include candidate task memory and the selected victim. Preserve the full event, not only the "Killed process" line.
+
+If the OOM happened in a cgroup, inspect that unit's configured memory.max and recent deployment changes.
+
+8. Immediate Mitigation Hierarchy
+
+Prefer actions with smallest blast radius.
+
+A. Stop or reduce nonessential memory-heavy batch work.
+B. Reduce concurrency in the leaking or overloaded service.
+C. Shift traffic to healthy hosts if capacity exists.
+D. Increase a cgroup limit only if host headroom and service policy allow it.
+E. Restart a clearly leaking service after capturing diagnostics.
+F. Add swap only as a controlled emergency buffer, not as a substitute for capacity planning.
+G. Reboot only when kernel-level pressure cannot be isolated and service recovery procedures justify it.
+
+Do not kill random large-RSS processes. First identify ownership and whether the memory is expected.
+
+9. Evidence to Capture Before Restart
+
+For a suspected user-space leak:
+- process command line and version;
+- RSS/PSS;
+- `/proc/<pid>/smaps_rollup`;
+- heap or runtime metrics if available;
+- open file/socket counts;
+- thread count;
+- application request/concurrency metrics;
+- deployment timestamp;
+- cgroup current/max/high;
+- memory PSI trend.
+
+Runtime-specific captures may include JVM heap histograms, Go pprof heap profiles, Python tracemalloc snapshots, or allocator statistics. Follow application security rules when captures may contain sensitive data.
+
+10. Common Patterns
+
+Pattern: high cache, low PSI, low swap I/O.
+Interpretation: probably normal Linux cache use.
+
+Pattern: cgroup memory.current near memory.max, host MemAvailable healthy.
+Interpretation: service/container limit.
+
+Pattern: growing anonymous RSS over hours after deployment.
+Interpretation: possible leak or changed workload footprint.
+
+Pattern: stable process RSS but large Slab growth.
+Interpretation: investigate kernel objects, filesystem, networking, or driver behavior.
+
+Pattern: large Dirty/Writeback plus blocked processes.
+Interpretation: storage writeback bottleneck can manifest as memory pressure.
+
+Pattern: swap storms after traffic surge.
+Interpretation: aggregate active working set exceeds physical RAM; reduce load or add capacity.
+
+11. Recovery Verification
+
+After mitigation, confirm:
+- memory.current or host usage stabilizes;
+- PSI some/full declines;
+- swap I/O returns toward baseline;
+- request latency recovers;
+- no new OOM events occur;
+- backlog drains without recreating pressure.
+
+Continue monitoring for at least one normal workload cycle.
+
+12. Post-Incident Follow-Up
+
+Capacity findings should be expressed in working-set terms, not only peak RSS. If a service needs a larger cgroup limit, document why the new value is safe for host consolidation. If a leak is suspected, retain a reproducible workload and memory-growth curve.
+
+Memory pressure is a resource-contention problem, not a "free memory" problem. The runbook should preserve that distinction throughout triage.

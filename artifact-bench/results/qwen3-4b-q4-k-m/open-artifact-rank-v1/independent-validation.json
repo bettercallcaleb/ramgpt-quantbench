@@ -1,0 +1,26 @@
+{
+  "checks": {
+    "bootstrap_ci_high": true,
+    "bootstrap_ci_low": true,
+    "delta": true,
+    "ggml_flip_count": true,
+    "ggml_mean_kl": true,
+    "unsloth_flip_count": true,
+    "unsloth_mean_kl": true,
+    "winner": true
+  },
+  "delta_kl_ggml_minus_unsloth": 0.015421990496549541,
+  "ggml_org_flip_count": 6437,
+  "ggml_org_mean_kl": 0.05396429797302534,
+  "implementation": "Independent exhaustive NumPy raw-RQL path using np.logaddexp.reduce and direct sum p*(logp-logq).",
+  "paired_bootstrap_95_ci": [
+    0.013704046109177425,
+    0.01724424066407271
+  ],
+  "rows_validated": 65536,
+  "schema": "ramgpt-qwen3-4b-q4-open-rank-independent-validation-v1",
+  "status": "PASS",
+  "unsloth_flip_count": 5699,
+  "unsloth_mean_kl": 0.0385423074764758,
+  "vocab_size": 151936
+}

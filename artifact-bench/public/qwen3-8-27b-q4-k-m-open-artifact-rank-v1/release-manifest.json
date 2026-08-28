@@ -1,0 +1,50 @@
+{
+  "benchmark_id": "qwen3-8-27b-q4-k-m-open-artifact-rank-v1",
+  "files": {
+    "compact/bartowski.npz": {
+      "bytes": 697300,
+      "sha256": "e06cb60e2c097ea51b99d89d08d8eaf3b4b01b9e4b0ca2842c59d183f57a65a9"
+    },
+    "compact/ggml-org.npz": {
+      "bytes": 698901,
+      "sha256": "1d9f3c2b94fe0a3ffaf1c2f5006586faa7d0777f06b8edff4adb015f2d2af70b"
+    },
+    "compact/mradermacher-static.npz": {
+      "bytes": 707154,
+      "sha256": "a3f79d1ac399de2cbc0943d0578e06988197febeae496f0e0364e0332e0dff42"
+    },
+    "compact/unsloth.npz": {
+      "bytes": 698963,
+      "sha256": "7bb301081da273d5c7b693a2e125b40956101ef7d8dcfe9f27d294e527ab13a4"
+    },
+    "forensic-evidence-v1.json": {
+      "bytes": 4675,
+      "sha256": "ee82a6bacbfb129cf31f5c419fcccbf916404a228a05c9b658d02c7b0400eb07"
+    },
+    "independent-validation.json": {
+      "bytes": 21290,
+      "sha256": "a2ff0ec755b79a38c0fc2b4110eca9b0fc24af2ddd51c600bc90cdb72fe705b4"
+    },
+    "leaderboard-entry.json": {
+      "bytes": 4658,
+      "sha256": "7b955c2713b9c175e722e8d6f3aa601219e1645073c6fcfc0c8cccda8dabc419"
+    },
+    "reference-preflight.json": {
+      "bytes": 374198,
+      "sha256": "dd858e08bd17265c2c07b311c11184484bfd6035f36fb78f804e1a9372211203"
+    },
+    "result.csv": {
+      "bytes": 2939,
+      "sha256": "9baeeb83486b967a731f18602a82c02a57271121a07b66198ad5d1e4264210e4"
+    },
+    "run-spec.json": {
+      "bytes": 3090,
+      "sha256": "a8cefe1ce903576398deb562ecba5eb2976466c754ba28271238260699160c0e"
+    },
+    "verified-result.json": {
+      "bytes": 25866,
+      "sha256": "97ebf39740ac0c432c73fc96c0968ae5da66ac4d5e0f9aabbfcbb2e00fee937d"
+    }
+  },
+  "schema": "ramgpt-artifact-bench-release-manifest-v1"
+}

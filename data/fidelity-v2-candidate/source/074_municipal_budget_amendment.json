@@ -1,0 +1,277 @@
+{
+  "amendment_id": "BA-2026-17",
+  "municipality": "Westhaven",
+  "fiscal_year": 2026,
+  "status": "council_approved",
+  "adopted_date": "2026-07-22",
+  "currency": "CAD",
+  "reason_summary": "Reallocate capital contingencies and update operating appropriations after spring tender results.",
+  "governance": {
+    "originating_office": "Finance and Corporate Services",
+    "committee": "Budget and Audit Committee",
+    "committee_vote": {
+      "for": 5,
+      "against": 1,
+      "abstained": 0
+    },
+    "council_vote": {
+      "for": 8,
+      "against": 3,
+      "absent": 1
+    },
+    "authority": "Municipal Act budget amendment procedure"
+  },
+  "baseline": {
+    "operating_revenue": 312480000,
+    "operating_expense": 311920000,
+    "capital_program": 184350000,
+    "opening_general_reserve": 29400000
+  },
+  "changes": [
+    {
+      "change_id": "C01",
+      "fund": "Capital",
+      "department": "Transportation",
+      "program": "Harbor Avenue bridge rehabilitation",
+      "account": "CAP-TR-4410",
+      "prior_budget": 28400000,
+      "change": -3100000,
+      "revised_budget": 25300000,
+      "cause": "lowest compliant tender below engineer estimate",
+      "funding_sources": [
+        {
+          "source": "debenture",
+          "prior": 15600000,
+          "change": -1900000,
+          "revised": 13700000
+        },
+        {
+          "source": "provincial_grant",
+          "prior": 8200000,
+          "change": 0,
+          "revised": 8200000
+        },
+        {
+          "source": "capital_reserve",
+          "prior": 4600000,
+          "change": -1200000,
+          "revised": 3400000
+        }
+      ]
+    },
+    {
+      "change_id": "C02",
+      "fund": "Capital",
+      "department": "Parks",
+      "program": "Riverside floodplain trail repairs",
+      "account": "CAP-PK-1882",
+      "prior_budget": 2400000,
+      "change": 1850000,
+      "revised_budget": 4250000,
+      "cause": "spring flood damage exceeded original emergency allowance",
+      "funding_sources": [
+        {
+          "source": "disaster_recovery_grant",
+          "prior": 0,
+          "change": 1100000,
+          "revised": 1100000
+        },
+        {
+          "source": "capital_contingency",
+          "prior": 800000,
+          "change": 750000,
+          "revised": 1550000
+        },
+        {
+          "source": "parks_reserve",
+          "prior": 1600000,
+          "change": 0,
+          "revised": 1600000
+        }
+      ]
+    },
+    {
+      "change_id": "C03",
+      "fund": "Operating",
+      "department": "Transit",
+      "program": "Night service pilot",
+      "account": "OPS-TRN-3021",
+      "prior_budget": 620000,
+      "change": 410000,
+      "revised_budget": 1030000,
+      "cause": "extend pilot from twelve to twenty-four weeks",
+      "line_items": [
+        {
+          "name": "operator wages",
+          "prior": 310000,
+          "change": 205000,
+          "revised": 515000
+        },
+        {
+          "name": "vehicle operations",
+          "prior": 154000,
+          "change": 92000,
+          "revised": 246000
+        },
+        {
+          "name": "security and station staffing",
+          "prior": 78000,
+          "change": 70000,
+          "revised": 148000
+        },
+        {
+          "name": "communications and evaluation",
+          "prior": 78000,
+          "change": 43000,
+          "revised": 121000
+        }
+      ]
+    },
+    {
+      "change_id": "C04",
+      "fund": "Operating",
+      "department": "Library",
+      "program": "Cooling-centre extended hours",
+      "account": "OPS-LIB-0914",
+      "prior_budget": 180000,
+      "change": 265000,
+      "revised_budget": 445000,
+      "cause": "heat-response plan expanded to six branches",
+      "line_items": [
+        {
+          "name": "staffing",
+          "prior": 98000,
+          "change": 138000,
+          "revised": 236000
+        },
+        {
+          "name": "security",
+          "prior": 28000,
+          "change": 39000,
+          "revised": 67000
+        },
+        {
+          "name": "utilities",
+          "prior": 36000,
+          "change": 56000,
+          "revised": 92000
+        },
+        {
+          "name": "supplies",
+          "prior": 18000,
+          "change": 32000,
+          "revised": 50000
+        }
+      ]
+    },
+    {
+      "change_id": "C05",
+      "fund": "Capital",
+      "department": "Water",
+      "program": "North pressure-zone pump replacement",
+      "account": "CAP-WTR-7780",
+      "prior_budget": 9100000,
+      "change": 1300000,
+      "revised_budget": 10400000,
+      "cause": "electrical switchgear scope added after condition assessment",
+      "funding_sources": [
+        {
+          "source": "water_rate_reserve",
+          "prior": 5100000,
+          "change": 1300000,
+          "revised": 6400000
+        },
+        {
+          "source": "development_charge",
+          "prior": 4000000,
+          "change": 0,
+          "revised": 4000000
+        }
+      ]
+    }
+  ],
+  "offsets": [
+    {
+      "source": "capital_program_savings_C01",
+      "amount": 3100000,
+      "restricted_to": "capital"
+    },
+    {
+      "source": "capital_contingency_unallocated",
+      "amount": 750000,
+      "restricted_to": "capital"
+    },
+    {
+      "source": "disaster_recovery_grant",
+      "amount": 1100000,
+      "restricted_to": "flood_repair"
+    },
+    {
+      "source": "transit_stabilization_reserve",
+      "amount": 410000,
+      "restricted_to": "transit"
+    },
+    {
+      "source": "general_contingency",
+      "amount": 265000,
+      "restricted_to": "operating"
+    },
+    {
+      "source": "water_rate_reserve",
+      "amount": 1300000,
+      "restricted_to": "water"
+    }
+  ],
+  "net_effect": {
+    "operating_expense_change": 675000,
+    "capital_program_change": 50000,
+    "tax_levy_change": 0,
+    "new_debt_authority_change": -1900000,
+    "reserve_draw_change": 775000,
+    "grant_revenue_change": 1100000
+  },
+  "conditions": [
+    {
+      "id": "K1",
+      "text": "Transit pilot extension must return with ridership and cost report before permanent service approval.",
+      "due": "2026-12-15"
+    },
+    {
+      "id": "K2",
+      "text": "Floodplain trail work may proceed only after environmental permit confirmation.",
+      "due": "before_contract_award"
+    },
+    {
+      "id": "K3",
+      "text": "Water switchgear procurement must preserve existing emergency bypass capability.",
+      "due": "design_review"
+    }
+  ],
+  "audit_trail": [
+    {
+      "date": "2026-06-28",
+      "event": "draft_created",
+      "actor": "finance-analyst-12"
+    },
+    {
+      "date": "2026-07-04",
+      "event": "department_validation_complete",
+      "actor": "budget-office"
+    },
+    {
+      "date": "2026-07-12",
+      "event": "committee_recommended",
+      "actor": "clerk"
+    },
+    {
+      "date": "2026-07-22",
+      "event": "council_approved",
+      "actor": "clerk"
+    },
+    {
+      "date": "2026-07-23",
+      "event": "ledger_budget_loaded",
+      "actor": "erp-batch-20260723"
+    }
+  ]
+}

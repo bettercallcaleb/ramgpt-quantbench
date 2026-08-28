@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ramgpt.invalid/schemas/pairwise-comparison-v1.schema.json",
+  "title": "RAMGPT Pairwise Artifact Comparison V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "comparison_class", "benchmark_version", "artifact_a", "artifact_b", "paired_delta_kl", "primary_verdict", "position_classes", "a_only_margin_summary", "b_only_margin_summary", "bootstrap"],
+  "properties": {
+    "schema_version": {"const": "pairwise-comparison-v1"},
+    "comparison_class": {"type": "string", "minLength": 1},
+    "benchmark_version": {"type": "string", "minLength": 1},
+    "artifact_a": {"$ref": "#/$defs/artifactIdentity"},
+    "artifact_b": {"$ref": "#/$defs/artifactIdentity"},
+    "paired_delta_kl": {
+      "type": "object", "additionalProperties": false,
+      "required": ["definition", "estimate", "ci_95"],
+      "properties": {
+        "definition": {"const": "mean_KL_A_minus_mean_KL_B"},
+        "estimate": {"type": "number"},
+        "ci_95": {"$ref": "#/$defs/interval"}
+      }
+    },
+    "primary_verdict": {"enum": ["A_HAS_CLEARLY_LOWER_KL", "B_HAS_CLEARLY_LOWER_KL", "STATISTICALLY_INDISTINGUISHABLE_ON_MEAN_KL"]},
+    "position_classes": {
+      "type": "object", "additionalProperties": false,
+      "required": ["both_stable", "a_only_flip", "b_only_flip", "both_flip_same_alternate", "both_flip_different_alternate"],
+      "properties": {
+        "both_stable": {"type": "integer", "minimum": 0},
+        "a_only_flip": {"type": "integer", "minimum": 0},
+        "b_only_flip": {"type": "integer", "minimum": 0},
+        "both_flip_same_alternate": {"type": "integer", "minimum": 0},
+        "both_flip_different_alternate": {"type": "integer", "minimum": 0}
+      }
+    },
+    "a_only_margin_summary": {"$ref": "#/$defs/marginSummary"},
+    "b_only_margin_summary": {"$ref": "#/$defs/marginSummary"},
+    "bootstrap": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resampling_unit", "replicates", "seed", "confidence_level", "interval_method"],
+      "properties": {
+        "resampling_unit": {"const": "segment"},
+        "replicates": {"const": 10000},
+        "seed": {"const": 20260823},
+        "confidence_level": {"const": 0.95},
+        "interval_method": {"const": "paired_percentile"}
+      }
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "artifactIdentity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "sha256"],
+      "properties": {"artifact_id": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "interval": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "items": false, "minItems": 2, "maxItems": 2},
+    "marginSummary": {
+      "type": "object", "additionalProperties": false,
+      "required": ["n", "median", "p90", "p99", "max", "counts_ge"],
+      "properties": {
+        "n": {"type": "integer", "minimum": 0},
+        "median": {"type": ["number", "null"], "minimum": 0},
+        "p90": {"type": ["number", "null"], "minimum": 0},
+        "p99": {"type": ["number", "null"], "minimum": 0},
+        "max": {"type": ["number", "null"], "minimum": 0},
+        "counts_ge": {
+          "type": "object", "additionalProperties": false,
+          "required": ["1", "2", "4", "8", "16"],
+          "properties": {
+            "1": {"type": "integer", "minimum": 0}, "2": {"type": "integer", "minimum": 0},
+            "4": {"type": "integer", "minimum": 0}, "8": {"type": "integer", "minimum": 0},
+            "16": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    }
+  }
+}

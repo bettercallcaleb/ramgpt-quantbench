@@ -1,0 +1,23 @@
+#include "formats.h"
+#include "llama.h"
+#include <algorithm>
+#include <fstream>
+#include <iostream>
+#include <map>
+#include <memory>
+#include <regex>
+#include <set>
+#include <stdexcept>
+#include <string>
+#include <vector>
+
+namespace {
+std::string arg(int n,char**v,const std::string&k){for(int i=1;i+1<n;i++)if(v[i]==k)return v[i+1];throw std::runtime_error("missing "+k);}
+int64_t integer(const std::string&s,const std::string&k){std::regex r("\\\""+k+"\\\"\\s*:\\s*(-?[0-9]+)");std::smatch m;if(!std::regex_search(s,m,r))throw std::runtime_error("comparison JSONL missing "+k);return std::stoll(m[1]);}
+double number(const std::string&s,const std::string&k){std::regex r("\\\""+k+"\\\"\\s*:\\s*(-?[0-9]+(?:\\.[0-9]+)?(?:[eE][+-]?[0-9]+)?)");std::smatch m;if(!std::regex_search(s,m,r))throw std::runtime_error("comparison JSONL missing "+k);return std::stod(m[1]);}
+std::set<uint64_t> positions(const std::string&p,uint64_t n){std::ifstream f(p);if(!f)throw std::runtime_error("cannot open positions file");std::set<uint64_t>s;std::string line;while(std::getline(f,line)){if(line.empty())continue;size_t used=0;auto x=std::stoll(line,&used);if(used!=line.size()||x<0||uint64_t(x)>=n||!s.insert(x).second)throw std::runtime_error("invalid or duplicate inspection position");}if(s.empty())throw std::runtime_error("empty positions file");return s;}
+std::string piece(const llama_vocab*v,llama_token t){std::vector<char>b(256);int n=llama_token_to_piece(v,t,b.data(),b.size(),0,true);if(n<0){b.resize(-n);n=llama_token_to_piece(v,t,b.data(),b.size(),0,true);}if(n<0)throw std::runtime_error("token-to-piece failed");return std::string(b.data(),n);}
+std::string detok(const llama_vocab*v,const std::vector<int32_t>&ids,size_t begin,size_t end){std::vector<llama_token>t(ids.begin()+begin,ids.begin()+end);int n=llama_detokenize(v,t.data(),t.size(),nullptr,0,false,true);if(n>=0)throw std::runtime_error("unexpected detokenize sizing result");std::vector<char>b(-n);n=llama_detokenize(v,t.data(),t.size(),b.data(),b.size(),false,true);if(n<0)throw std::runtime_error("detokenize failed");return std::string(b.data(),n);}
+std::string esc(const std::string&s){std::string o;char hex[]="0123456789abcdef";for(unsigned char c:s){switch(c){case'"':o+="\\\"";break;case'\\':o+="\\\\";break;case'\b':o+="\\b";break;case'\f':o+="\\f";break;case'\n':o+="\\n";break;case'\r':o+="\\r";break;case'\t':o+="\\t";break;default:if(c<0x20){o+="\\u00";o+=hex[c>>4];o+=hex[c&15];}else o+=char(c);}}return o;}
+}
+int main(int argc,char**argv){try{auto model_path=arg(argc,argv,"--model"),token_path=arg(argc,argv,"--tokens"),selected_path=arg(argc,argv,"--positions"),comparison_path=arg(argc,argv,"--comparison"),output_path=arg(argc,argv,"--output");auto tokens=rq::read_tokens(token_path);auto wanted=positions(selected_path,tokens.size()-1);std::ifstream in(comparison_path);if(!in)throw std::runtime_error("cannot open comparison JSONL");std::map<uint64_t,std::string>rows;std::string line;while(std::getline(in,line)){if(line.empty())continue;auto p=integer(line,"position");if(p>=0&&wanted.count(p))rows[p]=line;}if(rows.size()!=wanted.size())throw std::runtime_error("comparison JSONL lacks selected positions");llama_backend_init();auto mp=llama_model_default_params();mp.vocab_only=true;std::unique_ptr<llama_model,decltype(&llama_model_free)>model(llama_model_load_from_file(model_path.c_str(),mp),llama_model_free);if(!model)throw std::runtime_error("vocabulary load failed");auto*vocab=llama_model_get_vocab(model.get());std::ofstream out(output_path);if(!out)throw std::runtime_error("cannot create inspection output");out.precision(17);for(auto p:wanted){auto&r=rows[p];int32_t target=tokens[p+1],rt1=integer(r,"ref_top1_id"),rt2=integer(r,"ref_top2_id"),qt1=integer(r,"quant_top1_id");if(target!=integer(r,"target_token_id"))throw std::runtime_error("target mismatch in comparison JSONL");size_t begin=p>=19?p-19:0,end=std::min<uint64_t>(tokens.size(),p+11);out<<"{\"position\":"<<p<<",\"target_token_id\":"<<target<<",\"decoded_target_piece\":\""<<esc(piece(vocab,target))<<"\",\"ref_top1_id\":"<<rt1<<",\"ref_top1_piece\":\""<<esc(piece(vocab,rt1))<<"\",\"ref_top2_id\":"<<rt2<<",\"ref_top2_piece\":\""<<esc(piece(vocab,rt2))<<"\",\"quant_top1_id\":"<<qt1<<",\"quant_top1_piece\":\""<<esc(piece(vocab,qt1))<<"\",\"context_token_start\":"<<begin<<",\"context_token_end_exclusive\":"<<end<<",\"context_excerpt\":\""<<esc(detok(vocab,tokens,begin,end))<<"\",\"ref_margin\":"<<number(r,"ref_margin")<<",\"kl_ref_quant\":"<<number(r,"kl_ref_quant")<<",\"delta_nll\":"<<number(r,"delta_nll")<<"}\n";}model.reset();llama_backend_free();return 0;}catch(const std::exception&e){std::cerr<<"error: "<<e.what()<<"\n";return 1;}}

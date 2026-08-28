@@ -1,0 +1,143 @@
+Let G=(U,V,E) be a finite undirected bipartite graph. Every edge joins a vertex in U to a vertex in V; there are no edges within either part. This elementary structural condition has a strong spectral consequence: the eigenvalues of the adjacency matrix are symmetric about zero.
+
+Order the vertices with all vertices of U first and all vertices of V second. The adjacency matrix has block form
+
+A =
+[ 0   B
+  B^T 0 ],
+
+where B is the |U| by |V| bipartite incidence block.
+
+Suppose
+
+A [x;y] = lambda [x;y].
+
+In block form,
+
+B y = lambda x,
+B^T x = lambda y.
+
+Now replace y by -y. Then
+
+A [x;-y]
+=
+[-By; B^T x]
+=
+[-lambda x; lambda y]
+=
+-lambda [x;-y].
+
+Thus whenever lambda is an eigenvalue, -lambda is also an eigenvalue with the same multiplicity. If lambda=0, it is of course paired with itself.
+
+There is an even shorter proof using a signature matrix. Define
+
+S =
+[ I_U  0
+  0   -I_V ].
+
+Because every nonzero entry of A crosses the partition, multiplying on both sides gives
+
+S A S = -A.
+
+Since S^-1=S,
+
+SAS^-1=-A.
+
+Therefore A and -A are similar matrices and have identical characteristic polynomials. Hence the spectrum is invariant under lambda -> -lambda.
+
+The block equations also connect adjacency eigenvalues to singular values of B. If lambda is nonzero, eliminate y:
+
+B B^T x
+= B(lambda^-1 B^T x)
+= lambda^-1 B B^T x.
+
+More directly from the two eigenvector equations,
+
+BB^T x = lambda^2 x,
+B^T B y = lambda^2 y.
+
+Therefore lambda^2 is an eigenvalue of BB^T and B^T B. The nonzero eigenvalues of A are exactly
+
++s_1,-s_1,+s_2,-s_2,...
+
+where s_i are the nonzero singular values of B.
+
+This gives the rank relation
+
+rank(A)=2 rank(B).
+
+Consequently, if G has n vertices,
+
+nullity(A)=n-2 rank(B).
+
+For an unbalanced complete bipartite graph K_{p,q}, the matrix B is the p by q all-ones matrix. It has rank one and one nonzero singular value sqrt(pq). Hence the adjacency spectrum is
+
+{ sqrt(pq), -sqrt(pq), 0,...,0 },
+
+with zero multiplicity p+q-2.
+
+For K_{2,3}, for example,
+
+B=
+[1 1 1
+ 1 1 1].
+
+Then
+
+BB^T=
+[3 3
+ 3 3],
+
+whose eigenvalues are 6 and 0. The nonzero singular value is sqrt(6), so A has eigenvalues sqrt(6), -sqrt(6), and three zeros.
+
+The spectrum also gives a criterion for bipartiteness. A finite graph G is bipartite if and only if its adjacency spectrum is symmetric about zero.
+
+One direction has already been proved. For the converse, suppose the spectrum is symmetric. The trace of A^k counts closed walks of length k:
+
+tr(A^k)=sum_i lambda_i^k.
+
+If k is odd and the eigenvalues occur in +/- pairs, then
+
+sum_i lambda_i^k=0.
+
+Thus there are no closed walks of odd length. In particular, there can be no odd cycle. A graph is bipartite exactly when it contains no odd cycle, so G is bipartite.
+
+This proof assumes the usual adjacency matrix of a simple undirected graph. The key combinatorial identity follows because the diagonal entry (A^k)_{ii} counts walks of length k starting and ending at vertex i; summing the diagonal counts all closed walks.
+
+Regular bipartite graphs have additional structure. Suppose G is d-regular. The all-ones vector 1 satisfies
+
+A1=d1,
+
+so d is an eigenvalue. Bipartite symmetry then guarantees -d is also an eigenvalue. An eigenvector for -d is obtained by assigning +1 on U and -1 on V.
+
+If G is connected and d-regular, Perron-Frobenius theory shows d is the largest eigenvalue in absolute-value order and is simple. The eigenvalue -d is also simple. The presence of both endpoints +d and -d is a spectral signature of connected regular bipartiteness.
+
+Random walks are often studied through the normalized adjacency matrix. If D is the diagonal degree matrix, define
+
+M=D^(-1/2) A D^(-1/2).
+
+For a bipartite graph the same signature matrix S satisfies
+
+S M S=-M,
+
+because D is diagonal and commutes with S. Therefore the normalized adjacency spectrum is also symmetric about zero.
+
+The normalized Laplacian is
+
+L=I-M.
+
+If mu is an eigenvalue of M, then 1-mu is an eigenvalue of L. Symmetry mu <-> -mu becomes
+
+1-mu <-> 1+mu.
+
+Therefore the normalized Laplacian spectrum of a bipartite graph is symmetric about 1. In particular, if 0 is an eigenvalue of L, then 2 is also an eigenvalue. For any graph, 0 is present once per connected component. The eigenvalue 2 occurs precisely when a connected component is bipartite.
+
+A related phenomenon appears in powers of A. Because even-length walks begin and end in the same bipartition class or cross an even number of times, A^2 becomes block diagonal:
+
+A^2 =
+[ BB^T   0
+  0    B^T B ].
+
+Odd powers are block off-diagonal again. This parity pattern is the matrix shadow of the graph's alternating walk structure.
+
+Spectral symmetry can therefore be derived in several mutually reinforcing ways: an eigenvector sign flip, similarity through the signature matrix, singular values of the bipartite block, and cancellation of odd spectral moments. Each proof emphasizes something different. The sign matrix is the clean algebraic mechanism; the singular-value view quantifies the spectrum; the trace argument connects spectral symmetry back to the combinatorial absence of odd cycles.

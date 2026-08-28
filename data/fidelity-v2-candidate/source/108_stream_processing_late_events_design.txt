@@ -1,0 +1,187 @@
+Design Note: Late Events in the Stream Processing Pipeline
+
+Problem
+
+The analytics pipeline consumes event streams from mobile devices, web services, and branch systems. Events are timestamped at the source and may arrive out of order because of buffering, intermittent connectivity, retries, and regional transport delay.
+
+Business metrics are grouped into event-time windows. Processing strictly by arrival time would assign delayed events to the wrong period. Waiting forever for every possible late event would make outputs never final.
+
+The design therefore needs an explicit model for event time, watermarks, allowed lateness, correction, and downstream consistency.
+
+Event Time and Processing Time
+
+Each event contains:
+
+event_id
+event_time
+ingest_time
+source_id
+payload
+schema_version
+
+`event_time` represents when the business action occurred. `ingest_time` represents when the platform first accepted the event.
+
+All analytical windows use event_time. Ingest time is retained for latency measurement and operational debugging.
+
+Clock Validation
+
+Source timestamps cannot be trusted without bounds. Events more than 24 hours in the future relative to ingest time are quarantined. Devices with repeated clock anomalies receive a diagnostic flag.
+
+Past timestamps are allowed because offline clients can legitimately upload old events.
+
+Watermark
+
+A watermark is the system's estimate that most events earlier than time W have already arrived.
+
+For each source partition, the processor tracks the maximum observed event time and recent arrival-delay distribution. The partition watermark advances according to a configured delay allowance.
+
+The global operator watermark is the minimum of active partition watermarks so that one slow partition can delay finalization.
+
+Idle Partition Handling
+
+A partition with no events should not freeze the global watermark forever. After a configured idle timeout, the partition is marked idle and excluded from the minimum until activity resumes.
+
+When it resumes, old events are handled by the lateness policy rather than moving the watermark backward. Watermarks are monotonic.
+
+Window Policy
+
+Primary dashboard metrics use 5-minute tumbling windows.
+
+Example:
+
+[10:00,10:05)
+[10:05,10:10)
+
+An event at exactly 10:05 belongs to the second window.
+
+A window emits:
+1. preliminary result before watermark closure if low-latency consumers request it;
+2. on-time result when watermark passes window end;
+3. correction updates for events arriving within allowed lateness.
+
+Allowed Lateness
+
+Dashboard metrics allow corrections for 30 minutes after window end.
+
+After that interval, an event is "very late." Very-late events are still stored in the durable raw event log but are not automatically applied to the real-time aggregate.
+
+A nightly reconciliation job can recompute historical windows from raw data and produce audited corrections.
+
+Why Two Tiers
+
+Real-time users need stable data eventually. If every event can revise a dashboard indefinitely, operational interpretation becomes difficult.
+
+The 30-minute correction window captures normal transport delay. The batch reconciliation path handles rare long-offline cases without forcing unbounded state in the streaming system.
+
+Idempotency
+
+Retries can cause the same event to arrive multiple times. Every producer must generate a stable event_id before transmission.
+
+The processor deduplicates within a bounded retention horizon using event_id. The deduplication horizon is longer than maximum real-time lateness.
+
+For historical reconciliation, raw storage enforces unique event identity or performs deterministic deduplication before aggregation.
+
+Update Semantics
+
+Downstream sinks receive changelog records:
+
+window_key
+window_start
+window_end
+revision
+value
+update_type
+
+update_type is one of:
+- INSERT
+- UPDATE
+- FINAL
+
+A correction increments revision.
+
+Consumers must not assume every window is written once.
+
+Database sinks use `(window_key, window_start)` as an idempotent primary key and apply only revisions newer than current.
+
+Retractions
+
+For simple counts and sums, a late event adds to an existing aggregate. More complex operations may require retraction.
+
+Example: top-N products.
+
+A late event can change ranking, meaning the old top-N output is no longer valid. The stream processor must emit a replacement or changelog compatible with the sink rather than appending another independent result.
+
+Session Windows
+
+Session windows are especially sensitive to late data. A delayed event can bridge two sessions previously considered separate.
+
+For sessionized analytics, allowed lateness is longer and output remains provisional until session gap plus lateness has passed.
+
+Where exact session history is required, nightly recomputation is authoritative.
+
+State Management
+
+Window state is stored in the processor's managed state backend and checkpointed. State expiry is:
+
+window_end
++ allowed_lateness
++ operational_margin.
+
+This prevents indefinite growth.
+
+Deduplication state has its own TTL. The TTL must exceed replay and retry expectations or duplicate events can reappear after expiration.
+
+Source Replays
+
+During disaster recovery or connector reset, a partition may replay hours of old events. The stream distinguishes replay from live arrival through event IDs and offsets.
+
+A replay must not move watermarks backward. Events are processed according to their event-time lateness classification.
+
+Backpressure
+
+Late-event handling should not create a priority inversion where a large historical replay blocks current traffic.
+
+The ingestion layer can assign separate queues or rate limits for catch-up traffic. Current events retain capacity so real-time latency remains bounded.
+
+Metrics
+
+Operational metrics:
+- event lateness histogram;
+- watermark lag;
+- partitions idle;
+- late-event count;
+- very-late count;
+- correction count;
+- deduplication hits;
+- state size;
+- checkpoint duration;
+- replay throughput.
+
+Business dashboards should expose freshness metadata when values remain provisional.
+
+Testing
+
+Deterministic test streams include:
+- ordered events;
+- events delayed by one window;
+- events delayed within allowed lateness;
+- events beyond allowed lateness;
+- duplicate event IDs;
+- source clock in future;
+- idle partition then resume;
+- processor restart from checkpoint;
+- large replay mixed with live events.
+
+Tests verify both numeric aggregate and sequence of emitted revisions.
+
+Correctness Boundary
+
+The streaming output is operationally authoritative after the allowed-lateness period for normal use. The durable raw event log is the historical source of truth.
+
+Nightly reconciliation can supersede streaming aggregates if previously unseen very-late events are found.
+
+Decision
+
+Use event-time windows with monotonic watermarks, 30-minute correction allowance for standard dashboards, idempotent revisioned sink updates, bounded deduplication, and an offline reconciliation path for events beyond real-time lateness.
+
+The design makes finality a declared policy rather than an accidental consequence of arrival order.

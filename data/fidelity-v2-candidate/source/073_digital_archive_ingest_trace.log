@@ -1,0 +1,61 @@
+2026-08-20T15:00:00.441Z svc=ingest-gateway level=INFO event=batch_open batch=ARC-260820-1515 source=donor_dropbox expected_objects=184
+2026-08-20T15:00:00.912Z svc=ingest-gateway level=INFO event=manifest_read batch=ARC-260820-1515 format=csv rows=184 schema=donor_manifest_v3
+2026-08-20T15:00:01.108Z svc=validator level=INFO event=manifest_validate batch=ARC-260820-1515 valid_rows=182 invalid_rows=2
+2026-08-20T15:00:01.109Z svc=validator level=WARN event=row_reject batch=ARC-260820-1515 row=77 reason=missing_object_identifier filename="interview_notes_final.pdf"
+2026-08-20T15:00:01.110Z svc=validator level=WARN event=row_reject batch=ARC-260820-1515 row=141 reason=invalid_date value="2026-02-30"
+2026-08-20T15:00:02.015Z svc=ingest-gateway level=INFO event=object_scan batch=ARC-260820-1515 objects_found=184 unmatched_objects=2
+2026-08-20T15:00:02.016Z svc=ingest-gateway level=WARN event=unmatched_object object="desktop.ini" policy=ignore_system_file
+2026-08-20T15:00:02.017Z svc=ingest-gateway level=WARN event=unmatched_object object="notes_from_transfer.txt" policy=quarantine
+2026-08-20T15:00:02.994Z svc=checksum level=INFO event=hash_start batch=ARC-260820-1515 algorithm=sha256 workers=8
+2026-08-20T15:00:05.262Z svc=checksum level=INFO event=hash_complete object=OBJ-0001 bytes=842113 sha256=2524835c65a94f48167e9977bcf16ae8f596fc77dd47be5f28975666ca5caeb0
+2026-08-20T15:00:05.604Z svc=checksum level=INFO event=hash_complete object=OBJ-0002 bytes=14091284 sha256=ba5216194f53505f089a0fb2e02d7594797373098997571bad79340071fb28d1
+2026-08-20T15:00:06.088Z svc=checksum level=INFO event=hash_complete object=OBJ-0003 bytes=3871044 sha256=d3e7c2831a014970123974d8e25b080f53f2d46820d639906515242e81d23e9c
+2026-08-20T15:00:07.779Z svc=virus-scan level=INFO event=scan_start batch=ARC-260820-1515 engine=clamav definitions=20260820
+2026-08-20T15:00:08.188Z svc=metadata level=INFO event=extract_start object=OBJ-0001 mime=application/pdf extractor=tika
+2026-08-20T15:00:08.412Z svc=metadata level=INFO event=extract_complete object=OBJ-0001 pages=18 title="Harbor Workers Oral History Index" embedded_files=0
+2026-08-20T15:00:09.042Z svc=metadata level=INFO event=extract_start object=OBJ-0002 mime=audio/wav extractor=ffprobe
+2026-08-20T15:00:09.088Z svc=metadata level=INFO event=extract_complete object=OBJ-0002 duration_s=1928.442 channels=2 sample_rate=48000 codec=pcm_s24le
+2026-08-20T15:00:09.607Z svc=metadata level=INFO event=extract_start object=OBJ-0003 mime=image/tiff extractor=exiftool
+2026-08-20T15:00:09.654Z svc=metadata level=INFO event=extract_complete object=OBJ-0003 width=6120 height=4080 compression=lzw orientation=1
+2026-08-20T15:00:11.113Z svc=virus-scan level=INFO event=scan_result object=OBJ-0001 result=clean
+2026-08-20T15:00:11.640Z svc=virus-scan level=INFO event=scan_result object=OBJ-0002 result=clean
+2026-08-20T15:00:12.004Z svc=virus-scan level=INFO event=scan_result object=OBJ-0003 result=clean
+2026-08-20T15:00:14.355Z svc=format-id level=INFO event=identify object=OBJ-0001 puid=fmt/276 confidence=high mime=application/pdf
+2026-08-20T15:00:14.712Z svc=format-id level=INFO event=identify object=OBJ-0002 puid=fmt/141 confidence=high mime=audio/x-wav
+2026-08-20T15:00:15.018Z svc=format-id level=INFO event=identify object=OBJ-0003 puid=fmt/353 confidence=high mime=image/tiff
+2026-08-20T15:00:18.203Z svc=preservation level=INFO event=derivative_plan object=OBJ-0001 actions="pdfa_validation,thumbnail,text_extract"
+2026-08-20T15:00:18.204Z svc=preservation level=INFO event=derivative_plan object=OBJ-0002 actions="flac_preservation,mp3_access,waveform"
+2026-08-20T15:00:18.205Z svc=preservation level=INFO event=derivative_plan object=OBJ-0003 actions="tiff_validate,jpeg_access,thumbnail"
+2026-08-20T15:00:19.777Z svc=queue level=INFO event=job_submit job=J-88001 object=OBJ-0001 type=pdfa_validation priority=normal
+2026-08-20T15:00:19.779Z svc=queue level=INFO event=job_submit job=J-88002 object=OBJ-0002 type=flac_preservation priority=normal
+2026-08-20T15:00:19.782Z svc=queue level=INFO event=job_submit job=J-88003 object=OBJ-0003 type=tiff_validate priority=normal
+2026-08-20T15:00:24.616Z svc=worker-pdf level=INFO event=job_start job=J-88001 object=OBJ-0001
+2026-08-20T15:00:25.090Z svc=worker-audio level=INFO event=job_start job=J-88002 object=OBJ-0002
+2026-08-20T15:00:25.423Z svc=worker-image level=INFO event=job_start job=J-88003 object=OBJ-0003
+2026-08-20T15:00:28.144Z svc=worker-image level=INFO event=job_complete job=J-88003 result=valid warnings=0
+2026-08-20T15:00:31.775Z svc=worker-pdf level=WARN event=job_complete job=J-88001 result=valid_with_warning warning="embedded font subset missing ToUnicode map"
+2026-08-20T15:00:38.661Z svc=worker-audio level=INFO event=job_complete job=J-88002 result=success output_bytes=384029112
+2026-08-20T15:00:39.110Z svc=storage level=INFO event=write_original object=OBJ-0001 bucket=archive-original key=2026/ARC-260820-1515/OBJ-0001
+2026-08-20T15:00:39.445Z svc=storage level=INFO event=write_original object=OBJ-0002 bucket=archive-original key=2026/ARC-260820-1515/OBJ-0002
+2026-08-20T15:00:39.812Z svc=storage level=INFO event=write_original object=OBJ-0003 bucket=archive-original key=2026/ARC-260820-1515/OBJ-0003
+2026-08-20T15:00:40.042Z svc=storage level=INFO event=verify_readback object=OBJ-0001 sha256=2524835c65a94f48167e9977bcf16ae8f596fc77dd47be5f28975666ca5caeb0 result=match
+2026-08-20T15:00:40.603Z svc=storage level=INFO event=verify_readback object=OBJ-0002 sha256=ba5216194f53505f089a0fb2e02d7594797373098997571bad79340071fb28d1 result=match
+2026-08-20T15:00:41.028Z svc=storage level=INFO event=verify_readback object=OBJ-0003 sha256=d3e7c2831a014970123974d8e25b080f53f2d46820d639906515242e81d23e9c result=match
+2026-08-20T15:00:42.193Z svc=catalog level=INFO event=record_create object=OBJ-0001 record=AR-910244 collection=COL-58 access=onsite
+2026-08-20T15:00:42.315Z svc=catalog level=INFO event=record_create object=OBJ-0002 record=AR-910245 collection=COL-58 access=restricted
+2026-08-20T15:00:42.471Z svc=catalog level=INFO event=record_create object=OBJ-0003 record=AR-910246 collection=COL-58 access=public
+2026-08-20T15:00:44.002Z svc=rights level=INFO event=policy_apply record=AR-910244 policy=reading_room_until_2040
+2026-08-20T15:00:44.113Z svc=rights level=INFO event=policy_apply record=AR-910245 policy=donor_permission_required
+2026-08-20T15:00:44.224Z svc=rights level=INFO event=policy_apply record=AR-910246 policy=open_access
+2026-08-20T15:00:47.544Z svc=index level=INFO event=index_record record=AR-910244 searchable=true fulltext=true
+2026-08-20T15:00:47.911Z svc=index level=INFO event=index_record record=AR-910245 searchable=false fulltext=false reason=restricted
+2026-08-20T15:00:48.212Z svc=index level=INFO event=index_record record=AR-910246 searchable=true fulltext=false
+2026-08-20T15:00:52.881Z svc=validator level=INFO event=batch_progress batch=ARC-260820-1515 processed=50 accepted=49 rejected=1 warnings=4
+2026-08-20T15:01:28.330Z svc=validator level=INFO event=batch_progress batch=ARC-260820-1515 processed=100 accepted=98 rejected=2 warnings=7
+2026-08-20T15:02:41.774Z svc=validator level=INFO event=batch_progress batch=ARC-260820-1515 processed=150 accepted=148 rejected=2 warnings=11
+2026-08-20T15:03:19.913Z svc=checksum level=ERROR event=hash_mismatch object=OBJ-0166 manifest_sha256=68e7bb23c20af45a7755314352c586662cb88cad7828e1a3201be8cb5b91b130 actual_sha256=32f99f24bb38cd4d36e0ea6da035ac8aef4f03e5f82503999f1ee54533db9603
+2026-08-20T15:03:19.915Z svc=ingest-gateway level=INFO event=quarantine object=OBJ-0166 reason=checksum_mismatch location=quarantine/ARC-260820-1515/OBJ-0166
+2026-08-20T15:03:20.112Z svc=catalog level=INFO event=record_suppressed object=OBJ-0166 reason=ingest_validation_failure
+2026-08-20T15:04:05.556Z svc=validator level=INFO event=batch_progress batch=ARC-260820-1515 processed=182 accepted=179 rejected=3 warnings=13
+2026-08-20T15:04:05.889Z svc=ingest-gateway level=INFO event=batch_close batch=ARC-260820-1515 accepted=179 rejected=3 ignored=1 quarantined_unmatched=1
+2026-08-20T15:04:06.114Z svc=audit level=INFO event=provenance_seal batch=ARC-260820-1515 manifest_hash=7f9ab07ee8f0534288af469a74b6f77b344fc6c7019317887078065d4096c84d

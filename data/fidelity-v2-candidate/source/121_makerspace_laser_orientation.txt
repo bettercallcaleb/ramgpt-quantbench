@@ -1,0 +1,197 @@
+Makerspace Laser Cutter Orientation
+
+Participants:
+Dev — makerspace instructor
+Lena — new member
+Omar — new member
+Grace — lab monitor
+
+Dev: Before anyone operates the laser cutter independently, I want to be clear about what this orientation does and does not authorize. Today covers routine cutting and engraving of approved materials. It does not authorize machine maintenance, opening service panels, bypassing interlocks, or experimenting with unknown materials.
+
+Lena: What if I bring something and I know what plastic it is?
+
+Dev: "Know" needs to mean we can identify it from reliable documentation, not just appearance. Some plastics that look similar produce very different fumes.
+
+Omar: Acrylic is okay, right?
+
+Dev: Approved cast acrylic is on our material list. PVC and vinyl are prohibited because they can release corrosive and hazardous gases. Unknown plastics do not go in the machine.
+
+Grace: The material cabinet has green labels for approved stock and red labels for prohibited examples.
+
+Dev: Good visual reminder, but always check the written list too.
+
+Lena: What about plywood?
+
+Dev: Specific plywood and solid wood products are allowed within thickness limits. Composite wood with unknown adhesives needs review.
+
+Omar: Cardboard?
+
+Dev: Approved if it's clean and free from unknown coatings or embedded metal. Cardboard burns readily, so settings and supervision matter.
+
+Lena: Can we leave the laser while it's cutting?
+
+Dev: No. Never. Fire can develop quickly. Operator remains in the room and attentive for the entire job.
+
+Grace: "I'm just going to the printer for ten seconds" still counts as leaving.
+
+Dev: Exactly.
+
+Omar: What's the first thing we do when we come in?
+
+Dev: Pre-use check. Let's walk it.
+
+Dev: First, verify the exhaust system is on and the airflow indicator is in the normal range.
+
+Lena: What if the laser powers on but exhaust doesn't?
+
+Dev: Do not run a job. Stop and report it.
+
+Dev: Second, inspect the bed for scraps, especially small pieces near the beam path.
+
+Omar: Why are tiny scraps a problem?
+
+Dev: They can ignite or interfere with focus and airflow. Clean work area reduces fire risk.
+
+Dev: Third, confirm the lens and protective window are not visibly contaminated. You do not remove optics unless trained for maintenance.
+
+Grace: If it looks dirty, mark the machine out of service and call a monitor.
+
+Dev: Fourth, check the fire extinguisher is present and accessible. But remember, extinguisher use is not the first response to every tiny flame.
+
+Lena: What is the first response?
+
+Dev: If material begins sustaining a flame, stop the laser using the normal stop control if safe. Keep the lid closed initially because opening it can feed oxygen. If the flame does not extinguish or grows, use emergency procedures and alert staff.
+
+Grace: If there is a significant fire, trigger building emergency response. Don't become committed to saving the machine.
+
+Omar: Where's the emergency stop?
+
+Dev: Here. Pressing it removes machine motion and laser operation according to the equipment design. After an emergency stop, don't just reset and continue; a monitor inspects the cause.
+
+Lena: How do we focus?
+
+Dev: This machine has automatic focus for normal approved stock. You place the material flat and enter thickness from measurement.
+
+Omar: Can I just use the manufacturer's nominal thickness?
+
+Dev: Measure actual stock. Acrylic sold as three millimetres may not be exactly three.
+
+Lena: Calipers?
+
+Dev: Yes. The tool set is here.
+
+Dev: Now files. The software distinguishes vector cut, vector score, and raster engraving.
+
+Omar: So a thin line always cuts?
+
+Dev: No. Operation type is assigned in the job software. Don't rely on line color conventions from another lab.
+
+Grace: That's a common mistake when people import online templates.
+
+Dev: Before sending, use preview. Confirm dimensions and units. A drawing intended as 100 millimetres can become 100 inches if the import units are wrong.
+
+Lena: Does the software stop it from exceeding the bed?
+
+Dev: It warns, but you still verify.
+
+Omar: How do we choose power and speed?
+
+Dev: Start from our approved material settings table. For a new batch, run a small test pattern at conservative settings.
+
+Lena: Can we increase power until it cuts through?
+
+Dev: That's not the preferred approach. Often a slower speed or multiple controlled passes is safer than excessive power. Thick material may not be approved at all.
+
+Grace: If you see heavy smoke, flare, or unusual odor, stop.
+
+Dev: Correct.
+
+Omar: What about engraving a metal water bottle?
+
+Dev: Bare metal is not directly engraved by this CO2 laser. Some coated metals can be marked if the coating is approved. You cannot assume a painted surface is safe because the substrate is metal.
+
+Lena: Leather?
+
+Dev: Only known natural leather on the approved list. Synthetic leather may contain PVC.
+
+Dev: Let's talk placement. Keep the material flat. Warped stock can move out of focus or interfere with the head.
+
+Omar: Magnets to hold it down?
+
+Dev: Only the approved low-profile fixtures. Never place random metal objects in the bed.
+
+Lena: Why?
+
+Dev: They can interfere with motion and reflect the beam unpredictably.
+
+Grace: Also don't cut reflective metal foil.
+
+Dev: Yes.
+
+Omar: Air assist is automatic?
+
+Dev: It should be enabled for cutting profiles according to the job. If airflow is missing, stop.
+
+Lena: Suppose the cut doesn't go all the way through. Can I run it again without moving the material?
+
+Dev: If the job has fully stopped, material hasn't shifted, and the settings remain within policy, a second pass can be appropriate. But first inspect for charring or excessive heat.
+
+Omar: Can I open the lid to check while the laser is running?
+
+Dev: No. The interlock should disable the laser when opened, but we don't use the safety interlock as an operating control.
+
+Lena: After the job?
+
+Dev: Wait briefly for exhaust to clear fumes, then open. Some materials remain hot. Remove finished pieces and all scraps.
+
+Grace: If there's smoldering, it goes into the designated noncombustible area until fully cool.
+
+Dev: Right.
+
+Omar: What about resin or glue from tape?
+
+Dev: Masking materials must be approved too. Some tapes leave residue or contain unsuitable adhesives.
+
+Lena: I have painter's tape at home.
+
+Dev: Use the lab-provided masking unless a monitor approves another type.
+
+Dev: Now documentation. Every job log records operator, material, approximate thickness, and unusual events.
+
+Omar: Every job?
+
+Dev: Yes. It helps us track material performance and machine maintenance.
+
+Grace: If a setting works poorly, note it rather than just trying increasingly aggressive values.
+
+Dev: Exactly.
+
+Lena: What's the rule for files with tiny repeated cuts, like a detailed lattice?
+
+Dev: Dense cutting can overheat material because the beam repeatedly visits nearby areas. The software has a job-time estimate, but geometry matters too. Large dense jobs need monitor review.
+
+Omar: So passing the material list isn't the only approval.
+
+Dev: Correct. Material, thickness, geometry, and settings all matter.
+
+Dev: Final check. I give you a sheet of unknown clear plastic with no label. What do you do?
+
+Lena: Don't cut it. Find documentation or use known approved stock.
+
+Dev: A plywood panel is approved, but it is visibly warped.
+
+Omar: Don't run it flat-ish and hope. Replace or properly secure using approved methods, and ask if uncertain.
+
+Dev: A small flame appears and continues after the beam moves on.
+
+Lena: Stop the job, keep the lid closed initially, and escalate if it doesn't go out.
+
+Dev: Your job says three minutes remaining and you need the washroom.
+
+Omar: Cancel or wait. Don't leave it running unattended.
+
+Dev: Good.
+
+Grace: After you pass the practical check, your access card will allow independent booking. If you encounter anything outside today's normal workflow, "independent access" does not mean "figure it out alone."
+
+Dev: Exactly. Safe makerspace use includes knowing when to stop and ask.

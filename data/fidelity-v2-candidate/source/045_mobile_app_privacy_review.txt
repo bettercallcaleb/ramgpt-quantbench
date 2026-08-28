@@ -1,0 +1,49 @@
+The privacy review for the mobile app began with a feature that sounded harmless: “personalized nearby recommendations.” Product wanted to suggest cafés, transit stops, and events based on where a user was. Legal wanted to know exactly what “where” meant.
+
+产品经理先说：“We only need approximate location.” The privacy engineer asked the obvious follow-up: “Approximate at collection, or precise location collected and then rounded on the server?” 房间里安静了一下。Those two implementations produce similar UI but very different privacy properties.
+
+The current prototype requested the operating system’s precise location permission, sent latitude and longitude to the backend, then converted them into a neighborhood identifier. “那就不是 approximate collection,” the engineer said. “That is precise collection with approximate downstream use.”
+
+The team explored whether the conversion could happen on device. The app already shipped a lightweight map grid for offline search. A local function could map coordinates to a coarse cell and send only the cell ID. Product asked whether recommendation quality would drop. Engineering estimated that urban suggestions would remain useful at roughly one-kilometer granularity.
+
+“那先做 data minimization experiment,” said counsel. “Don’t start from maximum data and promise to be careful later.”
+
+The second issue was retention. Backend logs currently stored recommendation requests for thirty days, including the location-derived cell, account ID, device model, and query. Analytics wanted ninety days for cohort analysis. “为什么一定要 account ID?” the privacy engineer asked. Analytics replied that they needed to understand repeated use.
+
+They considered a pseudonymous session identifier, but product wanted cross-device behavior. Legal pushed back: cross-device analysis was not necessary for the feature’s core function. The group separated operational retention from research retention. Production logs would keep a short-lived pseudonymous ID for debugging; longer analytics would aggregate by coarse region and remove account-level linkage.
+
+The discussion moved to consent copy. The draft screen said, “Allow location to improve your experience.” Everyone disliked it. “Improve your experience 是典型 vague language,” counsel said. The permission prompt needed to say what the app would do: use approximate location to show nearby places, with a clear option to continue without location.
+
+A designer worried that too much text would reduce acceptance. The privacy engineer replied, “Higher opt-in is not the objective function. Informed choice is.” They wrote a short primary sentence and placed detailed explanation one tap away.
+
+Then someone noticed the app also requested Bluetooth permission for a separate device-pairing feature. On some operating systems, users associate Bluetooth scanning with location tracking. “如果两个 permission 在 onboarding 一起弹，用户会以为我们 secretly track more,” the designer said. The team staggered requests so each appeared only when its feature was used.
+
+The legal reviewer asked for a data-flow diagram. Engineering had one, but it labeled an external recommendation API simply as “partner service.” “Partner is a business word, not a technical boundary,” she said. They expanded the diagram to show which fields left the company network, whether requests were authenticated, and whether the provider could retain them.
+
+The external API received the coarse area plus categories such as “coffee” or “museum.” It did not need user ID. An SDK configuration, however, enabled diagnostic telemetry by default. That telemetry included device identifiers. “这就是 third-party SDK review 为什么不能只看我们主动 send 的 payload,” the privacy engineer said.
+
+They disabled diagnostic telemetry and added a build-time check so future SDK upgrades could not silently re-enable it without review. Product asked whether crash reporting would suffer. The app had its own crash pipeline, so the vendor telemetry was not essential.
+
+At 13:40 the team discussed minors. The app was not targeted specifically at children, but teenagers could use it. The recommendation feature did not require age data. Counsel advised against collecting date of birth merely to create an age gate unless another legal requirement demanded it. “不要为了 privacy compliance 反而新增敏感数据。”
+
+Security then raised abuse cases. Even coarse location could reveal patterns if queried repeatedly. Rate-limited APIs and short retention reduced risk, but internal support tools also mattered. Customer-service agents did not need to see a map of recent recommendation areas. The proposed support panel originally displayed the last ten requests; that field was removed.
+
+The team reviewed deletion behavior. If a user deleted the account, operational recommendation logs would expire automatically, but analytics aggregates would remain because they no longer contained user identifiers. The privacy notice needed to describe that distinction accurately rather than saying “all data is immediately deleted.”
+
+A developer asked about backups. “If account deletion happens today, old encrypted backups may still contain historical identifiers until backup rotation,” she said. Legal agreed that policy should specify the retention window rather than promising impossible instantaneous erasure across backups.
+
+The meeting ended with a revised design:
+- precise coordinates processed locally;
+- only coarse area cells sent to backend;
+- location feature optional;
+- no account ID in recommendation request logs;
+- short operational retention;
+- aggregate analytics without user-level linkage;
+- third-party diagnostic telemetry disabled;
+- support tools cannot browse location history;
+- permission prompts triggered in context;
+- deletion language aligned with backup reality.
+
+产品经理最后总结：“Feature 看起来没变，用户还是看到 nearby recommendations，但 data path 已经完全不一样。”
+
+That was the central lesson of the review. Privacy is often invisible in screenshots. Two apps can display the same nearby café while one sends precise coordinates, persistent identifiers, and SDK telemetry, and the other computes locally and transmits only a coarse region. The meaningful design choices live underneath the interface, in what data exists at all.

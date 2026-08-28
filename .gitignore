@@ -1,0 +1,78 @@
+# Models, weights, captures, and numerical scratch
+*.gguf
+*.safetensors
+*.rql
+*.npz
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.part
+*.partial
+
+# Intentionally public compact evidence
+!artifact-bench/public/**/*.npz
+
+# Local benchmark state
+artifact-bench/runs/
+artifact-bench/downloads/
+artifact-bench/results/
+!artifact-bench/results/
+artifact-bench/results/*
+!artifact-bench/results/qwen3-4b-q4-k-m/
+artifact-bench/results/qwen3-4b-q4-k-m/*
+!artifact-bench/results/qwen3-4b-q4-k-m/open-artifact-rank-v1/
+!artifact-bench/results/qwen3-4b-q4-k-m/open-artifact-rank-v1/per-position.npz
+!artifact-bench/results/qwen3-4b-q4-k-m/open-artifact-rank-v1/independent-validation.json
+/models/
+/results/
+/scratch/
+/tmp/
+*.log
+*.pid
+
+# Dependency and build trees
+third_party/llama.cpp/
+runtime/
+build/
+build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
+# Python and tools
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+cookies.txt
+.huggingface/
+
+# Editors and operating systems
+.idea/
+.vscode/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Required immutable evaluation fixtures and generated corpus records
+!artifact-bench/results/qwen3-4b-q4-k-m/open-artifact-rank-v1/per-position.npz
+!artifact-bench/results/qwen3-4b-q4-k-m/open-artifact-rank-v1/independent-validation.json
+!data/fidelity-v2-candidate/source/*.log

@@ -1,0 +1,133 @@
+Warehouse Wi-Fi Capacity Survey
+
+Site Overview
+
+The distribution centre covers approximately 42,000 square metres with 18-metre storage aisles, two mezzanines, receiving docks, packing stations, automated conveyors, and a yard-facing staging area. Wireless clients include handheld scanners, vehicle-mounted terminals, laptops, VoIP handsets, label printers, and autonomous carts.
+
+The survey objective is not merely to achieve signal coverage. The network must sustain predictable roaming and airtime utilization during peak receiving and picking periods.
+
+Method
+
+Measurements were collected over three working days using:
+- active throughput tests;
+- passive spectrum capture;
+- AP radio statistics;
+- client association logs;
+- roaming event logs;
+- channel utilization;
+- retry percentage;
+- noise floor;
+- application transaction latency.
+
+Measurements were repeated during low-load morning hours and the 14:00–17:00 operational peak.
+
+Physical Conditions
+
+Metal shelving strongly shapes propagation. An access point visible across an empty cross-aisle can become heavily attenuated when the same path crosses multiple loaded rack rows. Pallet composition also changes RF behavior: paper goods, liquids, and metal components produce different absorption and reflection patterns.
+
+Forklifts and people create transient shadowing at client height. Consequently, ceiling-mounted AP placement was evaluated from the perspective of actual handheld and vehicle antennas, not only theoretical line of sight.
+
+Client Population
+
+Peak observed associations:
+- 612 handheld scanners;
+- 84 vehicle-mounted terminals;
+- 56 VoIP handsets;
+- 41 laptops/tablets;
+- 73 fixed wireless printers;
+- 38 autonomous carts.
+
+The total association count is less important than simultaneous airtime demand. Scanners send small transactional bursts, while voice traffic requires low jitter and carts maintain frequent telemetry.
+
+2.4 GHz Findings
+
+The 2.4 GHz band remains enabled for a small number of legacy printers. During peak operation, co-channel contention was high because only three non-overlapping 20 MHz channels are practical.
+
+Several scanners capable of 5 GHz remained associated to 2.4 GHz longer than desired because transmit power on 2.4 GHz was higher. This produced a sticky-client pattern.
+
+Recommendation: reduce 2.4 GHz AP power, disable it on selected radios, and migrate remaining legacy printers to wired or 5 GHz-capable replacements.
+
+5 GHz Findings
+
+5 GHz provides the primary production capacity. Most radios currently use 40 MHz channels. In dense aisle areas, this creates excessive co-channel reuse distance. Channel utilization exceeded 70% on several APs even though RSSI appeared strong.
+
+Moving dense zones to 20 MHz channels increases the number of independent channels and reduces contention. Peak per-client throughput needs are modest, so wide channels are not valuable here.
+
+Roaming
+
+Handheld scanners roam while workers move rapidly between aisles. Association logs show some devices remaining connected below -75 dBm before switching. During those intervals, retry rates rise and transaction latency spikes.
+
+802.11k/v assistance is enabled, but client behavior varies by firmware. 802.11r is supported on current scanner models and should be enabled after application compatibility testing.
+
+The survey identified three physical boundaries where roaming is especially important:
+- aisle to packing zone;
+- mezzanine stair transition;
+- receiving dock to interior staging.
+
+AP cell overlap should be tuned around these transitions rather than uniformly increasing power.
+
+Voice
+
+VoIP handsets showed acceptable mean latency but occasional jitter bursts correlated with channel utilization above 80%. Voice quality degraded before packet loss became obvious.
+
+Recommendation: preserve WMM voice prioritization, reduce co-channel contention, and monitor airtime rather than relying on bandwidth utilization alone.
+
+Autonomous Carts
+
+Cart telemetry uses 5 GHz and roams frequently. Two carts experienced short disconnections near the automated conveyor because a local industrial camera bridge emits in the same band.
+
+Spectrum analysis found narrow bursts not visible in ordinary Wi-Fi AP statistics. The camera bridge will be moved to a coordinated channel and directional antenna.
+
+Coverage Gaps
+
+A true low-signal gap exists behind the fire-rated equipment room on the west mezzanine. Median RSSI fell below -78 dBm and SNR below 18 dB. An additional low-power AP is recommended, positioned to avoid creating excessive overlap below.
+
+The freezer staging area has adequate RSSI but elevated retries, likely because insulated panels produce multipath. AP relocation by approximately eight metres improved test performance more than adding transmit power.
+
+Capacity Model
+
+Peak airtime budget was estimated per zone using observed frame sizes and transaction rates. The busiest packing zone reaches approximately 63% planned airtime after the proposed channel changes, leaving headroom for retransmissions and workload growth.
+
+Design target is not 100% utilization. High airtime occupancy increases queueing delay sharply and reduces resilience to interference.
+
+Power Tuning
+
+Current APs use near-maximum automatic power in several zones. That extends cell size and encourages clients to remain attached to distant APs.
+
+Recommended policy:
+- cap 5 GHz power to a range consistent with scanner transmit capability;
+- reduce 2.4 GHz below 5 GHz where dual-band clients exist;
+- avoid asymmetric links where AP can hear client poorly even though client hears AP strongly.
+
+Channel Plan
+
+Use 20 MHz channels in high-density warehouse areas. DFS channels may be used where client support is verified, but radar-triggered channel moves must be evaluated for cart and voice impact.
+
+Static planning is preferred for the most constrained zones; automatic radio management remains enabled elsewhere with bounded channel/power ranges.
+
+Operational Metrics
+
+Post-change monitoring should include:
+- channel utilization P50/P95;
+- retry rate;
+- roam duration;
+- failed authentication;
+- DHCP latency;
+- scanner transaction P95;
+- voice jitter;
+- cart disconnect count;
+- clients below -72 dBm for extended periods.
+
+Implementation Sequence
+
+1. Upgrade scanner firmware and validate 802.11r.
+2. Reduce 2.4 GHz power and disable selected radios.
+3. Convert dense 5 GHz zones to 20 MHz.
+4. Coordinate industrial camera bridge channels.
+5. Add west-mezzanine AP.
+6. Relocate freezer-staging AP.
+7. Re-run peak-period validation.
+
+Conclusion
+
+The site does not suffer from a general lack of access points. Its primary limitations are airtime contention, oversized RF cells, client roaming behavior, and localized interference. Adding APs without reducing cell size and coordinating channels would likely worsen performance.

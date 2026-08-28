@@ -1,0 +1,33 @@
+The accessibility walkthrough began before the museum opened. 陈老师站在入口大厅，没有看墙上的总平面图，而是问：“If I arrive here with low vision and no prior knowledge, what tells me where the exhibition actually starts?” The design team instinctively pointed toward a tall banner. She shook her head. “That is visually dominant for you. 对我来说，它只是一个亮色的大块。”
+
+The new wayfinding system had been designed around three layers: overhead signs, floor-level directional cues, and a mobile audio guide. On renderings, the system looked coherent. During the walkthrough, however, the team discovered that coherence on a screen did not always survive real movement.
+
+At the ticket gate, the first sign read “Galleries 1–4 →”. The arrow pointed right, but the accessible elevator was slightly left and behind a column. “So if I follow the main sign, I reach the stairs first,” said Daniel, who uses a wheelchair. “Then I have to backtrack.” 设计师解释说电梯在建筑原始结构里位置受限。Daniel 回答：“The building can be constrained; the information doesn’t have to be.”
+
+The group agreed that accessible routing should not be treated as a secondary correction after the main route. The sign needed to show both options at the decision point: stairs right, elevator left, with equivalent visual prominence.
+
+In the first gallery corridor, 陈老师 tested the tactile floor strip. It was intended to guide visitors from the elevator to the information desk. Her cane detected the change in texture, but halfway along the path the strip passed directly beside a bench. “这里会有人的脚,” 她说。A tactile route that technically exists but repeatedly intersects resting areas can become unreliable. The facilities team marked the bench for relocation rather than shifting the entire floor strip.
+
+Next they evaluated label contrast. The museum had chosen pale gray walls and dark gray text to maintain a quiet visual style. Under gallery lighting, the contrast looked weaker than in design proofs. “Your brand palette is doing too much work,” Daniel said. “Wayfinding is infrastructure, not decoration.” 策展人有点犹豫，因为更高对比度会改变展厅气氛。最终大家决定先把方向信息与解释性展签分开：navigation signage 使用更高对比度，展览文字仍保留较柔和的视觉体系。
+
+The audio guide created a different problem. It offered instructions such as “continue forward approximately twelve meters and turn left after the large sculpture.” 陈老师问：“What if I don’t know which sculpture you mean?” The phrase depended on visual recognition. They rewrote the cue around stable spatial features: “continue until the floor changes from wood to stone, then turn left.” Where possible, audio directions would reference detectable surfaces, doorways, or acoustic changes rather than visual landmarks alone.
+
+At the central atrium, bilingual signage became the main topic. English text occupied the first line, Chinese the second. The team had tried to align both perfectly, but some Chinese translations were significantly shorter. “不要为了排版把中文写得像机器翻译,” one editor said. The phrase “Quiet Study Room” had been rendered as “静默研习空间,” which sounded formal and unfamiliar. The group changed it to “安静阅览室,” prioritizing immediate comprehension over stylistic symmetry.
+
+A visitor-services manager pointed out that code-switching also happens in real interactions. Staff may say, “洗手间在 gallery two 后面，turn left at the blue wall.” The official system should not assume visitors operate in one language at a time. For the mobile guide, the team decided that users could switch language per instruction without restarting the route.
+
+The children’s discovery area revealed another conflict. Bright icons marked activity zones, but the same shapes were reused elsewhere as decorative graphics. “If a symbol means something, it cannot also be random wallpaper,” 陈老师说。The designers removed several decorative arrows and circles from nearby walls so directional symbols would retain semantic meaning.
+
+At 10:15 they simulated a temporary closure. Facilities placed a movable barrier across the east corridor. The permanent sign still pointed visitors through the closed route, while the temporary paper notice sat too low to be seen in a crowd. This was exactly the kind of operational condition absent from architectural drawings. The group tested a magnetic overlay that could cover the permanent arrow and redirect traffic without creating a second competing message.
+
+Emergency egress was reviewed separately. The accessibility consultant emphasized that everyday wayfinding and emergency navigation should share certain landmarks but not depend on identical systems. Audio guide devices might fail or be unavailable during evacuation. Tactile and high-contrast exit cues therefore needed to stand on their own.
+
+The team moved upstairs and encountered a small but revealing problem: room numbers 2.10 and 2.11 were mounted on the hinge side of the doors. When doors stood open, the numbers disappeared. “这个不是无障碍专属问题，是所有人都会遇到,” the curator said. Accessibility review often exposed general usability flaws rather than niche exceptions.
+
+They tested the museum map last. The current map was geographically accurate but cognitively dense. It showed every room, service area, staircase, and collection name. Daniel suggested a hierarchy: first show “where am I, where are the essential services, how do I reach the major zones,” then offer detail. “A map doesn’t become better because it contains everything.”
+
+Before leaving, each participant independently attempted three routes: entrance to washroom, entrance to temporary exhibition, and second-floor gallery to café. The design team recorded wrong turns rather than coaching people mid-route. This mattered because spoken rescue can hide a signage failure.
+
+The final debrief switched back and forth between English and Chinese as naturally as the walkthrough itself. “High contrast is not the whole accessibility story.” “对，route logic 才是核心。” “Temporary closures need to be designed, not improvised.” “还有 bilingual copy，要按真实表达，不要按字数对齐。”
+
+The most useful conclusion was that wayfinding could not be evaluated from a static plan. It had to be walked, interrupted, misunderstood, and retried. A museum route is not just a line between rooms; it is a sequence of decisions made by people with different bodies, languages, habits, and levels of familiarity. The design only works when those decisions remain understandable outside the rendering.

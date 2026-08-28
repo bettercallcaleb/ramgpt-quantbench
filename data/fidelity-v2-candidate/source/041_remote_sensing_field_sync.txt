@@ -1,0 +1,37 @@
+The remote-sensing team’s evening sync took place in a temporary field office with three laptops, two satellite modems, and a whiteboard covered in flight lines. The morning drone survey had finished, but the data pipeline was not yet trustworthy.
+
+“Before we celebrate 1,200 hectares collected,” said Dr. Morgan, “先确认 coordinate reference、timestamp 和 ground control 都一致。” The project combined drone imagery, handheld vegetation plots, and satellite scenes. A small metadata mismatch could make otherwise excellent measurements impossible to compare.
+
+The field team had flown six blocks over a recovering grassland. Each drone stored image time in UTC, while one handheld tablet logged plot observations in local time. “Tablet 上显示 14:32，看起来没问题，但 export 没有 timezone offset,” 小赵说。If analysts assumed UTC, every field plot would appear four hours away from its corresponding flight.
+
+They corrected the export configuration but preserved the original files unchanged. A conversion script would create normalized timestamps in a derived dataset, with the timezone assumption documented. “Never overwrite raw field data to make it cleaner,” Morgan said. “原始记录哪怕有缺陷，也要保留 provenance.”
+
+Next came ground-control points. Survey markers had been measured with RTK GNSS, but marker GCP-07 was partially covered by grass in the imagery. The photogrammetry software still detected a bright corner and accepted it. “Software acceptance is not visual confirmation,” the mapping specialist warned. They opened several source images and found that the detected point was offset onto a nearby stone.
+
+Rather than forcing the point, they marked GCP-07 as unusable for that block. The remaining control geometry was sufficient, though less ideal near the southeast edge. The model would report higher uncertainty there.
+
+A graduate student asked whether they could use GCP-07 only as a check point. “No,” 小赵回答，“如果我们连它真实 image coordinate 都不确定，当 check point 也没有意义。” A validation point must be independently reliable; changing its label does not repair bad evidence.
+
+The satellite analyst then showed a Sentinel scene from two days earlier. Cloud cover was officially only six percent, but thin cirrus crossed one of the study areas. Automated masks missed part of it. “This is why overall cloud percentage is a poor scene-selection metric,” she said. The team kept the scene but flagged the affected polygon for alternate imagery.
+
+Field plots introduced another challenge. Botanists recorded canopy cover in categories—0–5%, 5–25%, 25–50%, and so on—while the remote-sensing model predicted continuous fractions. “不要把 category midpoint 当 ground truth without thinking,” Morgan said. Midpoints could be used for an exploratory plot, but formal validation should respect interval-valued observations or use a compatible scoring method.
+
+The group reviewed naming conventions. Drone blocks were `B01` through `B06`, field plots were `P001` through `P084`, and satellite tiles used provider IDs. One spreadsheet had manually shortened satellite names, creating ambiguous duplicates. They agreed to retain provider-native IDs and maintain a separate human-readable alias field.
+
+At 19:20, network bandwidth became the practical bottleneck. Uploading all raw imagery over the satellite connection would take hours. The field office had a local NAS, and a vehicle would return to the university the next afternoon. “Which data truly needs remote access tonight?” asked operations. The answer was metadata, quick-look orthomosaics, quality-control thumbnails, and logs—not hundreds of gigabytes of raw images.
+
+They created a priority sync: manifests and checksums first, then reduced-resolution previews, then selected diagnostic raw frames. Full imagery would travel on encrypted drives with the field team. “Sneakernet is not a failure if it is planned,” Morgan joked. “只是 checksum 一定要 before and after transport.”
+
+The checksum process caught a real issue. One memory card copy on the NAS differed from the original card for two files. The filenames and sizes matched, but SHA-256 did not. The copying laptop had reported no error. They recopied those files and verified the hashes. “如果只看 file count，这个 corruption 就过去了,” 小赵说。
+
+The ecological team joined by video for the final section. They wanted a map of areas with apparent vegetation decline before the next morning’s sampling. The remote team cautioned that reflectance differences could be caused by soil moisture, view angle, or illumination. They produced a “candidate change” layer rather than labeling it vegetation loss.
+
+“Can we at least rank the sites?” asked the ecologist. Yes, but with flags. Areas were ranked by spectral change magnitude, while pixels near cloud, image-edge, or poor control zones received lower confidence. The field crew could use the map to prioritize visits without treating it as a diagnosis.
+
+中文讨论里有人提出：“明天是不是直接去 top ten?” Morgan replied, “Top ten by signal, not top ten by certainty. We should include two low-confidence sites to understand failure modes.” That decision made the next day’s sampling more informative.
+
+Before closing, the team reviewed the next morning’s flight plan. Wind was forecast to increase after 10:30, so blocks with the most topographic relief would fly first. Batteries were assigned by serial number, and one pack with unusual voltage sag was removed from rotation despite still passing the charger’s basic status check.
+
+The field-sync summary listed no grand conclusions. It recorded concrete states: five reliable GCPs in one block, one unusable point, local-time metadata corrected only in derived data, one partly clouded satellite polygon, two corrupted copies replaced, full raw imagery pending physical transfer, and candidate change sites queued for ground inspection.
+
+Remote sensing often looks like a sophisticated image-analysis problem. In the field, much of its credibility depends on less glamorous synchronization: clocks, coordinate systems, names, hashes, control points, storage, and what observers actually wrote down. “模型可以 later,” 小赵在关电脑前说，“First make sure all our realities refer to the same place and time.”

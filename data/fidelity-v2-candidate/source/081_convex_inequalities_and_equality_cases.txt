@@ -1,0 +1,143 @@
+A useful inequality is not complete until its equality cases are understood. In convex analysis this is especially important because equality often identifies the exact geometric situation in which a bound becomes sharp.
+
+Start with Jensen's inequality. Let phi be convex on an interval I, let x_1,...,x_n belong to I, and let weights lambda_i satisfy lambda_i >= 0 and sum lambda_i=1. Then
+
+phi(sum_i lambda_i x_i) <= sum_i lambda_i phi(x_i).
+
+If phi is strictly convex and every lambda_i is positive, equality occurs if and only if
+
+x_1 = x_2 = ... = x_n.
+
+The necessity follows from strict convexity. For two distinct points x and y and 0<t<1,
+
+phi(tx+(1-t)y) < t phi(x)+(1-t)phi(y).
+
+For more than two points, combine terms recursively. If at least two positively weighted x_i differ, the convex combination can be reduced to a strict two-point step, forcing strict inequality.
+
+This gives a quick proof of the arithmetic-geometric mean inequality. Take phi(x)=-log x on (0,infinity), which is strictly convex because phi''(x)=1/x^2>0. With equal weights,
+
+-log((x_1+...+x_n)/n)
+<= -(1/n) sum_i log x_i.
+
+Multiplying by -1 reverses the inequality:
+
+log((x_1+...+x_n)/n)
+>= log((prod_i x_i)^(1/n)).
+
+Since log is increasing,
+
+(x_1+...+x_n)/n >= (prod_i x_i)^(1/n).
+
+Equality holds exactly when all x_i are equal. The common statement of AM-GM often gives the inequality but the strict-convexity argument explains the equality set immediately.
+
+A second example is the tangent-line inequality. If phi is differentiable and convex, then for every x and a,
+
+phi(x) >= phi(a)+phi'(a)(x-a).
+
+Geometrically, a convex graph lies above every tangent line. If phi is strictly convex, equality holds only at x=a. For phi(x)=e^x and a=0, this gives
+
+e^x >= 1+x,
+
+with equality only at x=0.
+
+This elementary bound can generate less obvious inequalities. Let u_i be real numbers with sum u_i=0. Applying e^x >= 1+x termwise gives
+
+sum_i e^(u_i) >= sum_i (1+u_i)=n.
+
+Equality requires each u_i=0. If u_i=log x_i - (1/n)sum_j log x_j, this becomes another normalized form of AM-GM.
+
+Cauchy-Schwarz can also be viewed through convexity, though its equality condition has a linear-algebraic form. For vectors a,b in R^n,
+
+(a dot b)^2 <= ||a||^2 ||b||^2.
+
+Consider the nonnegative quadratic
+
+Q(t)=||a-tb||^2
+    =||a||^2-2t(a dot b)+t^2||b||^2.
+
+If b is nonzero, its minimum occurs at t=(a dot b)/||b||^2. Nonnegativity of that minimum yields Cauchy-Schwarz. Equality holds exactly when the minimum is zero, meaning a=tb for some scalar t. Thus equality corresponds to linear dependence, not necessarily equality of coordinates.
+
+From Cauchy-Schwarz follows the Engel form
+
+sum_i a_i^2/b_i >= (sum_i a_i)^2/(sum_i b_i),
+
+for b_i>0. Set u_i=a_i/sqrt(b_i) and v_i=sqrt(b_i). Equality in Cauchy-Schwarz requires u_i=c v_i, so
+
+a_i/b_i = c
+
+for every i. Again, the equality condition is inherited from the proof.
+
+Another fundamental convex inequality is Young's inequality. If p,q>1 satisfy 1/p+1/q=1, then for a,b>=0,
+
+ab <= a^p/p + b^q/q.
+
+One proof uses convex conjugacy. Let phi(x)=x^p/p for x>=0. Its Legendre transform is phi*(y)=y^q/q. Fenchel-Young gives
+
+xy <= phi(x)+phi*(y).
+
+Equality in Fenchel-Young occurs when y is a subgradient of phi at x. Here phi'(x)=x^(p-1), so equality requires
+
+b=a^(p-1),
+
+or equivalently a^p=b^q.
+
+This equality relation is the key to deriving Holder's inequality sharply. For sequences a_i,b_i and conjugate exponents p,q, normalize
+
+A=(sum |a_i|^p)^(1/p),
+B=(sum |b_i|^q)^(1/q).
+
+If A and B are nonzero, apply Young to |a_i|/A and |b_i|/B and sum:
+
+sum |a_i b_i|/(AB)
+<= (1/p)sum |a_i|^p/A^p + (1/q)sum |b_i|^q/B^q
+=1.
+
+Therefore
+
+sum |a_i b_i| <= A B.
+
+For equality, every nonzero pair must satisfy
+
+(|a_i|/A)^p = (|b_i|/B)^q,
+
+and signs must align if the absolute-value-free inner product is considered. Thus the p-th powers of |a_i| and q-th powers of |b_i| are proportional.
+
+Strict convexity also clarifies equality in integral inequalities. If phi is strictly convex and X is an integrable random variable,
+
+phi(E[X]) <= E[phi(X)].
+
+Equality occurs when X is almost surely constant, assuming the distribution lies in the strict-convexity region. "Almost surely" matters: changing X on a probability-zero set does not change either side.
+
+As a concrete case, phi(x)=x^2 gives
+
+(E[X])^2 <= E[X^2],
+
+or Var(X)>=0. Equality means Var(X)=0, which is equivalent to X=E[X] almost surely.
+
+Convexity is equally useful when constraints are present. Suppose positive x_i satisfy sum x_i=S. To minimize
+
+F(x_1,...,x_n)=sum_i x_i^2,
+
+Jensen yields
+
+(1/n)sum x_i^2 >= ((1/n)sum x_i)^2=(S/n)^2.
+
+Hence F>=S^2/n, with equality only at x_i=S/n for all i. The equality case is not merely decorative; it identifies the unique optimizer.
+
+If phi is convex but not strictly convex, equality requires more care. For phi(x)=|x|, Jensen says
+
+|sum lambda_i x_i| <= sum lambda_i |x_i|.
+
+Equality can occur for many nonidentical x_i: it holds when all positively weighted nonzero x_i have the same sign. The graph of |x| is affine on each ray (-infinity,0] and [0,infinity). More generally, equality in Jensen occurs when all relevant x_i lie in a region on which phi is affine, or when the supporting hyperplane at their mean touches phi at all those points.
+
+This supporting-hyperplane viewpoint unifies the cases. For a convex phi and mean m=sum lambda_i x_i, choose a subgradient g at m:
+
+phi(x_i) >= phi(m)+g(x_i-m).
+
+Multiply by lambda_i and sum. The linear terms cancel, producing Jensen. Equality holds exactly when every positively weighted x_i lies on the same supporting line,
+
+phi(x_i)=phi(m)+g(x_i-m).
+
+For strictly convex phi this contact set contains only m; for piecewise-linear phi it may contain an interval.
+
+When proving a convex inequality, it is therefore efficient to track where each inequality step can be sharp. If a derivation uses Jensen, Cauchy-Schwarz, and then a monotone transformation, the final equality set is the intersection of the equality sets of all nonreversible steps. A proof that reaches the correct numerical bound but loses this information is mathematically weaker: it tells us how large or small an expression can be, but not what configurations actually achieve the extremum.

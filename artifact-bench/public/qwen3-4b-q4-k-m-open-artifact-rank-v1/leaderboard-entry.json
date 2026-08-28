@@ -1,0 +1,109 @@
+{
+  "artifacts": [
+    {
+      "artifact_sha256": "f6f851777709861056efcdad3af01da38b31223a3ba26e61a4f8bf3a2195813a",
+      "changed_top1_count": 5699,
+      "mean_kl_bf16_to_artifact": 0.03854230747637248,
+      "publisher": "Unsloth",
+      "rank": 1
+    },
+    {
+      "artifact_sha256": "ab27b9bfa375a178d6cba48f3ad892b94b7739659dcc7aae8058ce0ffed6b328",
+      "changed_top1_count": 6437,
+      "mean_kl_bf16_to_artifact": 0.05396429797282026,
+      "publisher": "ggml-org",
+      "rank": 2
+    }
+  ],
+  "badge": "RAMGPT_QUANTBENCH_VERIFIED",
+  "benchmark_id": "qwen3-4b-q4-k-m-open-artifact-rank-v1",
+  "comparison_class": "OPEN_ARTIFACT_DOWNLOAD_RANK",
+  "decision_stability": {
+    "ggml_org_hcdfr": {
+      "1": {
+        "eligible_positions": 43644,
+        "flips": 498,
+        "hcdf_rate": 0.01141050316194666
+      },
+      "2": {
+        "eligible_positions": 31364,
+        "flips": 111,
+        "hcdf_rate": 0.0035390894018620072
+      },
+      "4": {
+        "eligible_positions": 19716,
+        "flips": 33,
+        "hcdf_rate": 0.0016737674984783932
+      }
+    },
+    "ggml_org_max_flipped_bf16_margin": 24.74701690673828,
+    "ggml_org_top1_flips": 6437,
+    "unsloth_hcdfr": {
+      "1": {
+        "eligible_positions": 43644,
+        "flips": 336,
+        "hcdf_rate": 0.00769865273577124
+      },
+      "2": {
+        "eligible_positions": 31364,
+        "flips": 58,
+        "hcdf_rate": 0.0018492539216936614
+      },
+      "4": {
+        "eligible_positions": 19716,
+        "flips": 13,
+        "hcdf_rate": 0.0006593629539460336
+      }
+    },
+    "unsloth_max_flipped_bf16_margin": 9.239395141601562,
+    "unsloth_top1_flips": 5699
+  },
+  "frozen_evidence": {
+    "freeze_manifest_sha256": "34500999556dcc3037c93f49c95d74c4411d1f5e31de9045cb363b9e63244d9c",
+    "result_card_sha256": "55fa093ec7804b50a743a84a6dcd0cdf14b82136bbdcc6a32846a3d5d8b1f03a",
+    "verified_result_sha256": "6a4624c40f412087c5de23ef15c3479cb406cf68f8835cfd2ecf89c1c2bea4cd"
+  },
+  "model": "Qwen/Qwen3-4B",
+  "paired_uncertainty": {
+    "ci_95": [
+      0.013704046109005844,
+      0.017244240663994784
+    ],
+    "delta": 0.015421990496447782,
+    "delta_definition": "mean_KL_ggml-org - mean_KL_Unsloth",
+    "replicates": 10000,
+    "resampling_unit": "segment",
+    "seed": 20260823,
+    "segments": 128
+  },
+  "primary_metric": {
+    "direction": "lower_is_better",
+    "ggml_org": 0.05396429797282026,
+    "name": "mean KL(BF16 || artifact)",
+    "unsloth": 0.03854230747637248,
+    "unsloth_relative_reduction_percent": 28.57813605620376
+  },
+  "quantization_label": "Q4_K_M",
+  "ramgpt_recommended": {
+    "awarded": false,
+    "status": "NOT_AWARDED"
+  },
+  "schema": "ramgpt-quantbench-public-leaderboard-entry",
+  "schema_version": 1,
+  "scope": "Behavioral fidelity to the pinned native BF16 reference under this versioned RAMGPT QuantBench execution contract. This is not a claim of universal model quality or downstream capability.",
+  "status": "VERIFIED",
+  "strict_recipe_rank": {
+    "eligible": false,
+    "reason": "Unsloth explicitly records importance-matrix provenance while ggml-org does not expose equivalent recipe provenance. This result ranks downloadable artifacts, not controlled quantization algorithms.",
+    "status": "INELIGIBLE"
+  },
+  "verification": {
+    "bf16_full_reference_determinism": "PASS",
+    "canonical_analysis": "PASS",
+    "full_scored_positions": 65536,
+    "full_vocab_fp32_logits": true,
+    "independent_raw_rql_validation": "PASS",
+    "vocab_size": 151936
+  },
+  "winner": "Unsloth"
+}

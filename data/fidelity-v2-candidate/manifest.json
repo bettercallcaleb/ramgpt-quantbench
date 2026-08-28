@@ -1,0 +1,935 @@
+{
+  "artifact_status": "CANDIDATE_NOT_OFFICIAL",
+  "burn_in_tokens": 256,
+  "domain_counts": {
+    "chinese_prose": 16,
+    "code": 16,
+    "dialogue_instruction": 16,
+    "english_prose": 16,
+    "math_symbolic": 16,
+    "mixed_en_zh": 16,
+    "structured_data": 16,
+    "technical_it": 16
+  },
+  "extraction_manifest_sha256": "f4f16ae06d9f273869cb1a8a46bb4a40413bfb8e8a62fbfda1c3ed1ed1ecafdb",
+  "rqseg_sha256": "7110c8d1f3657bb63bc6b26eca3945b346ea74d11721f1ba4985fec91323e4ac",
+  "schema": "ramgpt-fidelity-v2-candidate-manifest",
+  "schema_version": 1,
+  "scored_predictions_per_segment": 512,
+  "segment_count": 128,
+  "segments": [
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "f4ca65eb7731e7989af5a0c9c6e0e3c917c18ef79c8dc6d6961fd86584b12541",
+      "segment_id": 0,
+      "source_filename": "000_winter_lighthouse_supply_run.txt",
+      "source_sha256": "0dab294645bff26c65c0fb7d27e07e7c14d18be3609d74c8904cdc51625c67e9"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "6fc3103a8a68b421e7d48f347be4b6b97e4b7113ab0182dd793d85c9b5be0476",
+      "segment_id": 1,
+      "source_filename": "001_urban_tree_canopy_dispute.txt",
+      "source_sha256": "2a6602c15307114595bc992d0789b9b8e099d0fb8d8fb5ae9a4a89b59e130e54"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "bbdae42b09aff366cbdb148fd4c261c06f7eb409af58831072d1ba79dcfe6984",
+      "segment_id": 2,
+      "source_filename": "002_restoring_a_ceramic_mural.txt",
+      "source_sha256": "d81201846d9bf976048d6f820d82a67e1a62a395a041e98cb8cf6f473e81fca0"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "7ad616e20b0c83af56fe4e39a7cc58afe7c77971c2652e83b9fa0c2c9807afc8",
+      "segment_id": 3,
+      "source_filename": "003_migratory_bird_count.txt",
+      "source_sha256": "dc27076791d7c59d422086f55d57dc9fa44b58a17c0ec086a3387a13ce239f36"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "e690eac2ff67674db2cc106bb8bd4f0107a8b0ef33ede326021e693cc010e0db",
+      "segment_id": 4,
+      "source_filename": "004_night_train_station_closure.txt",
+      "source_sha256": "7476d8f66c0528f5e8d7aaa036e7176ab19e63e6953afbc34afa7018a48edd94"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "589632da9fff72aa85d2ac2186ca40673fa1bf5761fe629886c872c168ca07b9",
+      "segment_id": 5,
+      "source_filename": "005_regional_seed_library.txt",
+      "source_sha256": "a5ce550f93835190c3d9d3d955f2ce8ed2930e0cbcd9656a589a4b4fc098b092"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "93dc2056ca3196ec4f097e86e2b387fc48b3ac2656addcf1f2612fecb73e5853",
+      "segment_id": 6,
+      "source_filename": "006_floodplain_buyout_review.txt",
+      "source_sha256": "e92adf5057724124ab61625253809b9e292a3de86fb9a5f1e141fa8dcf3697c2"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "6b36c1b653f19457e3805a05d4575fe855d20f09119cd1b0d58fd00022b2c844",
+      "segment_id": 7,
+      "source_filename": "007_community_orchestra_rehearsal.txt",
+      "source_sha256": "b9bf134db3e101a95c05ffe5db2d73f026aa2a41e626d242dfb41c588ea224b6"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "39b19ac41de41162e7b7df66e3c7f518b6cd33be2627a89b6883253dedf9f17b",
+      "segment_id": 8,
+      "source_filename": "008_coastal_ferry_schedule_redesign.txt",
+      "source_sha256": "12922ff083ce48abbd648611800b467d9590fe820c4de4ed6f4e2a6189ad6c07"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "becbaf870ee52f8626b71e4c0a574b82216af85a5264d2aa50c1c712c941ff41",
+      "segment_id": 9,
+      "source_filename": "009_geological_core_archive.txt",
+      "source_sha256": "8fd54e73561fb2a626d0942f220b258cb39e6b2fa2393918f7b94e33ec772177"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "290df2c57c41e8a1548bd68f1699b709f2d7cbd15b8823630be29ae544fa842d",
+      "segment_id": 10,
+      "source_filename": "010_small_town_water_tower_repair.txt",
+      "source_sha256": "149379395dc6cc559f851dfd83b8a2f7c09c26224e397e8a0e239de02dfc27be"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "e24a9a049774ff6406da516d1e147d4f6b2c340a1ae09c69db3e8b69a39aa3b2",
+      "segment_id": 11,
+      "source_filename": "011_public_market_noise_study.txt",
+      "source_sha256": "621ce91d769a4dda12e305dca2001a2564c0cf97df2c50947f8c74ad371cebe9"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "9dcd8b5409848f0d4e6b955c999d2a8061cfaa3d611790eb7e753d4b7ac6863d",
+      "segment_id": 12,
+      "source_filename": "012_intergenerational_recipe_notebook.txt",
+      "source_sha256": "a9fb633213c7e31ab2bee460c3e8a7661295180739196b177496351178f8bc7e"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "d3340f46d49092ca5b6ba8b391bea2185647af68f527181200104b6779001ded",
+      "segment_id": 13,
+      "source_filename": "013_prairie_prescribed_burn.txt",
+      "source_sha256": "e0867505d3a0cea367a8504d322e40eafae96d4958f888a8ed2643468f85c4f9"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "ecfe281de3bb9898f70e6721ec38d4dabe15008bc1659a756eed9276e056e5d0",
+      "segment_id": 14,
+      "source_filename": "014_mobile_dental_clinic_route.txt",
+      "source_sha256": "643045ceac85a0eb349d37ebb5c1332bb3c86711270faf5bebdac8f2f289e022"
+    },
+    {
+      "domain": "english_prose",
+      "extracted_token_sha256": "ac389fb3607cb405b552e6903c29718943cbfc84bc79bc59fcecad8ac5ad4815",
+      "segment_id": 15,
+      "source_filename": "015_abandoned_railway_greenway.txt",
+      "source_sha256": "fbf45d7fbbd76abc550b5a31e828ce66e4be92ed30b98cc41a7abce4aad34c0b"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "b1b41235d29d2a25f8c0cf80b97f72484d230e7b1dbfb54922e9895974487c40",
+      "segment_id": 16,
+      "source_filename": "016_古籍修复室的梅雨季.txt",
+      "source_sha256": "0fc195356af5fea7f9e4d55ac37e66806e648e7eeca5724a9bcf6a40b08883d8"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "7504938da497232b999a6bacd0df11ecdd104d31b5f2e25f9b5919a2d82c015d",
+      "segment_id": 17,
+      "source_filename": "017_山城公共电梯更新.txt",
+      "source_sha256": "1d8d660c86de6098c5e67c213458d1a8b90bd2d46a1a0444f35c4435a232b89f"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "71cdd5092aa6a51ffdc40c8e736982c3ca2b91ea7214dc88503487c8b58adfa2",
+      "segment_id": 18,
+      "source_filename": "018_海岛小学合班课程.txt",
+      "source_sha256": "c503f60cb6f97fc872ea64fd6a70c627b01c66c7655ed63274d2697594ebdce1"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "9c1a5ba15e845789b60603fab1cdd68d7b5d1e3e8d861ce95c182f7fcbd32793",
+      "segment_id": 19,
+      "source_filename": "019_老茶园土壤改良.txt",
+      "source_sha256": "688ecc13982167ff938eb72e72b2b87132e0285916f9cb8f03943ba39cf3ea9b"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "6f9c35107abf1da260c2e3295691455f815c91513113b33017084a06326e8c52",
+      "segment_id": 20,
+      "source_filename": "020_城市夜间公交试线.txt",
+      "source_sha256": "27049d34ae1a8edbb5719eb06f4a1c664332f4098a67a7ce2021f3280c954e3f"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "21e15b900c2808d517222c72bf50ed68650649617e5fccfb47b04983c2e309c5",
+      "segment_id": 21,
+      "source_filename": "021_木偶戏后台的一天.txt",
+      "source_sha256": "dba8c52914e6a82549d40799e44e92be80229c60ae2b9ed4100cb3c873b248c9"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "7822add4c4ea60458742e021c930bfe2ab9ec5e607a6a393939220f07f314343",
+      "segment_id": 22,
+      "source_filename": "022_湿地观鸟栈道争议.txt",
+      "source_sha256": "a5e0d5d69f5b7f65fda734f616002541d6a78ea1414cb309ff6b2b0a0ed77bbb"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "db3aa26947c3e4354aeaf147a3c87bad0864855fbb94c686214a8c9ab01afdf9",
+      "segment_id": 23,
+      "source_filename": "023_社区食堂营养调整.txt",
+      "source_sha256": "a3537f78ab5ca596ea16f5e3ee2e1a5560cbbd6901ff6f02665a9ca2b5e00486"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "7d8107f9bfb94969a9d5c31fd81d7879521441195ba3cbfaf78836f0cf8a2366",
+      "segment_id": 24,
+      "source_filename": "024_山区无线电中继站维护.txt",
+      "source_sha256": "dccff314979aacf867a7a71e91be9a896849802d91e32a0c545e2cb2a14ca887"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "50173d62599c6ab9ada845e48071ab32c18fdec333b8192811836e69aff4be55",
+      "segment_id": 25,
+      "source_filename": "025_地方志中的旧渡口.txt",
+      "source_sha256": "7223b0f2b3ca08a55228c411ab419312e113f2f2aafdb6bc6a3a09a25dcc7072"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "20cd8c629d0283153f65e323f7a9c0ee2f4d043a20ce77a3cd8f534935468a57",
+      "segment_id": 26,
+      "source_filename": "026_台风后渔港清理.txt",
+      "source_sha256": "869f91233e8219f04a9d16e4b9fca42cdd48038540dc1a275b70d4392b3da9d6"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "c3fce15ef56be6e01b91dcfdf5771f3b42a70f28752d24a135478e01425b37f2",
+      "segment_id": 27,
+      "source_filename": "027_县医院陪护制度试点.txt",
+      "source_sha256": "64e03b7b5fb000e535e2e534cf7bbd3b8554ff15cfdfe381187c5dc71ae189e5"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "7d4c60f2f7f1e1bb98666f7426440f7905b208b2abe50410686e54604bbf6bd3",
+      "segment_id": 28,
+      "source_filename": "028_竹编合作社转型.txt",
+      "source_sha256": "32742a80f347456f078064c5f3c4e873fb75bf59e232bc7c8f393e57e8e17108"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "69dbe568b69861d482225a18fb604dcfdb0274f21adc15a4eb1a038a3a592455",
+      "segment_id": 29,
+      "source_filename": "029_博物馆触摸展品设计.txt",
+      "source_sha256": "79baa1bfffa5159902cf45ce9a4b6f2a7aa548ad6b44f7640825213915a0f985"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "1e88556296acdb191694f811c40f8cef18266ebce13775b6d4fcab16f7ba6dac",
+      "segment_id": 30,
+      "source_filename": "030_高原供暖季空气监测.txt",
+      "source_sha256": "11c8fe5d32b6996d96dffe3bebd4a2b9c7f72ae180b7b4a0d7ec500d08da173c"
+    },
+    {
+      "domain": "chinese_prose",
+      "extracted_token_sha256": "9a7bf6ddad73a53607748652d95fcec8812ef1dca8020c946b51df2bca7145f4",
+      "segment_id": 31,
+      "source_filename": "031_运河边夜市迁移协商.txt",
+      "source_sha256": "5e76b7e9330d83450e5859bbf133be1b1a7ffbcb13ae9b282ced715fe9241dc8"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "34b2bc0b6d2033c34111a42e650ad01beb3bc5040f3af95f9d05ac41d1eafab9",
+      "segment_id": 32,
+      "source_filename": "032_robotics_safety_design_review.txt",
+      "source_sha256": "bdf7fd06f9fe9b6da461c8191880182a90da1287ec5263c346f4ab9b2cb4b54d"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "6d19091981123c8bff1e159d20481e1238194ed8a79b6a8b51f459599cd749fe",
+      "segment_id": 33,
+      "source_filename": "033_cross_border_cold_chain_handover.txt",
+      "source_sha256": "12faf115bb34636b23161cc9847ea402815cb9f5ded43e456ca5cd61c570f680"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "f5fc0151cd8dccfc2c46e5866698e60ce6a6b80e2ec31ef51ce64b9534079262",
+      "segment_id": 34,
+      "source_filename": "034_museum_wayfinding_walkthrough.txt",
+      "source_sha256": "d4b3319a550ebe1edde03951e2fd72de3c25e70d3502880246136fea92be5d54"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "8175da42cc8756731cb529ad35bc8082739ffd8862c9430735fb69298f9c973f",
+      "segment_id": 35,
+      "source_filename": "035_open_source_localization_triage.txt",
+      "source_sha256": "367ad2e83c55f87c896e90f96d61a7c798e72f649fdb7c2e65146de3aed08aed"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "9b1182a496ea9deceeedbe3e5e1cd97ff8a31a78ab54742ed8b270b5f78530ba",
+      "segment_id": 36,
+      "source_filename": "036_international_school_lab_planning.txt",
+      "source_sha256": "6384a0cbe39a6778efb82ac60b363da72f08456591963c26b68394898eea8f37"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "11bb8a83d6f8e01db90a3a08c601b0b88107eecdd39df1587c5a0f31db592bdb",
+      "segment_id": 37,
+      "source_filename": "037_airport_wildlife_risk_briefing.txt",
+      "source_sha256": "abe52346b70c067669f6c8bc7f91825166fd06f66975e803eeeb181795fab5df"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "ce08f0102d150883b9ae89a13865502937c5ecea2cf9ad57823a3d899202885a",
+      "segment_id": 38,
+      "source_filename": "038_architecture_material_mockup_review.txt",
+      "source_sha256": "4477acf9384457e30950586076babc7fd51ae6dff8037b49b383b16334adf504"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "4f010d0bf003ea80a60e74e8a595c2a0bbef543296d8a9007d3ad0099d9a8197",
+      "segment_id": 39,
+      "source_filename": "039_biotech_protocol_deviation_call.txt",
+      "source_sha256": "42e06ab7c072af7cb925f1e8b3792acfabe69c845c00db39024181c458484aa0"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "85604f033e1ca4a39a1848da56fe6c96850152ffc781c0a43498da725cac89cf",
+      "segment_id": 40,
+      "source_filename": "040_festival_stage_technical_rehearsal.txt",
+      "source_sha256": "d4d4e295f7b0aa4793f25328c34834ca3bd765fcde98156fb7a827cfb60e5329"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "7adb0209a4acd2e6b39a3b737156ebffd4f932a1ec9da7a304cd077adb15d663",
+      "segment_id": 41,
+      "source_filename": "041_remote_sensing_field_sync.txt",
+      "source_sha256": "8110e0d5e240585cd8a499ed557f4a5bde3727a1a16947ca16b071f9de76fd80"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "d51db3ca6e36ad784f2b7fe87c4d448cbbbc5df521035934aeab15497f7f5a83",
+      "segment_id": 42,
+      "source_filename": "042_hotel_energy_retrofit_negotiation.txt",
+      "source_sha256": "3162e78b6e6053c7f8b41df93cb8067ea837865f126bd6642a880537bb0e3470"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "ceaafb1a4c68858fa16870345f0d4712c13c77fbf6c64c2c7069da64bd170589",
+      "segment_id": 43,
+      "source_filename": "043_bilingual_podcast_fact_check.txt",
+      "source_sha256": "413109b2862b8283cf5c046521da04321c940e5c78b0087ae772c5930cfb94ab"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "cba823aaacf8a65cddaadf310839f5101e743a91639540c2ba4108a2689e794e",
+      "segment_id": 44,
+      "source_filename": "044_shipping_customs_exception.txt",
+      "source_sha256": "44f5fe1eecc70ce2937b32f65140108b57619031d033df0ec03c3666984fb0ea"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "aee918e1077271b9a2a9a22693b73541b5f9a5bf167a218b9ba101ff91353403",
+      "segment_id": 45,
+      "source_filename": "045_mobile_app_privacy_review.txt",
+      "source_sha256": "9532248f03b63576f7fde058213d7fe1d271aa4339a6366c42a184f5fb7a868d"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "e9cfb5daa655ae753d6a8f797ac084678b813fe30175fa45aa1ed6a53b7d0a84",
+      "segment_id": 46,
+      "source_filename": "046_urban_cycling_research_debrief.txt",
+      "source_sha256": "fd94a6ecbcb371f908ab158b3865358429018490062b022e9b19e6dda18a7747"
+    },
+    {
+      "domain": "mixed_en_zh",
+      "extracted_token_sha256": "2fe6d86675de580951491d1ffe788fbaba56b9bfa2bfba2511d676fd1b07742b",
+      "segment_id": 47,
+      "source_filename": "047_semiconductor_tool_installation.txt",
+      "source_sha256": "c60bb196de611fdea9892d1578b2a48cfc32b768494f2a6f88025f7c7440ad8b"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "9b237ad8ab91ec75e38f95da41e86fcad9130e3edd80fe017a0fd45dc842e5c9",
+      "segment_id": 48,
+      "source_filename": "048_python_meteorological_archive_cli.py",
+      "source_sha256": "c298b321d630119aed7d5f86aa2990211c14552f8fc5b583f42524d69cc293dd"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "c24148bd8c7de31d827128a3dc5a1e6dc04f96c966d90578a8ff113e261e4635",
+      "segment_id": 49,
+      "source_filename": "049_cpp_lock_free_audio_ring_buffer.cpp",
+      "source_sha256": "b4bfdd66d54ae3c3b17a1c5362e6bb11314420b84458dcc02941ce3bc818d1b7"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "5031fd3c069779b0f743e5be5ffdb40d360d53507cff494ab4512b813fc3f31d",
+      "segment_id": 50,
+      "source_filename": "050_bash_incremental_backup_verifier.sh",
+      "source_sha256": "bb4f2e565e168a6f6d307c6722d19adfa1b647228a81d6c0a219fe76a513ee48"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "46ad9b8dc286ef01e00d8b42cc3ebab9f456d728ccafa2ac5b06d5be1545146e",
+      "segment_id": 51,
+      "source_filename": "051_sql_library_circulation_analytics.sql",
+      "source_sha256": "61dbb55572481a78d377fe951076cb7a57b8601f178776511a914faacf4ef455"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "2bba92e73d65797be3d27adddd57b87152379cc91276cfdb73a456364d5cc03b",
+      "segment_id": 52,
+      "source_filename": "052_javascript_svg_transit_map.js",
+      "source_sha256": "12a67901aa71c5e69999e373e15d512f79ef986e99942a641e1ed2ef73cca8f3"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "98bf4630bdd4f238572160a99d9c36f0bbd1a1a80f26123c8a7d36daac90f03d",
+      "segment_id": 53,
+      "source_filename": "053_typescript_event_sourced_inventory.ts",
+      "source_sha256": "b184998965f558af19892a6776609691e1bb5f581419c7b95ad0cf077acfb507"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "70134978d279c2baaf24967e0211e93c9040a825005916dd3fcc80822fb2d108",
+      "segment_id": 54,
+      "source_filename": "054_python_recursive_descent_filter_parser.py",
+      "source_sha256": "6cf27364efad4aceb03342c559e2cdc7579105d64c79832e19d5b7f1e65e42a8"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "95a3c153b328a0b454ab8aa01a9fef43cae55d027c9e435bbd8d6208c03a83f0",
+      "segment_id": 55,
+      "source_filename": "055_cpp_grid_wildfire_simulation.cpp",
+      "source_sha256": "db38d049bbc5a5c7e9d94827eed92606a65fc1239e7e724d7daa4b0e28b50eb8"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "12e2de774872c225519058282890d9095731eed6bec00c25343fd3b69437ffe0",
+      "segment_id": 56,
+      "source_filename": "056_bash_certificate_expiry_monitor.sh",
+      "source_sha256": "a7ca253516fed918384e51425d7187683ee4eb28a94476b0d618f89a49464ad1"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "7c7c9ff9d00d97f0072b9f2221d6f480c765e033b8fa3c016ff63b7e39713fd6",
+      "segment_id": 57,
+      "source_filename": "057_sql_hospital_bed_state_model.sql",
+      "source_sha256": "1f7fa5e8eb099be87c60e849359c01fce64c48d771a0b96fbc54b0d3caf68385"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "84c5ee2e1b514acc23ba3d895e34e388d2ff6412c45390c2131e4a7a2e4a14b2",
+      "segment_id": 58,
+      "source_filename": "058_javascript_offline_form_sync.js",
+      "source_sha256": "43462725cbbf9187f8385e9b567f53e5114bf58597f042484601df2fbe566d14"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "582a4692bdfb818f3f418e332c1b354eae3da8dbfa1616de2007506af6ec8a69",
+      "segment_id": 59,
+      "source_filename": "059_typescript_rate_limited_scheduler.ts",
+      "source_sha256": "c46a8d85e34db276e1654c215c5643de3f1658bd1be26dc44e96c475a010d886"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "34978b87698040d82154d60f5c5580257c55c09af763846b34c9de38dcc37797",
+      "segment_id": 60,
+      "source_filename": "060_python_geospatial_csv_transform.py",
+      "source_sha256": "44052b22e58ef59f8b1df63f9bf796bb4ffb46306d4aa6ebff06936baaa9cc3b"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "7f9b71caefcbf1ac1f340e7cca5eb8bc6de5159b4f965193a0efb985cfb5213c",
+      "segment_id": 61,
+      "source_filename": "061_cpp_binary_packet_decoder.cpp",
+      "source_sha256": "9ea4f15c1101a09532441ce3294149ea24ba75bb75a24b818887ebb38017f732"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "a8553bf9eb816be95bb0a97c8f785854119288caf31eac7bfd60bb167c99d79a",
+      "segment_id": 62,
+      "source_filename": "062_javascript_canvas_waveform_editor.js",
+      "source_sha256": "a361e3b0ec9730a38d829fc7c43e829f9ce1c5761ddb1b30cfb495cec7b7e05d"
+    },
+    {
+      "domain": "code",
+      "extracted_token_sha256": "415565ce6127c23cd8f070cb7ae91c1060bfbb808e1f83c8a0c6ef8f579215aa",
+      "segment_id": 63,
+      "source_filename": "063_typescript_configuration_merge_engine.ts",
+      "source_sha256": "8b3da2579c387e9a6a9481b4151c899da8d4a8ae26b33f54100c3d7e13f51b17"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "c5dcc245e7fcb8a22bfcc78551847be1d3943c93ccd1838b6eecee32e23da87b",
+      "segment_id": 64,
+      "source_filename": "064_astronomical_observatory_night_log.json",
+      "source_sha256": "ad6ee22acaf5338a13e407f61974c205898d9db193f84e50c3dc49de39acaeca"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "4d1661dfba5b95029babbe46203eb5171b8f2ab59a34375f3a2377b52f30db1c",
+      "segment_id": 65,
+      "source_filename": "065_community_garden_allocation.yaml",
+      "source_sha256": "0ce2fdced7d302fd7eaa30c7d4b6dbaa179da6858a1b014f32abd792b01d421d"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "c11f6566ef9fbab03e394dc3d6c6aa8e003f05233f62ac8b97bcb4151977c122",
+      "segment_id": 66,
+      "source_filename": "066_regional_train_delay_export.csv",
+      "source_sha256": "a952d0e487de02c73dcce74d236bd442189aff5b2794308c7e636dbefc21d46a"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "284e2c64a8379e049a57aef7732066970314287b0f0a0f99e139374cedf43592",
+      "segment_id": 67,
+      "source_filename": "067_embedded_sensor_firmware_profile.ini",
+      "source_sha256": "f3668f878d53144551efb732db645d97e8f520d0508d6ce763af147771f80725"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "87de410cc417abeaea9a01e6ec6c2c840b3e8f3af5ee88ec3fbf81fc3120f1d9",
+      "segment_id": 68,
+      "source_filename": "068_container_terminal_audit_stream.log",
+      "source_sha256": "34b6eda336d50c07e67840a4e7630bacbe6ee10551cc0c0183da8085cc9330f8"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "f092bad5f1b0503dc35133b3fe57903712559f5b29617df3bc196c96fe8e2822",
+      "segment_id": 69,
+      "source_filename": "069_wildlife_rehabilitation_case.json",
+      "source_sha256": "7805136d908c6895d63139bb8d9d1d4309f4f735971abb56d3009b988bb735d1"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "75b7dcdf7977c11082fcf33f60dc8322f36cbf7753eca1fccd4bbbaaf7be7e1b",
+      "segment_id": 70,
+      "source_filename": "070_theatre_touring_cue_book.yaml",
+      "source_sha256": "6e38e294812e34cd9af5d5293c6c7bbafc6505a95de86275990964cd21f3e665"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "54895cbdaaf96940e245b976f5c61ee4e60aeb710094a561912c81453c3834e7",
+      "segment_id": 71,
+      "source_filename": "071_air_quality_calibration_results.csv",
+      "source_sha256": "08f824e9750870297bace3bd0d001acbe50318cc78843a876c4f9fdc98035daa"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "8c01e30fbfe1f91f3ae4f26ad25723462138afe5a302091a2c52e752a744f97c",
+      "segment_id": 72,
+      "source_filename": "072_reverse_proxy_multi_tenant_rules.conf",
+      "source_sha256": "b863f3d21b57c520387b501f3bf70a43674d77bc21e0e208c88ca2d106883c5e"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "73eff62bdb5dbd6eea62fc2433b1d16956521eec329a37d89413b6934be5c760",
+      "segment_id": 73,
+      "source_filename": "073_digital_archive_ingest_trace.log",
+      "source_sha256": "b88edb0b7f1de84c934250d30200dd4921173d2b3e38fd14c5bd876406192c33"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "7818a28bd3d130a8911ba5719a764f5a2d24cb900da899d462631f5a9d929989",
+      "segment_id": 74,
+      "source_filename": "074_municipal_budget_amendment.json",
+      "source_sha256": "78ad9bcfd69acce13eac6276df0185154e9bcd73b80586f0d91809757769c845"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "9bc36b45c928f41dd455f0399eb4aef8540a29d50c469e15900e2f7527b96b7f",
+      "segment_id": 75,
+      "source_filename": "075_research_vessel_manifest.yaml",
+      "source_sha256": "6efd4d50dfd90aa196c2845b9bf5a45685b589eba4f59d5f684d5dc8436ed46a"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "f5c3e11af57e34838902d341739415781f3abd339d8c8c7969995e8dd40cf174",
+      "segment_id": 76,
+      "source_filename": "076_orchard_harvest_quality_samples.csv",
+      "source_sha256": "c62c03f40b9585fbccc2e5b2164657d635e1c4222366ce83b4ddd800b93e8601"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "7d1a59fac01975cfea2207272b1bea15a9fd8a8dcfe563b53710f538dffefb8f",
+      "segment_id": 77,
+      "source_filename": "077_desktop_accessibility_preferences.conf",
+      "source_sha256": "11734399e97e473de0647c355ae781f19deea070a41a85906e983af74509b4c0"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "432f43fe045493a05826a3e3937028ab3a8da00bbd07cf6873848c7c32d3718c",
+      "segment_id": 78,
+      "source_filename": "078_emergency_shelter_activity_log.log",
+      "source_sha256": "77ceaa7863f4935439d761339bbf23d47966881b0aa14b9fa6a29fafe296029b"
+    },
+    {
+      "domain": "structured_data",
+      "extracted_token_sha256": "a265473aeefeac129819dc9fde99d7014bf170df3b55be650064309e0d189bf7",
+      "segment_id": 79,
+      "source_filename": "079_language_archive_catalog.json",
+      "source_sha256": "aab745fd820a30605bc414e726d15e81e88efda3b829ba0819a67674b697405d"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "a8b0cdaabbe9351ab01aa713c9ed1123abf28c5993318227115f63df306043b6",
+      "segment_id": 80,
+      "source_filename": "080_polynomial_factorization_over_finite_fields.txt",
+      "source_sha256": "a6e4f99197249892f64c753b3b967db32ceb36fe4e26a098d2fd06514096f6f5"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "c9cb14582767e4ded0b74f035e06d0061f2403241cef4ca94418982ab7e1e6e6",
+      "segment_id": 81,
+      "source_filename": "081_convex_inequalities_and_equality_cases.txt",
+      "source_sha256": "120b710c4662a90d5f9e102499f01946f77e887a3e0af2297728d3c52a83333a"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "a0cf62fc12ab14d9bb726d5ef3c2841b7da477b3f8b908b4b539a5d1b32c0621",
+      "segment_id": 82,
+      "source_filename": "082_conditional_probability_in_screening.txt",
+      "source_sha256": "49ee3d6ea7a8adefc7a9ef94149a52d0afc56f5cc2b12661368e89fadabdf3b8"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "697ee9f8a762e6494158f19c476949ba4c345349b31db9ef1205a0860598dc16",
+      "segment_id": 83,
+      "source_filename": "083_robust_location_estimators.txt",
+      "source_sha256": "d3b09c978fe391431da9660c440448a55288feebcd3e5d79a736aebd970c949e"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "a6a0b42f9f08ddc5dbe75ee69c3439f139a32d042b3ae1d80d09eb7351f6e51c",
+      "segment_id": 84,
+      "source_filename": "084_matrix_decompositions_for_least_squares.txt",
+      "source_sha256": "824b0ecc074bf56ac8adef0f1f46d761e338c0a506c696792fae86c2c61ea850"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "1db7be4b874e8c28024d097cdf4371540da8ccf615cd3392a1713338e03a73bf",
+      "segment_id": 85,
+      "source_filename": "085_vector_geometry_of_reflections.txt",
+      "source_sha256": "0b1a707be078b6e1c86998110c5852e777020cf821c615db452d07f58c00b10d"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "51e426b8b6c5b1eb02ecaadaeefb37299dd1e577977c9d70dc1041e31c8b1775",
+      "segment_id": 86,
+      "source_filename": "086_spectral_properties_of_bipartite_graphs.txt",
+      "source_sha256": "2ce6f81af6a7948141124f73b2f31c4f4da5357c557dccd3dab603c723814dc1"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "d8d5ea7ea7d6410b646df6c551187861d764ea76aced6f08ad2735fbab8f268d",
+      "segment_id": 87,
+      "source_filename": "087_constrained_transport_optimization.txt",
+      "source_sha256": "3042046ff6e898d4dd9f2dfa5cce758c464dff29a09503f30f642d7d84f338e2"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "124b297e65373aa5f9b61d47dd7d10c909c40a4bd5899d5d9d0209573b26b0ae",
+      "segment_id": 88,
+      "source_filename": "088_symbolic_recurrence_solution.txt",
+      "source_sha256": "15303b3c9aeb3dbe33c7a4427960938333a39e37ceca86da430ea430d476ce94"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "b770d42908a1ff11e42d1f1e9cf7f21be1454f8d268efbbf503d994cc0742876",
+      "segment_id": 89,
+      "source_filename": "089_lattice_path_counting_with_barriers.txt",
+      "source_sha256": "8c5a2ab204abe71bd82bd1b50939ff0651a702eae8fccd0d775c183c740abdd4"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "022e3548fedf682133b1da1b66c545a2ccc18626eaeff63e32426390f4827c68",
+      "segment_id": 90,
+      "source_filename": "090_improper_integrals_and_parameter_differentiation.txt",
+      "source_sha256": "a92cfda1f806eda3cc6f9e7a67080469a69b44e662ac9074cca9c4da8bbc6464"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "bce2c7ff35c4c61458e4f46221f7d6dbd0a248c1207d6f4aa097481bfa6e0275",
+      "segment_id": 91,
+      "source_filename": "091_modular_arithmetic_error_codes.txt",
+      "source_sha256": "ae4c1c6644abea9bd47c63a5a09765884a0d1fbca4c05921f597eb1ad0b2bd2b"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "286be9f908a8745648a92bec3cc09ed8630a8dca15604276562ad85db6634b25",
+      "segment_id": 92,
+      "source_filename": "092_markov_chain_return_times.txt",
+      "source_sha256": "f12f0d9572975d345d087da930694c735afdebd1353a26c56d1118260279c7c5"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "62f1e187d5b3d27011f2a35a5cf51579ecf15129c0860dfe97516b82d4430b96",
+      "segment_id": 93,
+      "source_filename": "093_nonlinear_fixed_point_iteration.txt",
+      "source_sha256": "7ca6384b217eebac79865667ea331f7d5ee8f1ec78be0ce02f16c3c3649f3f29"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "13691c328fcd4f44eb1df61df8f137bb5fe77a9309c8502fbef1c23accf5f694",
+      "segment_id": 94,
+      "source_filename": "094_projective_conic_intersections.txt",
+      "source_sha256": "0060a8c8320b3e81c789df55ded1b0860b66f1295a41e9e58f070a3e616a69ce"
+    },
+    {
+      "domain": "math_symbolic",
+      "extracted_token_sha256": "a6ecc9075a52d812d829ad9591399590c4f473ec7da756d6e2824ac144d9921f",
+      "segment_id": 95,
+      "source_filename": "095_fourier_series_boundary_behavior.txt",
+      "source_sha256": "669b543a5a4e9ccf005f47e0916ab43fcc45a1d1f124f6e96be6b589a19cbef2"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "4aa27b1a3ffee7a154fa6e38499a6d575a8122b5e9ef838919c35f5df7a50c45",
+      "segment_id": 96,
+      "source_filename": "096_dnssec_validation_failure_postmortem.txt",
+      "source_sha256": "ffd237b9a5a87674835a668884ee0cc2cb01616197fff98edf7afb03572d1beb"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "981dea3ea111608d707056d8df9c3a65fb6381be5a0ecd351221d67c99813773",
+      "segment_id": 97,
+      "source_filename": "097_multi_region_object_replication_adr.txt",
+      "source_sha256": "9a6ff5670c6d21783f8f70e3156f4ed8e31caf15ae55413bc4ecde077ee5261e"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "4af15a040ad33c1623cf1d87af55032cd3c76715d371b0bcf4a953d840cb27bb",
+      "segment_id": 98,
+      "source_filename": "098_linux_memory_pressure_runbook.txt",
+      "source_sha256": "4b8c5ac6d05c2faf945399e6719d69eee820fcfe43718edc497ac9228c6589fb"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "97b30b5eb4f249cafca396854ec10e7572fc950867b27af09d905208aa8254ac",
+      "segment_id": 99,
+      "source_filename": "099_database_online_schema_migration_review.txt",
+      "source_sha256": "02280a2386123555ab2edb34fdf88baab0235aee0034c33f397c197467bbe0d9"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "e0b01d63d20a3c5b42070e9d83a95cf6992f6de8dfae0fc19472287920476858",
+      "segment_id": 100,
+      "source_filename": "100_service_mesh_certificate_rotation_plan.txt",
+      "source_sha256": "d7475ef691cdd326601693b3eddd3086f97bfff8ca93d3862d99a2e9333b8ef5"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "59881c50edde7eb9f7ace41bdb6eba035abd061b5fb22823a9d15c717262ace2",
+      "segment_id": 101,
+      "source_filename": "101_warehouse_wifi_capacity_survey.txt",
+      "source_sha256": "13d10056f469bc66092c1c13268dbb83505018c288b82c55cd8b0a7e85619f05"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "0a62897af4f506b2d7e364c878c9ab165f7f1ebbaca6844a53e9a5397de9e744",
+      "segment_id": 102,
+      "source_filename": "102_kubernetes_admission_policy_security_architecture.txt",
+      "source_sha256": "787ef3e369ae70ab76d08fa2c853285f6af73fea8f2edde8dcae4fc29df7ba29"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "6d9a4d74b87596c459cc75e394c195d939be0ec23e9ceff0c781f5ba2af1d15c",
+      "segment_id": 103,
+      "source_filename": "103_distributed_counter_reconciliation_algorithm.txt",
+      "source_sha256": "41397c5e4d22d2a9e792fcfe6bdef0958f2fb164091f60c40019e190147d3621"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "6396da9b5edb87a765349bad8436366d51dfabb9cdcf83c8a342959923b78ead",
+      "segment_id": 104,
+      "source_filename": "104_observability_cardinality_outage.txt",
+      "source_sha256": "f59fa0a7f183a4dadf9db4fc9773d9279719dd1d9a2de18b80c1ddabe89d74aa"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "06824e8f651f370f9df2e557de6b482cc91ccdbcc6d4353f17dce6887ad3bf61",
+      "segment_id": 105,
+      "source_filename": "105_backup_restore_disaster_recovery_evidence.txt",
+      "source_sha256": "22521f194c9de2146a03c2c7eca3c5fb9f19bfcb3ad1927a34a1c9fec5207210"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "afe7c0ff45e4fabef58fbd56f696b388c5b7008e19e5f6bc035c73228a73130d",
+      "segment_id": 106,
+      "source_filename": "106_ipv6_branch_network_rollout_guide.txt",
+      "source_sha256": "84525282a27a057c0601d3564ecf8b2fb080909ce0c542ecad5f3053a7a460d4"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "6c25806d560d9a068743daa319e5c7d3763bd55acdadc04a9cb5e07a90b2ada8",
+      "segment_id": 107,
+      "source_filename": "107_secrets_broker_threat_model.txt",
+      "source_sha256": "370c59467fdf5758b69ba12d4f3c862bbeded1cc0dfdf14f322fd65211a3602c"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "ad539a8f23146c3994fe225325907eb993708c471355a2842cf3ad9c808bc11a",
+      "segment_id": 108,
+      "source_filename": "108_stream_processing_late_events_design.txt",
+      "source_sha256": "fc7fa23c78d6b1d44cae2bda5d4653a78992a33600ac0fecb4509a385846fbc7"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "5cdbed1b87b93220a0c568a03d84e48106aa1253eeff6fda3bbfaf72186f63f9",
+      "segment_id": 109,
+      "source_filename": "109_filesystem_metadata_corruption_troubleshooting.txt",
+      "source_sha256": "b89d57f88614b4eb2e0922dd8f457552553477e114705d19213f271bdee01f16"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "8da0bc80eb218f2942df3a5bea42edde30a6e9a13a2bb929108afa40b4bddbea",
+      "segment_id": 110,
+      "source_filename": "110_edge_cache_consistency_tradeoffs.txt",
+      "source_sha256": "4222e6ac4a7a15dc7a39c6d7e5d93a88b00f97915cc184db980dabb931ac74b4"
+    },
+    {
+      "domain": "technical_it",
+      "extracted_token_sha256": "5f3b5129d00958e437ae70287e476ac90802debd8a762b79327aebde10cd564f",
+      "segment_id": 111,
+      "source_filename": "111_cloud_cost_allocation_pipeline_spec.txt",
+      "source_sha256": "51904505a74977a18356e5eee4ac4b4af4a5feb3c0e253a3ee3b9709d400520d"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "df608044630570fd8b2e45317f1ec703c073c641347fec58bab45bcd93bb2d6a",
+      "segment_id": 112,
+      "source_filename": "112_rare_book_exhibition_edit.txt",
+      "source_sha256": "3b04a86b3e6d300e6c455476f188856cb8afc7f8f43f667d5bcc3eae0346b805"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "fd54711dc4faf01eb3400183bc5db0fa515d49d6bff5f933d4af590092d37ba1",
+      "segment_id": 113,
+      "source_filename": "113_river_rescue_training_plan.txt",
+      "source_sha256": "ae296b5b3baba4c953c38f9525ca24ff0ab5fda2b765496b4b885a8a1ad7f861"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "cfaa741abc0884b153f91893573c1f8cfde0851ec1fc85cf401d1bf0a9b7cf93",
+      "segment_id": 114,
+      "source_filename": "114_tenant_repair_mediation.txt",
+      "source_sha256": "6bf0fde57c0b80cdc8866b479957eadac9fde6e9f1a36484a939fcd969b202c5"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "173125a29b36288a52973bcc1810a9f9c30f8f9a8bbb08af17ffab810d8f486b",
+      "segment_id": 115,
+      "source_filename": "115_radio_documentary_fact_check.txt",
+      "source_sha256": "12d950edf6579270b404221298bf5455470d923023fabd7dc85714ab5bed0dc8"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "a62e6363b4a302ed4b2b1338a4e59ee61530da1153cae1d1ef163c177cc15545",
+      "segment_id": 116,
+      "source_filename": "116_allergy_safe_bakery_workflow.txt",
+      "source_sha256": "43059ebad8ccd3902eac238eebc0b341298d903cebe7379fe102a8650dc9ee2f"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "e7390b19134db38960c6791383188a1781ebe03d1ee43ba794d03f9aa8e193bb",
+      "segment_id": 117,
+      "source_filename": "117_accessible_hiking_route_review.txt",
+      "source_sha256": "c3fc5b44ff4b749a9b831db976611ac155cfda4cf81d3a236bee9cf294f2396b"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "a0846c85f0ef1331f8023b5b12f782404adbbbc08e9bf6b26d943008eedf2c44",
+      "segment_id": 118,
+      "source_filename": "118_school_telescope_purchase.txt",
+      "source_sha256": "2228a068c7db839146aa4a01857da50545fa6428673b1a267ab6f701f8dc579b"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "f56194c569766b2ec16e5bfc5c396e090414db7da60995ad3c915588f32cde3b",
+      "segment_id": 119,
+      "source_filename": "119_oral_history_consent_review.txt",
+      "source_sha256": "f2774ad2b61f07718762a9f5f5b92386456b706075cd0b31aaeb8f6cced9b511"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "a75117e686db7f2c0adaa5da439b4bfde3bf4654b3e77a0c6ccdf626b8f18445",
+      "segment_id": 120,
+      "source_filename": "120_dance_company_tour_logistics.txt",
+      "source_sha256": "3f0bcf7d433e02954cb8217a84ef259c8b4627979aeb94cfa570d08c0383a47a"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "a4b19e9a0923b936f771f75bfccb4e4e5346f50096e778c2fd18fcf1505da978",
+      "segment_id": 121,
+      "source_filename": "121_makerspace_laser_orientation.txt",
+      "source_sha256": "616f3029ba0030c48c3d4bf646b95c02873a5b2342a346d567183702aea9f847"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "3fa1f5eb321ec1c5c759b174c9c396db4665281866b788f5a0d952758ba3a021",
+      "segment_id": 122,
+      "source_filename": "122_translation_style_dispute.txt",
+      "source_sha256": "32a1acc0217eb563ad2a103221244aa59710b323a5fe5e62e429d87b43d9f54c"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "12c6b8bd2afbd9cfa19ca69f1466adfa9067bbbe031807feb05a7be40e0800db",
+      "segment_id": 123,
+      "source_filename": "123_veterinary_discharge_teaching.txt",
+      "source_sha256": "ca35daa2bb38c922ceaebc26b863843ba6d10413112570a3084de86b990668f3"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "76d06e2c64c0c997597fd9bf60f4cc1d8bae006ecf7e10a8693796a5e37b6cc6",
+      "segment_id": 124,
+      "source_filename": "124_neighborhood_emergency_drill.txt",
+      "source_sha256": "d44d2b4253d7aba9910c6d883caaea46d8d69c77c0c3b98df1fb9ebc30ae1b1c"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "dcf3289c00fb68aad89b45f4fe23273a1dc9fde36d664e0a2c290d550c873eb9",
+      "segment_id": 125,
+      "source_filename": "125_community_radio_call_screening.txt",
+      "source_sha256": "e3f502b673d7797ccd2963aae46e002d7f76a150ba1a2f2135a13cf08373b5b0"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "d6416fa1b7f873caf9dd9c8fde89c8ca2866825e09014ee2f52204c4485e1e74",
+      "segment_id": 126,
+      "source_filename": "126_historic_boat_launch_decision.txt",
+      "source_sha256": "13fdc5649d6ccaa4d1c3621f86b85aaae5309a6077d2e190a37fa58cbaf48fe7"
+    },
+    {
+      "domain": "dialogue_instruction",
+      "extracted_token_sha256": "1943bd386f87696a4bf588bc45ebe5b65e63e1a27787cbc3f815de362d755159",
+      "segment_id": 127,
+      "source_filename": "127_food_coop_inventory_redesign.txt",
+      "source_sha256": "a40706c33066da0ad293913a02847687f6ca5c83a1b7adc1be973bd704e2b34e"
+    }
+  ],
+  "source_tree_sha256": "f8697327af987d591d47b893dfc692381aa6e60f55e231eddc0ddeb7a6d0b1a6",
+  "token_payload_sha256": "e90edc14f5511e8fe65fb9ebcd15608c0f8b7db8b6901d6545bf216be61c08b4",
+  "tokenizer": {
+    "add_special": true,
+    "llama_cpp_commit": "70adb1b4cea5ee39f867792c78dc59320921eda7",
+    "model_identity": "Qwen3 8B",
+    "model_path": "models/Qwen3-8B-BF16.gguf",
+    "model_sha256": "9992dae57b55989222bbad7e5fa96ca596d096560ec8554d6de46698740ec820",
+    "observed_added_special_token_count": 0,
+    "parse_special": false,
+    "tokenizer_model": "gpt2",
+    "tokenizer_pre": "qwen2",
+    "tokenizer_stdout_identity": "model_id= general_name=Qwen3 8B tokenizer_model=gpt2 tokenizer_pre=qwen2 add_special=true parse_special=false"
+  },
+  "tokens_per_segment": 768,
+  "total_future_scored_positions": 65536,
+  "total_stored_tokens": 98304
+}

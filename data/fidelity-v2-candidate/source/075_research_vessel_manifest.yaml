@@ -1,0 +1,196 @@
+voyage:
+  vessel: RV Meridian
+  call_sign: C6RM2
+  voyage_id: MER-26-09
+  purpose: continental_shelf_benthic_survey
+  departure:
+    port: Halifax
+    planned: 2026-09-04T08:00:00-03:00
+  return:
+    port: Halifax
+    planned: 2026-09-18T16:00:00-03:00
+  endurance_days: 24
+  science_days_planned: 12
+
+command:
+  master: {person_id: P001, name: Lena Hart, certification: Master_Mariners}
+  chief_mate: {person_id: P002, name: Omar Singh}
+  chief_engineer: {person_id: P003, name: Ren Ito}
+  safety_officer: {person_id: P004, name: Claire Dubois}
+
+crew:
+  - {person_id: P005, role: second_mate, watch: "00-04/12-16", cabin: C12}
+  - {person_id: P006, role: deck_bosun, watch: daywork, cabin: C14}
+  - {person_id: P007, role: able_seafarer, watch: "04-08/16-20", cabin: C15}
+  - {person_id: P008, role: able_seafarer, watch: "08-12/20-24", cabin: C16}
+  - {person_id: P009, role: motorman, watch: rotating, cabin: E07}
+  - {person_id: P010, role: electrician, watch: daywork, cabin: E08}
+  - {person_id: P011, role: cook, watch: galley, cabin: H03}
+  - {person_id: P012, role: steward, watch: galley, cabin: H04}
+
+science_party:
+  lead:
+    person_id: S001
+    name: Dr. Hana Morrow
+    institution: Atlantic Shelf Institute
+    discipline: benthic_ecology
+    cabin: S02
+  members:
+    - {person_id: S002, role: sediment_geochemist, institution: North Coast University, cabin: S03}
+    - {person_id: S003, role: marine_taxonomist, institution: Museum of Natural Systems, cabin: S04}
+    - {person_id: S004, role: sonar_specialist, institution: Hydrographic Centre, cabin: S05}
+    - {person_id: S005, role: data_manager, institution: Atlantic Shelf Institute, cabin: S06}
+    - {person_id: S006, role: ROV_pilot, institution: Deep Systems Lab, cabin: S07}
+    - {person_id: S007, role: ROV_technician, institution: Deep Systems Lab, cabin: S08}
+    - {person_id: S008, role: graduate_researcher, institution: North Coast University, cabin: S09}
+
+mission_areas:
+  - id: A1
+    name: Emerald Bank West
+    bounds: {north: 44.22, south: 43.88, west: -63.52, east: -62.91}
+    operations: [multibeam, box_core, CTD]
+    priority: high
+  - id: A2
+    name: Sable Margin Transect
+    bounds: {north: 43.74, south: 43.16, west: -61.82, east: -60.94}
+    operations: [ROV_video, sediment_push_core, CTD]
+    priority: high
+  - id: A3
+    name: Outer Shelf Reference
+    bounds: {north: 43.15, south: 42.82, west: -61.40, east: -60.72}
+    operations: [multibeam, water_sampling]
+    priority: medium
+
+stores:
+  potable_water:
+    departure_l: 52000
+    reserve_min_l: 16000
+    daily_budget_l: 1700
+  fuel:
+    marine_diesel_l: 132000
+    reserve_min_pct: 22
+    expected_daily_l_transit: 5100
+    expected_daily_l_station: 2800
+  galley:
+    frozen_kg: 1180
+    chilled_kg: 620
+    dry_kg: 1490
+    dietary_notes:
+      vegetarian_meals_per_day: 4
+      shellfish_allergy_persons: 1
+      gluten_free_persons: 2
+
+scientific_equipment:
+  - id: EQ-01
+    item: box_corer
+    mass_kg: 780
+    stowage: aft_workdeck
+    tie_down_points: 4
+    operator: science_party
+  - id: EQ-02
+    item: CTD_rosette
+    mass_kg: 640
+    stowage: starboard_hangar
+    consumables: [sample_bottles, oxygen_reagents]
+  - id: EQ-03
+    item: compact_ROV
+    mass_kg: 1260
+    stowage: aft_workdeck
+    power: "3-phase 400V"
+    launch_system: A_frame
+  - id: EQ-04
+    item: multibeam_processing_rack
+    mass_kg: 210
+    stowage: dry_lab
+    power: "2x 230V UPS"
+  - id: EQ-05
+    item: sediment_freezer
+    mass_kg: 180
+    stowage: wet_lab
+    setpoint_c: -20
+    emergency_circuit: true
+
+hazardous_materials:
+  - id: HZ-01
+    substance: formalin_buffered
+    amount_l: 24
+    container: "12x2L"
+    stowage: chemical_locker_A
+    sds_onboard: true
+  - id: HZ-02
+    substance: ethanol_95pct
+    amount_l: 36
+    container: "6x6L"
+    stowage: flammable_locker
+    sds_onboard: true
+  - id: HZ-03
+    substance: compressed_nitrogen
+    amount: "2 cylinders"
+    stowage: exterior_gas_rack
+    secured: true
+
+sample_plan:
+  box_core:
+    planned_stations: 34
+    replicates_per_station: 3
+    archive_fraction: 0.25
+  CTD:
+    planned_casts: 28
+    depths_m: [surface, 10, 50, near_bottom]
+  ROV:
+    planned_dives: 9
+    max_depth_m: 420
+    target_bottom_time_min: 150
+  water:
+    chemistry_bottles: 240
+    eDNA_filters: 96
+
+constraints:
+  weather:
+    box_core_max_wave_m: 2.5
+    ROV_launch_max_wave_m: 2.0
+    ROV_launch_max_wind_kn: 22
+  daylight:
+    ROV_recovery_preferred: before_civil_twilight_end
+  staffing:
+    minimum_bridge_watch: 2
+    minimum_ROV_team: 3
+    sediment_sorting_requires: 2
+  storage:
+    frozen_sample_capacity_l: 410
+    formalin_fixed_capacity_l: 180
+  communications:
+    daily_position_report_utc: "12:00"
+    satellite_data_budget_gb_day: 8
+
+emergency:
+  muster_count: 20
+  liferafts:
+    port: 25_person
+    starboard: 25_person
+  medical:
+    medic: P004
+    telemedicine_provider: OceanMed_Link
+  abandon_ship:
+    science_data_priority: none
+    sample_priority: none
+    personnel_priority: absolute
+
+predeparture_checks:
+  - item: customs_science_equipment_manifest
+    owner: S005
+    status: complete
+  - item: ROV_lift_test
+    owner: S006
+    status: scheduled
+    due: 2026-09-02
+  - item: freezer_alarm_test
+    owner: S002
+    status: complete
+  - item: chemical_locker_inventory
+    owner: P004
+    status: complete
+  - item: weather_routing_subscription
+    owner: P002
+    status: pending
+    due: 2026-09-03

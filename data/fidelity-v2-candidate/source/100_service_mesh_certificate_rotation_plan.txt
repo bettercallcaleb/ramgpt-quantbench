@@ -1,0 +1,139 @@
+Service Mesh Certificate Rotation Plan
+
+Objective
+
+Rotate the internal service-mesh certificate authority and all workload certificates without interrupting east-west traffic. The mesh currently uses a root CA with an intermediate signing CA per environment. Workload certificates are short-lived and issued automatically by the control plane, but trust bundles are distributed separately to sidecar proxies and a small set of non-mesh gateways.
+
+The rotation must preserve mutual TLS between workloads during the overlap period and must not depend on every workload restarting at exactly the same time.
+
+Current Trust Model
+
+Root R1 signs intermediate I1. I1 signs workload certificates with a 24-hour lifetime. Proxies trust R1 through a bundle delivered by mesh configuration. Several legacy gateways trust the intermediate directly, which is a known inconsistency and must be corrected during the rotation.
+
+Target State
+
+Root R2 signs intermediate I2. New workload certificates chain to I2 and R2. During transition, trust bundles contain both R1 and R2. Issuance switches from I1 to I2 only after dual trust is confirmed across all participating clients.
+
+Rotation Phases
+
+Phase A — Inventory and Readiness
+
+Identify every trust consumer:
+- mesh sidecars;
+- ambient data-plane nodes if present;
+- ingress and egress gateways;
+- background workers using mesh-issued identities;
+- certificate-pinning clients;
+- Java trust stores maintained outside mesh automation;
+- monitoring probes and synthetic clients.
+
+For each consumer record current issuer, trusted roots, reload behavior, and whether certificate refresh requires restart.
+
+The inventory must distinguish trust-anchor configuration from workload certificate configuration. Updating only issuers without updating trust creates an outage.
+
+Phase B — Publish Dual Trust
+
+Add R2 to trust bundles while keeping R1. Do not switch issuance yet.
+
+Validate distribution using control-plane configuration state and direct workload inspection. A sample proxy should show both roots in the active trust bundle. Legacy gateways must be updated to trust roots rather than only I1.
+
+Success criteria:
+- >99.9% of managed proxies report dual trust;
+- all critical gateways explicitly verified;
+- no unexpected mTLS validation errors;
+- configuration convergence within normal bounds.
+
+Any unmanaged exception blocks the issuance switch until there is an owner and mitigation.
+
+Phase C — Introduce I2
+
+Create I2 signed by R2. Verify key protection, signing policy, subject constraints, validity window, and audit logging. I2 remains inactive for workload issuance while test identities are generated.
+
+Test certificates are validated from representative clients in every environment. Both old and new chains must be accepted during overlap.
+
+Phase D — Switch Issuance
+
+Change the control plane to issue new workload certificates through I2. Existing I1-issued workload certificates remain valid until natural expiry.
+
+Because workload certificates live for 24 hours, the environment will temporarily contain both chains. This is expected and is why dual trust was published first.
+
+Monitor:
+- certificate issuance success rate;
+- handshake failure rate;
+- proxy authentication errors;
+- expired certificate count;
+- workload certificate chain distribution;
+- control-plane signing latency.
+
+Do not force global restart merely to accelerate convergence. Natural rotation is lower risk unless an emergency requires faster replacement.
+
+Phase E — Confirm Old Leaf Expiry
+
+Wait until the maximum old workload-certificate lifetime plus clock-skew margin has passed since the issuance switch. Query telemetry to confirm no active workloads present certificates chaining to I1.
+
+This check is evidence-based. A timer alone is insufficient because paused workloads, isolated nodes, or control-plane failures may have retained old material.
+
+Phase F — Remove R1 from Trust
+
+Only after all active certificates chain through R2/I2, remove R1 from the distributed trust bundle. Roll out gradually by environment and failure domain.
+
+Canary removal begins on noncritical workloads. Successful mTLS traffic and authentication metrics must remain stable before expanding.
+
+Phase G — Retire I1 and R1
+
+Disable I1 signing capability, archive required audit material, revoke or mark retired according to internal PKI policy, and remove private-key access from active systems. R1 retirement follows the organization's key-retention requirements.
+
+Rollback
+
+Before Phase D, rollback is simply removal of R2/I2 from planned state.
+
+After issuance switches to I2, rollback means restoring I1 issuance while dual trust remains. Do not remove R2 trust during rollback because already-issued I2 certificates may still be active.
+
+After R1 trust removal, emergency rollback is more complex. R1 must be republished before any I1-issued certificate can be relied upon again. For this reason, R1 key destruction does not occur in the same change window as trust removal.
+
+Clock Skew
+
+Certificate validity failures can occur if nodes have incorrect time. Rotation dashboards include NTP health and authentication failures with `not yet valid` or `expired` reasons. New intermediate validity starts sufficiently before issuance activation to tolerate bounded clock skew.
+
+Certificate Pinning
+
+Any client pinning an exact leaf or intermediate certificate violates the intended mesh trust model. The inventory phase must find such clients. Where pinning cannot be removed immediately, a compatibility plan is required before issuance changes.
+
+Testing
+
+A pre-production exercise includes:
+1. dual-root publication;
+2. mixed old/new workload certificates;
+3. control-plane restart during mixed state;
+4. node disconnected through the issuance switch and later rejoined;
+5. gateway with delayed trust reload;
+6. expired old leaf after R1 still trusted;
+7. R1 removal after no old leaf remains.
+
+Operational Dashboard
+
+Required panels:
+- active workload certs by issuing intermediate;
+- trust-bundle version by proxy;
+- mTLS handshake failures by validation reason;
+- certificate age distribution;
+- issuance failures;
+- configuration convergence;
+- gateways not on expected trust version.
+
+Change Gates
+
+The rotation pauses if:
+- critical workload trust convergence is incomplete;
+- handshake failures exceed baseline;
+- any unmanaged gateway is still intermediate-pinned;
+- issuance error rate rises materially;
+- telemetry cannot distinguish old-chain from new-chain traffic.
+
+Security Consideration
+
+The overlap period intentionally trusts two roots, increasing the number of valid trust anchors temporarily. Its duration should be no longer than required for safe certificate expiry and validation. The rotation therefore balances continuity with minimizing the dual-trust window.
+
+Final Success
+
+Rotation is complete when all active workload identities chain to R2/I2, R1 is absent from production trust bundles, I1 cannot sign, no critical consumer depends on the previous chain, and audit evidence records the transition.

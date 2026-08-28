@@ -1,0 +1,39 @@
+The cycling research team met after four days of street observations, intercept surveys, and sensor counts. Everyone had anecdotes. The purpose of the debrief was to prevent anecdotes from becoming conclusions.
+
+“我先说一个 impression,” said Jia. “Protected lane sections feel calmer, but intersections are where people hesitate.” The principal investigator nodded. “Good observation. Now show me where the data supports it and where it doesn’t.”
+
+The study compared three corridor types: painted bike lanes, curb-protected lanes, and mixed-traffic streets. Cameras recorded approach behavior at twelve intersections, while pneumatic counters measured volumes. Surveyors asked riders about comfort, route choice, and near-miss experiences.
+
+The first discrepancy was volume. One protected corridor carried far more cyclists than the painted corridor, but it also connected directly to a university campus. “不能说 protection caused all of that difference,” the analyst said. Land use, network connectivity, slope, and trip purpose were confounders.
+
+They therefore focused on within-corridor behavior at specific treatments. At two intersections, riders in protected lanes made more predictable stopping movements but sometimes became less visible to turning drivers behind parked cars. “Protection midblock, visibility at junction—这是两个 separate design questions,” Jia said.
+
+The video coding team had classified conflicts using time-to-collision estimates. A research assistant asked whether a close pass without braking counted as a near miss. The protocol required observable evasive action or a threshold trajectory conflict. “If we expand definition after watching dramatic clips, we bias the study,” the investigator said.
+
+Chinese terminology caused a coding discussion too. Survey participants used “危险,” “不舒服,” “被逼,” and “差点撞” differently. English-language survey categories such as “unsafe” and “near miss” did not map perfectly. The qualitative team preserved original phrases and coded them into broader concepts rather than translating every response into one standardized word.
+
+Sensor counts showed a strange overnight spike on corridor C. Manual review revealed street sweepers crossing the pneumatic tube repeatedly. “这就是为什么 raw count 不能直接进 model,” the data engineer said. The team marked maintenance windows and removed those passages under a pre-specified non-bicycle classification rule.
+
+Weather also varied. Day two was windy; day four had light rain. E-bike usage appeared higher on the rainy day, but sample size was small. Rather than claiming weather changed vehicle type, the team added conditions to the dataset for later modeling.
+
+The debrief moved to intercept sampling bias. Surveyors stood near bike parking and a coffee shop, which probably overrepresented riders willing to stop. Fast commuters may have declined more often. “我们的 satisfaction scores cannot be treated as population estimates without weighting or a different design,” the survey lead said.
+
+One fieldworker noted that parents riding with children were especially likely to talk. Their comments emphasized separation from traffic but also complained about narrow protected lanes that made overtaking difficult. The study had originally treated “comfort” as one dimension. Interviews suggested at least three: separation from motor vehicles, maneuvering space, and intersection legibility.
+
+“Maybe our next questionnaire should not ask one 1-to-5 comfort score,” Jia said. “对，single score hides why people feel comfortable,” replied the survey lead.
+
+A city planner attending as observer asked the team whether they could identify “the best lane type.” The investigator declined. “Not from this study. We can compare observed behaviors under these specific corridor conditions.” He emphasized that design performance depended on junctions, parking interfaces, bus stops, width, and surrounding network.
+
+The team then reviewed helmet observations. Helmet use differed by corridor, but so did rider demographics and trip purposes. No causal claim would be made. The variable remained descriptive and might be included as a covariate in behavioral models.
+
+At 15:00 they discussed route-choice GPS data from a volunteer subset. Participants had consented to record trips for one week. The privacy protocol snapped tracks to a coarse network and removed the first and last few hundred meters near home locations. “We lose some precision, but we don’t need exact door-to-door traces to study corridor choice,” the data manager said.
+
+Bilingual field notes also required normalization. One observer wrote “右转 conflict,” another “turning interaction,” another “车右转逼停自行车.” They created a controlled event taxonomy but retained raw notes for context. “Normalized code is for analysis; raw language stays for audit,” Jia summarized.
+
+The most interesting preliminary pattern involved signal timing. At two intersections, cyclists received a short leading interval before turning vehicles. Video showed fewer simultaneous starts, but riders arriving late sometimes entered during the motor phase. The team wanted to examine compliance and queue formation before drawing conclusions.
+
+Near the end, each subgroup listed one finding they trusted and one they did not yet trust. Counts trusted daily volume patterns but not overnight spikes. Video coders trusted stopping-position measures but wanted more review of conflict severity. Survey staff trusted recurring themes but not population-level percentages. GPS analysts trusted corridor-level route choices but not fine-grained speed estimates near tall buildings.
+
+The principal investigator wrote two columns on the board: “Evidence now” and “Questions next.” 中文写在下面：“不要把 next question 写成 current conclusion.”
+
+The debrief succeeded because it reduced certainty rather than increasing it. Four days in the field had generated many plausible stories about protected lanes, intersections, rain, e-bikes, families, and signal timing. Research quality depended on deciding which stories were observations, which were measured patterns, and which still needed a design capable of testing them.

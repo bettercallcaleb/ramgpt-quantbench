@@ -1,0 +1,37 @@
+Morning operations briefing, 05:55. The airport wildlife team had received three bird-strike reports in ten days, all involving small flocking species near the south runway. None caused aircraft damage, but the pattern was enough to trigger a coordinated review.
+
+赵队长先把 map 打开：“Recent activity is concentrated here, between taxiway S4 and the drainage basin. 不要只看 strike point，因为 birds move before and after aircraft passage.” The map overlaid strike reports, radar observations, mowing schedules, standing-water reports, and nearby land use.
+
+The airport ecologist explained that the immediate species was less important than the habitat pattern. Recent rain had left shallow water in a maintenance depression. Insects increased, and freshly cut grass exposed feeding areas. “If we just chase birds away every morning, they may return because the site is still attractive,” she said.
+
+Operations asked whether the basin could simply be drained. Engineering replied that the depression was part of stormwater management and could not be permanently dry. “可以改 water residence time，但不能为了 wildlife risk 把 drainage function 取消。” The team needed to reduce attractiveness without compromising flood control.
+
+A radar technician showed tracks from the previous evening. Most flocks crossed below 150 feet and moved between the basin and fields east of the perimeter. The pattern intensified around sunset. “Radar tells us movement, not species with certainty,” he cautioned. Visual observers had identified starlings and gulls in the same area, but the team would not assume every radar track belonged to them.
+
+The tower representative asked what information controllers actually needed in real time. Long ecological explanations were not useful during active traffic. The wildlife team proposed three alert levels: normal, elevated activity near movement areas, and immediate runway hazard. “Tower 只需要知道 action implication,” 赵队长说，“比如 hold departure for two minutes, or request inspection.”
+
+They reviewed one recent event in detail. At 18:42 a flock lifted from grass beside the runway after a service vehicle passed. A departing aircraft was already rolling. The birds crossed behind the aircraft, so no strike occurred, but timing was uncomfortably close. The service driver had not violated any rule; the route was authorized. The problem was that vehicle movement acted as a disturbance trigger.
+
+“这不是说 service vehicle 不能走,” the operations manager said. “It means wildlife state should inform nonessential vehicle routing when activity is high.” They added a temporary coordination step during sunset peaks: wildlife control could request a short hold on discretionary perimeter traffic.
+
+The group then discussed deterrence. Pyrotechnics, distress calls, lasers, and vehicle hazing were all available, but repeated use could lead to habituation. “More noise is not always more control,” the ecologist said. Harassment needed variation and should be paired with habitat management.
+
+One controversial topic was grass height. Some airports maintain taller grass to discourage certain feeding birds, while others use shorter regimes depending on local species. The airport’s current mowing standard was based on equipment convenience more than ecological evidence. “我们需要自己的 field data,” said the ecologist. A trial would compare two mowing heights in separated zones while tracking bird use.
+
+Food waste near staff facilities was another attractant. Inspections found two dumpsters with lids that did not close fully. Catering contractors were instructed to correct them within forty-eight hours. This seemed minor compared with runway operations, but persistent food sources can draw gulls and corvids from outside the airfield.
+
+The briefing also covered migratory timing. The current incidents occurred during a seasonal movement period. “Risk today is not a stable annual baseline,” the radar technician noted. Historical data showed similar peaks for roughly three weeks in previous years, but weather shifted the exact dates. The team decided to increase dawn and dusk observation shifts temporarily rather than permanently adding staffing.
+
+An airline safety representative asked whether pilots should receive a NOTAM. The airport already had standard wildlife advisories, but a broad warning could become background noise. “If every day says ‘bird activity,’ eventually nobody learns anything,” she said. The group chose targeted ATIS language during elevated periods and direct tower advisories when flocks were observed near active runways.
+
+The bilingual nature of ground operations required clear phraseology. Internal teams often spoke Mandarin, while aviation communications used standardized English. 赵队长强调：“Radio 上不要自己翻译 standard phraseology。内部 brief 可以 bilingual，但跟 tower 的 operational calls 必须按 approved wording.” This separation prevented informal language from leaking into safety-critical communications.
+
+At 06:40 the sun was rising, and a field observer called in from the south perimeter. “Approximately forty small birds feeding north edge of basin, moving intermittently.” 赵队长看了一眼 runway schedule and replied in English over the operational channel: “Wildlife unit proceeding to south basin. Request advisory for elevated bird activity near taxiway S4.”
+
+The meeting transitioned immediately from planning to action. A vehicle team approached from the west to avoid pushing the flock toward the runway. Radar staff watched whether the birds climbed or moved east. Engineering logged the water level for later comparison.
+
+The final briefing note did not claim a single cause for the recent strikes. It listed interacting conditions: rainfall, shallow water, mowing, seasonal movement, food sources, and disturbance from vehicles. Actions were similarly layered: immediate dispersal, operational coordination, dumpster correction, mowing trial, drainage review, and short-term staffing changes.
+
+“Wildlife risk is dynamic,” the ecologist said before leaving. “你不能把 birds 当成一个固定 obstacle. They respond to habitat, weather, people, aircraft, and our own control measures.”
+
+That is why the briefing mattered. The airport was not trying to eliminate birds from the landscape, an impossible goal. It was trying to understand when ordinary ecological behavior intersects with aircraft movement, then change the conditions and timing enough to keep those intersections rare.

@@ -1,0 +1,179 @@
+IPv6 Branch Network Rollout Guide
+
+Scope
+
+This guide defines the phased introduction of IPv6 to enterprise branch offices while preserving IPv4 connectivity during migration. The target model is dual stack, followed by selective reduction of IPv4 dependence after application validation.
+
+Addressing
+
+Each branch receives a /48 from the enterprise IPv6 aggregate. Internal allocation uses /64 per Layer-2 subnet.
+
+Example:
+Enterprise aggregate: 2001:db8:4200::/36
+Branch 017: 2001:db8:4211::/48
+
+Subnet convention:
+2001:db8:4211:0010::/64 — user LAN
+2001:db8:4211:0020::/64 — voice
+2001:db8:4211:0030::/64 — corporate Wi-Fi
+2001:db8:4211:0040::/64 — infrastructure
+2001:db8:4211:0050::/64 — guest Wi-Fi
+2001:db8:4211:00f0::/64 — management
+
+Do not create subnets smaller than /64 for ordinary host networks. SLAAC and several IPv6 mechanisms assume /64 semantics.
+
+Router Advertisement
+
+User and wireless networks receive Router Advertisements. Managed address configuration differs by device class.
+
+Corporate endpoints:
+- SLAAC enabled;
+- RDNSS announced where platform support is confirmed;
+- DHCPv6 may provide supplemental information.
+
+Infrastructure networks may use static addressing or DHCPv6 reservations according to service requirements.
+
+Router Advertisement Guard is enabled on access switches to prevent unauthorized endpoints from advertising themselves as routers.
+
+DNS
+
+Internal authoritative DNS publishes AAAA records only after the corresponding service is validated over IPv6.
+
+Recursive resolvers are reachable over both address families. Branch clients receive dual-stack DNS service.
+
+Application testing must distinguish:
+- DNS name has AAAA;
+- client can route IPv6;
+- firewall allows IPv6;
+- application actually works over IPv6.
+
+Publishing AAAA before all four are true can create user-visible failures.
+
+Routing
+
+Branches use OSPFv3 internally where dynamic routing is required and BGP toward WAN edges according to the existing architecture.
+
+IPv6 routes are monitored independently. IPv4 route health does not imply IPv6 route health.
+
+Default route validation checks both:
+- next-hop reachability;
+- upstream path acceptance.
+
+Firewall
+
+IPv6 receives an explicit ruleset. IPv4 rules are not assumed to apply automatically.
+
+Baseline controls:
+- default deny inbound between security zones;
+- permit established/related flows according to platform behavior;
+- permit required ICMPv6;
+- block unauthorized transition tunnels;
+- log denied traffic at controlled rate.
+
+ICMPv6 must not be broadly blocked. Neighbor Discovery, Path MTU Discovery, and error signaling depend on it.
+
+Required ICMPv6 types are documented and tested.
+
+WAN MTU
+
+IPv6 routers do not fragment transit packets. End hosts rely on Path MTU Discovery.
+
+Rollout testing includes large HTTPS transfers and paths with reduced WAN MTU. Firewalls must permit Packet Too Big messages.
+
+Security
+
+IPv6 introduces no assumption of safety from large address space. Endpoint exposure is controlled by firewall policy and host security, not by perceived unguessability.
+
+Neighbor Discovery protections:
+- RA Guard;
+- DHCPv6 Guard where applicable;
+- switch-port security features supported by hardware.
+
+Monitoring must ingest IPv6 addresses correctly without truncation or normalization errors.
+
+Logging and SIEM parsers are tested before production rollout.
+
+Pilot Sequence
+
+Phase 1 — Lab
+Validate routing, RA, DHCPv6 behavior, DNS, firewall, VPN, monitoring, and endpoint management.
+
+Phase 2 — IT Pilot Branch
+Enable dual stack for infrastructure and a small IT user VLAN. No public AAAA changes.
+
+Phase 3 — General User VLAN
+Expand to managed endpoints. Measure preferred address family and application failures.
+
+Phase 4 — Voice and Wireless
+Enable only after vendor support validation.
+
+Phase 5 — Guest Network
+Guest IPv6 is independently evaluated because captive portals and content filtering frequently contain IPv4 assumptions.
+
+Application Validation
+
+Test categories:
+- identity provider;
+- endpoint management;
+- software distribution;
+- file services;
+- printing;
+- internal web applications;
+- SaaS;
+- VPN;
+- voice;
+- monitoring agents;
+- security proxies.
+
+Tests include IPv6-preferred clients. Simply confirming IPv4 fallback is insufficient.
+
+Happy Eyeballs
+
+Modern clients may race IPv6 and IPv4. A partially broken IPv6 path can therefore produce latency rather than total failure.
+
+Synthetic probes record per-address-family connection success and timing. This helps detect IPv6 paths that are technically reachable but much slower.
+
+VPN
+
+Remote-access and site-to-site VPN products are reviewed for:
+- carriage of IPv6 traffic;
+- assignment of IPv6 client addresses;
+- IPv6 DNS leakage;
+- split-tunnel policy;
+- firewall parity.
+
+A VPN that protects IPv4 but leaves IPv6 outside the tunnel is unacceptable for corporate endpoints.
+
+Operations
+
+Network tools must support:
+ping -6
+traceroute -6
+dig AAAA
+neighbor-table inspection
+IPv6 flow logging
+packet capture
+
+Runbooks include both compressed and full address notation. Operators should avoid manually comparing long textual addresses when tooling can canonicalize them.
+
+Rollback
+
+Dual-stack rollout allows rollback by withdrawing Router Advertisements and IPv6 addressing from affected user networks while leaving IPv4 unchanged.
+
+Rollback must be gradual enough to allow existing IPv6 sessions to drain or fail predictably.
+
+Success Metrics
+
+- IPv6 route stability;
+- client IPv6 adoption;
+- DNS AAAA query success;
+- IPv6 connection error rate;
+- firewall deny anomalies;
+- application failure by address family;
+- PMTU errors;
+- VPN leak tests;
+- help-desk tickets attributable to IPv6.
+
+Exit Criteria
+
+A branch is considered successfully dual-stack when IPv6 is the normal working path for validated destinations, failure rates are comparable to IPv4, monitoring has parity, security controls are enforced, and operational staff can troubleshoot the address family without disabling it as the default first response.

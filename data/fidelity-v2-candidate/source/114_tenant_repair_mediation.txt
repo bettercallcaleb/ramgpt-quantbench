@@ -1,0 +1,213 @@
+Tenant Repair Mediation Session
+
+Participants:
+Nadia — mediator
+Ms. Alvarez — tenant
+Mr. Chen — property manager
+Ruth — building maintenance supervisor
+
+Nadia: Thank you for coming. My role is to help identify the repair issues, what has already been attempted, and what concrete next steps everyone can agree to. I'm not here to decide legal liability. If a point is disputed, we'll record it as disputed rather than arguing it into certainty.
+
+Ms. Alvarez: That's fine. My main issue is water coming through the bedroom ceiling whenever we get heavy rain. I've reported it four times.
+
+Mr. Chen: We responded each time.
+
+Ms. Alvarez: Someone came each time, yes. But the leak is still there.
+
+Nadia: Let's separate response from resolution. Ruth, can you summarize the maintenance history?
+
+Ruth: First report was April 11. We inspected the unit above and found no plumbing leak. Second report was May 2 after rain. We resealed flashing around the east roof vent. Third report June 19, also after rain. We found staining but the ceiling was dry by the time we arrived. Fourth report July 27 included photos of active dripping.
+
+Nadia: What changed after the July report?
+
+Ruth: We hired a roofing contractor. They found a cracked membrane seam approximately two metres uphill from the vent. Temporary patch was installed July 29.
+
+Ms. Alvarez: It leaked again last week.
+
+Ruth: I saw the photo you sent. That suggests the patch didn't address the whole path.
+
+Mr. Chen: The contractor is booked to return.
+
+Nadia: Do we have a date?
+
+Mr. Chen: They gave us a window next Tuesday or Wednesday.
+
+Ms. Alvarez: That's what I mean. Everything is a window. I have to move my bed every time it rains.
+
+Nadia: Could we turn that into a firm communication commitment? For example, property management confirms the contractor date by Monday at noon.
+
+Mr. Chen: Yes, I can do that.
+
+Nadia: And if the contractor cannot attend Tuesday or Wednesday?
+
+Mr. Chen: We arrange another roofing company.
+
+Ruth: I would support that. We need a water test, not another visual-only inspection.
+
+Ms. Alvarez: What does that involve?
+
+Ruth: Controlled water applied to roof sections while someone monitors inside. It helps isolate the entry route.
+
+Nadia: Any risk to the apartment?
+
+Ruth: If done properly, we start low-volume and in sections. We stop immediately when water appears. We'll protect the bedroom floor and furniture.
+
+Ms. Alvarez: I want that in writing because last time I was told just to put down a bucket.
+
+Mr. Chen: We can include it in the work order.
+
+Nadia: Good. Next issue: interior damage.
+
+Ms. Alvarez: The ceiling paint is bubbling, and there's a brown patch. I'm worried about mold.
+
+Ruth: We measured moisture last visit. The ceiling board near the stain was elevated but not saturated. We didn't open the ceiling because the exterior leak wasn't confirmed repaired.
+
+Ms. Alvarez: So nothing gets fixed inside until the roof is fixed?
+
+Ruth: We should not repaint before the leak is stopped. But we can inspect for hidden damage sooner if moisture persists.
+
+Nadia: Can we define a sequence?
+
+Ruth: Yes.
+1. Identify and repair roof entry.
+2. Confirm no active leak during test or rainfall.
+3. Measure ceiling moisture.
+4. If moisture remains elevated or material is deteriorated, open the affected section.
+5. Replace damaged board if required.
+6. Prime and repaint after drying.
+
+Ms. Alvarez: How long does "after drying" mean?
+
+Ruth: We don't use a fixed number of days. We measure. Painting damp board can trap moisture and fail again.
+
+Nadia: That sounds like a reasonable technical condition, but the tenant also needs a timetable. Could management provide status updates even if drying isn't complete?
+
+Mr. Chen: Every two business days after the roof repair until the interior work is done.
+
+Ms. Alvarez: Email, please. I don't want to keep calling.
+
+Mr. Chen: Email is fine.
+
+Nadia: Let's move to the bathroom fan.
+
+Ms. Alvarez: It's very loud and sometimes doesn't start.
+
+Ruth: We replaced the switch in June.
+
+Ms. Alvarez: The switch works. The fan itself rattles.
+
+Ruth: Then that's a separate fault. I had it listed as resolved because the original work order said "fan not operating."
+
+Nadia: This is a useful distinction. Ms. Alvarez, what is the current symptom exactly?
+
+Ms. Alvarez: When I turn it on, sometimes there's a hum for five or ten seconds before the blades start. When it runs, it rattles loudly.
+
+Ruth: That sounds like motor or bearing failure. We'll replace the fan unit rather than service it in place.
+
+Mr. Chen: Is that something our staff can do?
+
+Ruth: Yes, assuming the housing size matches. If not, we may need an electrician for wiring changes.
+
+Nadia: Target date?
+
+Ruth: I can inspect tomorrow and either replace from stock or order the correct model. If it must be ordered, I'll give an ETA.
+
+Ms. Alvarez: That's okay as long as I know what's happening.
+
+Nadia: Third issue: kitchen cabinet under the sink.
+
+Mr. Chen: We believe that damage is from a tenant spill.
+
+Ms. Alvarez: It wasn't. The old drain leaked slowly. Your plumber fixed the drain.
+
+Ruth: I checked the plumbing record. There was a loose slip joint repaired May 14. The cabinet base was noted as swollen.
+
+Mr. Chen: I hadn't seen that note.
+
+Nadia: So we have documentation of a plumbing leak and cabinet swelling at the same visit.
+
+Mr. Chen: Yes, based on that note.
+
+Ms. Alvarez: The cabinet smells musty.
+
+Ruth: The particleboard base has delaminated. It should be removed. We can replace the cabinet floor panel without replacing the whole cabinet box if the sides are sound.
+
+Nadia: Any reason to delay that?
+
+Ruth: No. The plumbing leak is already repaired and the area is dry.
+
+Mr. Chen: Let's schedule it.
+
+Ms. Alvarez: I work from home Tuesday and Thursday. Either day is easiest.
+
+Ruth: Thursday morning.
+
+Nadia: Can we make it an arrival window rather than an all-day appointment?
+
+Ruth: 9:00 to 11:00.
+
+Ms. Alvarez: Good.
+
+Nadia: Access protocol. There was disagreement in the written messages about entry notice.
+
+Ms. Alvarez: One worker knocked and then used the key almost immediately. I was in a meeting.
+
+Mr. Chen: Staff are supposed to wait.
+
+Ruth: For non-emergency scheduled work, our procedure is to knock, identify ourselves, wait, and call if there's no response. We should not be entering immediately.
+
+Nadia: Can we record the tenant's preference?
+
+Ms. Alvarez: Please call my mobile when they arrive. If I don't answer, wait five minutes before using authorized access, unless it's a real emergency.
+
+Mr. Chen: That's reasonable for scheduled repairs.
+
+Ruth: I'll put it in the work orders.
+
+Nadia: We should define emergency separately so nobody assumes the five-minute rule applies to active flooding or fire.
+
+Ms. Alvarez: Yes, obviously.
+
+Nadia: Final concern: communication history. Ms. Alvarez, what would make you feel the process is actually moving now?
+
+Ms. Alvarez: A written list with dates and somebody responsible. I don't want another message saying "maintenance has been notified."
+
+Nadia: Mr. Chen?
+
+Mr. Chen: I'll be the communication owner. Ruth is the technical owner.
+
+Nadia: Let's summarize commitments.
+
+Nadia: Roof leak: contractor date confirmed by Monday noon. If current contractor cannot attend Tuesday or Wednesday, management seeks an alternate. Repair investigation includes controlled water testing, with interior protection.
+
+Ruth: Correct.
+
+Nadia: Ceiling: after roof work, moisture is measured. Damaged material is opened or replaced if needed. Status email every two business days until interior restoration is complete.
+
+Mr. Chen: Correct.
+
+Nadia: Bathroom fan: Ruth inspects tomorrow; replace from stock if compatible, otherwise provide order ETA.
+
+Ruth: Yes.
+
+Nadia: Sink cabinet: Thursday, 9:00 to 11:00, remove and replace damaged base panel if cabinet sides are sound.
+
+Ruth: Yes.
+
+Nadia: Access: for scheduled non-emergency work, call on arrival, knock, and wait five minutes if no response before authorized entry. Emergencies follow building emergency protocol.
+
+Ms. Alvarez: That's what I want.
+
+Nadia: Is there anything in that summary that anyone believes is inaccurate?
+
+Mr. Chen: No.
+
+Ruth: No.
+
+Ms. Alvarez: No.
+
+Nadia: Then I'll circulate the written summary today. If a date changes, the person responsible should notify the others before the appointment window, not after it is missed.
+
+Mr. Chen: Agreed.
+
+Nadia: Good. The point of today's agreement is not to declare the history solved; it's to make the next actions observable and specific.

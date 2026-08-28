@@ -1,0 +1,238 @@
+Translation Style Review
+
+Participants:
+Wei — translator
+Hannah — English-language editor
+Sora — bilingual reviewer
+Martin — project manager
+
+Martin: We need to resolve the style disagreement before the remaining chapters are translated. The issue isn't whether the English is grammatical. It's how much texture from the Chinese source should remain.
+
+Hannah: My concern is readability. Some passages currently feel translated in a way that draws attention to themselves.
+
+Wei: And my concern is that the proposed edits erase the narrator's rhythm and social register.
+
+Sora: Let's use specific examples instead of arguing about "literal" versus "natural" in the abstract.
+
+Martin: Agreed.
+
+Sora: First sentence in chapter three. Source: "她嘴上说不急，手里的茶盖却一下一下刮着杯沿。"
+
+Wei's version: "She said she was in no hurry, but the lid in her hand scraped the rim of the teacup again and again."
+
+Hannah's edit: "She said there was no rush, though she kept worrying the teacup lid against the rim."
+
+Wei: "Worrying" is elegant, but it gives the motion an English literary flavor the narrator doesn't have.
+
+Hannah: "Scraped the rim again and again" sounds mechanical.
+
+Sora: What information matters? She verbally denies urgency, while repetitive hand movement betrays tension.
+
+Wei: Yes, and "一下一下" is plain, repetitive language.
+
+Hannah: What about "She said she wasn't in a hurry, but kept scraping the lid along the rim of her teacup."
+
+Wei: Better. "Kept" carries repetition without ornament.
+
+Sora: I agree.
+
+Martin: Record the principle?
+
+Sora: Preserve plain repetitive diction when the source is deliberately plain. Don't automatically replace repetition with a more literary English verb.
+
+Hannah: Fine.
+
+Sora: Second example: "人情不是秤砣，哪有一斤一两算得清。"
+
+Wei: "Human obligations aren't weights on a scale; you can't calculate every pound and ounce."
+
+Hannah: I changed it to "Relationships aren't an account book; you can't balance every debt."
+
+Wei: But that's a different metaphor.
+
+Hannah: The original weight units don't carry naturally.
+
+Sora: The metaphor is culturally ordinary but understandable. We don't need to replace it just because English has another idiom.
+
+Martin: Would "Favors between people aren't weights on a scale; you can't measure every ounce exactly" work?
+
+Wei: "Favors" is too narrow for 人情 here.
+
+Sora: Context includes favors, obligation, and social feeling. Maybe: "What people owe each other isn't a weight on a scale; you can't measure it down to the last ounce."
+
+Hannah: That's natural enough.
+
+Wei: I like that because it keeps the scale.
+
+Martin: So metaphor preservation is default unless it becomes unintelligible.
+
+Hannah: Default, not absolute.
+
+Sora: Correct.
+
+Sora: Third issue: forms of address. The source repeatedly calls an older neighbor "王姨."
+
+Wei: I used "Auntie Wang."
+
+Hannah: I changed it to "Mrs. Wang" because she isn't related.
+
+Wei: That loses the social relationship.
+
+Sora: "Auntie Wang" is understandable in contemporary English translations, especially with context.
+
+Hannah: But some readers will assume actual kinship.
+
+Martin: Can the first occurrence clarify?
+
+Wei: "Auntie Wang, as everyone in the lane called her..." That's intrusive.
+
+Sora: We can let context establish it. The narrator calls several unrelated older women Auntie plus surname.
+
+Hannah: Then I can accept "Auntie Wang" if the style sheet defines kinship terms as social address when context supports them.
+
+Martin: Good.
+
+Sora: Fourth: idiom. Source: "他这人三棍子打不出一个屁来."
+
+Hannah: The literal draft, "You couldn't beat a fart out of him with three sticks," is impossible in this scene.
+
+Wei: I agree that literal wording is comic in English in the wrong way.
+
+Sora: Function?
+
+Wei: It means he's extremely taciturn, with a rough colloquial tone.
+
+Hannah: I proposed, "You could pull his teeth before you'd get a sentence out of him."
+
+Sora: That's vivid, but introduces a different image.
+
+Wei: "You couldn't get three words out of him" is too neutral.
+
+Martin: Could we use "You couldn't beat a word out of him"?
+
+Hannah: That's idiomatic enough and retains roughness.
+
+Wei: Yes, though it loses the exaggeration count.
+
+Sora: Acceptable functional substitution. Note that idioms can be replaced when literal transfer produces a misleading tone.
+
+Martin: Next.
+
+Sora: Sentence-final particles and short dialogue. The grandmother says, "行了行了，别说了，吃饭吧。"
+
+Wei: "All right, all right. Enough talking. Eat."
+
+Hannah: "That's enough. Let's eat."
+
+Wei: My version is intentionally abrupt.
+
+Hannah: In English "Eat." sounds hostile.
+
+Sora: Is she hostile?
+
+Wei: Not exactly. She is ending an argument through authority.
+
+Hannah: "All right, enough. Let's eat." retains control without sounding bizarre.
+
+Wei: Yes. Repeating "all right" is less important than the turn-taking function.
+
+Sora: Good.
+
+Martin: So not every surface repetition must survive if English pragmatics change the character.
+
+Wei: Correct, but we should know why we're removing it.
+
+Sora: Fifth: paragraph structure. Hannah merged three one-sentence paragraphs.
+
+Hannah: Because they looked choppy.
+
+Wei: The source uses those breaks around a moment of realization.
+
+Sora: Read them.
+
+Wei: "The door was open. / Her shoes were gone. / Only then did he look at the clock."
+
+Hannah: In my edit: "The door was open and her shoes were gone. Only then did he look at the clock."
+
+Sora: The original pacing is stronger. The isolated facts arrive separately.
+
+Hannah: I can restore the breaks.
+
+Martin: Rule: preserve marked paragraph pacing unless English layout creates an actual comprehension problem.
+
+Hannah: Yes.
+
+Sora: Sixth: culturally specific object, "搪瓷缸."
+
+Wei: "enamel mug."
+
+Hannah: Fine.
+
+Sora: No footnote?
+
+Wei: No. The object is understandable.
+
+Martin: Good. We don't annotate every ordinary object.
+
+Sora: Seventh: "单位." In this chapter it's the father's work organization in the older state-enterprise context.
+
+Hannah: "company"?
+
+Wei: Too narrow.
+
+Sora: "work unit" is historically specific and conventional.
+
+Hannah: But general readers may not know it.
+
+Martin: First occurrence can be "work unit," with context doing the rest.
+
+Wei: Exactly.
+
+Sora: Footnote only if the institutional meaning matters later.
+
+Martin: Now the bigger question: do we domesticate units and money?
+
+Wei: Keep yuan as yuan. For physical measures, context-dependent.
+
+Hannah: I don't want jin translated as "catty."
+
+Sora: If exact measure matters, "jin" can confuse readers. If approximate household quantity, translate the functional amount into kilograms only if the conversion doesn't erase historical voice.
+
+Wei: In dialogue, a grandmother saying "buy two jin of pork" should not suddenly sound metric.
+
+Hannah: Could say "two jin—about a kilogram" once?
+
+Martin: That feels explanatory inside dialogue.
+
+Sora: Better to use "two jin of pork" and put a concise glossary if the term recurs often.
+
+Hannah: I can accept that.
+
+Martin: We're converging on a style philosophy: fidelity isn't word-for-word sameness; it's preserving narrative function, register, metaphor, social relationships, and pacing unless doing so creates a false effect in English.
+
+Wei: Yes.
+
+Hannah: And readability isn't permission to normalize every unusual feature.
+
+Sora: Exactly.
+
+Martin: Let's capture operational rules:
+1. Preserve metaphor by default.
+2. Preserve social address where it carries relationship.
+3. Replace idioms when literal transfer creates the wrong tone.
+4. Preserve marked repetition and paragraph rhythm unless English pragmatics distort them.
+5. Avoid unnecessary explanatory footnotes.
+6. Keep culturally meaningful terms when context or glossary can carry them.
+7. Every substantial stylistic change should answer: what source effect are we preserving?
+
+Hannah: I would add: don't make the English more elegant than the source.
+
+Wei: Absolutely.
+
+Sora: And don't make it rougher just to signal foreignness.
+
+Martin: Excellent. We'll apply this to chapter four as a pilot. Wei translates, Hannah edits with tracked rationale on disputed lines, Sora reviews only those flagged points. If the system works, we use it for the rest.
+
+Hannah: That's much better than arguing globally over whether the translation should be "literal."
+
+Wei: Agreed. The useful question is always: literal about what?

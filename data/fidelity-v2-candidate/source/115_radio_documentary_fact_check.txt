@@ -1,0 +1,210 @@
+Radio Documentary Fact-Check Session
+
+Participants:
+Sofia — producer
+Cal — reporter
+Mei — fact checker
+Andre — sound editor
+
+Sofia: We are locking the harbor-closure episode tomorrow. I want every factual sentence in the narration classified before we mix. Mei, take us through the red flags.
+
+Mei: First line in act one: "For nearly a century, the east pier was the town's largest employer." We don't have evidence for that.
+
+Cal: The shipyard on the east pier employed thousands at its peak.
+
+Mei: That's not the same claim. The municipal employment tables show it was the largest industrial employer in some decades, but the railway employed more people in the 1920s.
+
+Sofia: Rewrite?
+
+Cal: "For much of the twentieth century, the east-pier shipyard was one of the town's largest employers."
+
+Mei: Supported.
+
+Andre: Does that change the archival clip underneath? The former worker says, "Everybody's father was down there."
+
+Sofia: Keep the clip. It's memory, not a statistical claim.
+
+Mei: Right, but we should not use the quote as proof of "largest."
+
+Cal: Next.
+
+Mei: At 06:18, narration says the harbor authority "abruptly announced closure in March 1987." The board minutes show a March vote, but layoffs had been discussed publicly since December.
+
+Cal: I meant the final closure announcement.
+
+Mei: Then say that. "In March 1987, the authority approved the final closure plan."
+
+Sofia: Better.
+
+Andre: I have newspaper audio from March 14 calling it "a surprise decision."
+
+Mei: A newspaper can characterize it as surprise, but our narrator shouldn't say there was no warning.
+
+Cal: Fine.
+
+Mei: Next: the union representative says, "They promised every displaced worker a retraining place." Can we verify the promise?
+
+Cal: I found a government release announcing 600 training places.
+
+Mei: There were approximately 1,100 affected workers across the yard and subcontractors. So "every" is not supported.
+
+Sofia: We can't edit the interviewee's words.
+
+Mei: We don't need to. We contextualize afterward. "Government records from the time announced 600 training places, fewer than the number of workers affected."
+
+Cal: Do we know the denominator precisely enough?
+
+Mei: We have 842 direct employees in the closure notice. Subcontractor estimates vary from 180 to 320.
+
+Sofia: Then don't say "fewer than the number of workers affected" if we're counting categories inconsistently.
+
+Cal: How about, "The official program initially funded 600 places; the closure notice listed 842 direct employees."
+
+Mei: Strong and precise.
+
+Andre: That will fit in the pause after the quote.
+
+Sofia: Good.
+
+Mei: At 11:42 there's a sound montage over the line, "By the end of summer, the yard was silent." The final production shift ended September 4.
+
+Cal: That's still summer.
+
+Mei: Meteorologically yes, but the line implies closure was complete earlier. Equipment removal and maintenance continued into October.
+
+Sofia: What's the real point of the sentence?
+
+Cal: That the industrial soundscape disappeared quickly.
+
+Andre: I can support that sonically. Our recordings from late September have mostly gulls and trucks.
+
+Mei: Then phrase it as observation, not total closure. "Within weeks of the final production shift, the usual hammering and engine tests had largely disappeared."
+
+Sofia: Do we have a source for "usual"?
+
+Cal: Oral histories plus local environmental-noise complaints from earlier years.
+
+Mei: Fine if the script notes this is a reconstruction from accounts, not a direct measurement.
+
+Sofia: We can say, "Workers and nearby residents remembered how quickly the noise changed."
+
+Andre: That leads naturally into the resident interview.
+
+Mei: Next issue is more serious. At 17:03, the script says contaminated sediment from the shipyard "caused the shellfish ban."
+
+Cal: The environmental report links metals and hydrocarbons from industrial activity to contamination.
+
+Mei: The shellfish closure predates the shipyard shutdown and had multiple causes, including municipal wastewater. We cannot assign one cause.
+
+Cal: You're right. I'll change it to: "Industrial contamination was one factor in a harbor already burdened by sewage and runoff."
+
+Mei: The report supports that.
+
+Sofia: Keep the distinction between contamination source and regulatory closure.
+
+Andre: There's a dramatic music rise under the original line. I'll pull it back. The certainty was doing emotional work we no longer have.
+
+Sofia: Good editorial judgment.
+
+Mei: At 20:15, an activist says, "The cleanup took twenty years." What exactly begins and ends that period?
+
+Cal: First formal remediation planning in 1990; major sediment project completed in 2010.
+
+Mei: Then the quote is roughly true, but cleanup activities continued after 2010.
+
+Sofia: Again, don't correct the speaker in her own sentence unless necessary. Follow with exact dates.
+
+Cal: "Planning began in 1990. The largest dredging phase finished in 2010, while monitoring continued afterward."
+
+Mei: Supported.
+
+Mei: Now the archival mayor clip: "This land will be public forever." The redevelopment agreement does not guarantee all land remains public.
+
+Cal: But that's the mayor's recorded statement.
+
+Mei: We can broadcast it as a historical statement. The problem is our next line: "And it was." That's false.
+
+Sofia: Delete "And it was."
+
+Andre: That actually improves the cut. We can let the quote hang, then transition to the later condominium debate.
+
+Cal: Maybe narration: "The promise would be tested almost immediately."
+
+Mei: That's interpretive but fair if we then document the disputes.
+
+Sofia: What evidence follows?
+
+Cal: 1992 proposal to lease parcel 7 to a private marina, 1998 hotel proposal, 2004 condo rezoning application.
+
+Mei: Then "tested" is justified.
+
+Sofia: Next category: numbers.
+
+Mei: The current script says redevelopment created "more than 5,000 jobs." The consultant report estimated 5,200 job-years during construction, not 5,200 permanent jobs.
+
+Cal: That's a classic unit problem.
+
+Sofia: We need to fix it clearly.
+
+Cal: "A consultant projected about 5,200 job-years of construction work and roughly 900 permanent jobs after build-out."
+
+Mei: Yes, with attribution: "projected."
+
+Andre: The existing sentence is only seven seconds. New one is longer.
+
+Sofia: Facts win. Trim the music.
+
+Mei: The population figure is also off. Narration says the waterfront district has 14,000 residents today. The latest municipal profile counts 12,860 within our map boundary.
+
+Cal: The 14,000 number came from the business association.
+
+Mei: Their boundary includes two blocks north of ours.
+
+Sofia: Use 12,860 and define the boundary in the web notes. On air: "nearly 13,000 residents."
+
+Mei: Good.
+
+Cal: What about the line, "No one lives where the dry dock stood"?
+
+Mei: That's correct physically, but only because the dry dock itself is a water feature now.
+
+Sofia: Then it's a nice line, but we should make sure it doesn't imply no redevelopment nearby.
+
+Andre: The sound design has kids playing beside it, which helps.
+
+Mei: Final issue: an interviewee says his grandfather arrived "in 1901 on the first passenger ship after the new pier opened." We cannot confirm the "first."
+
+Cal: Family story.
+
+Mei: Then label it as family story. Narration could say, "In his family, the arrival was remembered as part of the pier's opening year."
+
+Sofia: That's elegant.
+
+Cal: We should probably use this taxonomy in the script notes:
+- verified fact;
+- attributed claim;
+- personal memory;
+- estimate;
+- interpretation.
+
+Mei: Exactly. The mistake is when one category silently turns into another.
+
+Andre: It also helps sound editing. An archival clip can be emotionally strong without the narration endorsing every factual detail inside it.
+
+Sofia: Let's do the final check sentence by sentence. If it's narration, we need a source or clear interpretive framing. If it's interview, we preserve the speaker but add context when the claim materially affects understanding.
+
+Cal: What about tiny details like weather?
+
+Mei: Same standard. If you say it rained on the closure day because an interviewee remembers rain, either verify the weather record or say the worker remembers rain.
+
+Sofia: Good. We are not trying to drain uncertainty from the documentary. We're trying to place uncertainty honestly.
+
+Andre: That should be in every radio edit room.
+
+Sofia: All right. Cal revises the five flagged narration sections tonight. Mei does a final source pass at 09:00. Andre holds the mix until the factual wording is locked.
+
+Cal: Understood.
+
+Mei: I'll also attach the source line for every number so nobody has to reconstruct where it came from next year.
+
+Sofia: Perfect. Then we're done when the story remains compelling after the unsupported certainty is removed.

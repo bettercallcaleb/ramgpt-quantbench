@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "batch": "segments_000_015",
+  "generation_method": "one_time_external_language_model_source_creation",
+  "generator_identity": "OpenAI GPT-5.6 Sol",
+  "source_plan_sha256": "79fd3a82b70f7a7e033ba4bf958f864c99fd3335fc9fd437c46c1d7208114328",
+  "documents": [
+    {
+      "segment_id": 0,
+      "domain": "english_prose",
+      "topic": "winter_lighthouse_supply_run",
+      "document_genre_or_structure": "first-person logistical narrative",
+      "language": "English",
+      "filename": "000_winter_lighthouse_supply_run.txt",
+      "sha256": "0dab294645bff26c65c0fb7d27e07e7c14d18be3609d74c8904cdc51625c67e9",
+      "bytes": 6531,
+      "word_count": 1106
+    },
+    {
+      "segment_id": 1,
+      "domain": "english_prose",
+      "topic": "urban_tree_canopy_dispute",
+      "document_genre_or_structure": "municipal hearing digest",
+      "language": "English",
+      "filename": "001_urban_tree_canopy_dispute.txt",
+      "sha256": "2a6602c15307114595bc992d0789b9b8e099d0fb8d8fb5ae9a4a89b59e130e54",
+      "bytes": 7714,
+      "word_count": 1136
+    },
+    {
+      "segment_id": 2,
+      "domain": "english_prose",
+      "topic": "restoring_a_ceramic_mural",
+      "document_genre_or_structure": "craft conservation journal",
+      "language": "English",
+      "filename": "002_restoring_a_ceramic_mural.txt",
+      "sha256": "d81201846d9bf976048d6f820d82a67e1a62a395a041e98cb8cf6f473e81fca0",
+      "bytes": 8174,
+      "word_count": 1312
+    },
+    {
+      "segment_id": 3,
+      "domain": "english_prose",
+      "topic": "migratory_bird_count",
+      "document_genre_or_structure": "field observation report",
+      "language": "English",
+      "filename": "003_migratory_bird_count.txt",
+      "sha256": "dc27076791d7c59d422086f55d57dc9fa44b58a17c0ec086a3387a13ce239f36",
+      "bytes": 8317,
+      "word_count": 1234
+    },
+    {
+      "segment_id": 4,
+      "domain": "english_prose",
+      "topic": "night_train_station_closure",
+      "document_genre_or_structure": "literary third-person narrative",
+      "language": "English",
+      "filename": "004_night_train_station_closure.txt",
+      "sha256": "7476d8f66c0528f5e8d7aaa036e7176ab19e63e6953afbc34afa7018a48edd94",
+      "bytes": 7695,
+      "word_count": 1281
+    },
+    {
+      "segment_id": 5,
+      "domain": "english_prose",
+      "topic": "regional_seed_library",
+      "document_genre_or_structure": "explanatory magazine feature",
+      "language": "English",
+      "filename": "005_regional_seed_library.txt",
+      "sha256": "a5ce550f93835190c3d9d3d955f2ce8ed2930e0cbcd9656a589a4b4fc098b092",
+      "bytes": 8251,
+      "word_count": 1238
+    },
+    {
+      "segment_id": 6,
+      "domain": "english_prose",
+      "topic": "floodplain_buyout_review",
+      "document_genre_or_structure": "policy analysis memo",
+      "language": "English",
+      "filename": "006_floodplain_buyout_review.txt",
+      "sha256": "e92adf5057724124ab61625253809b9e292a3de86fb9a5f1e141fa8dcf3697c2",
+      "bytes": 9481,
+      "word_count": 1320
+    },
+    {
+      "segment_id": 7,
+      "domain": "english_prose",
+      "topic": "community_orchestra_rehearsal",
+      "document_genre_or_structure": "scene-based cultural reportage",
+      "language": "English",
+      "filename": "007_community_orchestra_rehearsal.txt",
+      "sha256": "b9bf134db3e101a95c05ffe5db2d73f026aa2a41e626d242dfb41c588ea224b6",
+      "bytes": 7923,
+      "word_count": 1218
+    },
+    {
+      "segment_id": 8,
+      "domain": "english_prose",
+      "topic": "coastal_ferry_schedule_redesign",
+      "document_genre_or_structure": "operational case study",
+      "language": "English",
+      "filename": "008_coastal_ferry_schedule_redesign.txt",
+      "sha256": "12922ff083ce48abbd648611800b467d9590fe820c4de4ed6f4e2a6189ad6c07",
+      "bytes": 9333,
+      "word_count": 1329
+    },
+    {
+      "segment_id": 9,
+      "domain": "english_prose",
+      "topic": "geological_core_archive",
+      "document_genre_or_structure": "curatorial essay",
+      "language": "English",
+      "filename": "009_geological_core_archive.txt",
+      "sha256": "8fd54e73561fb2a626d0942f220b258cb39e6b2fa2393918f7b94e33ec772177",
+      "bytes": 7912,
+      "word_count": 1157
+    },
+    {
+      "segment_id": 10,
+      "domain": "english_prose",
+      "topic": "small_town_water_tower_repair",
+      "document_genre_or_structure": "chronological procedural account",
+      "language": "English",
+      "filename": "010_small_town_water_tower_repair.txt",
+      "sha256": "149379395dc6cc559f851dfd83b8a2f7c09c26224e397e8a0e239de02dfc27be",
+      "bytes": 9522,
+      "word_count": 1382
+    },
+    {
+      "segment_id": 11,
+      "domain": "english_prose",
+      "topic": "public_market_noise_study",
+      "document_genre_or_structure": "evidence-led civic report",
+      "language": "English",
+      "filename": "011_public_market_noise_study.txt",
+      "sha256": "621ce91d769a4dda12e305dca2001a2564c0cf97df2c50947f8c74ad371cebe9",
+      "bytes": 8815,
+      "word_count": 1230
+    },
+    {
+      "segment_id": 12,
+      "domain": "english_prose",
+      "topic": "intergenerational_recipe_notebook",
+      "document_genre_or_structure": "reflective personal essay",
+      "language": "English",
+      "filename": "012_intergenerational_recipe_notebook.txt",
+      "sha256": "a9fb633213c7e31ab2bee460c3e8a7661295180739196b177496351178f8bc7e",
+      "bytes": 7345,
+      "word_count": 1166
+    },
+    {
+      "segment_id": 13,
+      "domain": "english_prose",
+      "topic": "prairie_prescribed_burn",
+      "document_genre_or_structure": "incident-free operations narrative",
+      "language": "English",
+      "filename": "013_prairie_prescribed_burn.txt",
+      "sha256": "e0867505d3a0cea367a8504d322e40eafae96d4958f888a8ed2643468f85c4f9",
+      "bytes": 7772,
+      "word_count": 1216
+    },
+    {
+      "segment_id": 14,
+      "domain": "english_prose",
+      "topic": "mobile_dental_clinic_route",
+      "document_genre_or_structure": "service evaluation report",
+      "language": "English",
+      "filename": "014_mobile_dental_clinic_route.txt",
+      "sha256": "643045ceac85a0eb349d37ebb5c1332bb3c86711270faf5bebdac8f2f289e022",
+      "bytes": 9238,
+      "word_count": 1296
+    },
+    {
+      "segment_id": 15,
+      "domain": "english_prose",
+      "topic": "abandoned_railway_greenway",
+      "document_genre_or_structure": "historical landscape analysis",
+      "language": "English",
+      "filename": "015_abandoned_railway_greenway.txt",
+      "sha256": "fbf45d7fbbd76abc550b5a31e828ce66e4be92ed30b98cc41a7abce4aad34c0b",
+      "bytes": 7650,
+      "word_count": 1121
+    }
+  ]
+}

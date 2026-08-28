@@ -1,0 +1,11 @@
+{
+  "files": {
+    "README.md": "8292cf888f4c5e40e9712e1c18d279275bef33e7b5d2e4b1659bfacd2acb6b3b",
+    "badge.json": "3b1fa807f3606a67a0f3e7767d9c72fac921a09af80d94955e6b40ba45ec8b8f",
+    "leaderboard-entry.json": "c5873da79bbe7bd1785703c06181a1dfc093024cbbf7ab4d1e28e3d2ca5048d5"
+  },
+  "schema": "ramgpt-quantbench-public-leaderboard-release",
+  "schema_version": 1,
+  "source_verified_result_sha256": "6a4624c40f412087c5de23ef15c3479cb406cf68f8835cfd2ecf89c1c2bea4cd",
+  "status": "PASS"
+}

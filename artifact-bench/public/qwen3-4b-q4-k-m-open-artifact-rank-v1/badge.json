@@ -1,0 +1,10 @@
+{
+  "benchmark_id": "qwen3-4b-q4-k-m-open-artifact-rank-v1",
+  "designation": "RAMGPT_QUANTBENCH_VERIFIED",
+  "recommended": false,
+  "schema": "ramgpt-quantbench-verification-badge",
+  "schema_version": 1,
+  "status": "PASS",
+  "verified_result_sha256": "6a4624c40f412087c5de23ef15c3479cb406cf68f8835cfd2ecf89c1c2bea4cd",
+  "winner": "Unsloth"
+}

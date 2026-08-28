@@ -1,0 +1,149 @@
+Consider a screening program in which a binary test is used to detect a condition that is uncommon in the target population. The central Bayesian point is that sensitivity and specificity do not directly answer the question a screened person usually asks: "Given that my test is positive, what is the probability that I actually have the condition?"
+
+Let D denote the event that the condition is present and T+ the event that the test is positive. Suppose
+
+P(D)=0.008,
+P(T+|D)=0.94,
+P(T-|D^c)=0.975.
+
+The sensitivity is 0.94 and the specificity is 0.975. The false-positive probability is therefore
+
+P(T+|D^c)=1-0.975=0.025.
+
+Bayes' theorem gives
+
+P(D|T+)
+= P(T+|D)P(D) / P(T+).
+
+The denominator is expanded by total probability:
+
+P(T+)
+= P(T+|D)P(D)+P(T+|D^c)P(D^c)
+= 0.94(0.008)+0.025(0.992)
+= 0.00752+0.02480
+= 0.03232.
+
+Hence
+
+P(D|T+) = 0.00752/0.03232 ≈ 0.2327.
+
+So a positive result corresponds to a posterior probability of about 23.3%, despite the test having 94% sensitivity and 97.5% specificity. The low prevalence means that false positives generated from the large unaffected population remain numerically important.
+
+A frequency table makes the same calculation transparent. Imagine screening 100,000 people. Approximately 800 have the condition and 99,200 do not. Of the 800 affected people, sensitivity predicts
+
+0.94(800)=752
+
+positive tests. Of the 99,200 unaffected people, the 2.5% false-positive rate predicts
+
+0.025(99,200)=2,480
+
+positive tests. The positive group therefore contains 3,232 people, of whom 752 are true cases. The fraction 752/3232 is again about 0.233.
+
+Now suppose every initially positive sample receives an independent confirmatory test with sensitivity 0.91 and specificity 0.995. Let C+ denote a positive confirmation. If conditional independence is assumed given disease status, then
+
+P(T+,C+|D)=0.94*0.91=0.8554,
+
+and
+
+P(T+,C+|D^c)=0.025*0.005=0.000125.
+
+Bayes gives
+
+P(D|T+,C+)
+= 0.8554(0.008) /
+  [0.8554(0.008)+0.000125(0.992)].
+
+The numerator is 0.0068432 and the false-positive contribution is 0.000124. Thus the posterior rises to roughly
+
+0.0068432 / 0.0069672 ≈ 0.9822.
+
+Under the independence assumption, two positive results are dramatically stronger evidence than one.
+
+But conditional independence is a substantive assumption, not a mathematical identity. If both tests use the same biological mechanism, the same interfering substance may cause correlated false positives. In that case
+
+P(C+|T+,D^c)
+
+may be much larger than P(C+|D^c). The correct posterior after two tests is
+
+P(D|T+,C+)
+= P(C+|T+,D)P(D|T+) /
+  [P(C+|T+,D)P(D|T+) +
+   P(C+|T+,D^c)P(D^c|T+)].
+
+Suppose validation data show
+
+P(C+|T+,D)=0.90,
+P(C+|T+,D^c)=0.08.
+
+Using P(D|T+)=0.2327,
+
+P(D|T+,C+)
+= 0.90(0.2327) /
+  [0.90(0.2327)+0.08(0.7673)]
+≈ 0.20943/(0.20943+0.06138)
+≈ 0.773.
+
+The posterior is still much higher than after one test, but nowhere near 98%. Correlation in errors matters.
+
+Negative results can be analyzed similarly. For the initial test,
+
+P(D|T-)
+= P(T-|D)P(D) /
+  [P(T-|D)P(D)+P(T-|D^c)P(D^c)].
+
+Here P(T-|D)=0.06, so
+
+P(D|T-)
+=0.06(0.008)/[0.06(0.008)+0.975(0.992)]
+≈0.00048/(0.00048+0.9672)
+≈0.000496.
+
+A negative result lowers the probability from 0.8% to about 0.05%.
+
+Odds form makes sequential updating especially clean. Prior odds are
+
+O(D)=P(D)/P(D^c)=0.008/0.992≈0.0080645.
+
+The positive likelihood ratio is
+
+LR+ = sensitivity/(1-specificity)
+    =0.94/0.025
+    =37.6.
+
+Posterior odds after a positive test are
+
+O(D|T+)=O(D)LR+≈0.30323.
+
+Converting odds to probability gives
+
+0.30323/(1+0.30323)=0.2327.
+
+For a negative result, the negative likelihood ratio is
+
+LR-=(1-sensitivity)/specificity
+   =0.06/0.975
+   ≈0.06154.
+
+Multiplying prior odds by LR- gives the posterior odds directly.
+
+This formulation separates population prevalence from test evidence. The prior odds encode the population or individual pretest risk; the likelihood ratio encodes how the observed result shifts those odds.
+
+Now consider two subpopulations. In group A, prevalence is 0.2%; in group B, prevalence is 4%. Assume the same test characteristics. For group A,
+
+P(D|T+,A)
+=0.94(0.002) /
+ [0.94(0.002)+0.025(0.998)]
+≈0.0699.
+
+For group B,
+
+P(D|T+,B)
+=0.94(0.04) /
+ [0.94(0.04)+0.025(0.96)]
+≈0.610.
+
+The same laboratory result has very different positive predictive values because the pretest distributions differ. Reporting one universal "accuracy after a positive" would hide this dependence.
+
+Selection into the screened population can change the prior as well. If screening is offered only after symptoms or a risk questionnaire, the relevant prevalence is not population-wide prevalence but prevalence among those who reach the test. Conversely, mass screening of asymptomatic individuals may use a lower prior.
+
+Bayesian screening calculations therefore require four distinct layers of information: the pretest probability, the conditional distribution of the test among affected people, the conditional distribution among unaffected people, and any dependence structure among repeated or confirmatory tests. Sensitivity and specificity are important, but they are properties of P(test|status). Predictive values reverse the conditioning to P(status|test), and that reversal necessarily introduces the prior probability through Bayes' theorem.

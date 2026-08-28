@@ -1,0 +1,181 @@
+Algorithm Note: Reconciliation of Distributed Counters
+
+Problem
+
+A global usage counter is incremented independently in multiple regions. Low-latency writes must continue during WAN partitions, so a single synchronous database transaction across regions is not acceptable.
+
+The counter represents a monotonic quantity such as processed events, not a balance that can be decremented. We require eventual convergence without double counting retries.
+
+Naive Design
+
+If every region stores a scalar total and replication uses last-write-wins, increments can be lost.
+
+Example:
+
+Region A starts at 100 and increments to 101.
+Region B starts at 100 and increments to 101 during a partition.
+
+When values reconcile, choosing either 101 loses one increment. Adding the two values gives 202 and double counts the shared base.
+
+G-Counter Representation
+
+Represent the global counter as a vector indexed by replica identity.
+
+At replica r, state is:
+
+C = {replica_id -> nonnegative integer}
+
+Replica r may increment only C[r].
+
+The global value is
+
+value(C) = sum_r C[r].
+
+Merge is elementwise maximum:
+
+merge(C,D)[r] = max(C[r],D[r]).
+
+This merge is associative, commutative, and idempotent. Therefore duplicate or reordered replication messages do not change the final result.
+
+Example
+
+Initial:
+A={A:100,B:40}
+B={A:100,B:40}
+
+During partition:
+A performs 3 increments:
+A={A:103,B:40}
+
+B performs 5 increments:
+B={A:100,B:45}
+
+Merge:
+
+{A:max(103,100), B:max(40,45)}
+={A:103,B:45}
+
+Global value=148, exactly preserving eight new increments.
+
+Persistence
+
+Each regional component must be durably monotonic. If a region loses local state and restarts its component at zero under the same replica ID, later merge can discard valid new increments because peers retain a larger old value.
+
+Therefore replica identity is tied to an epoch.
+
+Component key:
+
+(replica_id, epoch)
+
+If a region must rebuild from scratch, it creates a new epoch rather than reusing the old component.
+
+Storage Model
+
+counter_components(
+    counter_id,
+    replica_id,
+    epoch,
+    value,
+    updated_at,
+    primary key(counter_id, replica_id, epoch)
+)
+
+Only the owning replica may update its active component.
+
+Replication messages carry absolute component values, not deltas:
+
+{
+  counter_id,
+  replica_id,
+  epoch,
+  value
+}
+
+Receivers apply:
+
+stored = max(stored, received).
+
+Absolute state makes retries idempotent.
+
+Why Not Replicate Increment Events
+
+Event replication is possible but requires durable unique event identifiers and indefinite deduplication or compacted event history. The G-counter stores only monotonic component state and naturally tolerates duplicates.
+
+Read Semantics
+
+A local read returns the sum of components known to that region. During partition it may undercount increments made elsewhere, but it never invents increments.
+
+If a caller requires globally current value, the API must either query all healthy replicas or use a different consistency model. The data structure itself provides eventual consistency, not linearizable reads.
+
+Anti-Entropy
+
+Regions exchange component digests periodically. A digest includes the highest known value for each component. If peer digests differ, nodes send missing or higher component values.
+
+Periodic anti-entropy ensures convergence even if streaming replication drops messages.
+
+Compaction
+
+Epochs accumulate after replacements. Old epochs cannot simply be deleted from one replica because another replica might later reintroduce them during merge.
+
+Safe retirement requires a versioned membership protocol. An epoch may be compacted only after all current replicas acknowledge a checkpoint containing that component and agree it is retired.
+
+A simpler implementation retains old components because the number of regions and replacement events is small.
+
+Membership
+
+Replica IDs are assigned centrally and never reused. Removing a region marks its active epoch closed. Adding a replacement creates a new replica ID or epoch.
+
+The reconciliation algorithm must not infer membership from recent message traffic; an isolated replica could be temporarily silent rather than retired.
+
+Idempotent API Requests
+
+The CRDT prevents replication duplicates from double counting, but a client retry sent twice to the same owning region can still increment twice.
+
+Therefore the write API includes an idempotency key. Each region stores recently accepted operation IDs:
+
+increment(counter_id, amount, operation_id)
+
+If operation_id was already applied, return the previous result without changing the component.
+
+The deduplication retention window must exceed expected client retry duration.
+
+Batching
+
+High-throughput workers may aggregate increments locally and flush component updates periodically. Because only absolute component values replicate, batching does not affect convergence.
+
+A crash can lose unflushed increments unless the local increment state itself is durable. Therefore in-memory aggregation is allowed only after increments are durably recorded in a local WAL or transactional store.
+
+Reconciliation Invariants
+
+For every component:
+1. value never decreases;
+2. only one logical owner increments it;
+3. merge chooses maximum;
+4. replica identity is never reused after state loss.
+
+For the global counter:
+5. computed value is the sum of all known components;
+6. merge cannot decrease the global value;
+7. repeated merge of the same state changes nothing.
+
+Verification
+
+Property tests generate random sequences of:
+- local increments;
+- message duplication;
+- message loss followed by anti-entropy;
+- reordering;
+- partitions;
+- replica restart with new epoch.
+
+After all messages eventually exchange, every replica must converge to identical component maps and the expected total.
+
+Limitations
+
+A G-counter supports increments only. If decrements are required, a PN-counter can maintain independent grow-only positive and negative vectors and define value=P-N.
+
+For financial balances or inventory where invariants such as "never below zero" must hold globally, an eventually consistent counter is insufficient. Those domains require coordination, escrow techniques, or a stronger consistency model.
+
+Conclusion
+
+The reconciliation problem becomes tractable by storing causal ownership in the state itself. Scalar totals lose information about concurrent increments. Per-replica monotonic components preserve that information, and elementwise maximum gives a merge operation robust to duplicate and reordered replication.

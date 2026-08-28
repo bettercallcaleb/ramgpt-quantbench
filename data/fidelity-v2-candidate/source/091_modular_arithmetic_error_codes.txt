@@ -1,0 +1,134 @@
+Modular arithmetic provides simple error-detecting codes whose structure can be analyzed exactly. The most familiar example is a check digit: append one symbol determined by a congruence so that common transcription errors violate the congruence.
+
+Consider a decimal identifier with data digits
+
+d_1 d_2 ... d_8
+
+and a check digit c. Choose weights
+
+w=(3,1,7,9,3,1,7,9)
+
+and impose the condition
+
+3d_1+d_2+7d_3+9d_4+3d_5+d_6+7d_7+9d_8+c
+=0 mod 10.
+
+Given the data digits, c is uniquely determined modulo 10:
+
+c =
+-[3d_1+d_2+7d_3+9d_4+3d_5+d_6+7d_7+9d_8]
+mod 10.
+
+For data 4 8 1 6 0 2 5 3, the weighted sum is
+
+3(4)+1(8)+7(1)+9(6)+3(0)+1(2)+7(5)+9(3)
+=12+8+7+54+0+2+35+27
+=145.
+
+Therefore
+
+c=-145 mod 10=5.
+
+The valid codeword is 481602535.
+
+Suppose one data digit d_i changes by an error amount e, where e is nonzero modulo 10. The syndrome changes by
+
+w_i e mod 10.
+
+A single-digit error is guaranteed detectable exactly when multiplication by w_i never maps a nonzero e to zero modulo 10. This occurs when w_i is a unit modulo 10, meaning gcd(w_i,10)=1.
+
+All chosen weights 1,3,7,9 are units modulo 10. Therefore every nonzero single-digit substitution changes the check congruence and is detected.
+
+Now examine an adjacent transposition. Suppose digits a and b at positions i and i+1 are swapped. Before the swap their contribution is
+
+w_i a + w_{i+1} b.
+
+After the swap it is
+
+w_i b + w_{i+1} a.
+
+The syndrome difference is
+
+(w_i-w_{i+1})(b-a).
+
+The transposition is undetected when
+
+(w_i-w_{i+1})(b-a)=0 mod 10.
+
+If w_i-w_{i+1} is a unit modulo 10, then the only solution is a=b modulo 10, which is not a genuine transposition error. But with decimal modulus 10, differences of odd unit weights are even and therefore not units. For example 3-1=2, so
+
+2(b-a)=0 mod 10
+
+whenever b-a=5 mod 10. Thus swapping 1 and 6 in such positions can be invisible.
+
+This limitation motivates moduli with better algebraic properties. Work instead over the prime field F_11 and allow a check symbol representing residues 0,...,10. Let
+
+sum_{i=1}^8 i d_i + c =0 mod 11.
+
+Every nonzero weight 1,...,8 is invertible modulo 11, so all single-symbol errors are detected. For an adjacent swap at positions i and i+1, the syndrome difference is
+
+[i-(i+1)](b-a)
+=-(b-a).
+
+This is nonzero for every genuine swap a != b modulo 11. Hence all adjacent transpositions are detected.
+
+The familiar ISBN-10 scheme exploits exactly this kind of modulus-11 structure. Its use of the symbol X for residue 10 is the practical price of having eleven possible check values.
+
+Modular codes can detect more than one class of errors if multiple check equations are used. Suppose a message consists of symbols x_1,...,x_n in F_p. Append two check symbols enforcing
+
+sum_i x_i = s_0,
+sum_i i x_i = s_1
+
+modulo prime p.
+
+If one symbol at position j changes by error e, the syndrome vector is
+
+Delta_0=e,
+Delta_1=j e.
+
+Because e is nonzero, the first syndrome detects the error. Moreover,
+
+j = Delta_1 / Delta_0 mod p,
+
+so the error location can be inferred as long as positions are represented by distinct residues modulo p. The error magnitude is simply e=Delta_0. Thus two parity equations can correct one symbol error, not merely detect it.
+
+This is a small Reed-Solomon-like idea. Polynomial evaluation codes generalize it. Let a message define a polynomial
+
+m(t)=m_0+m_1 t+...+m_{k-1}t^(k-1)
+
+over F_p. Evaluate it at n distinct field points alpha_1,...,alpha_n. The codeword is
+
+(m(alpha_1),...,m(alpha_n)).
+
+Two distinct polynomials of degree less than k can agree at at most k-1 points, because their difference is a nonzero polynomial of degree at most k-1 and therefore has at most k-1 roots. Hence two codewords differ in at least
+
+n-(k-1)=n-k+1
+
+positions. The minimum distance is n-k+1.
+
+A code with minimum distance d can detect up to d-1 symbol errors and correct up to floor((d-1)/2). This connects elementary check digits to general coding theory through the same modular arithmetic.
+
+Even a simple residue code can be interpreted as a linear code. Let the message vector x in F_p^n satisfy
+
+H x^T=0,
+
+where H is a parity-check matrix. If error vector e corrupts x to y=x+e, then the syndrome is
+
+s=H y^T
+ =H(x+e)^T
+ =H x^T+H e^T
+ =H e^T.
+
+The syndrome depends only on the error, not on the transmitted valid codeword. Detection means s is nonzero for the error patterns of interest. Correction means different correctable error patterns have different syndromes.
+
+For a single parity equation,
+
+H=[w_1 w_2 ... w_n 1],
+
+the syndrome is a single residue. It cannot uniquely identify many multi-symbol errors because different errors collapse to the same residue. Adding independent parity equations increases syndrome space.
+
+The modulus itself matters. Over a prime p, every nonzero residue has a multiplicative inverse, so algebraic arguments are clean. Over a composite modulus such as 10, zero divisors appear. A nonzero product can equal zero modulo 10, as in 2*5=0 mod 10. This is exactly why some transpositions escape decimal weighted checks.
+
+A good check-digit design therefore starts from the error model. If the goal is only single-digit substitution detection, decimal weights coprime to 10 may suffice. If adjacent transpositions must also be guaranteed, a prime modulus or a specially designed nonlinear scheme may be preferable. If correction is required, one check equation is generally insufficient and the code should be designed in a larger algebraic space.
+
+The mathematical question is always the same: for the allowed set of nonzero error vectors e, does the parity-check mapping e -> He^T ever produce zero, or the same syndrome as another correctable error? Modular arithmetic makes that question explicit and testable.

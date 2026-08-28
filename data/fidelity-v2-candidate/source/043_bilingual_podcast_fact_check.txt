@@ -1,0 +1,39 @@
+The editorial review began with a forty-two-minute podcast episode about urban water reuse. The hosts had recorded naturally in English and Chinese, switching languages depending on the guest and technical term. Now the fact-check team needed to verify claims without flattening that bilingual texture.
+
+Producer Mei played the opening clip: “This city basically recycles all of its wastewater back into drinking water, 对吧?” The guest had answered, “Not exactly.” The fact checker paused. “这个 opening hook 太强了。If we leave it, listeners may remember the claim even though the guest corrects it ten seconds later.”
+
+The team distinguished three categories: factual error, misleading compression, and stylistic simplification. The host’s sentence was not presented as a final assertion, but it framed the system inaccurately. They rewrote the intro voice-over to say the city reused a substantial share of treated water through several pathways, including indirect potable reuse.
+
+Next they checked a number: “The plant processes 800 million liters per day.” The facility’s annual report listed 760 megaliters per day of design capacity, while average recent flow was lower. “Which number did the guest mean—capacity or actual throughput?” Mei asked. The raw interview showed the guest had said “up to around eight hundred.” The edit had removed “up to.”
+
+“把 qualifier 剪掉以后，数字性质变了,” the Chinese editor said. They restored wording closer to the original: “capacity approaching 800 million liters per day,” and added the official design figure in the show notes.
+
+A later segment discussed membrane filtration. The host translated “reverse osmosis” as “反向渗透.” The technical reviewer flagged it: standard Chinese usage in this context is “反渗透.” “Literal translation sounds understandable, but terminology matters,” she said. The subtitle glossary was corrected.
+
+Another claim was harder. The guest said advanced treatment “removes everything except water molecules.” Scientifically, that was too absolute. Reverse osmosis and associated processes remove a very broad range of contaminants, but no treatment should be described as literally removing everything. The team considered cutting the sentence.
+
+Mei preferred to preserve the guest’s conversational style while adding clarification. They inserted a host follow-up already recorded later: “当然不是 mathematically 100 percent, right?” The guest then explained monitoring, treatment barriers, and trace constituents. Reordering the exchange kept the nuance without adding a new scripted correction.
+
+The bilingual transcript created citation challenges. Searchable sources were mostly English, while several Chinese claims used different terminology. For “water reclamation,” one municipal Chinese-language brochure used “再生水利用,” while the host sometimes said “污水回收.” The team did not force one phrase everywhere. They documented when terms referred to treated nonpotable reuse versus broader wastewater recycling.
+
+At minute 18, a host said, “Singapore has been doing this for decades, 所以技术已经完全没有争议.” Fact checker Arun marked the second half. A technology can have decades of operational history while public acceptance, policy, energy use, and specific implementation choices remain debated. The team changed the narration to: “The core treatment technologies have long operating histories, although policy and public acceptance still vary by place.”
+
+Then came an anecdote about a drought emergency. The guest remembered a reservoir “almost reaching zero” in a particular year. Historical records showed severe decline but not near-zero storage. Because the anecdote was personal memory rather than a central argument, the team kept the emotional context but removed the numerical implication: “during a period when reservoir levels had fallen sharply.”
+
+Mei asked whether that was over-editing. “Podcast 不是 academic paper,” she said. Arun agreed, but replied: “We are not footnoting every adjective. We are fixing places where a listener could walk away with a materially wrong model.”
+
+The team reviewed pronunciation and name accuracy too. A Chinese researcher’s surname had been rendered correctly in subtitles but pronounced with the wrong tone in narration. Re-recording one line was easy. A river name had two accepted English transliterations; the team chose the spelling used by the local authority and noted the alternate in show notes.
+
+At minute 29, the episode compared energy intensity of desalination and water reuse. The host said reuse uses “half the energy.” Sources showed ranges that depended heavily on treatment configuration and pumping distance. “Half” was plausible in some comparisons but too universal. They replaced it with “often substantially less energy than seawater desalination, depending on the system.”
+
+The final section concerned health regulation. The guest described multiple treatment barriers and continuous monitoring. The Chinese subtitle translated “barrier” as “屏障,” which sounded physical. The technical editor preferred “多重处理防线” in the conversational subtitle while retaining the formal term in notes. “字幕是帮助理解，不是术语词典,” she said.
+
+The fact-check spreadsheet used four columns: exact audio claim, verification source, assessment, and editorial action. A fifth column tracked bilingual terminology changes so the subtitle editor would not accidentally reintroduce rejected wording.
+
+By late afternoon, the team had marked only nine substantive changes across forty-two minutes. Most of the episode remained untouched. “That’s a good sign,” Mei said. “Fact check 不是 rewriting service.”
+
+They listened to the revised introduction once more. The hosts still sounded curious and informal. English technical nouns appeared where participants had naturally used them; Chinese explanations remained conversational. Nothing sounded like a translated policy report.
+
+The editor summarized the standard they were aiming for: “If a sentence is colorful but basically true, keep the color. 如果一句话让事实变简单到变形，就修。And if bilingual wording changes the meaning, treat that as a fact issue, not just a language issue.”
+
+Fact-checking the episode was therefore not about making every sentence maximally cautious. It was about preserving the difference between capacity and actual flow, operational history and universal consensus, broad contaminant removal and absolute purity, personal memory and measured data. Those distinctions are what let a lively conversation remain trustworthy after editing.

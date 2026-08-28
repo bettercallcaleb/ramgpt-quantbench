@@ -1,0 +1,184 @@
+Allergy-Safe Bakery Workflow Review
+
+Participants:
+Tessa — bakery manager
+Owen — head baker
+Dr. Shah — food-safety consultant
+Mina — front-counter lead
+
+Tessa: We are not trying to become a completely allergen-free bakery. The goal is to make our handling claims accurate and reduce cross-contact risk for the products we identify as produced under the controlled workflow.
+
+Dr. Shah: Good starting point. The most dangerous mistake would be promising "allergen-free" when the facility handles wheat, milk, eggs, sesame, tree nuts, and peanuts.
+
+Mina: Customers ask exactly that: "Is this safe for a peanut allergy?" What should staff say?
+
+Dr. Shah: Staff should describe the process and the limitation. For example: "This item is made without peanut ingredients under our designated process, but peanuts are handled in the facility, so we cannot guarantee zero cross-contact."
+
+Tessa: I want that wording standardized.
+
+Owen: Then production needs to support it. Right now the nut cookies are mixed on the same bench as morning muffins after a wipe-down.
+
+Dr. Shah: A wipe-down is not enough as a generic rule. We need defined cleaning, sequencing, utensils, storage, and verification.
+
+Tessa: Let's build the workflow from receiving.
+
+Owen: Ingredients arrive at the rear door. Dry goods go to the main storeroom.
+
+Dr. Shah: Allergens need clear identification at receiving. Original labels stay with bulk products or the transferred container must carry ingredient and allergen identity.
+
+Mina: What about bins? We refill flour bins from sacks.
+
+Dr. Shah: That's fine if the bin is dedicated and labeled. Do not pour a new ingredient into a bin containing residue from a different formulation.
+
+Owen: Nuts are currently on the top shelf.
+
+Dr. Shah: Move them below non-nut ingredients in sealed containers. If a bag tears, we do not want fragments falling into other ingredients.
+
+Tessa: What about sesame?
+
+Dr. Shah: Same principle. Store allergen-containing ingredients in closed, identified containers. Physical segregation where practical.
+
+Owen: For the controlled product line, I propose first production of the day after full overnight sanitation.
+
+Dr. Shah: That is a strong sequencing control. What products?
+
+Tessa: The oat bars made without peanut or tree-nut ingredients, and two birthday cakes made without nut ingredients.
+
+Dr. Shah: Be precise with oats. Are they certified or otherwise controlled for wheat/gluten claims?
+
+Tessa: We are not making a gluten-free claim.
+
+Dr. Shah: Good. Then don't let staff improvise one because the recipe "doesn't have flour."
+
+Mina: That's happened before.
+
+Tessa: We'll add claim-specific training.
+
+Owen: First production means the mixer, bench, sheet pans, scoops, scales, and cooling racks must all be clean before the run.
+
+Dr. Shah: Better if some small tools are dedicated and stored separately.
+
+Owen: Dedicated spatulas, scoops, bowl scraper, and two sets of pans are easy. Dedicated mixer is not.
+
+Dr. Shah: Then the mixer needs a validated cleaning method. Disassemble removable contact parts, wash with detergent, rinse, sanitize where appropriate, dry, and visually inspect. For sticky nut butter residue, physical removal matters.
+
+Tessa: Do we need allergen test swabs?
+
+Dr. Shah: They can be useful for validation, not as a substitute for cleaning. Pick a test relevant to the allergen and surface. Use it periodically to demonstrate the procedure works, and after major process changes.
+
+Owen: So not every batch?
+
+Dr. Shah: Not necessarily. Routine control can be documented cleaning plus inspection if the validated procedure is consistently followed. The verification frequency should match risk and claim.
+
+Mina: Front counter is another problem. Even if production is careful, we use the same tongs in the display case.
+
+Tessa: Controlled items should be wrapped before they enter the front display.
+
+Dr. Shah: Yes. Packaging immediately after cooling reduces later contact. Label before leaving the controlled area.
+
+Owen: Cakes are harder. They are decorated later.
+
+Dr. Shah: Then define a decoration window on a cleaned bench with dedicated or freshly cleaned tools. No open nut garnish in the room during that period.
+
+Tessa: Can we use the same frosting piping bags?
+
+Owen: Disposable bags, dedicated tips.
+
+Dr. Shah: That simplifies control.
+
+Mina: And the cake box needs the exact disclaimer.
+
+Tessa: Right.
+
+Dr. Shah: Let's discuss rework. Do you reuse cake scraps or crumbs?
+
+Owen: Sometimes crumbs go into truffles.
+
+Dr. Shah: Rework is a common cross-contact route. Controlled-line rework must remain within the same allergen profile and be clearly identified. General rework never goes back into a controlled product.
+
+Owen: I would rather ban rework in the controlled line.
+
+Tessa: Agreed. Simpler rule.
+
+Mina: How do we handle ingredient substitutions? Suppliers sometimes send a different chocolate.
+
+Dr. Shah: No substitution without label review. A formulation that was acceptable last month can change if the supplier changes facility or ingredients.
+
+Tessa: So receiving flags substitutions and the manager approves before use.
+
+Owen: We also need recipe version control. Paper recipe cards get handwritten changes.
+
+Dr. Shah: For controlled products, use a current approved recipe with revision date. No handwritten ingredient substitution on the floor.
+
+Mina: What about customer special orders? Someone says "just leave the almonds off."
+
+Dr. Shah: Leaving off a topping does not convert an ordinary product into a controlled one. Staff should not make a safety claim based on omission alone.
+
+Tessa: Good. Special orders requiring the controlled workflow must be scheduled into the controlled production window.
+
+Owen: That may mean saying no to same-day requests.
+
+Tessa: That's acceptable.
+
+Dr. Shah: Employee food is another overlooked route. No personal food on production benches. Break-room food stays in the break area.
+
+Mina: Staff sometimes bring peanut snacks and then come back to the register.
+
+Dr. Shah: Handwashing before returning to food handling. Gloves do not replace handwashing.
+
+Tessa: Let's define an incident procedure. Suppose someone realizes a nut spatula touched a controlled cake.
+
+Owen: We discard or relabel the cake as ordinary, depending on whether the product is otherwise saleable.
+
+Dr. Shah: Correct. Do not "clean off" the contacted frosting and continue the controlled claim.
+
+Mina: And if it was already boxed?
+
+Tessa: Hold it, identify it, and inform the manager. If it has already been sold under an incorrect claim, we need a customer-notification decision immediately.
+
+Dr. Shah: Document the event and root cause. Was it tool storage? Training? Scheduling? Label confusion?
+
+Owen: Color-coded tools?
+
+Dr. Shah: Useful as a visual aid, but color is not the control by itself. Labels and training still matter, including for workers with color-vision differences.
+
+Tessa: Cleaning records need to stay simple or people won't use them.
+
+Owen: Checklist:
+- prior production completed;
+- ingredients removed;
+- contact surfaces washed;
+- mixer cleaned;
+- dedicated tools retrieved;
+- clean pans confirmed;
+- visual inspection signed;
+- controlled ingredients staged.
+
+Dr. Shah: Add who performed and who verified when the run requires independent verification.
+
+Mina: Front-counter checklist:
+- wrapped product remains sealed;
+- correct label attached;
+- no repackaging with shared utensils;
+- no unsupported allergy advice;
+- customer questions escalated if staff are unsure.
+
+Tessa: Excellent.
+
+Dr. Shah: Training should include scenarios, not just reading policy. Ask: "A customer says the child has a severe nut allergy. What can you truthfully say?" Or: "The approved chocolate is unavailable; what do you do?"
+
+Mina: Staff should be allowed to say, "I don't know; let me check."
+
+Tessa: I want that explicitly encouraged.
+
+Owen: Final question. Can we put "nut-free recipe" on the label?
+
+Dr. Shah: I'd prefer "made without peanut or tree-nut ingredients" if that is the recipe fact you're trying to communicate. "Nut-free" can be interpreted as a broader facility or cross-contact claim.
+
+Tessa: Then that's our wording.
+
+Mina: And below it: "Peanuts and tree nuts are handled in this facility."
+
+Dr. Shah: Yes, assuming that statement is accurate and visible.
+
+Tessa: Good. We will launch only after the production procedure is validated, staff complete scenario training, and packaging language is reviewed. The marketing claim comes last, not first.

@@ -1,0 +1,23 @@
+{
+  "schema": "ramgpt-quantbench-execution-contract",
+  "schema_version": 1,
+  "name": "primary-benchmark-condition",
+  "cuda_visible_devices": "0",
+  "cuda_logical_device": 0,
+  "n_ctx": 4096,
+  "n_batch": 512,
+  "n_ubatch": 512,
+  "kv_k_type": "F16",
+  "kv_v_type": "F16",
+  "gpu_layers": -1,
+  "flash_attention": {
+    "requested": "enabled",
+    "resolved_required": "enabled"
+  },
+  "sampling": "none",
+  "logit_storage": "FP32",
+  "reference_model_precision": "native BF16",
+  "tokenizer_add_special": true,
+  "tokenizer_parse_special": false,
+  "llama_cpp_commit": "70adb1b4cea5ee39f867792c78dc59320921eda7"
+}

@@ -1,0 +1,232 @@
+Dance Company Tour Logistics Meeting
+
+Participants:
+Rafael — company manager
+Nora — production manager
+Jules — rehearsal director
+Imani — touring physiotherapist
+
+Rafael: We have six cities in nine days, and the current schedule assumes every travel day is also a full technical day. I don't think that is physically realistic.
+
+Nora: It isn't. The venues are not identical, and two have load-in restrictions that already compress the schedule.
+
+Jules: The dancers also need enough warm-up time after travel. We can't unload at noon, sit on a bus for six hours, and then treat a 20-minute barre as sufficient.
+
+Imani: Especially with the jump-heavy second act. Travel stiffness plus shortened warm-up is exactly the combination I want to avoid.
+
+Rafael: Let's map the hard constraints first.
+
+Nora: City one is straightforward. Truck unload at 08:00, theatre access from 08:00, show at 19:30. City two is the problem: truck cannot access the loading dock until 12:00 because of a market closure.
+
+Jules: How long is travel from city one?
+
+Rafael: Four hours and fifteen minutes without stops.
+
+Imani: Then dancers should not travel on the truck schedule. They need at least one break.
+
+Rafael: Coach leaves at 07:30, rest stop at 09:30, arrival around noon.
+
+Jules: If theatre access starts at noon, can we rehearse onstage at 15:00?
+
+Nora: Only if the lighting focus is already complete. That venue is receiving our pre-focus file, but they still need physical adjustment.
+
+Rafael: What can happen without dancers?
+
+Nora: Deck and lighting. Sound can line-check. Wardrobe can set quick-change stations.
+
+Jules: Then dancers arrive, eat, rest, and warm up while production works.
+
+Imani: I want a minimum 45-minute movement warm-up before any full-out stage spacing. Not 45 minutes from entering the building; 45 minutes of actual warm-up.
+
+Rafael: Can we start stage spacing at 16:15?
+
+Nora: Yes, if we keep it to spacing and cue checks, not a full run.
+
+Jules: That's enough. We can mark difficult transitions.
+
+Rafael: City three is a matinee the next day.
+
+Imani: That's the bigger issue. What is the show finish the night before?
+
+Nora: Curtain at 19:30, runtime 95 minutes plus bows. Out by 21:20.
+
+Rafael: Load-out to 23:30.
+
+Jules: Dancers don't need to stay for load-out.
+
+Rafael: Correct. Hotel is a ten-minute walk.
+
+Imani: Morning call for matinee?
+
+Jules: We proposed 10:30 for a 14:00 show.
+
+Imani: Fine if breakfast is available early and the dancers aren't required at a production meeting.
+
+Rafael: Production meeting is staff only.
+
+Nora: I want one dancer representative for stage-floor feedback.
+
+Jules: We can collect that the night before.
+
+Imani: Better.
+
+Rafael: Transportation of costumes. Nora?
+
+Nora: Main wardrobe travels on the truck. Critical costume pieces and one emergency kit travel separately with the company.
+
+Rafael: Why split?
+
+Nora: If the truck is delayed, we still have enough to perform a reduced version. The emergency kit includes shoes, principal costumes, repair supplies, and key accessories.
+
+Jules: Can we truly perform without the full truck?
+
+Nora: Not the full production. But we can mount a concert version if the venue and artistic director approve.
+
+Rafael: Then we need that contingency documented rather than pretending the truck cannot be late.
+
+Imani: Same for medical kit. My treatment supplies stay with me, not in freight.
+
+Rafael: Agreed.
+
+Jules: Stage floor consistency worries me. City four has a hard wood floor, not sprung.
+
+Imani: Then we should not perform the same choreography on it without an approved sprung overlay.
+
+Nora: Contract says venue provides a sprung dance floor and marley. I asked for specification and got only "professional dance surface."
+
+Rafael: That's not enough.
+
+Nora: I'll require construction details and photos. If it isn't sprung, we need a rental floor or artistic modification.
+
+Jules: Some sections can be adapted, but not all jumps.
+
+Imani: Please don't leave that decision until show day.
+
+Rafael: Deadline?
+
+Nora: Verification by next Wednesday. If unresolved, rental quote immediately.
+
+Rafael: Hotels. Current booking in city five has twins, but three dancers require single rooms for medical or access reasons.
+
+Imani: I sent the confidential requirement list to you, not to the full group.
+
+Rafael: I have it. We'll adjust rooming without circulating reasons.
+
+Jules: Thank you.
+
+Nora: Venue five has no laundry.
+
+Rafael: Hotel does.
+
+Nora: Can wardrobe use hotel machines?
+
+Rafael: Not for performance costumes without approval. We need commercial laundry access or hand-care plan.
+
+Jules: Some costumes are hand wash only.
+
+Nora: I'll create a city-by-city laundry matrix.
+
+Imani: Hydration and food. We have two venues that propose only sandwiches after show.
+
+Rafael: Catering rider says hot meal or equivalent substantial meal.
+
+Jules: After a performance, some dancers don't want a heavy meal immediately.
+
+Imani: Then offer choices: hot food, carbohydrate/protein cold options, fruit, and fluids. The issue is availability, not forcing everyone to eat the same plate.
+
+Rafael: Good.
+
+Nora: City six involves border crossing.
+
+Rafael: Carnets and work documentation are being prepared.
+
+Nora: Who carries the equipment inventory?
+
+Rafael: I do, with a duplicate on the truck.
+
+Nora: Serial numbers for projectors and wireless equipment need to match the carnet exactly.
+
+Rafael: We'll do a physical check before departure.
+
+Jules: What if one costume changes between the inventory date and crossing?
+
+Rafael: Ordinary costumes are listed by category, but high-value equipment is itemized. Any material change goes through the customs broker.
+
+Nora: No last-minute swapping rental electronics into truck cases without telling management.
+
+Rafael: Correct.
+
+Imani: Rest day. There isn't one.
+
+Rafael: I know.
+
+Imani: Then we need protected recovery blocks. A tour can comply with contract hours and still overload people if every "free" period becomes rehearsal or press.
+
+Jules: I can commit to no optional rehearsal on the afternoon after city three unless there is an urgent safety issue.
+
+Rafael: Press request in city four is currently 11:00.
+
+Imani: That's in the recovery block.
+
+Rafael: We can send two volunteers, not the full company.
+
+Jules: Fine.
+
+Nora: Technical staff also need rest. Load-out crews are getting the worst schedule.
+
+Rafael: Can we supplement with local crew at cities three and five?
+
+Nora: Yes. If local crew handles more of the physical load-out, our touring crew can finish supervision earlier.
+
+Rafael: Budget impact?
+
+Nora: Less than overtime plus burnout.
+
+Rafael: Approved.
+
+Jules: Injury contingency. If a principal cannot perform, understudy spacing needs stage time.
+
+Imani: But not automatically a full emergency rehearsal.
+
+Jules: Right. We have pre-defined replacement tracks. Onstage, we need entrances, lifts, and spacing checks.
+
+Nora: I can reserve a 20-minute contingency block before each show. If unused, it becomes extra rest.
+
+Rafael: Excellent.
+
+Imani: That's a better default than using rest time opportunistically.
+
+Rafael: Communication chain?
+
+Nora: Daily production update by 20:00 for next day:
+- departure time;
+- luggage call;
+- venue access;
+- meal schedule;
+- warm-up;
+- stage call;
+- show;
+- transport back;
+- known changes.
+
+Jules: Artistic notes should be separate. Don't bury a casting change inside the bus schedule.
+
+Rafael: Agreed.
+
+Imani: And medical information never goes in the general tour message.
+
+Rafael: Yes.
+
+Nora: One more thing: every venue asks for slightly different emergency procedures. We need local briefing.
+
+Rafael: Five minutes at first company call: exits, assembly point, backstage access restrictions, and who is venue duty manager.
+
+Jules: Good.
+
+Rafael: Let's summarize principles. Freight schedule does not dictate dancer schedule. Technical work happens without performers whenever possible. Warm-up is protected. Floor safety is verified in advance. Critical gear travels redundantly. Recovery blocks are real blocks, not empty calendar space waiting to be filled.
+
+Imani: Add that schedule changes are assessed for cumulative load, not one hour at a time.
+
+Nora: And contingencies should be planned before the failure occurs.
+
+Rafael: Good. I'll rebuild the master itinerary around those constraints and circulate version three tomorrow.

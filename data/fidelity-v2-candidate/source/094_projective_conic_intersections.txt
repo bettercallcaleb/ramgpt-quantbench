@@ -1,0 +1,221 @@
+Projective geometry treats affine points and points at infinity within one homogeneous coordinate system. Conic sections become zero sets of homogeneous quadratic forms, and intersection statements become cleaner because parallel lines meet and algebraic multiplicities are retained.
+
+A point in the real projective plane P^2 is represented by a nonzero triple
+
+[X:Y:Z],
+
+where
+
+[X:Y:Z]=[lambda X:lambda Y:lambda Z]
+
+for every nonzero scalar lambda. The affine plane is the chart Z != 0, where we set
+
+x=X/Z,
+y=Y/Z.
+
+Points with Z=0 are points at infinity.
+
+A projective conic has equation
+
+Q(X,Y,Z)=0,
+
+where Q is a nonzero homogeneous quadratic polynomial,
+
+Q=aX^2+bXY+cY^2+dXZ+eYZ+fZ^2.
+
+Equivalently,
+
+Q(v)=v^T M v
+
+for a symmetric 3 by 3 matrix M, with cross-term coefficients split between symmetric entries.
+
+The conic is nondegenerate when det(M) != 0. If det(M)=0, the quadratic may factor into two lines, a repeated line, or another degenerate form depending on the field.
+
+Consider the affine parabola
+
+y=x^2.
+
+Homogenization replaces x by X/Z and y by Y/Z and multiplies by Z^2:
+
+YZ=X^2.
+
+So the projective conic is
+
+X^2-YZ=0.
+
+Its points at infinity satisfy Z=0, hence X^2=0, so X=0. There is one projective point at infinity:
+
+[0:1:0].
+
+This single point encodes the common direction of the parabola's affine tangents at infinity.
+
+Now intersect the parabola with the affine line
+
+y=mx+b.
+
+The projective line is
+
+Y-mX-bZ=0.
+
+Substitute Y=mX+bZ into the conic:
+
+X^2-(mX+bZ)Z=0,
+
+or
+
+X^2-mXZ-bZ^2=0.
+
+In the affine chart Z=1 this is
+
+x^2-mx-b=0.
+
+The discriminant
+
+Delta=m^2+4b
+
+determines two real affine intersections, a tangent double point, or no real affine intersections. Over the complex projective plane, however, a line and a nondegenerate conic always have two intersection points counted with multiplicity. The "missing" real intersections simply become complex.
+
+Tangency has a projective differential description. Let Q(X,Y,Z)=0 be a smooth conic and let P=[X_0:Y_0:Z_0] lie on it. The tangent line is
+
+Q_X(P) X + Q_Y(P) Y + Q_Z(P) Z =0,
+
+because Q is homogeneous of degree two and Euler's relation gives
+
+X_0 Q_X(P)+Y_0 Q_Y(P)+Z_0 Q_Z(P)=2Q(P)=0,
+
+so P itself lies on this line.
+
+For
+
+Q=X^2-YZ,
+
+the gradient is
+
+(2X,-Z,-Y).
+
+At an affine point P=[t:t^2:1], the tangent is
+
+2t X - Y - t^2 Z=0.
+
+Setting Z=1 gives
+
+y=2tx-t^2,
+
+the familiar tangent to y=x^2.
+
+At the point at infinity [0:1:0], the gradient is
+
+(0,0,-1),
+
+so the tangent line is
+
+Z=0,
+
+the line at infinity. Thus the parabola is tangent to the line at infinity at its unique infinite point. This projective tangency distinguishes a parabola from an ellipse or hyperbola in the affine classification.
+
+Consider instead the circle
+
+x^2+y^2=1.
+
+Its projective closure is
+
+X^2+Y^2-Z^2=0.
+
+At infinity Z=0, we solve
+
+X^2+Y^2=0.
+
+Over the real numbers there are no nonzero solutions. Over the complex numbers there are two points,
+
+[1:i:0],
+[1:-i:0].
+
+Every Euclidean circle passes through these same two complex points at infinity, sometimes called circular points. This is a projective explanation for why angle-related Euclidean structure can be encoded using complex projective geometry.
+
+A hyperbola such as
+
+x^2-y^2=1
+
+homogenizes to
+
+X^2-Y^2-Z^2=0.
+
+At infinity,
+
+X^2-Y^2=0,
+
+so
+
+X=+/-Y.
+
+There are two real points at infinity,
+
+[1:1:0],
+[1:-1:0].
+
+These correspond to the two asymptotic directions y=+/-x. The affine asymptotes arise naturally from the real intersection of the projective conic with the line at infinity.
+
+Two conics can intersect in up to four points. Bezout's theorem states that two projective plane curves of degrees m and n with no common component have mn intersection points counted with algebraic multiplicity over an algebraically closed field. For two conics, m=n=2, so the total is four.
+
+Consider
+
+C_1: X^2+Y^2-Z^2=0,
+C_2: X^2-YZ=0.
+
+In the affine chart Z=1,
+
+x^2+y^2=1,
+y=x^2.
+
+Substitute y=x^2 into the circle:
+
+x^2+x^4=1.
+
+Let u=x^2. Then
+
+u^2+u-1=0,
+
+so
+
+u=(-1 +/- sqrt(5))/2.
+
+Only the positive u gives real x, yielding two real affine points. Over C, the negative u gives two additional complex x values. Together there are four projective intersections counted over the complex field, consistent with Bezout.
+
+Conics also have a dual description. A nondegenerate conic represented by symmetric invertible M defines tangent lines. If point vector p lies on the conic,
+
+p^T M p=0,
+
+then the tangent line has coefficient vector
+
+l=M p,
+
+up to scalar. Conversely,
+
+p=M^(-1) l.
+
+The set of tangent lines itself forms a dual conic
+
+l^T M^(-1) l=0.
+
+This point-line duality makes incidence and tangency symmetric.
+
+Projective transformations are invertible linear transformations of homogeneous coordinates, considered up to overall scale:
+
+p -> H p,
+
+with det(H) !=0.
+
+They map lines to lines and conics to conics and preserve incidence and intersection multiplicity. Metric notions such as angle and distance are not preserved, but cross-ratios and projective incidence are.
+
+A conic under transformation H changes its quadratic matrix according to
+
+M' = H^(-T) M H^(-1),
+
+because a point p' corresponds to p=H^(-1)p' and
+
+p^T M p
+=p'^T H^(-T) M H^(-1) p'.
+
+This formula is important in computer vision, where an image homography maps conics between views or planar coordinate systems.
+
+The projective treatment therefore reorganizes familiar analytic geometry. Ellipse, parabola, and hyperbola are not fundamentally different projective conics; their affine distinctions arise from how the conic meets the chosen line at infinity. Intersections that disappear from the real affine plane remain visible through complex points or multiplicity, and tangent lines become linear objects derived directly from the homogeneous quadratic form.

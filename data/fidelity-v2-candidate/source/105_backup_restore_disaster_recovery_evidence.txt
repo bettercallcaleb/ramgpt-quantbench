@@ -1,0 +1,171 @@
+Disaster Recovery Restore Evidence Report
+
+Exercise ID: DR-2026-Q3-Storage-02
+System: Customer Document Platform
+Scenario: Primary database and object-storage region unavailable
+Exercise Type: Controlled failover and restore validation
+
+Purpose
+
+The exercise was designed to prove that documented backups can be restored into an isolated environment and that restored data is internally consistent enough for application recovery.
+
+A backup is not considered valid merely because a backup job reports success. Recovery evidence must include restore execution, application-level checks, and measured recovery objectives.
+
+Declared Objectives
+
+Database RPO: <= 15 minutes
+Object storage RPO: <= 15 minutes for replicated committed objects
+Service RTO: <= 120 minutes for read-only recovery
+Full write RTO: <= 240 minutes
+
+Scenario Start
+
+At 09:00 UTC the exercise controller declared the simulated loss of Region A. Production traffic was not actually redirected; the recovery occurred in an isolated DR environment using copied configuration and restricted credentials.
+
+Backup Inputs
+
+Database:
+- weekly full snapshot: 2026-08-09 02:00 UTC;
+- daily incremental snapshot: 2026-08-13 02:00 UTC;
+- transaction-log archive through 2026-08-14 08:52 UTC.
+
+Object storage:
+- cross-region replicas through journal sequence 881,204,771;
+- nightly inventory manifest;
+- retention metadata export;
+- encryption-key wrapping metadata.
+
+Recovery target time was 08:50 UTC.
+
+Database Restore
+
+09:07 — Empty database cluster created.
+09:14 — Full snapshot restore started.
+09:42 — Base snapshot restore completed.
+09:45 — Incremental chain applied.
+10:02 — Transaction-log replay started.
+10:17 — Replay reached target timestamp 08:50 UTC.
+10:20 — Database opened in read-only verification mode.
+
+Database validation:
+- schema migration version matched expected production state;
+- row counts across 28 primary tables within expected recovery snapshot range;
+- foreign-key validation passed;
+- sample transactional checksums matched pre-exercise control values;
+- no replay gaps reported by database engine.
+
+Object Restore
+
+The surviving-region object replica was mounted through DR credentials. Inventory manifest showed 14,381,204 committed versions expected at the recovery target.
+
+Validation sampled:
+- 10,000 objects selected by deterministic hash stratification;
+- all object metadata entries resolved to physical objects;
+- content SHA-256 matched for all sampled objects;
+- encrypted objects could be decrypted through DR-region wrapped data keys;
+- retention locks were present on all sampled retention-controlled objects.
+
+A full inventory comparison found 41 objects marked `local_only` in metadata at the target time. Those objects had been committed less than the declared replication RPO before the simulated failure and were correctly classified as potentially unavailable.
+
+This is within the RPO contract and was not treated as restore corruption.
+
+Application Verification
+
+At 10:44 a read-only application stack connected to the restored database and object store.
+
+Test suite:
+- authenticate synthetic tenant;
+- list folders;
+- fetch metadata;
+- download objects;
+- verify signed download URL;
+- search by known document attributes;
+- read retention state;
+- reject cross-tenant access.
+
+All 64 scripted checks passed.
+
+Write Recovery
+
+At 11:03 the database was switched from read-only verification to writable DR mode. A new isolated object bucket and replication journal were configured.
+
+Synthetic writes were executed:
+- create folder;
+- upload small object;
+- upload multipart 2.1 GB object;
+- create new version;
+- delete non-retained object;
+- attempt delete of retained object.
+
+Expected results were observed. Retention enforcement rejected the protected deletion.
+
+Recovery Timing
+
+Read-only service readiness:
+Scenario declaration 09:00
+Ready 10:52
+Elapsed 112 minutes
+Target <=120 minutes
+Result: PASS
+
+Writable service readiness:
+Ready 11:27
+Elapsed 147 minutes
+Target <=240 minutes
+Result: PASS
+
+Recovered database point:
+08:50 UTC
+Data loss relative to simulated 09:00 failure: 10 minutes
+Target <=15 minutes
+Result: PASS
+
+Evidence Artifacts
+
+The exercise package contains:
+- backup snapshot identifiers;
+- transaction-log archive range;
+- database restore logs;
+- object inventory manifest hashes;
+- deterministic sample list;
+- application verification results;
+- timestamps from orchestration system;
+- DR environment configuration digest;
+- reviewer signatures.
+
+All evidence is stored separately from the restored environment.
+
+Observed Gaps
+
+1. One restore script assumed the production monitoring namespace existed and failed during DR bootstrap. The dependency was nonessential but delayed metrics by nine minutes.
+
+2. Documentation for unwrapping peer-region encryption keys referenced an outdated command name. The engineer used the current tool successfully, but the runbook requires correction.
+
+3. The object inventory comparison took 38 minutes and was not on the critical path. For a real incident, a staged verification mode should provide fast confidence before full reconciliation completes.
+
+4. Two synthetic search checks initially returned stale results because the search index had not finished replay. The application correctly fell back to database-backed navigation, but the runbook did not clearly define search as an asynchronously restored subsystem.
+
+Recovery Integrity Principles
+
+The exercise separates several statements that are often incorrectly combined:
+- backup media exists;
+- backup restore succeeds;
+- database reaches requested timestamp;
+- object content is readable;
+- metadata references valid objects;
+- encryption keys are usable;
+- application behavior is correct.
+
+Evidence is required at each layer.
+
+RPO Interpretation
+
+The measured ten-minute database gap is not inferred from backup job timestamps. It is derived from the latest replayed transaction position relative to the scenario failure time.
+
+For object data, RPO is derived from replication-journal state and known local-only versions.
+
+Conclusion
+
+The recovery exercise met declared RPO and RTO objectives. The result provides evidence for this specific backup set, recovery procedure, and environment version. It does not prove that every future backup is recoverable.
+
+Recurring restore exercises remain required because restoreability is a property tested through execution, not a property guaranteed by successful backup creation.

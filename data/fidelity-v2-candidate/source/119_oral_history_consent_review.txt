@@ -1,0 +1,201 @@
+Oral History Consent Review Meeting
+
+Participants:
+Elena — archive project lead
+Thomas — interviewer
+Rina — community liaison
+Seth — collections archivist
+
+Elena: We need to revise the consent process before the next round of interviews. The existing form is legally tidy but not very understandable.
+
+Rina: Several participants told me they signed because they trusted the interviewer, not because they understood the future-use options.
+
+Thomas: That's uncomfortable to hear.
+
+Elena: It doesn't mean you pressured them. It means our process relied too much on trust and too little on explanation.
+
+Seth: The form currently has one broad permission: "I grant the archive the right to preserve, reproduce, publish, and distribute the interview in any media."
+
+Rina: That's exactly the problem. Someone may be comfortable with preservation but not public internet access.
+
+Elena: Let's separate decisions.
+
+Thomas: Preservation first?
+
+Seth: Yes. Option one: archive may preserve the recording and transcript. Option two: access level.
+
+Rina: Access choices should use plain language:
+- public;
+- registered researchers;
+- community members;
+- closed until a date;
+- closed until participant approval.
+
+Elena: "Participant approval" creates an ongoing administrative dependency. Can we support it?
+
+Seth: We can, but we need current contact information and a fallback if we cannot reach the participant later.
+
+Rina: Then the form must say what happens if contact is lost.
+
+Thomas: Could default be no access until contact is re-established?
+
+Seth: Operationally possible, but it may leave material permanently inaccessible.
+
+Elena: That's acceptable if that is the participant's informed choice. Access is not our entitlement.
+
+Rina: Agreed.
+
+Thomas: What about excerpts in exhibitions or podcasts?
+
+Elena: Separate permission. Public archival access does not automatically mean permission to remix excerpts into promotional media.
+
+Seth: We can define:
+A. archival access;
+B. educational/exhibition use by the archive;
+C. third-party reuse.
+
+Rina: Third-party reuse is the one people worry about. "Public" can sound like "people can listen," not "a documentary producer can download and republish."
+
+Thomas: So we explain the difference verbally too.
+
+Elena: Yes. The consent process is not just the signature page.
+
+Seth: We also need to discuss transcript editing. Do participants get review rights?
+
+Rina: For this project, they should have the option.
+
+Thomas: That could delay deposit significantly.
+
+Elena: Then build the delay into the schedule.
+
+Thomas: Fair.
+
+Seth: We should distinguish correction from withdrawal. If someone says, "I got the date wrong," we can annotate the transcript. If they say, "I don't want that story included," that's a different request.
+
+Rina: Participants should be able to mark sections restricted without closing the whole interview.
+
+Elena: Can the archive system support time-coded restrictions?
+
+Seth: Yes. We can create an access copy with muted or removed intervals while preserving the restricted master.
+
+Thomas: Do we tell listeners that a section was removed?
+
+Rina: Unless the participant requests otherwise, yes. Something neutral like, "A portion of this interview is restricted."
+
+Elena: Good.
+
+Thomas: Names of third parties are another issue. Interviewees sometimes tell stories about living people who never consented.
+
+Seth: Consent from the speaker does not eliminate privacy concerns about everyone mentioned.
+
+Rina: The interviewer should warn participants before recording: avoid sharing private information about someone else unless it's necessary and appropriate.
+
+Elena: But we shouldn't make the interview so cautious that nobody can speak naturally.
+
+Thomas: Right. Oral history includes relationships.
+
+Seth: Then use review and access controls rather than pretending all third-party risk can be eliminated in advance.
+
+Rina: We also need a process for sensitive cultural knowledge. Some material should not be publicly described in detail even if the speaker is willing in the moment.
+
+Elena: How do we avoid the archive substituting its judgment for the community?
+
+Rina: Community-specific guidance. For the current project, a designated advisory group can flag categories for a second consent conversation, not automatically prohibit them.
+
+Thomas: So if a story includes restricted ceremonial knowledge, I don't decide alone.
+
+Rina: Exactly.
+
+Seth: Metadata can also reveal sensitive information even if the audio is closed. A title like "Interview about X ceremony at Y location" may disclose too much.
+
+Elena: Good point. Access review must include descriptive metadata.
+
+Thomas: Recording location?
+
+Rina: Approximate location by default unless precision matters and participant approves.
+
+Elena: Withdrawal rights. The old form says permission is irrevocable.
+
+Rina: That wording destroys trust.
+
+Seth: From an archival management perspective, we need limits. If material has already been legally reused by a third party, we cannot always retract every copy.
+
+Elena: Then say exactly that. We can allow participants to request closure or removal from our future distribution while explaining that copies already lawfully distributed may be beyond our control.
+
+Thomas: What about published podcast episodes?
+
+Seth: We can remove our hosted copy, but third-party downloads may persist.
+
+Rina: Participants need to know that before agreeing to public distribution.
+
+Elena: Compensation?
+
+Thomas: We currently offer travel reimbursement and a small honorarium.
+
+Rina: The consent form should state that payment is for participation, not purchase of ownership.
+
+Seth: Yes. Rights remain defined by the permission choices.
+
+Elena: Copyright. Who owns the interview?
+
+Seth: That can be complicated because the recording contains contributions from interviewer and participant. We should not oversimplify. The agreement can grant the archive a license for specified uses rather than claiming transfer of all copyright.
+
+Rina: Plain language again: "You keep the rights you have in your words. You give the archive permission to use the interview only in the ways you choose below."
+
+Seth: Subject to legal review, that is the right explanatory direction.
+
+Thomas: Can participants choose a pseudonym?
+
+Rina: Yes, but we must explain that voice, stories, and contextual details may still identify them.
+
+Elena: So pseudonymity is risk reduction, not guaranteed anonymity.
+
+Seth: Correct.
+
+Thomas: What happens at the interview itself?
+
+Elena: Proposed sequence:
+1. interviewer explains project before recording;
+2. participant receives options in writing;
+3. participant asks questions;
+4. preliminary consent recorded or signed;
+5. interview happens;
+6. participant is reminded they can pause or skip questions;
+7. after interview, access choices are confirmed;
+8. optional transcript review occurs before public release.
+
+Rina: I want one more step before release: send a short summary of the selected permissions back to the participant.
+
+Seth: That's good evidence for both sides.
+
+Thomas: If they never respond to transcript review?
+
+Elena: The consent form needs a selected rule. For example, participant can choose:
+- release after 30 days if no response;
+- keep closed until review is complete.
+
+Rina: Let the participant choose, not us.
+
+Seth: Works for me.
+
+Elena: Interviewer behavior. We should script how to handle a participant who reveals something and then says, "Don't put that part in."
+
+Thomas: Stop, mark the time, confirm whether they want it deleted from access copy, restricted, or whether they want to re-record.
+
+Rina: And don't argue that it's historically important.
+
+Elena: Exactly.
+
+Seth: The master preservation question may need another conversation. Some participants may want the restricted segment destroyed entirely.
+
+Rina: Then we respect that if the project agreement allows it. We should not secretly preserve what they asked us to erase.
+
+Elena: Final principle?
+
+Rina: Consent should be specific enough that people can say yes to one use and no to another.
+
+Thomas: And revisitable enough that a moment of trust isn't treated as permission for every future technology.
+
+Seth: From the archive side, we need permissions encoded as metadata so access systems enforce them consistently.
+
+Elena: Good. I'll have legal review the revised language, but the structure is set: preservation, access, reuse, review, naming, withdrawal, and sensitive-content handling as separate choices. The form supports the conversation; it does not replace it.

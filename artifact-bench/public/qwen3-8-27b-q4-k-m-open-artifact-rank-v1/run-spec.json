@@ -1,0 +1,75 @@
+{
+  "adapter": "qwen-v1",
+  "artifacts": [
+    {
+      "input_url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/97c30c65c8d9a3e73f9fdfb50f1d1a669e9a2827/Qwen3.8-27B-Q4_K_M.gguf",
+      "label": "ggml-org",
+      "resolved_revision": "97c30c65c8d9a3e73f9fdfb50f1d1a669e9a2827",
+      "resolved_url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/97c30c65c8d9a3e73f9fdfb50f1d1a669e9a2827/Qwen3.8-27B-Q4_K_M.gguf"
+    },
+    {
+      "input_url": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF/resolve/419d4bf0b4841d3517a2a15a70465abdf655281c/Qwen3.8-27B-Q4_K_M.gguf",
+      "label": "bartowski",
+      "resolved_revision": "419d4bf0b4841d3517a2a15a70465abdf655281c",
+      "resolved_url": "https://huggingface.co/bartowski/Qwen3.8-27B-GGUF/resolve/419d4bf0b4841d3517a2a15a70465abdf655281c/Qwen3.8-27B-Q4_K_M.gguf"
+    },
+    {
+      "input_url": "https://huggingface.co/mradermacher/Qwen3.8-27B-GGUF/resolve/860659a596e879987cee91b4c43ae605796f3ef8/Qwen3.8-27B.Q4_K_M.gguf",
+      "label": "mradermacher-static",
+      "resolved_revision": "860659a596e879987cee91b4c43ae605796f3ef8",
+      "resolved_url": "https://huggingface.co/mradermacher/Qwen3.8-27B-GGUF/resolve/860659a596e879987cee91b4c43ae605796f3ef8/Qwen3.8-27B.Q4_K_M.gguf"
+    },
+    {
+      "input_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/2c80088ea5e6033bed6a180e28a6573d98e8c0cf/Qwen3.8-27B-Q4_K_M.gguf",
+      "label": "unsloth",
+      "resolved_revision": "2c80088ea5e6033bed6a180e28a6573d98e8c0cf",
+      "resolved_url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/resolve/2c80088ea5e6033bed6a180e28a6573d98e8c0cf/Qwen3.8-27B-Q4_K_M.gguf"
+    }
+  ],
+  "benchmark_id": "qwen3-8-27b-q4-k-m-open-artifact-rank-v1",
+  "cleanup_policy": "aggressive",
+  "execution_contract": {
+    "artifact_gpu_layers": -1,
+    "bootstrap": {
+      "replicates": 10000,
+      "resampling_unit": "independent segment",
+      "seed": 20260823
+    },
+    "flash_attention": true,
+    "fresh_context_each_segment": true,
+    "full_vocabulary_fp32_logits": true,
+    "hcdf_thresholds": [
+      1,
+      2,
+      4
+    ],
+    "kv_k_type": "F16",
+    "kv_v_type": "F16",
+    "n_batch": 512,
+    "n_ctx": 4096,
+    "n_ubatch": 512,
+    "placement_policy": "reference_partial_offload_artifact_full_gpu",
+    "positions_per_segment": 512,
+    "reference": "native BF16",
+    "reference_gpu_layers": 24,
+    "rql_version": 2,
+    "sampling": false,
+    "segments": 128,
+    "tokenizer_add_special": true,
+    "tokenizer_parse_special": false,
+    "total_positions": 65536,
+    "version": "QuantBench-V1-REFNGL24"
+  },
+  "llama_cpp_commit": "70adb1b4cea5ee39f867792c78dc59320921eda7",
+  "min_free_gib": 10.0,
+  "model": "Qwen/Qwen3.8-27B",
+  "quantization_label": "Q4_K_M",
+  "reference_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+  "reference_vocabulary_size": 248320,
+  "resolved_reference_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "schema": "ramgpt-artifact-bench-run-spec-v1",
+  "start_time": "2026-08-27T16:03:32.804781+00:00",
+  "tool_versions": {
+    "python": "3.13.5"
+  }
+}

@@ -1,0 +1,213 @@
+Community Radio Call-Screening Training
+
+Participants:
+Rosa — station manager
+Malik — call screener
+Eve — host
+Patrick — producer
+
+Rosa: Tonight's show has live phone calls about the proposed transit redesign. We need a screening process that protects airtime without turning the screener into a political gatekeeper.
+
+Malik: What exactly am I deciding?
+
+Patrick: Whether the caller is technically ready, understands the delay, can summarize their point, and isn't planning to violate station rules.
+
+Eve: Not whether I agree with them.
+
+Rosa: Correct. Viewpoint is not a screening criterion.
+
+Malik: Let's build the opening script.
+
+Patrick: "Community Radio, you're calling for Transit Forum. My name is Malik. We're screening calls before air. What's your first name and the main point you'd like to make?"
+
+Malik: Do I ask location?
+
+Rosa: Neighborhood if relevant and if they want to provide it. Don't demand a home address.
+
+Eve: I like knowing whether a caller uses the route they're discussing.
+
+Patrick: You can ask: "Do you want to tell us your connection to the issue?" That's broader.
+
+Malik: What if they say they're an expert?
+
+Rosa: Ask what they want the host to know, but don't verify credentials live unless the producer has time. On air, Eve should not introduce someone as an expert solely from self-description.
+
+Eve: I can say, "A caller who says they work in transportation planning."
+
+Patrick: Exactly—attribution.
+
+Malik: Prohibited content?
+
+Rosa: Direct threats, targeted harassment, personal private information, slurs under station policy, and clearly unlawful instructions do not go to air. Also no reading out someone's phone number or private address.
+
+Malik: What about profanity?
+
+Patrick: We have a broadcast delay. Mild accidental profanity can be dumped, but a caller who says they intend to swear repeatedly should not be placed live.
+
+Eve: I don't want people excluded just because they're angry.
+
+Rosa: Anger is fine. Threats and abuse are not the same as anger.
+
+Malik: Suppose a caller says, "That councillor is a thief."
+
+Patrick: Ask what factual basis they intend to discuss. Accusing a named person of a crime creates legal risk.
+
+Rosa: We can invite them to discuss the policy decision instead of broadcasting an unsupported criminal allegation.
+
+Malik: So I might say, "Can you make your point about the transit proposal without accusing someone of a crime?"
+
+Rosa: Yes.
+
+Eve: And if they refuse, don't put them live.
+
+Patrick: Correct.
+
+Malik: What if the allegation has been reported publicly?
+
+Rosa: Then the producer needs to know before air so Eve can frame it accurately. Screening is not the place to adjudicate it.
+
+Malik: Calls about personal hardship?
+
+Eve: Those are important.
+
+Rosa: They are, but protect privacy. If someone starts giving a child's full name, medical diagnosis, and school, interrupt gently and ask them to keep identifying details private.
+
+Malik: Can I interrupt before air?
+
+Patrick: Absolutely. That's part of screening.
+
+Malik: How long do I have?
+
+Patrick: Usually 60 to 90 seconds.
+
+Rosa: If a story is complex, flag it for producer review rather than rushing.
+
+Eve: We should prioritize first-time callers over people who call every week.
+
+Rosa: That's an editorial queue rule, but it should be transparent and viewpoint-neutral.
+
+Patrick: Proposed queue weighting:
+1. callers not yet heard in this episode;
+2. range of direct experiences;
+3. concise questions;
+4. geographic diversity where relevant.
+
+Malik: "Range of direct experiences" sounds subjective.
+
+Rosa: It is editorial judgment. The safeguard is that we don't use it to suppress one side. We can monitor the queue by broad topic rather than political label.
+
+Eve: For example, rider, driver, accessibility user, nearby resident, student.
+
+Patrick: Exactly.
+
+Malik: What about organized campaigns? Ten callers with the same script?
+
+Rosa: We don't need to air ten repetitions. Ask whether they have a distinct point. The first may go through; later duplicate scripts can be declined for repetition, not viewpoint.
+
+Malik: Tell them why?
+
+Rosa: If time permits: "We've already aired that specific point and are trying to include additional perspectives."
+
+Eve: Good.
+
+Patrick: Delay procedure. Once caller is approved, tell them:
+- stay on the line;
+- turn off radio or stream;
+- listen through phone only;
+- there is a broadcast delay;
+- host may move on if connection drops;
+- keep answer concise.
+
+Malik: Why turn off radio?
+
+Patrick: Prevent delayed audio feedback and confusion.
+
+Malik: If they ask how long they'll wait?
+
+Rosa: Give an estimate only if you have one. Don't promise they will definitely air.
+
+Eve: Very important. Sometimes the segment ends.
+
+Malik: What do I write in the call log?
+
+Patrick: First name or chosen on-air name, optional neighborhood, topic summary, any factual/legal flag, and queue status.
+
+Rosa: Do not write unnecessary sensitive details.
+
+Malik: Can callers be anonymous?
+
+Rosa: On air, yes, under a chosen first name if appropriate. Internally, caller ID may appear in the phone system, but we don't announce it.
+
+Eve: What if someone is in immediate distress?
+
+Rosa: A live radio call-in show is not an emergency service. If a caller expresses an immediate safety crisis, don't put them on air for content value. Alert the producer and follow station emergency protocol.
+
+Malik: I shouldn't try to counsel them.
+
+Rosa: Correct.
+
+Patrick: Practice cases.
+
+Patrick: Caller one: "I'm furious. They removed my bus stop and now I walk twelve extra minutes with a cane."
+
+Malik: Valid direct experience. I summarize it and queue them.
+
+Eve: Yes.
+
+Patrick: Caller two: "I know where the transit director lives and people should go there tonight."
+
+Malik: Do not air. That's targeted location/harassment risk. Escalate to producer.
+
+Rosa: Correct.
+
+Patrick: Caller three: "Every member of group X is an idiot and shouldn't be allowed on buses."
+
+Malik: Don't air that formulation. If there's an underlying policy point, I can ask whether they can state it without attacking a group.
+
+Rosa: Correct.
+
+Patrick: Caller four says, "I have proof the contractor falsified invoices."
+
+Malik: Flag legal/factual allegation. Ask them not to disclose private documents on air and send to producer before deciding.
+
+Eve: Good.
+
+Patrick: Caller five asks a clear question that is critical of the host.
+
+Malik: Queue them. Criticism of the host is not a reason to block.
+
+Rosa: Exactly.
+
+Malik: How do we prevent unconscious bias in who gets through?
+
+Rosa: Review logs after the show. Compare screened, aired, declined, duplicate, technical failure, and rule violation categories. If "too emotional" appears as a decline reason, that's a warning sign because it's vague and can hide bias.
+
+Patrick: Use specific reasons.
+
+Eve: And I should avoid cherry-picking only easy callers from the queue.
+
+Rosa: Producer and host share responsibility.
+
+Malik: If I misunderstand someone's accent?
+
+Rosa: Ask them to repeat. Don't mark them incoherent because you struggled to hear. Technical clarity matters for radio, but give people a fair chance.
+
+Patrick: We can also call back on a cleaner line.
+
+Eve: What about language other than English?
+
+Rosa: Tonight's program is English because we don't have live interpretation staffed. Don't pretend otherwise. For future episodes, multilingual access needs actual production support, not ad hoc translation by callers.
+
+Malik: Final screen question?
+
+Patrick: "Can you make that point in about thirty seconds when the host comes to you?"
+
+Malik: If they say no?
+
+Eve: Maybe they need a producer-recorded segment instead of live call.
+
+Rosa: Exactly. Live radio format is one constraint, not a judgment on whether their story matters.
+
+Malik: So the screener's job is to create a safe, workable queue while preserving a genuine range of calls.
+
+Rosa: Yes. You're not selecting the "right opinions." You're enforcing format and safety rules consistently enough that disagreement can actually reach air.

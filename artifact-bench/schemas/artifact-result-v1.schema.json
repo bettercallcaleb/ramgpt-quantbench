@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ramgpt.invalid/schemas/artifact-result-v1.schema.json",
+  "title": "RAMGPT Artifact Result V1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "artifact", "benchmark", "metrics", "bootstrap", "integrity", "verification_status", "result_manifest_sha256"],
+  "properties": {
+    "schema_version": {"const": "artifact-result-v1"},
+    "artifact": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_id", "artifact_sha256", "provenance_grade", "comparison_class"],
+      "properties": {
+        "artifact_id": {"type": "string", "minLength": 1},
+        "artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "provenance_grade": {"enum": ["GRADE_A_VERIFIED_SAME_SOURCE", "GRADE_B_MODEL_MATCHED_SOURCE_UNCERTAIN", "GRADE_C_RECIPE_VARIANT", "GRADE_D_INELIGIBLE"]},
+        "comparison_class": {"type": "string", "minLength": 1}
+      }
+    },
+    "benchmark": {"$ref": "#/$defs/benchmarkIdentity"},
+    "whole_model_bpw": {"type": "number", "exclusiveMinimum": 0},
+    "metrics": {
+      "type": "object", "additionalProperties": false,
+      "required": ["mean_kl", "median_kl", "p90_kl", "p99_kl", "delta_nll", "ppl_ratio", "flip_count", "flip_rate", "hcdfr_at_1", "hcdfr_at_2", "hcdfr_at_4", "max_flipped_bf16_margin"],
+      "properties": {
+        "mean_kl": {"$ref": "#/$defs/nonnegative"},
+        "median_kl": {"$ref": "#/$defs/nonnegative"},
+        "p90_kl": {"$ref": "#/$defs/nonnegative"},
+        "p99_kl": {"$ref": "#/$defs/nonnegative"},
+        "delta_nll": {"type": "number"},
+        "ppl_ratio": {"type": "number", "exclusiveMinimum": 0},
+        "flip_count": {"type": "integer", "minimum": 0},
+        "flip_rate": {"$ref": "#/$defs/rate"},
+        "hcdfr_at_1": {"$ref": "#/$defs/rate"},
+        "hcdfr_at_2": {"$ref": "#/$defs/rate"},
+        "hcdfr_at_4": {"$ref": "#/$defs/rate"},
+        "max_flipped_bf16_margin": {"$ref": "#/$defs/nonnegative"}
+      }
+    },
+    "bootstrap": {
+      "type": "object", "additionalProperties": false,
+      "required": ["resampling_unit", "replicates", "seed", "confidence_level", "intervals"],
+      "properties": {
+        "resampling_unit": {"const": "segment"},
+        "replicates": {"const": 10000},
+        "seed": {"const": 20260823},
+        "confidence_level": {"const": 0.95},
+        "intervals": {"type": "object", "additionalProperties": {"$ref": "#/$defs/interval"}}
+      }
+    },
+    "decision_stability_flags": {"type": "array", "uniqueItems": true, "items": {"enum": ["HIGH_MARGIN_STABILITY_EXCEPTION"]}},
+    "integrity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["artifact_identity", "position_alignment", "execution_contract", "metric_validation", "manifest_frozen"],
+      "properties": {
+        "artifact_identity": {"$ref": "#/$defs/verdict"},
+        "position_alignment": {"$ref": "#/$defs/verdict"},
+        "execution_contract": {"$ref": "#/$defs/verdict"},
+        "metric_validation": {"$ref": "#/$defs/verdict"},
+        "manifest_frozen": {"$ref": "#/$defs/verdict"}
+      }
+    },
+    "verification_status": {"enum": ["UNVERIFIED", "RAMGPT_QUANTBENCH_VERIFIED"]},
+    "result_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "created_at": {"type": "string", "format": "date-time"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nonnegative": {"type": "number", "minimum": 0},
+    "rate": {"type": "number", "minimum": 0, "maximum": 1},
+    "verdict": {"enum": ["PASS", "FAIL"]},
+    "interval": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "items": false, "minItems": 2, "maxItems": 2},
+    "benchmarkIdentity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["benchmark_version", "model_reference_sha256", "reference_rql_sha256", "corpus_sha256", "execution_contract_sha256", "llama_cpp_commit", "analysis_protocol_version", "artifact_sha256"],
+      "properties": {
+        "benchmark_version": {"type": "string", "minLength": 1},
+        "model_reference_sha256": {"$ref": "#/$defs/sha256"},
+        "reference_rql_sha256": {"$ref": "#/$defs/sha256"},
+        "corpus_sha256": {"$ref": "#/$defs/sha256"},
+        "execution_contract_sha256": {"$ref": "#/$defs/sha256"},
+        "llama_cpp_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "analysis_protocol_version": {"type": "string", "minLength": 1},
+        "artifact_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    }
+  }
+}

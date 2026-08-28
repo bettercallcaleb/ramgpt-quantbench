@@ -1,0 +1,264 @@
+Let (X_n) be a discrete-time Markov chain on a finite state space with transition matrix P. Return times describe how long the chain takes to revisit a state after leaving or after time zero. They connect recurrence, stationary distributions, renewal theory, and first-step analysis.
+
+Fix a state i. Define the first positive return time
+
+T_i^+ = inf{n>=1 : X_n=i}.
+
+Starting from X_0=i, the return probability is
+
+f_ii = P_i(T_i^+<infinity).
+
+State i is recurrent if f_ii=1 and transient if f_ii<1. In a finite irreducible chain every state is positive recurrent, so return occurs with probability one and the mean return time is finite.
+
+Consider the three-state chain
+
+P =
+[ 0   1/2 1/2
+ 1/3 1/3 1/3
+ 1/4 1/2 1/4 ].
+
+We want the expected return time to state 1.
+
+A direct first-step method can be built by defining
+
+h_j = E_j[T_1],
+
+for j != 1, where
+
+T_1=inf{n>=0:X_n=1}.
+
+For j=2,
+
+h_2
+=1 + (1/3)*0 + (1/3)h_2 + (1/3)h_3.
+
+For j=3,
+
+h_3
+=1 + (1/4)*0 + (1/2)h_2 + (1/4)h_3.
+
+Rearrange:
+
+(2/3)h_2 - (1/3)h_3 = 1,
+
+-(1/2)h_2 + (3/4)h_3 = 1.
+
+Multiply the first equation by 3:
+
+2h_2-h_3=3.
+
+Multiply the second by 4:
+
+-2h_2+3h_3=4.
+
+Add them:
+
+2h_3=7,
+
+so
+
+h_3=7/2.
+
+Then
+
+2h_2=3+7/2=13/2,
+
+and
+
+h_2=13/4.
+
+Starting from state 1, the chain moves to state 2 or 3 with equal probability. Therefore
+
+E_1[T_1^+]
+=1 + (1/2)h_2 + (1/2)h_3
+=1 + 13/8 + 7/4
+=1 + 13/8 + 14/8
+=35/8.
+
+So the expected positive return time is 4.375 steps.
+
+There is a second route through the stationary distribution. For a finite irreducible positive recurrent chain, Kac's formula states
+
+E_i[T_i^+] = 1/pi_i,
+
+where pi is the stationary distribution satisfying
+
+pi P=pi,
+sum_i pi_i=1.
+
+Let pi=(a,b,c). The first-coordinate balance equation is
+
+a = b/3 + c/4.
+
+The second is
+
+b = a/2 + b/3 + c/2.
+
+Together with a+b+c=1, solve for a. From the first,
+
+12a=4b+3c.
+
+The return-time result predicts
+
+a=8/35.
+
+We can verify. If a=8/35, then b+c=27/35. The equation
+
+4b+3c=96/35.
+
+Substitute c=27/35-b:
+
+4b+81/35-3b=96/35,
+
+so
+
+b=15/35=3/7,
+
+and
+
+c=12/35.
+
+Check the second balance equation:
+
+a/2+b/3+c/2
+=4/35+5/35+6/35
+=15/35=b.
+
+Thus
+
+pi=(8/35,15/35,12/35),
+
+and indeed
+
+1/pi_1=35/8.
+
+Kac's formula has an intuitive renewal interpretation. Visits to state i divide the path into cycles. In stationarity, the long-run fraction of time spent at i is pi_i. If the average cycle length between visits is mu_i and each cycle contains exactly one visit epoch to i, then the renewal rate is 1/mu_i. That rate must equal the stationary occupancy frequency pi_i, giving
+
+mu_i=1/pi_i.
+
+Return-time distributions carry more information than their mean. Let
+
+f_ii(n)=P_i(T_i^+=n)
+
+be the first-return probabilities, and let
+
+p_ii^(n)=P_i(X_n=i)
+
+be the n-step return probabilities.
+
+A return to i at time n can be decomposed according to the time k of the first return:
+
+p_ii^(n)
+=
+sum_{k=1}^n f_ii(k) p_ii^(n-k),
+
+with p_ii^(0)=1.
+
+This is a renewal equation.
+
+Define generating functions
+
+P_ii(z)=sum_{n>=0} p_ii^(n) z^n
+
+and
+
+F_ii(z)=sum_{n>=1} f_ii(n) z^n.
+
+The renewal convolution becomes
+
+P_ii(z)=1+F_ii(z)P_ii(z),
+
+so
+
+P_ii(z)=1/[1-F_ii(z)]
+
+whenever the formal manipulation is valid.
+
+This identity links recurrence to the sum of return probabilities. If
+
+sum_{n>=0} p_ii^(n)=infinity,
+
+then state i is recurrent; if the sum is finite, i is transient. Formally, evaluating P_ii(z) as z approaches 1 from below reflects whether F_ii(1)=1.
+
+As a simpler example, consider a two-state chain
+
+P =
+[1-p  p
+ q   1-q],
+
+with p,q in (0,1).
+
+Starting from state 1, a positive return occurs either immediately with probability 1-p, or the chain moves to state 2 with probability p and then remains there for some number of steps before returning.
+
+For n=1,
+
+f_11(1)=1-p.
+
+For n>=2, the required path is
+
+1 -> 2,
+then n-2 self-transitions at 2,
+then 2 -> 1.
+
+Therefore
+
+f_11(n)=p(1-q)^(n-2)q.
+
+The probabilities sum to
+
+1-p + pq sum_{m>=0}(1-q)^m
+=1-p + pq/q
+=1.
+
+The mean return time is
+
+E_1[T_1^+]
+=(1-p)
++sum_{n>=2} n p q (1-q)^(n-2).
+
+Let m=n-2. Then
+
+sum_{m>=0}(m+2)pq(1-q)^m
+=pq[
+ sum m r^m + 2 sum r^m
+],
+
+where r=1-q.
+
+Using
+
+sum_{m>=0} r^m=1/q,
+
+sum_{m>=0} m r^m=(1-q)/q^2,
+
+the tail contribution is
+
+pq[(1-q)/q^2 + 2/q]
+=p(1-q)/q + 2p.
+
+Adding 1-p gives
+
+1+p+p(1-q)/q
+=1+p/q.
+
+The stationary probability of state 1 is
+
+pi_1=q/(p+q),
+
+so
+
+1/pi_1=(p+q)/q=1+p/q,
+
+matching the return-time calculation.
+
+Periodicity also appears through returns. The period of state i is
+
+d(i)=gcd{n>=1 : p_ii^(n)>0}.
+
+In an irreducible chain all states share the same period. If returns to i are possible only at even times, then d(i)>=2 and convergence to stationarity can oscillate rather than settle pointwise.
+
+For the simple random walk on a bipartite graph, every step alternates bipartition classes, so a return to the starting vertex requires an even number of steps. This creates period two unless self-loops or other odd cycles break the parity.
+
+Expected hitting times and return times are solved with similar equations, but the boundary conditions differ. For hitting a target i, set h_i=0. For a positive return starting at i, one step must occur before the return clock can finish, so the starting-state equation uses neighboring hitting times rather than simply assigning zero.
+
+The key ideas are therefore complementary. First-step equations compute specific hitting and return quantities locally. Stationary distributions convert mean return time into the compact formula 1/pi_i. Renewal equations describe the full return distribution, and the support of return times determines periodicity. Together they show that "coming back to a state" is not a narrow event but a structural probe of the chain's long-run behavior.

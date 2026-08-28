@@ -1,0 +1,914 @@
+{
+  "document_count": 128,
+  "documents": [
+    {
+      "document_genre_or_structure": "first-person logistical narrative",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 0,
+      "topic": "winter_lighthouse_supply_run"
+    },
+    {
+      "document_genre_or_structure": "municipal hearing digest",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 1,
+      "topic": "urban_tree_canopy_dispute"
+    },
+    {
+      "document_genre_or_structure": "craft conservation journal",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 2,
+      "topic": "restoring_a_ceramic_mural"
+    },
+    {
+      "document_genre_or_structure": "field observation report",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 3,
+      "topic": "migratory_bird_count"
+    },
+    {
+      "document_genre_or_structure": "literary third-person narrative",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 4,
+      "topic": "night_train_station_closure"
+    },
+    {
+      "document_genre_or_structure": "explanatory magazine feature",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 5,
+      "topic": "regional_seed_library"
+    },
+    {
+      "document_genre_or_structure": "policy analysis memo",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 6,
+      "topic": "floodplain_buyout_review"
+    },
+    {
+      "document_genre_or_structure": "scene-based cultural reportage",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 7,
+      "topic": "community_orchestra_rehearsal"
+    },
+    {
+      "document_genre_or_structure": "operational case study",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 8,
+      "topic": "coastal_ferry_schedule_redesign"
+    },
+    {
+      "document_genre_or_structure": "curatorial essay",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 9,
+      "topic": "geological_core_archive"
+    },
+    {
+      "document_genre_or_structure": "chronological procedural account",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 10,
+      "topic": "small_town_water_tower_repair"
+    },
+    {
+      "document_genre_or_structure": "evidence-led civic report",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 11,
+      "topic": "public_market_noise_study"
+    },
+    {
+      "document_genre_or_structure": "reflective personal essay",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 12,
+      "topic": "intergenerational_recipe_notebook"
+    },
+    {
+      "document_genre_or_structure": "incident-free operations narrative",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 13,
+      "topic": "prairie_prescribed_burn"
+    },
+    {
+      "document_genre_or_structure": "service evaluation report",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 14,
+      "topic": "mobile_dental_clinic_route"
+    },
+    {
+      "document_genre_or_structure": "historical landscape analysis",
+      "domain": "english_prose",
+      "language_or_programming_language": "English",
+      "segment_id": 15,
+      "topic": "abandoned_railway_greenway"
+    },
+    {
+      "document_genre_or_structure": "工作札记",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 16,
+      "topic": "古籍修复室的梅雨季"
+    },
+    {
+      "document_genre_or_structure": "民生调查报道",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 17,
+      "topic": "山城公共电梯更新"
+    },
+    {
+      "document_genre_or_structure": "教育观察随笔",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 18,
+      "topic": "海岛小学合班课程"
+    },
+    {
+      "document_genre_or_structure": "农事记录与解释",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 19,
+      "topic": "老茶园土壤改良"
+    },
+    {
+      "document_genre_or_structure": "运营评估报告",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 20,
+      "topic": "城市夜间公交试线"
+    },
+    {
+      "document_genre_or_structure": "人物纪实",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 21,
+      "topic": "木偶戏后台的一天"
+    },
+    {
+      "document_genre_or_structure": "多方意见分析",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 22,
+      "topic": "湿地观鸟栈道争议"
+    },
+    {
+      "document_genre_or_structure": "说明性调查文章",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 23,
+      "topic": "社区食堂营养调整"
+    },
+    {
+      "document_genre_or_structure": "现场工作纪要",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 24,
+      "topic": "山区无线电中继站维护"
+    },
+    {
+      "document_genre_or_structure": "历史考据短论",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 25,
+      "topic": "地方志中的旧渡口"
+    },
+    {
+      "document_genre_or_structure": "时间线式纪实",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 26,
+      "topic": "台风后渔港清理"
+    },
+    {
+      "document_genre_or_structure": "政策解读",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 27,
+      "topic": "县医院陪护制度试点"
+    },
+    {
+      "document_genre_or_structure": "产业人物报道",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 28,
+      "topic": "竹编合作社转型"
+    },
+    {
+      "document_genre_or_structure": "策展反思",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 29,
+      "topic": "博物馆触摸展品设计"
+    },
+    {
+      "document_genre_or_structure": "技术科普报告",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 30,
+      "topic": "高原供暖季空气监测"
+    },
+    {
+      "document_genre_or_structure": "社区会议综述",
+      "domain": "chinese_prose",
+      "language_or_programming_language": "Chinese",
+      "segment_id": 31,
+      "topic": "运河边夜市迁移协商"
+    },
+    {
+      "document_genre_or_structure": "bilingual engineering review minutes",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 32,
+      "topic": "robotics_safety_design_review"
+    },
+    {
+      "document_genre_or_structure": "operations shift handoff with natural code-switching",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 33,
+      "topic": "cross_border_cold_chain_handover"
+    },
+    {
+      "document_genre_or_structure": "bilingual accessibility critique",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 34,
+      "topic": "museum_wayfinding_walkthrough"
+    },
+    {
+      "document_genre_or_structure": "developer issue discussion",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 35,
+      "topic": "open_source_localization_triage"
+    },
+    {
+      "document_genre_or_structure": "staff planning record",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 36,
+      "topic": "international_school_lab_planning"
+    },
+    {
+      "document_genre_or_structure": "multilingual operational briefing",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 37,
+      "topic": "airport_wildlife_risk_briefing"
+    },
+    {
+      "document_genre_or_structure": "design-studio critique",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 38,
+      "topic": "architecture_material_mockup_review"
+    },
+    {
+      "document_genre_or_structure": "research incident discussion",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 39,
+      "topic": "biotech_protocol_deviation_call"
+    },
+    {
+      "document_genre_or_structure": "production coordination log",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 40,
+      "topic": "festival_stage_technical_rehearsal"
+    },
+    {
+      "document_genre_or_structure": "scientific team exchange",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 41,
+      "topic": "remote_sensing_field_sync"
+    },
+    {
+      "document_genre_or_structure": "client-engineer meeting notes",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 42,
+      "topic": "hotel_energy_retrofit_negotiation"
+    },
+    {
+      "document_genre_or_structure": "editorial review transcript",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 43,
+      "topic": "bilingual_podcast_fact_check"
+    },
+    {
+      "document_genre_or_structure": "logistics troubleshooting thread",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 44,
+      "topic": "shipping_customs_exception"
+    },
+    {
+      "document_genre_or_structure": "product and legal discussion",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 45,
+      "topic": "mobile_app_privacy_review"
+    },
+    {
+      "document_genre_or_structure": "mixed-language research conversation",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 46,
+      "topic": "urban_cycling_research_debrief"
+    },
+    {
+      "document_genre_or_structure": "vendor-site acceptance dialogue",
+      "domain": "mixed_en_zh",
+      "language_or_programming_language": "natural English/Chinese code-switching",
+      "segment_id": 47,
+      "topic": "semiconductor_tool_installation"
+    },
+    {
+      "document_genre_or_structure": "complete Python command-line archive validator",
+      "domain": "code",
+      "language_or_programming_language": "Python",
+      "segment_id": 48,
+      "topic": "python_meteorological_archive_cli"
+    },
+    {
+      "document_genre_or_structure": "C++ concurrency component with tests",
+      "domain": "code",
+      "language_or_programming_language": "C++",
+      "segment_id": 49,
+      "topic": "cpp_lock_free_audio_ring_buffer"
+    },
+    {
+      "document_genre_or_structure": "defensive Bash operations utility",
+      "domain": "code",
+      "language_or_programming_language": "Bash",
+      "segment_id": 50,
+      "topic": "bash_incremental_backup_verifier"
+    },
+    {
+      "document_genre_or_structure": "multi-query SQL analytical workbook",
+      "domain": "code",
+      "language_or_programming_language": "SQL",
+      "segment_id": 51,
+      "topic": "sql_library_circulation_analytics"
+    },
+    {
+      "document_genre_or_structure": "browser JavaScript rendering module",
+      "domain": "code",
+      "language_or_programming_language": "JavaScript",
+      "segment_id": 52,
+      "topic": "javascript_svg_transit_map"
+    },
+    {
+      "document_genre_or_structure": "TypeScript service component",
+      "domain": "code",
+      "language_or_programming_language": "TypeScript",
+      "segment_id": 53,
+      "topic": "typescript_event_sourced_inventory"
+    },
+    {
+      "document_genre_or_structure": "Python lexer/parser package",
+      "domain": "code",
+      "language_or_programming_language": "Python",
+      "segment_id": 54,
+      "topic": "python_recursive_descent_filter_parser"
+    },
+    {
+      "document_genre_or_structure": "C++ numerical simulation executable",
+      "domain": "code",
+      "language_or_programming_language": "C++",
+      "segment_id": 55,
+      "topic": "cpp_grid_wildfire_simulation"
+    },
+    {
+      "document_genre_or_structure": "Bash monitoring and reporting script",
+      "domain": "code",
+      "language_or_programming_language": "Bash",
+      "segment_id": 56,
+      "topic": "bash_certificate_expiry_monitor"
+    },
+    {
+      "document_genre_or_structure": "SQL schema, constraints, views, and procedures",
+      "domain": "code",
+      "language_or_programming_language": "SQL",
+      "segment_id": 57,
+      "topic": "sql_hospital_bed_state_model"
+    },
+    {
+      "document_genre_or_structure": "JavaScript offline synchronization library",
+      "domain": "code",
+      "language_or_programming_language": "JavaScript",
+      "segment_id": 58,
+      "topic": "javascript_offline_form_sync"
+    },
+    {
+      "document_genre_or_structure": "TypeScript asynchronous scheduler",
+      "domain": "code",
+      "language_or_programming_language": "TypeScript",
+      "segment_id": 59,
+      "topic": "typescript_rate_limited_scheduler"
+    },
+    {
+      "document_genre_or_structure": "Python streaming data transformation",
+      "domain": "code",
+      "language_or_programming_language": "Python",
+      "segment_id": 60,
+      "topic": "python_geospatial_csv_transform"
+    },
+    {
+      "document_genre_or_structure": "C++ bounded network-protocol parser",
+      "domain": "code",
+      "language_or_programming_language": "C++",
+      "segment_id": 61,
+      "topic": "cpp_binary_packet_decoder"
+    },
+    {
+      "document_genre_or_structure": "JavaScript interactive editing component",
+      "domain": "code",
+      "language_or_programming_language": "JavaScript",
+      "segment_id": 62,
+      "topic": "javascript_canvas_waveform_editor"
+    },
+    {
+      "document_genre_or_structure": "TypeScript typed configuration processor",
+      "domain": "code",
+      "language_or_programming_language": "TypeScript",
+      "segment_id": 63,
+      "topic": "typescript_configuration_merge_engine"
+    },
+    {
+      "document_genre_or_structure": "nested JSON observations and instrument state",
+      "domain": "structured_data",
+      "language_or_programming_language": "JSON",
+      "segment_id": 64,
+      "topic": "astronomical_observatory_night_log"
+    },
+    {
+      "document_genre_or_structure": "YAML governance and plot allocation",
+      "domain": "structured_data",
+      "language_or_programming_language": "YAML",
+      "segment_id": 65,
+      "topic": "community_garden_allocation"
+    },
+    {
+      "document_genre_or_structure": "CSV-like event and cause table",
+      "domain": "structured_data",
+      "language_or_programming_language": "CSV",
+      "segment_id": 66,
+      "topic": "regional_train_delay_export"
+    },
+    {
+      "document_genre_or_structure": "key/value configuration with typed sections",
+      "domain": "structured_data",
+      "language_or_programming_language": "INI-like config",
+      "segment_id": 67,
+      "topic": "embedded_sensor_firmware_profile"
+    },
+    {
+      "document_genre_or_structure": "structured operational logs",
+      "domain": "structured_data",
+      "language_or_programming_language": "logs",
+      "segment_id": 68,
+      "topic": "container_terminal_audit_stream"
+    },
+    {
+      "document_genre_or_structure": "JSON case history with treatments",
+      "domain": "structured_data",
+      "language_or_programming_language": "JSON",
+      "segment_id": 69,
+      "topic": "wildlife_rehabilitation_case"
+    },
+    {
+      "document_genre_or_structure": "YAML schedule, cues, and dependencies",
+      "domain": "structured_data",
+      "language_or_programming_language": "YAML",
+      "segment_id": 70,
+      "topic": "theatre_touring_cue_book"
+    },
+    {
+      "document_genre_or_structure": "CSV-like laboratory measurements",
+      "domain": "structured_data",
+      "language_or_programming_language": "CSV",
+      "segment_id": 71,
+      "topic": "air_quality_calibration_results"
+    },
+    {
+      "document_genre_or_structure": "declarative key/value configuration",
+      "domain": "structured_data",
+      "language_or_programming_language": "config",
+      "segment_id": 72,
+      "topic": "reverse_proxy_multi_tenant_rules"
+    },
+    {
+      "document_genre_or_structure": "multi-component ingestion logs",
+      "domain": "structured_data",
+      "language_or_programming_language": "logs",
+      "segment_id": 73,
+      "topic": "digital_archive_ingest_trace"
+    },
+    {
+      "document_genre_or_structure": "hierarchical JSON financial model",
+      "domain": "structured_data",
+      "language_or_programming_language": "JSON",
+      "segment_id": 74,
+      "topic": "municipal_budget_amendment"
+    },
+    {
+      "document_genre_or_structure": "YAML crew, stores, and voyage constraints",
+      "domain": "structured_data",
+      "language_or_programming_language": "YAML",
+      "segment_id": 75,
+      "topic": "research_vessel_manifest"
+    },
+    {
+      "document_genre_or_structure": "CSV-like sampling dataset",
+      "domain": "structured_data",
+      "language_or_programming_language": "CSV",
+      "segment_id": 76,
+      "topic": "orchard_harvest_quality_samples"
+    },
+    {
+      "document_genre_or_structure": "namespaced key/value settings",
+      "domain": "structured_data",
+      "language_or_programming_language": "config",
+      "segment_id": 77,
+      "topic": "desktop_accessibility_preferences"
+    },
+    {
+      "document_genre_or_structure": "timestamped incident and resource logs",
+      "domain": "structured_data",
+      "language_or_programming_language": "logs",
+      "segment_id": 78,
+      "topic": "emergency_shelter_activity_log"
+    },
+    {
+      "document_genre_or_structure": "JSON linked-record catalog",
+      "domain": "structured_data",
+      "language_or_programming_language": "JSON",
+      "segment_id": 79,
+      "topic": "language_archive_catalog"
+    },
+    {
+      "document_genre_or_structure": "worked algebraic derivation",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 80,
+      "topic": "polynomial_factorization_over_finite_fields"
+    },
+    {
+      "document_genre_or_structure": "proof-focused inequality note",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 81,
+      "topic": "convex_inequalities_and_equality_cases"
+    },
+    {
+      "document_genre_or_structure": "Bayesian probability case analysis",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 82,
+      "topic": "conditional_probability_in_screening"
+    },
+    {
+      "document_genre_or_structure": "statistics comparison with derivations",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 83,
+      "topic": "robust_location_estimators"
+    },
+    {
+      "document_genre_or_structure": "linear algebra tutorial",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 84,
+      "topic": "matrix_decompositions_for_least_squares"
+    },
+    {
+      "document_genre_or_structure": "coordinate-free geometric derivation",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 85,
+      "topic": "vector_geometry_of_reflections"
+    },
+    {
+      "document_genre_or_structure": "graph mathematics proof note",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 86,
+      "topic": "spectral_properties_of_bipartite_graphs"
+    },
+    {
+      "document_genre_or_structure": "optimization formulation and dual interpretation",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 87,
+      "topic": "constrained_transport_optimization"
+    },
+    {
+      "document_genre_or_structure": "stepwise generating-function transformation",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 88,
+      "topic": "symbolic_recurrence_solution"
+    },
+    {
+      "document_genre_or_structure": "combinatorics argument",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 89,
+      "topic": "lattice_path_counting_with_barriers"
+    },
+    {
+      "document_genre_or_structure": "calculus-style worked analysis",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 90,
+      "topic": "improper_integrals_and_parameter_differentiation"
+    },
+    {
+      "document_genre_or_structure": "number-theoretic construction",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 91,
+      "topic": "modular_arithmetic_error_codes"
+    },
+    {
+      "document_genre_or_structure": "stochastic-process derivation",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 92,
+      "topic": "markov_chain_return_times"
+    },
+    {
+      "document_genre_or_structure": "numerical analysis convergence study",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 93,
+      "topic": "nonlinear_fixed_point_iteration"
+    },
+    {
+      "document_genre_or_structure": "analytic geometry exposition",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 94,
+      "topic": "projective_conic_intersections"
+    },
+    {
+      "document_genre_or_structure": "harmonic analysis worked note",
+      "domain": "math_symbolic",
+      "language_or_programming_language": "English",
+      "segment_id": 95,
+      "topic": "fourier_series_boundary_behavior"
+    },
+    {
+      "document_genre_or_structure": "incident postmortem",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 96,
+      "topic": "dnssec_validation_failure"
+    },
+    {
+      "document_genre_or_structure": "architecture decision record",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 97,
+      "topic": "multi_region_object_replication"
+    },
+    {
+      "document_genre_or_structure": "diagnostic runbook",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 98,
+      "topic": "linux_memory_pressure_diagnosis"
+    },
+    {
+      "document_genre_or_structure": "migration design review",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 99,
+      "topic": "database_online_schema_migration"
+    },
+    {
+      "document_genre_or_structure": "operational change plan",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 100,
+      "topic": "service_mesh_certificate_rotation"
+    },
+    {
+      "document_genre_or_structure": "site survey report",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 101,
+      "topic": "warehouse_wifi_capacity"
+    },
+    {
+      "document_genre_or_structure": "security architecture explanation",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 102,
+      "topic": "kubernetes_admission_policy"
+    },
+    {
+      "document_genre_or_structure": "algorithm design note",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 103,
+      "topic": "distributed_counter_reconciliation"
+    },
+    {
+      "document_genre_or_structure": "incident analysis",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 104,
+      "topic": "observability_cardinality_outage"
+    },
+    {
+      "document_genre_or_structure": "disaster-recovery exercise report",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 105,
+      "topic": "backup_restore_evidence"
+    },
+    {
+      "document_genre_or_structure": "implementation guide",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 106,
+      "topic": "ipv6_branch_network_rollout"
+    },
+    {
+      "document_genre_or_structure": "security threat assessment",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 107,
+      "topic": "secrets_broker_threat_model"
+    },
+    {
+      "document_genre_or_structure": "data-platform design document",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 108,
+      "topic": "stream_processing_late_events"
+    },
+    {
+      "document_genre_or_structure": "forensic troubleshooting narrative",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 109,
+      "topic": "filesystem_metadata_corruption"
+    },
+    {
+      "document_genre_or_structure": "protocol trade-off analysis",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 110,
+      "topic": "edge_cache_consistency"
+    },
+    {
+      "document_genre_or_structure": "FinOps technical specification",
+      "domain": "technical_it",
+      "language_or_programming_language": "English",
+      "segment_id": 111,
+      "topic": "cloud_cost_allocation_pipeline"
+    },
+    {
+      "document_genre_or_structure": "curator-editor two-person working session",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 112,
+      "topic": "rare_book_exhibition_edit"
+    },
+    {
+      "document_genre_or_structure": "instructor team scenario dialogue",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 113,
+      "topic": "river_rescue_training_plan"
+    },
+    {
+      "document_genre_or_structure": "facilitated three-party conversation",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 114,
+      "topic": "tenant_repair_mediation"
+    },
+    {
+      "document_genre_or_structure": "producer-researcher transcript",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 115,
+      "topic": "radio_documentary_fact_check"
+    },
+    {
+      "document_genre_or_structure": "trainer and kitchen crew briefing",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 116,
+      "topic": "allergy_safe_bakery_workflow"
+    },
+    {
+      "document_genre_or_structure": "mixed-experience planning conversation",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 117,
+      "topic": "accessible_hiking_route_review"
+    },
+    {
+      "document_genre_or_structure": "committee question-and-answer meeting",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 118,
+      "topic": "school_telescope_purchase"
+    },
+    {
+      "document_genre_or_structure": "archivist-participant dialogue",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 119,
+      "topic": "oral_history_consent_review"
+    },
+    {
+      "document_genre_or_structure": "fast-paced group chat",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 120,
+      "topic": "dance_company_tour_logistics"
+    },
+    {
+      "document_genre_or_structure": "interactive safety instruction",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 121,
+      "topic": "makerspace_laser_orientation"
+    },
+    {
+      "document_genre_or_structure": "translator-editor-client review",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 122,
+      "topic": "translation_style_dispute"
+    },
+    {
+      "document_genre_or_structure": "clinician-owner teach-back dialogue",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 123,
+      "topic": "veterinary_discharge_teaching"
+    },
+    {
+      "document_genre_or_structure": "multi-agency tabletop transcript",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 124,
+      "topic": "neighborhood_emergency_drill"
+    },
+    {
+      "document_genre_or_structure": "mentor-trainee coaching exchange",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 125,
+      "topic": "community_radio_call_screening"
+    },
+    {
+      "document_genre_or_structure": "weather-sensitive operations meeting",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 126,
+      "topic": "historic_boat_launch_decision"
+    },
+    {
+      "document_genre_or_structure": "staff workshop with divergent proposals",
+      "domain": "dialogue_instruction",
+      "language_or_programming_language": "English",
+      "segment_id": 127,
+      "topic": "food_coop_inventory_redesign"
+    }
+  ],
+  "domain_counts": {
+    "chinese_prose": 16,
+    "code": 16,
+    "dialogue_instruction": 16,
+    "english_prose": 16,
+    "math_symbolic": 16,
+    "mixed_en_zh": 16,
+    "structured_data": 16,
+    "technical_it": 16
+  },
+  "prompt_version": "fidelity-v2-source-generation-v1",
+  "schema": "ramgpt-fidelity-v2-source-plan",
+  "schema_version": 1
+}

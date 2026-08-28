@@ -1,0 +1,497 @@
+{
+  "catalog_version": "1.3",
+  "archive": "Northern Languages Community Archive",
+  "snapshot_date": "2026-08-19",
+  "access_policy": {
+    "public": "metadata and media publicly accessible",
+    "registered": "account required for media access",
+    "community": "access limited to approved community members",
+    "restricted": "metadata visible; content by named steward approval"
+  },
+  "people": [
+    {
+      "person_id": "P-001",
+      "display_name": "Mara Qannik",
+      "roles": [
+        "speaker",
+        "consultant"
+      ],
+      "community": "Kittaq",
+      "birth_year": 1958,
+      "public_bio": true
+    },
+    {
+      "person_id": "P-002",
+      "display_name": "Eli Soren",
+      "roles": [
+        "interviewer",
+        "linguist"
+      ],
+      "affiliation": "Northshore University",
+      "public_bio": true
+    },
+    {
+      "person_id": "P-003",
+      "display_name": "Noah Ivalu",
+      "roles": [
+        "speaker",
+        "storyteller"
+      ],
+      "community": "Kittaq",
+      "birth_year": 1947,
+      "public_bio": false
+    },
+    {
+      "person_id": "P-004",
+      "display_name": "Leah Tom",
+      "roles": [
+        "transcriber",
+        "translator"
+      ],
+      "community": "Riverbend",
+      "public_bio": true
+    },
+    {
+      "person_id": "P-005",
+      "display_name": "Samir Cole",
+      "roles": [
+        "audio_engineer"
+      ],
+      "affiliation": "Archive Lab",
+      "public_bio": true
+    },
+    {
+      "person_id": "P-006",
+      "display_name": "Ava Natik",
+      "roles": [
+        "speaker",
+        "teacher"
+      ],
+      "community": "Kittaq",
+      "birth_year": 1972,
+      "public_bio": true
+    }
+  ],
+  "languages": [
+    {
+      "language_id": "L-ktq",
+      "name": "Kittaq",
+      "iso639_3": "qkt",
+      "status": "community_preferred_name",
+      "writing_systems": [
+        "Latin",
+        "community_orthography_2012"
+      ]
+    },
+    {
+      "language_id": "L-en",
+      "name": "English",
+      "iso639_3": "eng",
+      "writing_systems": [
+        "Latin"
+      ]
+    },
+    {
+      "language_id": "L-rvb",
+      "name": "Riverbend Sign",
+      "iso639_3": null,
+      "status": "local_sign_language",
+      "writing_systems": []
+    }
+  ],
+  "places": [
+    {
+      "place_id": "PL-01",
+      "name": "Kittaq Harbour",
+      "region": "North Coast",
+      "coordinates": {
+        "lat": 67.113,
+        "lon": -62.442
+      },
+      "precision": "approximate"
+    },
+    {
+      "place_id": "PL-02",
+      "name": "Stone Creek Camp",
+      "region": "Upper Kittaq watershed",
+      "coordinates": null,
+      "precision": "community_restricted"
+    },
+    {
+      "place_id": "PL-03",
+      "name": "Old School Hall",
+      "region": "Kittaq Harbour",
+      "coordinates": {
+        "lat": 67.108,
+        "lon": -62.451
+      },
+      "precision": "approximate"
+    }
+  ],
+  "collections": [
+    {
+      "collection_id": "C-oral-01",
+      "title": "Kittaq Oral Histories 1988–1996",
+      "description": "Interviews and narrative recordings created during community language documentation workshops.",
+      "stewards": [
+        "P-001",
+        "P-006"
+      ],
+      "default_access": "community"
+    },
+    {
+      "collection_id": "C-school-02",
+      "title": "School Language Materials",
+      "description": "Classroom recordings, reading exercises, and teacher-produced pronunciation materials.",
+      "stewards": [
+        "P-006"
+      ],
+      "default_access": "registered"
+    }
+  ],
+  "records": [
+    {
+      "record_id": "R-00041",
+      "collection_id": "C-oral-01",
+      "title": "Spring seal-hunting route discussion",
+      "date_recorded": "1991-05-18",
+      "languages": [
+        {
+          "language_id": "L-ktq",
+          "role": "primary"
+        },
+        {
+          "language_id": "L-en",
+          "role": "elicitation"
+        }
+      ],
+      "participants": [
+        {
+          "person_id": "P-003",
+          "role": "speaker"
+        },
+        {
+          "person_id": "P-002",
+          "role": "interviewer"
+        }
+      ],
+      "places": [
+        "PL-01",
+        "PL-02"
+      ],
+      "subjects": [
+        "seasonal_travel",
+        "sea_ice",
+        "hunting_vocabulary"
+      ],
+      "access": "community",
+      "media": [
+        "M-0041-A",
+        "M-0041-B"
+      ],
+      "annotations": [
+        "A-0041-TR",
+        "A-0041-TX"
+      ],
+      "rights": {
+        "steward": "P-003",
+        "reuse": "permission_required"
+      }
+    },
+    {
+      "record_id": "R-00052",
+      "collection_id": "C-oral-01",
+      "title": "Story of the lantern at Stone Creek",
+      "date_recorded": "1992-11-03",
+      "languages": [
+        {
+          "language_id": "L-ktq",
+          "role": "primary"
+        }
+      ],
+      "participants": [
+        {
+          "person_id": "P-001",
+          "role": "speaker"
+        }
+      ],
+      "places": [
+        "PL-02"
+      ],
+      "subjects": [
+        "narrative",
+        "place_memory",
+        "winter_travel"
+      ],
+      "access": "restricted",
+      "media": [
+        "M-0052-A"
+      ],
+      "annotations": [
+        "A-0052-TR"
+      ],
+      "rights": {
+        "steward": "P-001",
+        "reuse": "no_publication_without_approval"
+      }
+    },
+    {
+      "record_id": "R-00077",
+      "collection_id": "C-school-02",
+      "title": "Classroom minimal-pair exercise",
+      "date_recorded": "1995-02-14",
+      "languages": [
+        {
+          "language_id": "L-ktq",
+          "role": "instruction"
+        },
+        {
+          "language_id": "L-en",
+          "role": "teacher_comment"
+        }
+      ],
+      "participants": [
+        {
+          "person_id": "P-006",
+          "role": "teacher"
+        }
+      ],
+      "places": [
+        "PL-03"
+      ],
+      "subjects": [
+        "phonology",
+        "education",
+        "pronunciation"
+      ],
+      "access": "registered",
+      "media": [
+        "M-0077-A"
+      ],
+      "annotations": [
+        "A-0077-TR",
+        "A-0077-AL"
+      ],
+      "rights": {
+        "steward": "P-006",
+        "reuse": "educational_with_attribution"
+      }
+    },
+    {
+      "record_id": "R-00103",
+      "collection_id": "C-oral-01",
+      "title": "Boat-building terminology elicitation",
+      "date_recorded": "1996-07-09",
+      "languages": [
+        {
+          "language_id": "L-ktq",
+          "role": "primary"
+        },
+        {
+          "language_id": "L-en",
+          "role": "elicitation"
+        }
+      ],
+      "participants": [
+        {
+          "person_id": "P-001",
+          "role": "speaker"
+        },
+        {
+          "person_id": "P-002",
+          "role": "interviewer"
+        }
+      ],
+      "places": [
+        "PL-01"
+      ],
+      "subjects": [
+        "material_culture",
+        "boats",
+        "lexicon"
+      ],
+      "access": "community",
+      "media": [
+        "M-0103-A",
+        "M-0103-PH"
+      ],
+      "annotations": [
+        "A-0103-TR",
+        "A-0103-TX",
+        "A-0103-GL"
+      ],
+      "rights": {
+        "steward": "P-001",
+        "reuse": "permission_required"
+      }
+    }
+  ],
+  "media": [
+    {
+      "media_id": "M-0041-A",
+      "record_id": "R-00041",
+      "type": "audio",
+      "format": "audio/flac",
+      "duration_s": 1864.2,
+      "channels": 1,
+      "sample_rate_hz": 48000,
+      "sha256": "198ea4fd21561160a92f48c0a59e4b1d9d942a24260128131c037c99c335d997"
+    },
+    {
+      "media_id": "M-0041-B",
+      "record_id": "R-00041",
+      "type": "audio_access",
+      "format": "audio/mpeg",
+      "duration_s": 1864.2,
+      "channels": 1,
+      "bitrate_kbps": 128,
+      "derived_from": "M-0041-A"
+    },
+    {
+      "media_id": "M-0052-A",
+      "record_id": "R-00052",
+      "type": "audio",
+      "format": "audio/flac",
+      "duration_s": 742.8,
+      "channels": 1,
+      "sample_rate_hz": 48000,
+      "sha256": "bb5f4cd0e3e99a32c026473bac45ea11d49964ab502bf325786701148d14c566"
+    },
+    {
+      "media_id": "M-0077-A",
+      "record_id": "R-00077",
+      "type": "audio",
+      "format": "audio/flac",
+      "duration_s": 931.4,
+      "channels": 2,
+      "sample_rate_hz": 48000,
+      "sha256": "4474743e57c5bb58e39aeb740c269918402315333d31f79a69ac31d21082f67d"
+    },
+    {
+      "media_id": "M-0103-A",
+      "record_id": "R-00103",
+      "type": "audio",
+      "format": "audio/flac",
+      "duration_s": 2210.7,
+      "channels": 1,
+      "sample_rate_hz": 96000,
+      "sha256": "54135907af257b4d4f11edc0b6e96fb406d62698cf9b0538ed41747342e49786"
+    },
+    {
+      "media_id": "M-0103-PH",
+      "record_id": "R-00103",
+      "type": "image_set",
+      "format": "image/tiff",
+      "count": 18,
+      "sha256_manifest": "54fcbf55e03870df89a41f0acf0cc3a81df700f2f1c3ff85628011be5428cab2"
+    }
+  ],
+  "annotations": [
+    {
+      "annotation_id": "A-0041-TR",
+      "record_id": "R-00041",
+      "type": "time_aligned_transcript",
+      "language_id": "L-ktq",
+      "format": "text/eaf+xml",
+      "annotator": "P-004",
+      "version": 3
+    },
+    {
+      "annotation_id": "A-0041-TX",
+      "record_id": "R-00041",
+      "type": "translation",
+      "language_id": "L-en",
+      "format": "application/json",
+      "annotator": "P-004",
+      "version": 2
+    },
+    {
+      "annotation_id": "A-0052-TR",
+      "record_id": "R-00052",
+      "type": "time_aligned_transcript",
+      "language_id": "L-ktq",
+      "format": "text/eaf+xml",
+      "annotator": "P-004",
+      "version": 1
+    },
+    {
+      "annotation_id": "A-0077-TR",
+      "record_id": "R-00077",
+      "type": "transcript",
+      "language_id": "L-ktq",
+      "format": "text/plain",
+      "annotator": "P-006",
+      "version": 4
+    },
+    {
+      "annotation_id": "A-0077-AL",
+      "record_id": "R-00077",
+      "type": "phonetic_alignment",
+      "language_id": "L-ktq",
+      "format": "textgrid",
+      "annotator": "P-002",
+      "version": 2
+    },
+    {
+      "annotation_id": "A-0103-TR",
+      "record_id": "R-00103",
+      "type": "time_aligned_transcript",
+      "language_id": "L-ktq",
+      "format": "text/eaf+xml",
+      "annotator": "P-004",
+      "version": 5
+    },
+    {
+      "annotation_id": "A-0103-TX",
+      "record_id": "R-00103",
+      "type": "translation",
+      "language_id": "L-en",
+      "format": "application/json",
+      "annotator": "P-004",
+      "version": 3
+    },
+    {
+      "annotation_id": "A-0103-GL",
+      "record_id": "R-00103",
+      "type": "gloss",
+      "language_id": "L-ktq",
+      "format": "application/json",
+      "annotator": "P-002",
+      "version": 1
+    }
+  ],
+  "relationships": [
+    {
+      "source": "R-00041",
+      "predicate": "same_interview_series",
+      "target": "R-00052"
+    },
+    {
+      "source": "R-00103",
+      "predicate": "uses_terminology_discussed_in",
+      "target": "R-00041"
+    },
+    {
+      "source": "R-00077",
+      "predicate": "teaching_material_for",
+      "target": "L-ktq"
+    },
+    {
+      "source": "P-006",
+      "predicate": "steward_of",
+      "target": "C-school-02"
+    },
+    {
+      "source": "PL-02",
+      "predicate": "referenced_by",
+      "target": "R-00052"
+    }
+  ],
+  "integrity": {
+    "record_count": 4,
+    "media_count": 6,
+    "annotation_count": 8,
+    "orphan_reference_count": 0,
+    "snapshot_manifest_sha256": "6759f2299bb86d8f2cd8f46d72b5a2e17f4f2e74334b8f26d2dde4e8a8f2bc64"
+  }
+}

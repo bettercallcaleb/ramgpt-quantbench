@@ -1,0 +1,242 @@
+Neighborhood Emergency Drill Planning Meeting
+
+Participants:
+Farah — neighborhood association coordinator
+Miguel — emergency-management volunteer
+Joanne — apartment building representative
+Theo — communications lead
+
+Farah: The purpose of the drill is preparedness, not realism for its own sake. I don't want smoke machines, fake injuries that alarm passersby, or surprise sirens.
+
+Miguel: Agreed. We can make it challenging through information flow and decision-making rather than theatrics.
+
+Joanne: Our building has seniors, young families, and several residents who use mobility devices. If the drill is designed around healthy adults running outside, it's useless.
+
+Farah: Exactly. Scenario is prolonged power outage after a summer windstorm. No building fire, no structural collapse.
+
+Theo: How long is the simulated outage?
+
+Miguel: Twelve hours in scenario time, compressed into ninety minutes.
+
+Farah: What are the learning objectives?
+
+Miguel: Four:
+1. account for residents who request check-ins;
+2. establish a communication hub;
+3. identify heat and medical-risk escalation;
+4. coordinate resources without spreading rumors.
+
+Joanne: We should add elevator outage. In my building, that's the first major accessibility issue.
+
+Farah: Good. But we don't actually shut down the elevator.
+
+Joanne: Correct. We simulate that it is unavailable.
+
+Theo: How do participants know which facts are simulated and which are real?
+
+Miguel: Every exercise message begins "DRILL MESSAGE." All printed cards have a colored border and the word EXERCISE.
+
+Farah: And if a real emergency occurs?
+
+Miguel: Anyone says "REAL WORLD" and the exercise stops for that area. Real emergency procedures take priority.
+
+Theo: I'll put that on every facilitator sheet.
+
+Joanne: Resident participation is voluntary, right?
+
+Farah: Yes. We notify everyone a week ahead. Nobody is required to answer the door.
+
+Joanne: Then how do we practice welfare checks?
+
+Miguel: Use a roster of volunteer households who opted in. Some facilitators can play scripted residents by phone.
+
+Farah: Good. No unannounced entry, no testing whether someone "notices."
+
+Theo: Communication hub?
+
+Farah: Community room in building A.
+
+Joanne: If power is out, the room may be hot.
+
+Miguel: In the scenario, yes. For the actual drill, building systems remain normal. We can tell participants the simulated indoor temperature.
+
+Farah: What channels?
+
+Theo: Primary is text-message group for volunteers. Backup is two-way radio. We also test a paper message runner for participants without phones.
+
+Joanne: Text group raises privacy issues. I don't want apartment numbers plus medical conditions posted broadly.
+
+Theo: We can use household codes. Sensitive information goes only to the check-in lead.
+
+Miguel: The main board can show:
+- checked;
+- needs follow-up;
+- unreachable;
+- declined;
+without medical details.
+
+Farah: Excellent.
+
+Joanne: What injects are we planning?
+
+Miguel: At exercise minute 10: "Utility estimates restoration in six hours."
+
+Theo: Easy.
+
+Miguel: Minute 20: "Resident H-14 reports indoor temperature rising and says refrigerated medication may need protection."
+
+Joanne: Don't make volunteers improvise medical storage advice.
+
+Farah: Right. The desired action is identify it as a health-related concern and escalate to the designated support contact, not invent instructions.
+
+Miguel: I'll write that into evaluator criteria.
+
+Theo: Minute 30 could be conflicting restoration rumors.
+
+Farah: Yes. One social message says power will return in thirty minutes; official utility channel still says six hours.
+
+Theo: Objective: verify before forwarding.
+
+Joanne: Good.
+
+Miguel: Minute 40: elevator-dependent resident wants to leave for a cooling centre.
+
+Joanne: Then participants need accessible transportation information.
+
+Farah: We should have the real municipal number and process available, but mark that calls are simulated unless arranged in advance.
+
+Theo: Could a facilitator play the transport dispatcher?
+
+Miguel: Better. We don't want to burden real dispatch for a drill.
+
+Farah: Minute 50?
+
+Miguel: One volunteer reports smelling gas in a hallway.
+
+Joanne: That's too close to a real emergency. What if someone actually smells gas?
+
+Farah: Good point. We shouldn't train people to treat gas odor as simulation.
+
+Miguel: Replace it with a non-immediate infrastructure issue: basement sump alarm after power loss.
+
+Joanne: Much better.
+
+Theo: Objective could be reporting to building management and protecting the area, not attempting electrical repair.
+
+Farah: Exactly.
+
+Miguel: Minute 60: phone network congestion. Text messages delayed by ten minutes.
+
+Theo: Then backup radio and runner network activates.
+
+Joanne: We should include one communication failure at the hub, like the radio battery is low.
+
+Theo: Fine, but not every system fails at once. The point is to practice redundancy, not make success impossible.
+
+Farah: Agreed.
+
+Miguel: Minute 70: a neighboring building asks whether we have spare bottled water.
+
+Joanne: Resource tracking.
+
+Farah: And decision-making about reserve levels.
+
+Theo: We need inventory cards.
+
+Miguel: We'll simulate:
+- 20 cases water;
+- 12 battery packs;
+- 8 flashlights;
+- 3 portable fans;
+- first-aid kits;
+- printed information sheets.
+
+Farah: Portable fans during an outage need power source.
+
+Miguel: Battery fans. I'll specify.
+
+Joanne: Can we include pets?
+
+Farah: Yes, but not as the central difficulty.
+
+Miguel: One resident declines cooling-centre transport because their cat cannot go. Participants identify pet-friendly options rather than pressuring them.
+
+Theo: That's realistic.
+
+Farah: Evaluators. How many?
+
+Miguel: One at communication hub, one shadowing check-in team, one with resource team, one at apartment-building interface.
+
+Joanne: Evaluators should not correct people immediately unless safety issue. Otherwise we won't see the process.
+
+Farah: Right. They record observations for debrief.
+
+Theo: Metrics?
+
+Miguel: Not just speed. Measure:
+- percentage of opt-in households accounted for;
+- time to establish verified information source;
+- number of rumors forwarded without verification;
+- number of sensitive details exposed improperly;
+- accessibility needs identified;
+- unresolved requests at end;
+- whether backup communications were used.
+
+Joanne: Add whether volunteers asked before providing help. People sometimes assume a wheelchair user wants to be pushed or moved.
+
+Farah: Good.
+
+Theo: Should we test door-to-door check-ins physically?
+
+Joanne: With opt-in residents, yes. Teams of two. They carry identification and don't enter apartments.
+
+Miguel: Check-in script:
+"Hello, this is the neighborhood emergency drill. Are you participating today? Do you need us to pass any simulated request to the hub?"
+
+Farah: Clear.
+
+Joanne: If someone says they're not participating, team thanks them and leaves.
+
+Theo: What if they report a real problem?
+
+Miguel: Stop the exercise interaction and handle it as real. Facilitators need that instruction repeatedly.
+
+Farah: Cooling centre. We should use the actual route in planning.
+
+Joanne: It's twelve blocks away and one major intersection has construction.
+
+Theo: We can provide route cards with two options.
+
+Miguel: But do not actually move vulnerable residents there as part of the exercise.
+
+Farah: Correct. This is planning and communication only.
+
+Joanne: Debrief needs resident feedback, not just volunteer feedback.
+
+Farah: We'll have two debrief layers. Immediate 20-minute volunteer hot wash, then a short participant survey for residents.
+
+Theo: What questions?
+
+Farah: "Did you know the drill was happening? Was the check-in respectful? Did you receive clear information? Was there any point where the exercise created confusion or concern? What support would matter in a real outage?"
+
+Miguel: Good.
+
+Joanne: We also need to test our contact list. Half the failures in real events come from old phone numbers.
+
+Theo: The drill can flag undelivered messages, but we shouldn't treat no response as permission to add new contact details from neighbors.
+
+Farah: Right. Residents update their own records.
+
+Miguel: End condition at minute 90: official message says restoration has begun, but some buildings remain without power. Participants must hand over unresolved cases rather than declaring everything finished.
+
+Farah: I like that. Real emergencies don't end neatly because the exercise clock ends.
+
+Joanne: What is success?
+
+Farah: Success is finding weaknesses we can fix. If every inject is handled perfectly, the drill may be too easy or our observers aren't looking closely enough.
+
+Theo: And the public notice should say that plainly. This isn't an evaluation of residents.
+
+Miguel: It's an evaluation of our neighborhood process.
+
+Farah: Exactly. I'll circulate the final scenario, opt-in form, privacy rules, and "REAL WORLD" stop procedure. No surprises and no pretending safety comes from drama.

@@ -1,0 +1,227 @@
+Troubleshooting Guide: Filesystem Metadata Corruption
+
+Scope
+
+This guide covers Linux hosts where a local filesystem reports metadata errors, remounts read-only, fails to mount, or shows directory/inode inconsistencies. It assumes a journaling filesystem such as ext4 or XFS but does not treat repair commands as interchangeable.
+
+Primary Rule
+
+Preserve evidence and stop further damage before attempting repair.
+
+Do not repeatedly mount a damaged filesystem read-write. Do not run a filesystem checker against a mounted writable filesystem unless the filesystem-specific documentation explicitly supports it.
+
+Initial Symptoms
+
+Common indicators:
+- kernel messages reporting metadata checksum errors;
+- journal recovery failures;
+- "structure needs cleaning";
+- I/O errors while reading directories;
+- filesystem remounted read-only;
+- missing directory entries;
+- incorrect free-space accounting;
+- mount failure after crash.
+
+Collect Evidence
+
+Immediately capture:
+
+date -Is
+uname -a
+lsblk -f
+findmnt
+dmesg -T
+journalctl -k --since "-2 hours"
+
+Record:
+- device path;
+- filesystem type;
+- mount options;
+- storage layer;
+- LVM/RAID mapping;
+- encryption layer;
+- cloud/block-device identifiers.
+
+If the filesystem is backed by RAID, SAN, virtual disk, or cloud volume, inspect that layer too. Filesystem corruption can be secondary to storage faults.
+
+Distinguish Metadata Error from Device Error
+
+Search kernel logs for:
+- medium errors;
+- NVMe critical warnings;
+- SATA resets;
+- SCSI sense data;
+- RAID degradation;
+- path failover;
+- timeouts.
+
+A filesystem repair may restore structural consistency while the underlying device continues corrupting data.
+
+If hardware health is suspect, prioritize imaging or snapshotting before repair.
+
+Unmount
+
+If service architecture permits:
+
+systemctl stop <dependent-service>
+umount /mountpoint
+
+If unmount fails because processes hold files:
+
+fuser -vm /mountpoint
+lsof +f -- /mountpoint
+
+Do not lazily unmount merely to make repair tooling run without understanding active users.
+
+Snapshot or Clone
+
+For LVM, storage array, or cloud volume, create a crash-consistent snapshot when possible.
+
+For failing physical media, use a recovery-oriented imaging tool that can tolerate read errors rather than ordinary `dd`.
+
+All destructive repair is preferably performed on a clone or after a recoverable snapshot.
+
+Identify Filesystem
+
+Use:
+
+blkid /dev/...
+file -s /dev/...
+
+Do not guess based on mount path.
+
+ext4 Path
+
+For ext4, `e2fsck` is normally used offline.
+
+First use non-modifying inspection:
+
+e2fsck -fn /dev/DEVICE
+
+`-n` answers no to repair prompts and `-f` forces checking.
+
+Review output for:
+- inode bitmap differences;
+- block bitmap differences;
+- orphaned inodes;
+- directory structure errors;
+- journal problems;
+- duplicate block use.
+
+If a repair is authorized and backup/snapshot exists:
+
+e2fsck -f /dev/DEVICE
+
+Avoid automatically using `-y` on important data because it can approve destructive choices without review.
+
+If the primary superblock is damaged, ext4 maintains backup superblocks. Locate candidates with filesystem-specific tools before choosing one. Do not write a new filesystem merely to regenerate metadata.
+
+XFS Path
+
+For XFS, use:
+
+xfs_repair -n /dev/DEVICE
+
+for no-modify inspection.
+
+Unlike ext filesystems, XFS does not use `fsck` in the same way.
+
+A normal repair is:
+
+xfs_repair /dev/DEVICE
+
+Only use log-zeroing options when documentation and incident conditions justify them. Clearing an unrecoverable log may discard metadata updates that were pending at crash time.
+
+Read-Only Mount for Recovery
+
+After structural repair, a read-only mount may be appropriate:
+
+mount -o ro /dev/DEVICE /recovery
+
+For filesystems that replay journals on nominally read-only mount, use the filesystem-specific option to prevent replay if evidence preservation is required.
+
+Validate Data
+
+A clean filesystem checker means metadata is internally consistent. It does not prove file contents are correct.
+
+Validate:
+- application checksums;
+- database integrity checks;
+- package manifests;
+- known file counts;
+- backup comparison.
+
+If an application stores its own checksums or WAL, use them.
+
+Lost+found and Orphan Recovery
+
+Repair tools may reconnect orphaned files into recovery directories. These files can have lost names and parent paths.
+
+Do not immediately delete them. Inventory inode, size, timestamps, magic type, and application signatures. Some may contain recoverable user data.
+
+Database Filesystems
+
+If corruption affected database storage, filesystem repair is not sufficient validation.
+
+Follow database-specific recovery:
+- verify WAL/redo consistency;
+- run database integrity checks;
+- compare replicas;
+- consider restoring from backup.
+
+Never assume a database file is usable because the directory is readable.
+
+Root Filesystem
+
+For root filesystem corruption, boot into rescue environment or recovery image so the target filesystem can remain unmounted.
+
+If the system automatically remounts root read-write, disable that behavior before checking.
+
+After Repair
+
+Mount normally only after:
+- repair tool exits cleanly;
+- underlying storage health is acceptable;
+- required backups are preserved;
+- application owner agrees to validation.
+
+Monitor kernel logs during initial load.
+
+Root Cause Investigation
+
+Potential causes:
+- sudden power loss with storage cache lacking protection;
+- faulty disk or controller;
+- firmware bug;
+- memory corruption;
+- unsafe storage snapshot;
+- hypervisor/storage path issue;
+- kernel/filesystem bug;
+- forced reset during metadata-heavy workload.
+
+Correlate corruption timestamp with infrastructure events.
+
+What Not to Do
+
+Do not:
+- format the device to "fix" mount errors;
+- run repair on the wrong block layer;
+- repeatedly reboot hoping journal replay succeeds;
+- run generic fsck commands without knowing filesystem type;
+- discard SMART/NVMe/storage logs after repair;
+- declare success from a checker alone.
+
+Escalation Evidence
+
+Provide:
+- raw kernel error messages;
+- filesystem checker output;
+- storage health report;
+- device topology;
+- snapshot/clone identifiers;
+- repair commands executed;
+- post-repair integrity checks.
+
+Conclusion
+
+Filesystem metadata repair is a consistency operation, not a guarantee of data correctness. Safe troubleshooting separates three questions: is the storage device reliable, is the filesystem structure internally coherent, and are the application files semantically intact? Each requires its own evidence.

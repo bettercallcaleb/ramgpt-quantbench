@@ -1,0 +1,71 @@
+{
+  "artifacts": {
+    "Unsloth": {
+      "hcdfr": {
+        "1": {
+          "eligible_positions": 43644,
+          "flips": 336,
+          "hcdf_rate": 0.00769865273577124
+        },
+        "2": {
+          "eligible_positions": 31364,
+          "flips": 58,
+          "hcdf_rate": 0.0018492539216936614
+        },
+        "4": {
+          "eligible_positions": 19716,
+          "flips": 13,
+          "hcdf_rate": 0.0006593629539460336
+        }
+      },
+      "max_flipped_bf16_margin": 9.239395141601562,
+      "mean_kl": 0.03854230747637248,
+      "top1_flips": 5699
+    },
+    "ggml-org": {
+      "hcdfr": {
+        "1": {
+          "eligible_positions": 43644,
+          "flips": 498,
+          "hcdf_rate": 0.01141050316194666
+        },
+        "2": {
+          "eligible_positions": 31364,
+          "flips": 111,
+          "hcdf_rate": 0.0035390894018620072
+        },
+        "4": {
+          "eligible_positions": 19716,
+          "flips": 33,
+          "hcdf_rate": 0.0016737674984783932
+        }
+      },
+      "max_flipped_bf16_margin": 24.74701690673828,
+      "mean_kl": 0.05396429797282026,
+      "top1_flips": 6437
+    }
+  },
+  "benchmark_id": "qwen3-4b-q4-k-m-open-artifact-rank-v1",
+  "geometry": {
+    "positions_per_segment": 512,
+    "segments": 128,
+    "total_positions": 65536
+  },
+  "independent_validation": {
+    "sha256": "ac98a6b1f53a1466174f1b699eea6bc5c0fdb4e9b86d6f9f7a0cf49f19263828",
+    "status": "PASS"
+  },
+  "methodology": {
+    "comparison_class": "OPEN_ARTIFACT_DOWNLOAD_RANK",
+    "primary_metric": "mean KL(BF16 || artifact), lower is better",
+    "reference": "native BF16",
+    "strict_recipe_rank": {
+      "eligible": false,
+      "reason": "Unsloth explicitly records importance-matrix provenance while ggml-org does not expose equivalent recipe provenance. This result ranks downloadable artifacts, not controlled quantization algorithms."
+    }
+  },
+  "reference_determinism": "Two complete independent captures were bitwise identical across 9,957,277,696 FP32 logits.",
+  "schema": "ramgpt-quantbench-forensic-evidence",
+  "schema_version": 1,
+  "source_verified_result_sha256": "6a4624c40f412087c5de23ef15c3479cb406cf68f8835cfd2ecf89c1c2bea4cd"
+}

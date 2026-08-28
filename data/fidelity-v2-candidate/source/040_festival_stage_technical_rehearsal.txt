@@ -1,0 +1,33 @@
+Production coordination log, 14:00. The outdoor festival stage looked finished from the audience lawn, but the technical rehearsal was only beginning. LED walls were powered, line arrays were hung, moving lights had completed self-test, and four bands were waiting for soundcheck. 舞台经理阿杰先提醒所有人：“今天不是 show run-through。We are testing transitions, communications, and failure cases.”
+
+The first problem appeared before any music played. The video team’s media server output was 59.94 Hz, while the center LED processor had been configured for 60 Hz. The picture looked normal to most people, but camera playback showed a slow rolling artifact. “现场观众可能看不出来，broadcast camera 会看到,” the video engineer said. The team standardized the chain on 59.94 and restarted the processor before continuing.
+
+Audio had a different timing issue. Band two used in-ear monitors and a digital split, while band three brought an analog transformer split. The stage patch sheet assumed the same input order for both. “不要按 band number 复制上一套 patch,” the monitor engineer warned. “Kick, snare, bass look universal until one artist arrives with three percussion channels and no guitar.” They rebuilt each input list from the artist riders and marked only physically shared lines as common.
+
+At 14:45 the production manager called the first changeover drill. Band one cleared the stage, and the crew had twelve minutes to reset for band two. 中文 radio 频道里不断有人报位置：“鼓 riser 已出。”“Keyboard loom 还在 stage left。”“Hold, power cable crossing.” The English comms channel remained reserved for department heads and touring engineers. This language split reduced chatter but required clear handoff phrases between channels.
+
+The lighting programmer noticed that two moving heads lost position reference after a temporary power interruption. They recovered automatically, but their reset sequence swept beams across the stage. During a live performance that could hit cameras or distract performers. “If power returns, fixtures should not immediately resume show movement,” she said. The team changed the recovery cue so affected fixtures homed while dimmed, then rejoined only after operator confirmation.
+
+Weather monitoring ran in parallel. The forecast predicted a possible thunderstorm after 19:00. A small station beside front-of-house measured wind, temperature, rain, and lightning distance. “Weather app 不是我们的 trigger,” 阿杰说。The event had explicit thresholds: elevated wind initiated banner removal; a higher threshold stopped use of flown scenic elements; lightning within the defined radius triggered evacuation procedures.
+
+A decorative scrim became the focus. At low wind it hung neatly behind the stage. When fans simulated a gust, the fabric pulled against its lower ties and began to behave like a sail. The rigging supervisor had already calculated loads, but the rehearsal demonstrated how quickly appearance changed. The team decided the scrim would be removed earlier than the main wind threshold because it had little operational value and significant wind area.
+
+At 15:30 the first artist arrived for soundcheck and requested an additional wireless vocal channel. Spectrum coordination was already tight because local television and event security occupied nearby frequencies. The RF coordinator scanned the band and found an available slot, but warned: “One free frequency is not enough. We need intermodulation compatibility with the whole set.” 他没有直接把新麦克风开机，而是重新跑 coordination software, then assigned the channel.
+
+Backstage, the power team tested generator failover. Critical systems—communications, emergency lighting, network control, and selected audio electronics—were on UPS or backed circuits. The full PA could not run indefinitely on backup. When they simulated loss of utility feed, control systems remained alive while amplifiers muted in sequence. “Good,” the audio lead said. “我们宁愿 controlled silence，不要一半系统 random reboot.”
+
+The rehearsal then moved to emergency announcements. The festival’s public-address system could override performance audio. A pre-recorded message existed in English and Chinese, but staff worried that playing both full versions sequentially would be too slow. They rewrote the first instruction into a compact bilingual form: “Please stop where you are and listen / 请原地停留并注意广播,” followed by route-specific details.
+
+Security asked whether an announcement should direct people to the main entrance. The crowd manager rejected that wording. Depending on incident location, the main entrance might not be the safest path. Instead, zone stewards would receive route instructions over radio, while public messaging emphasized following staff and illuminated exits.
+
+At 16:40, sunset lighting cues were reviewed. The stage looked balanced in programming mode, but the giant LED wall became far brighter as ambient light fell. Camera exposure forced performers’ faces darker. The video and lighting teams negotiated brightness targets rather than independently maximizing their systems. “Nobody wins if LED looks amazing and singer becomes silhouette,” the camera director said.
+
+A later changeover revealed a cable-management flaw. A touring keyboard stand rolled across a temporary network line connecting stage right to the lighting node. The cable had been protected with a low-profile ramp, but the stand’s small wheel caught the edge. Crew repositioned the route behind a barricade. “这就是 rehearsal 要找的东西,” 阿杰说，“not whether everybody remembers the song order.”
+
+At 18:05, the team ran a simulated lightning hold. Music stopped, stage power remained controlled, department heads acknowledged the call, and audience-zone staff practiced moving toward shelter points. One radio message used the phrase “evacuate now” before the formal trigger had been declared. The production manager corrected it immediately: operational terms had defined meanings and should not be improvised.
+
+The final technical run lasted forty-five minutes. It included two artist transitions, a video playback cue, bilingual stage announcements, backup comms, and one deliberate lighting-node disconnect. Not everything was perfect. A backstage display froze once, and one interpreter monitor received the wrong audio feed. Both became overnight fixes.
+
+At debrief, 阿杰 summarized in Chinese first, then English for touring staff: “明天我们不是靠设备‘应该没问题’来开门。Every critical transition has an owner, a trigger, and a fallback.”
+
+The audience would never see most of the work: frame-rate alignment, RF coordination, cable routes, wind thresholds, failover logic, and precise radio language. If the festival ran smoothly, those details would disappear behind the performance. Technical rehearsal existed to make that disappearance earned rather than accidental.

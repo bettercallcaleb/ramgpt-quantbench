@@ -1,0 +1,282 @@
+FinOps Specification: Cloud Cost Allocation Pipeline
+
+Purpose
+
+Build a reproducible daily pipeline that assigns cloud-provider charges to business units, products, environments, and platform services. The pipeline must preserve raw billing evidence, make allocation rules explicit, and reconcile allocated totals back to provider invoices.
+
+Inputs
+
+Primary sources:
+- provider billing export;
+- account/subscription/project hierarchy;
+- resource tags and labels;
+- Kubernetes usage allocation;
+- CMDB ownership;
+- shared-platform usage metrics;
+- currency and tax reference data where applicable.
+
+Raw provider exports are immutable inputs. The pipeline never rewrites them in place.
+
+Canonical Cost Record
+
+Each normalized line contains:
+
+billing_date
+provider
+billing_account
+resource_id
+service
+sku
+region
+usage_quantity
+usage_unit
+list_cost
+discount
+credit
+net_cost
+currency
+invoice_month
+source_line_id
+
+`source_line_id` is stable and permits traceability to the provider export.
+
+Normalization
+
+Provider-specific fields map into one canonical schema. No allocation occurs during normalization.
+
+Normalization validates:
+- monetary fields parse correctly;
+- currency known;
+- billing dates valid;
+- source line IDs unique;
+- sum(net_cost) matches source export within rounding tolerance.
+
+Ownership Dimensions
+
+Target dimensions:
+- business_unit;
+- product;
+- application;
+- environment;
+- cost_center;
+- owner_team;
+- allocation_method;
+- allocation_confidence.
+
+Direct Allocation
+
+If a resource has valid authoritative ownership metadata, its net cost is directly assigned.
+
+Metadata precedence:
+1. finance-approved cost-center tag;
+2. CMDB application relationship;
+3. cloud account/project ownership;
+4. fallback mapping table;
+5. unallocated.
+
+Conflicting tags do not silently choose one. They generate an exception record with the precedence rule that resolved it.
+
+Shared Costs
+
+Shared platform examples:
+- observability;
+- CI runners;
+- network transit;
+- Kubernetes control planes;
+- security scanning;
+- shared databases.
+
+These costs require allocation drivers.
+
+Allocation Rule Structure
+
+Each rule contains:
+- rule_id;
+- effective_start;
+- effective_end;
+- source cost filter;
+- allocation driver;
+- target dimensions;
+- minimum coverage;
+- residual treatment;
+- version.
+
+Rules are immutable once used for a closed accounting period. Corrections create a new version.
+
+Kubernetes Allocation
+
+Node and cluster costs are allocated to workloads from measured resource consumption.
+
+For compute:
+allocated share =
+weighted CPU usage + weighted memory usage.
+
+Reserved but unused capacity is not automatically attributed entirely to active workloads. The model separates:
+- workload usage cost;
+- idle cluster cost;
+- platform overhead.
+
+Idle cost may be allocated proportionally or retained under platform ownership according to finance policy.
+
+Network Allocation
+
+Shared network egress can be assigned by measured bytes when destination attribution is available.
+
+Unattributable backbone charges remain in a network platform pool rather than being distributed through an arbitrary equal split.
+
+Commitment Discounts
+
+Reserved-instance or savings-plan discounts are treated separately from raw usage.
+
+The pipeline first calculates usage cost under provider billing semantics, then allocates realized commitment benefit according to finance policy.
+
+This avoids making one team's apparent cost depend unpredictably on which resource the provider happened to match to a commitment.
+
+Credits
+
+Service credits and negotiated discounts are classified:
+- resource-specific;
+- account-wide;
+- contractual;
+- incident compensation.
+
+Resource-specific credits follow the resource. Account-wide credits are allocated using an explicit rule or retained centrally.
+
+Amortization
+
+Upfront commitments are amortized across their coverage period for management reporting.
+
+Invoice reporting preserves provider cash timing separately.
+
+The pipeline therefore produces both:
+- invoice basis;
+- amortized management basis.
+
+Unallocated Cost
+
+No pipeline should force 100% allocation by inventing ownership.
+
+Records that fail ownership rules enter `unallocated` with reason:
+- missing tag;
+- invalid cost center;
+- retired CMDB record;
+- ambiguous shared service;
+- unmapped account.
+
+The unallocated percentage is itself a governance KPI.
+
+Daily Processing
+
+1. Land provider export.
+2. Verify file hash and completeness.
+3. Normalize records.
+4. Enrich ownership metadata as of billing date.
+5. Apply direct allocation.
+6. Build shared-cost pools.
+7. Compute allocation drivers.
+8. Allocate shared pools.
+9. Apply commitment/credit policy.
+10. Reconcile totals.
+11. Publish detailed and summarized outputs.
+12. Persist rule/version manifest.
+
+Historical Metadata
+
+Ownership must be time-aware. If a resource moves from Team A to Team B on August 15, August 10 cost must not be reassigned to Team B merely because today's CMDB says Team B owns it.
+
+Enrichment uses effective-dated ownership snapshots.
+
+Reconciliation
+
+For each provider and invoice month:
+
+sum(canonical net cost)
+=
+sum(direct allocations)
++ sum(shared allocations)
++ sum(unallocated)
++ explicit rounding adjustment.
+
+Tolerance is tightly bounded.
+
+A failed reconciliation blocks publication.
+
+Rounding
+
+Allocation operates at high decimal precision. Rounding to currency minor units occurs only at reporting boundaries.
+
+Residual cents are assigned deterministically using largest-remainder ordering so repeated runs are stable.
+
+Data Quality Metrics
+
+- raw lines loaded;
+- duplicate source IDs;
+- unmapped services;
+- direct allocation coverage;
+- shared cost percentage;
+- unallocated percentage;
+- invalid ownership tags;
+- stale CMDB relationships;
+- reconciliation difference;
+- rule coverage;
+- late provider adjustments.
+
+Late Billing Adjustments
+
+Providers can issue corrected or delayed charges.
+
+The pipeline is append-aware and reruns open periods when source exports change. Closed finance periods require a controlled adjustment entry rather than silently rewriting prior published numbers.
+
+Auditability
+
+Every allocated output carries:
+- source_line_id;
+- allocation rule ID;
+- rule version;
+- driver value;
+- allocation fraction;
+- ownership source;
+- pipeline run ID.
+
+An analyst must be able to trace a dashboard amount back to provider line items and rule logic.
+
+Publishing
+
+Outputs:
+- detailed Parquet table;
+- daily team summary;
+- monthly cost-center summary;
+- shared-pool report;
+- unallocated exception report;
+- reconciliation report.
+
+Dashboards read published tables, not raw provider exports.
+
+Access Control
+
+Detailed billing can reveal resource names and organizational structure. Access follows finance and platform least privilege.
+
+Teams can view their own allocated detail plus shared-pool methodology. Central FinOps can view enterprise totals.
+
+Change Management
+
+Allocation-rule changes require:
+- owner;
+- rationale;
+- before/after simulation;
+- finance approval for material changes;
+- effective date.
+
+Rules are tested on a frozen prior-day dataset before production deployment.
+
+Success Criteria
+
+The pipeline succeeds when:
+- provider totals reconcile;
+- allocation rules are reproducible;
+- historical ownership is respected;
+- shared costs use documented drivers;
+- unallocated cost is visible rather than hidden;
+- every published amount is traceable to source and rule version.
+
+The objective is not merely a cost dashboard. It is an accounting-quality transformation from provider billing evidence to explainable internal ownership.
