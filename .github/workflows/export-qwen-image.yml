@@ -1,0 +1,15 @@
+name: Export Qwen image
+on:
+  push:
+    branches:
+      - artifact/qwen-image-complex-20260921
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/upload-artifact@v4
+        with:
+          name: qwen-image-complex-expo
+          path: artifacts/qwen-image/qwen21_complex_expo_1024.png
+          if-no-files-found: error
