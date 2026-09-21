@@ -11,5 +11,5 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: qwen-image-complex-expo
-          path: artifacts/qwen-image/qwen21_complex_expo_1024.png
+          path: artifacts/qwen-image/*.png
           if-no-files-found: error
